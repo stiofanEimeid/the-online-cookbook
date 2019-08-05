@@ -1,10 +1,16 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
 from datetime import datetime
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 # create instance of app in variable 'app'
 
 app = Flask(__name__)
+app.config["MONGO_DBNAME"] = 'the-online-cookbook'
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+
+mongo = PyMongo(app)
 
 @app.route("/")
 def hello():
