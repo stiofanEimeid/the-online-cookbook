@@ -13,8 +13,9 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI", 'mongodb://localhost')
 mongo = PyMongo(app)
 
 @app.route("/")
-def hello():
-    return "Milestone Project 3: Aperitif is under construction"
+@app.route("/home")
+def home():
+    return render_template("home.html")
     
 @app.route('/products')
 def products():
