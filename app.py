@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Milestone Project 3 is under construction"
+    return "Milestone Project 3: Aperitif is under construction"
     
 @app.route('/products')
 def products():
