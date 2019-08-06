@@ -24,6 +24,9 @@
       <li class="nav-item">
         <a class="nav-link" href="{{url_for('products')}}">Products</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
+      </li>
     </ul>
     <!--<form class="form-inline my-2 my-lg-0">-->
     <!--  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
@@ -32,10 +35,6 @@
   </div>
 </nav>
 
-<div class="text-center">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Generator: Gravit.io --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 283.465 283.465" width="283.465pt" height="283.465pt"><defs><clipPath id="_clipPath_qxiBYGR35b30fHlwT3tkWKJOe16toLvt"><rect width="283.465" height="283.465"/></clipPath></defs><g clip-path="url(#_clipPath_qxiBYGR35b30fHlwT3tkWKJOe16toLvt)"><path d=" M 60.382 136.762 C 60.382 89.789 98.522 51.652 145.499 51.652 C 192.477 51.652 230.616 89.789 230.616 136.762 C 230.616 183.736 192.477 221.873 145.499 221.873 C 98.522 221.873 60.382 183.736 60.382 136.762 Z  M 84.384 136.762 C 84.384 103.035 111.769 75.653 145.499 75.653 C 179.23 75.653 206.614 103.035 206.614 136.762 C 206.614 170.49 179.23 197.872 145.499 197.872 C 111.769 197.872 84.384 170.49 84.384 136.762 Z " fill-rule="evenodd" fill="rgb(255,153,0)"/><rect x="50.99" y="120.633" width="189.019" height="24.984" transform="matrix(0.945,0.327,-0.307,0.952,48.887,-41.211)" fill="rgb(255,153,0)"/><rect x="51.304" y="129.644" width="189.459" height="24.176" transform="matrix(0.945,-0.327,0.327,0.945,-38.304,55.516)" fill="rgb(255,153,0)"/></g></svg>
-</div>
-    
     <div class="container">
         {% block content %} {% endblock %}
     </div>

@@ -1,4 +1,5 @@
 import os
+import pymongo
 from flask import Flask, render_template, redirect, request, url_for
 from datetime import datetime
 from flask_pymongo import PyMongo
@@ -7,9 +8,8 @@ from bson.objectid import ObjectId
 # create instance of app in variable 'app'
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'the-online-cookbook'
-app.config["MONGO_URI"] = os.getenv("MONGO_URI", 'mongodb://localhost')
-
+app.config['MONGO_DBNAME'] = 'the-online-cookbook'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
 
 @app.route("/")
@@ -17,6 +17,11 @@ mongo = PyMongo(app)
 def home():
     return render_template("home.html")
     
+@app.route("/recipes")
+def get_recipes():
+    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+                        
+
 @app.route('/products')
 def products():
     return render_template("products.html")

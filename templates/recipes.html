@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% for recipe in recipes %}
+            <div>
+                <strong>{{recipe.recipe_name}}</strong>
+            </div>
+            <div>
+                <strong>{{recipe.recipe_ingredients}}</strong>
+            </div>
+            <div>
+                <strong>{{recipe.recipe_serves}}</strong>
+            </div>
+            <div>
+                <strong>{{recipe.recipe_preptime}}</strong>
+            </div>
+            <div>
+                <strong>{{recipe.recipe_steps}}</strong>
+            </div>
+            
+        {% endfor %}
+    {% endblock %}
+    
+   
