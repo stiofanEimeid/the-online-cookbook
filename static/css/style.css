@@ -2,7 +2,15 @@ h1 {
     font-family: 'Lobster', cursive;
 }
 
-body {
-    background-color: black;
-    color: white;
+img {
+    width: 100vw;
+    z-index: -1;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-brand {
+    font-family: 'Lobster', cursive;
 }

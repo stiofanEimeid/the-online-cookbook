@@ -29,6 +29,10 @@ def products():
 @app.route("/login")
 def login():
     return render_template("login.html")
+    
+@app.route("/my_account")
+def account():
+    return render_template("account.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
