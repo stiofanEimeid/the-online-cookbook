@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
     {% block content %}
+    <div class="container">
         {% for recipe in recipes %}
             <div>
                 <strong>{{recipe.recipe_name}}</strong>
             </div>
             <div>
-                <strong>{{recipe.recipe_ingredients}}</strong>
+            <ul>
+                {% for ingredient in recipe.recipe_ingredients %}
+                    <li>{{ingredient}}</li>
+                {% endfor %}
+            </ul>
             </div>
             <div>
                 <strong>{{recipe.recipe_serves}}</strong>
@@ -14,8 +19,13 @@
                 <strong>{{recipe.recipe_preptime}}</strong>
             </div>
             <div>
-                <strong>{{recipe.recipe_steps}}</strong>
+            <ul>
+                {% for step in recipe.recipe_steps %}
+                    <li>{{step}}</li>
+                {% endfor %}
+            </ul>
             </div>
+    </div>
             
         {% endfor %}
     {% endblock %}
