@@ -20,6 +20,12 @@ def home():
 @app.route("/recipes")
 def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.form.to.dict())
+    return redirect(url_for('get_recipes'))
                         
 
 @app.route('/products')

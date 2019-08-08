@@ -1,33 +1,75 @@
 {% extends 'base.html' %}
     {% block content %}
     <div class="container">
+        
         {% for recipe in recipes %}
-            <div>
+            <div class="card-header">
+                <h5 class="mb-0">
+
                 <strong>{{recipe.recipe_name}}</strong>
+                
+                </h5>
+          
             </div>
             <div>
-            <ul>
-                {% for ingredient in recipe.recipe_ingredients %}
-                    <li>{{ingredient}}</li>
-                {% endfor %}
-            </ul>
+                
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Ingredients
+                    </button>
+                  </h5>
+                </div>
+                
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <ul>
+                            {% for ingredient in recipe.recipe_ingredients %}
+                                <li>{{ingredient}}</li>
+                            {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                <div class="card-header">
+                    <strong>Serves: {{recipe.recipe_serves}}</strong>
+                </div>
+                <div class="card-header">
+                    <strong>Preptime: {{recipe.recipe_preptime}}</strong>
+                </div>
+                <div>
             </div>
-            <div>
-                <strong>{{recipe.recipe_serves}}</strong>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Steps
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                        {% for step in recipe.recipe_steps %}
+                            <li>{{step}}</li>
+                        {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-                <strong>{{recipe.recipe_preptime}}</strong>
-            </div>
-            <div>
-            <ul>
-                {% for step in recipe.recipe_steps %}
-                    <li>{{step}}</li>
-                {% endfor %}
-            </ul>
-            </div>
-    </div>
+        </div>
             
         {% endfor %}
     {% endblock %}
+    
+
+
+  
+  
+
+
     
    
