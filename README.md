@@ -1,10 +1,79 @@
 # The Online Cookbook
 
-## User Stories
+## Table of Contents
+1. [**UX**](#ux)
+    - [**Project Goals**](#project-goals)
+    - [**User Goals**](#player-goals)
+    - [**User Stories**](#user-stories)
+    - [**Design Choices**](#design-choices)
+    - [**Wireframes**](#wireframes)
+
+2. [**Features**](#features)
+    - [**Demo**](#demo)
+    - [**Existing Features**](#existing-features)
+    - [**Features Left to Implement**](#features-left-to-implement)
+
+3. [**Data Structure**](#datastructure)
+
+4. [**Technologies**](#technologies)
+
+5. [**Testing**](#testing)
+
+6. [**Deployment**](#deployment)
+    - [**How to Run Code Locally**](#how-to-run-locally)
+
+7. [**Credits**](#credits)
+    - [**Content**](#content)
+    - [**Media**](#media)
+    - [**Code**](#code)
+    - [**Acknowledgements**](#acknowledgements)
+
+## UX
+
+### Project Goals
+
+#### User Goals
 
 As a user, I want to find and share recipes. I want to be able to create an account that is secure and keeps track of the recipes I create, allowing me to update them and delete them as I please. 
 
 As a site owner, I want to promote a brand of cooking tools.
+
+### Design Choices
+
+...
+
+
+### Wireframes
+
+...
+
+
+
+## Features
+
+### Demo
+
+...
+
+### Existing Features
+
+...
+
+### Features left to implement 
+
+...
+
+## Testing
+
+...
+
+## Deployment
+
+...
+
+### How to Run Code Locally
+
+...
 
 ## Data Structure
 
@@ -23,6 +92,7 @@ Steps | recipe_steps | Array
 Allergens | recipe_allergens | Boolean 
 Description | recipe_description | String 
 Username | username | String
+Image | recipe_imgURL | String
 
 ### User Collection
 
@@ -40,3 +110,14 @@ Title | DB Key | Data Type
 Product ID | _id | Object ID 
 Product Name | product_name | String
 
+## Credits
+
+### Content 
+
+### Media
+
+### Code
+
+### Acknowledgements
+
+[**Jump to top &uarr;**](#table-of-contents)
