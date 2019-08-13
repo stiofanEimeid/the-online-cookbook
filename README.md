@@ -15,9 +15,9 @@ The recipe collection and user collection share a common key-value pair, "userna
 Title | DB Key | Data type 
 --- | --- | --- 
 Recipe ID | _id | Object ID 
-Name | 2 | String | 4
-Preparation Time | 2 | Integer 
-Serves | 2 | Integer | 4
+Name | recipe_name | String 
+Preparation Time | recipe_preptime | Integer 
+Serves | recipe_serves | Integer 
 Ingredients | receipe_ingredients | Array 
 Steps | recipe_steps | Array 
 Allergens | recipe_allergens | Boolean 
