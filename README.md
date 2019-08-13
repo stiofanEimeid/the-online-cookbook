@@ -1,5 +1,11 @@
 # The Online Cookbook
 
+## User Stories
+
+As a user, I want to find and share recipes. I want to be able to create an account that is secure and keeps track of the recipes I create, allowing me to update them and delete them as I please. 
+
+As a site owner, I want to promote a brand of cooking tools.
+
 ## Data Structure
 
 The recipe collection and user collection share a common key-value pair, "username", which links the two collections. The recipe entry takes the username of the user who created it. Each recipe can only have one creator and may therefore be described as a one-to-one relationship between each recipe and the user who created it. However, a user can have many recipes attributed to them.  As such, a one-to-many relationship exists between the user and the recipes created by them. 
