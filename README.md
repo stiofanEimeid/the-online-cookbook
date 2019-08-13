@@ -2,7 +2,7 @@
 
 ## Data Structure
 
-The recipe collection and user collection share a common key-value pair, username, which links the two collections. The recipe entry takes the username of the user who created it. As each recipe can only have one creator, this describes a one-to-one relationship but a user can have many recipes in her name and is therefore a one-to-many relationship.
+The recipe collection and user collection share a common key-value pair, "username", which links the two collections. The recipe entry takes the username of the user who created it. Each recipe can only have one creator and may therefore be described as a one-to-one relationship between each recipe and the user who created it. However, a user can have many recipes attributed to them.  As such, a one-to-many relationship exists between the user and the recipes created by them. 
 
 ### Recipe Collection
 
