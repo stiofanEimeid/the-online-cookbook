@@ -53,24 +53,23 @@ def products():
  
 # User functionality begins
 
-@app.route('/index')
-def index():
+@app.route('/login') # formerly 'index' & 'index'
+def login():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
         
-    return render_template('index.html')
+    return render_template('login.html')
     
-@app.route("/index", methods=["POST"])
-def login():
+@app.route("/login", methods=["POST"]) # formerly 'index' & 'login'
+def login_form():
+        
     users = mongo.db.users
     login_user = users.find_one({'name' : request.form['username']})
     
     if login_user:
-        # if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'): 
-        #         session['username'] = request.form['username']
         if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
                 session['username'] = request.form['username']
-                return redirect(url_for('index'))
+                return redirect(url_for('login')) # formerly 'index'
                 
         return 'Invalid username/password combination'
     
@@ -84,11 +83,10 @@ def register():
         existing_user = users.find_one({'name' : request.form['username']})
         
         if existing_user is None:
-            # hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
             hashpass = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
             users.insert({'name' : request.form['username'], 'password': hashpass})
             session['username'] = request.form['username']
-            return redirect(url_for('index'))
+            return redirect(url_for('login')) # formerly 'index'
             
         return 'That username already exists!'
         
