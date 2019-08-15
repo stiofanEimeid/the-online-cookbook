@@ -112,12 +112,20 @@ Product Name | product_name | String
 
 ## Credits
 
-### Content 
+### Content
+
+...
 
 ### Media
 
+...
+
 ### Code
 
+...
+
 ### Acknowledgements
+
+...
 
 [**Jump to top &uarr;**](#table-of-contents)
