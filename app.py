@@ -101,6 +101,10 @@ def logout():
 def account():
     return render_template('account.html')
     
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+    
 # User functionality ends
 
 if __name__ == '__main__':
