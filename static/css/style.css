@@ -1,5 +1,10 @@
-h1 {
+body {
+    background-color: #67A467;
+}
+
+h1, h2 {
     font-family: 'Lobster', cursive;
+    margin: 50px;
 }
 
 img {
@@ -48,7 +53,8 @@ legend
     border-radius: 5px 5px 5px 5px;
 }
 
-.logo-container {
-    width: 100px;
-    height: 100px;
+
+
+.intro-blurb {
+    padding: 50px;
 }
