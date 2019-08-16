@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <h1>My Account</h1>
-<p>Hello, user</p>
+<p>Welcome, {{ session.username }}</p>
 <a href="{{ url_for('logout') }}">Logout</a>
 
 {% endblock %}

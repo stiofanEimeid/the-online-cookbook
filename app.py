@@ -41,8 +41,8 @@ def insert_recipe():
                 "recipe_description": request.form["recipe_description"],
                 "recipe_serves": request.form["recipe_serves"],
                 "recipe_steps":  request.form.getlist('recipe_step'),
-                "recipe_ingredients": request.form.getlist('recipe_ingredient')
-                    
+                "recipe_ingredients": request.form.getlist('recipe_ingredient'),
+                "name": session["username"]
             })
         return redirect(url_for('get_recipes'))
                         

@@ -47,3 +47,8 @@ legend
     font-family: 'Lobster';
     border-radius: 5px 5px 5px 5px;
 }
+
+.logo-container {
+    width: 100px;
+    height: 100px;
+}
