@@ -1,5 +1,9 @@
-body {
-    background-color: #67A467;
+main {
+    background-image: url("../static/img/baehaki-hariri-unsplash.jpg"); /*Photo by Lukasz Szmigiel on Unsplash*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 80vh;
 }
 
 h1, h2 {
@@ -21,9 +25,15 @@ img {
 }
 
 footer {
-    background: #1a1a1a;
-    color: #1a1a1a;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #fafafa;
+  text-align: center;
 }
+
 
 input {
   width: 50%;  
