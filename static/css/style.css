@@ -1,15 +1,31 @@
 .sleeve {
-    background-image: url(".././img/baehaki-hariri-min-unsplash.jpg"); /*Photo by Lukasz Szmigiel on Unsplash*/
+    background-image: url(".././img/baehaki-hariri-min-unsplash.jpg"); /*Photo by ... on Unsplash*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 80vh;
+    height: 67.5vh;
 }
 
-h1, h2 {
-    font-family: 'Lobster', cursive;
-    margin: 50px;
+.logo-container {
+    position: absolute;
+	top: 30%;
+	left: 40%;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	   -moz-transform: translate(-50%, -50%);
+	     -o-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 }
+
+h1 {
+    color: #fafafa;
+}
+
+h1, h2, .navbar-brand {
+    font-family: 'Lobster', cursive;
+}
+
+
 
 img {
     width: 100vw;
@@ -20,12 +36,7 @@ img {
     padding: 10px;
 }
 
-.navbar-brand {
-    font-family: 'Lobster', cursive;
-}
-
 footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
