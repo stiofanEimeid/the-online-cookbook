@@ -1,3 +1,7 @@
+body {
+    background-color: #67A467
+}
+
 .sleeve {
     background-image: url(".././img/baehaki-hariri-min-unsplash.jpg"); /*Photo by ... on Unsplash*/
     background-size: cover;
@@ -78,4 +82,11 @@ legend
 
 .intro-blurb {
     padding: 50px;
+}
+
+.recipe-row {
+    background-color: #fafafa;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
 }

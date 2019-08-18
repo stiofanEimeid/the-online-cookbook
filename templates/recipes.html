@@ -5,14 +5,14 @@
         {% for recipe in recipes %}
         
         <div class="container">
-          <div class="row">
+          <div class="recipe-row row">
             <h5 class="mb-0">
   
                   <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
                   
                   </h5>
           </div>
-          <div class="row">
+          <div class="recipe-row row">
             <h5>Ingredients</h5>
             <ul>
                               {% for ingredient in recipe.recipe_ingredients %}
@@ -20,13 +20,13 @@
                               {% endfor %}
                           </ul>
           </div>
-          <div class="row">
+          <div class="recipe-row row">
             <strong>Serves: {{recipe.recipe_serves}}</strong>
           </div>
-          <div class="row">
+          <div class="recipe-row row">
             <strong>Preptime: {{recipe.recipe_preptime}}</strong>
           </div>
-          <div class="row">
+          <div class="recipe-row row">
             <h5>Steps</h5>
              <ul>
                         {% for step in recipe.recipe_steps %}
