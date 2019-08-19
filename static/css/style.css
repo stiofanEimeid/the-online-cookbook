@@ -1,5 +1,6 @@
 body {
-    background-color: #67A467
+    background-color: #67A467;
+    background-color: #ccdaf3
 }
 
 .sleeve {
@@ -41,6 +42,7 @@ img {
 }
 
 footer {
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;

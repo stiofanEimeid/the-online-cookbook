@@ -1,6 +1,6 @@
 import os
 import pymongo
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_bcrypt import Bcrypt
 from datetime import datetime
 from flask_pymongo import PyMongo
@@ -22,6 +22,11 @@ def home():
 @app.route("/recipes")
 def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    
+@app.route("/recipe/<id>")
+def recipe(id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+    return render_template("recipe.html", recipe=recipe)
     
 # create and update recipes in the database
     
@@ -45,7 +50,18 @@ def insert_recipe():
                 "name": session["username"]
             })
         return redirect(url_for('get_recipes'))
-                        
+        
+        
+# @app.route('/edit_recipe')
+# def edit_recipe():
+
+# @app.route('delete_recipe')
+# def delete_recipe():
+    
+        
+# create and update recipes in the database ends
+
+#Products Page
 
 @app.route('/products')
 def products():
@@ -56,7 +72,10 @@ def products():
 @app.route('/login') # formerly 'index' & 'index'
 def login():
     if 'username' in session:
-        return 'You are logged in as ' + session['username']
+        # return 'You are logged in as ' + session['username']
+        # flash('Logged in successfully')
+        return redirect(url_for('account'))
+        
         
     return render_template('login.html')
     
@@ -99,7 +118,10 @@ def logout():
     
 @app.route('/account')
 def account():
-    return render_template('account.html')
+    if 'username' in session:
+        return render_template('account.html')
+        
+    return "Please login to view your account"
     
 @app.route('/settings')
 def settings():

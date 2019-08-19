@@ -1,6 +1,26 @@
 {% extends 'base.html' %} {% block content %}
+<div class="container">
 <h1>My Account</h1>
 <p>Welcome, {{ session.username }}</p>
-<a href="{{ url_for('logout') }}">Logout</a>
 
+
+
+
+    <div class="row recipe-row">
+        <div class="col">
+            <h2>My Recipes</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat volutpat orci, sit amet faucibus erat. Etiam dictum dictum semper. Vivamus hendrerit pharetra neque, ut dignissim nibh. In dapibus libero sit amet nunc laoreet, vel tempus mi porttitor. Vestibulum iaculis purus sit amet nunc aliquet, non sagittis est finibus. Etiam eu ultrices magna, non scelerisque ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla et interdum arcu. Curabitur consequat tortor et ultricies fermentum. Maecenas eget nisi est. Pellentesque erat mi, ornare quis quam et, varius tincidunt est.</p>
+        </div>
+    </div>
+    
+    <div class="row recipe-row">
+        <div class="col">
+            <h2>My Favourite Recipes</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat volutpat orci, sit amet faucibus erat. Etiam dictum dictum semper. Vivamus hendrerit pharetra neque, ut dignissim nibh. In dapibus libero sit amet nunc laoreet, vel tempus mi porttitor. Vestibulum iaculis purus sit amet nunc aliquet, non sagittis est finibus. Etiam eu ultrices magna, non scelerisque ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla et interdum arcu. Curabitur consequat tortor et ultricies fermentum. Maecenas eget nisi est. Pellentesque erat mi, ornare quis quam et, varius tincidunt est.</p>
+        </div>
+    </div>
+
+<!--<a href="{{ url_for('logout') }}"><button>Logout</button></a>-->
+<a href="{{ url_for('logout') }}" class="btn btn-default btn-lg active" role="button">Logout</a>
+</div>
 {% endblock %}
