@@ -1,12 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Edit Recipe</h1>
 <div class="container">
-    <h1>Add Recipe</h1>
     <form action="{{ url_for('update_recipe', id=recipe._id) }}" method="POST">
         
        <div class="form-group">
             <label for="formGroupExampleInput">Recipe Name</label>
-            <input type="text" name="recipe_name" class="form-control" id="recipe_name" placeholder="Name">
+            <input type="text" name="recipe_name" class="form-control" value="{{ recipe.recipe_name }}"
         </div>
         
         <div class="form-group">
@@ -14,7 +13,9 @@
     		<legend>Add ingredients</legend>
         		<div class="field_wrapper">
         	        <div>
-        	            <input type="text" name="recipe_ingredient" value="" placeholder="Ingredient no. 1"/>
+        	            {% for ingredient in recipe.recipe_ingredients %}
+        	            <input type="text" name="recipe_ingredient" value={{ingredient}} />
+        	            {% endfor %}
         	        </div>
             	</div>
         	</fieldset>
@@ -26,7 +27,9 @@
 		    <legend>Add steps</legend>
 		          <div class="field_wrapper2">
     	               <div>
-    	                <textarea class="form-control" name="recipe_step" value="" rows="2" placeholder="Step no. 1"></textarea>
+    	               {% for step in recipe.recipe_steps %}
+    	                <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea>
+    	                {% endfor %}
     	              </div>
         	       </div>
 	        </fieldset>
@@ -35,21 +38,21 @@
         
           <div class="form-group">
             <label for="formGroupExampleInput">Recipe Preptime</label>
-            <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Insert number">
+            <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}">
           </div>
           
           <div class="form-group">
             <label for="formGroupExampleInput2">Recipe Serves</label>
-            <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Insert number">
+            <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}">
           </div>
         
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Recipe Description</label>
-            <textarea class="form-control" name="recipe_description" id="recipe_description" rows="3"></textarea>
+            <textarea class="form-control" name="recipe_description"  rows="3">{{recipe.recipe_description}}</textarea>
         </div>
         
         <div class="form-group">
-            <button class="btn btn-primary" type="submit" name="action">Add Recipe</button>
+            <button class="btn btn-primary" type="submit" name="action">Update Recipe</button>
         </div>
     </form>
     
