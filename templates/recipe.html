@@ -3,27 +3,36 @@
 
         <div class="container">
           <div class="recipe-row row">
+              <div class="col">
             <h5 class="mb-0">
   
                   <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
                   
                   </h5>
+                  </div>
           </div>
           <div class="recipe-row row">
+            <div class="col">
             <h5>Ingredients</h5>
             <ul>
                               {% for ingredient in recipe.recipe_ingredients %}
                                   <li>{{ingredient}}</li>
                               {% endfor %}
                           </ul>
+            </div>
           </div>
           <div class="recipe-row row">
+            <div class="col">
             <strong>Serves: {{recipe.recipe_serves}}</strong>
+            </div>
           </div>
           <div class="recipe-row row">
+            <div class="col">
             <strong>Preptime: {{recipe.recipe_preptime}}</strong>
+            </div>
           </div>
           <div class="recipe-row row">
+            <div class="col">
             <h5>Steps</h5>
              <ul>
                         {% for step in recipe.recipe_steps %}
@@ -31,22 +40,18 @@
                         {% endfor %}
               </ul>
               
-              
+              </div>
         </div>
         {% if session.username == recipe.name %}
               <div class="row recipe-row">
                 <div class="col">
                   
                 <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-lg">Edit recipe</button></a>
+                <a href="{{ url_for('delete_recipe') }}"><button type="button" class="btn btn-danger btn-lg">Delete recipe</button></a>
                 </div>
+                
               </div>
-              
-              <div class="row recipe-row">
-                <div class="col">
-                 
-                  <a href="{{ url_for('delete_recipe') }}"><button type="button" class="btn btn-danger btn-lg">Delete recipe</button></a>
-                  </div>
-              </div>
+             
         {% endif %}
           </div>
 
