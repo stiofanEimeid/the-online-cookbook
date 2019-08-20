@@ -41,13 +41,6 @@ def insert_recipe():
         recipes = mongo.db.recipes
         recipes.insert_one(
             {
-                # "recipe_name": request.form["recipe_name"],
-                # "recipe_preptime": request.form["recipe_preptime"],
-                # "recipe_description": request.form["recipe_description"],
-                # "recipe_serves": request.form["recipe_serves"],
-                # "recipe_steps":  request.form.getlist('recipe_step'),
-                # "recipe_ingredients": request.form.getlist('recipe_ingredient'),
-                # "name": session["username"]
                 "recipe_name": request.form.get("recipe_name"),
                 "recipe_preptime": request.form.get("recipe_preptime"),
                 "recipe_description": request.form.get("recipe_description"),
@@ -117,9 +110,9 @@ def login_form():
                 session['username'] = request.form['username']
                 return redirect(url_for('login')) # formerly 'index'
                 
-        return 'Invalid username/password combination'
+        return render_template("error2.html")
     
-    return 'Invalid username/password combination'
+    return render_template("error2.html")
         
     
 @app.route("/register", methods=["POST", "GET"])
@@ -134,7 +127,7 @@ def register():
             session['username'] = request.form['username']
             return redirect(url_for('login')) # formerly 'index'
             
-        return 'That username already exists!'
+        return render_template("error1.html")
         
     return render_template('register.html')
     
