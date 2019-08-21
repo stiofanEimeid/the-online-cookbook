@@ -3,16 +3,9 @@
 <h1>My Account</h1>
 <div class="row">
     <div class="col">
-        Welcome, {{ session.username }}.<a href="{{ url_for('settings') }}"><button type="button" class="btn btn-light">Account Settings<i class="fas fa-cog"></i></button></a></div>
-</div>
-
-
-    <div class="row recipe-row">
-        <div class="col">
-            <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a>
-        </div>
+        Welcome, {{ session.username }}
     </div>
-
+</div>
 
     <h2>My Recipes</h2>
     {% for recipe in recipes %}
@@ -29,13 +22,49 @@
         </div>
     </div>
      {% endfor %}
+
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Content')" id="defaultOpen">Content</button>
+      <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
+    </div>
+
+<div id="Content" class="tabcontent">
+   
+        <h2>My Recipes</h2>
+        <div>
+        
+        {% for recipe in recipes %}
+       
+                      <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
+                      <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>
+      
+         {% endfor %}
+        
+         </div>
+         <div class="row recipe-row">
+            <div class="col">
+                <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a>
+            </div>
+        </div>
+ 
+</div>
+
+<div id="Settings" class="tabcontent">
+  <h3>Settings</h3>
+ <!--<a href="{{ url_for('settings') }}"><button type="button" class="btn btn-light">Account Settings<i class="fas fa-cog"></i></button></a>-->
+     <div class="row">
+        <div class="col"><a href="#">Change Username</a></div>
+    </div>
+     <div class="row">
+        <div class="col"><a href="#">Change Password</a></div>
+    </div>
+    <div class="row">
+        <div class="col"><a href="#">Delete Account</a></div>
+    </div>
     
-    <!--<div class="row recipe-row">-->
-    <!--    <div class="col">-->
-    <!--        <h2>My Favourite Recipes</h2>-->
-    <!--        <p>...</p>-->
-    <!--    </div>-->
-    <!--</div>-->
+    
+</div>
+
 
 
 <div class="row">

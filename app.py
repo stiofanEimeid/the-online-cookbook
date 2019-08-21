@@ -47,7 +47,8 @@ def insert_recipe():
                 "recipe_serves": request.form.get("recipe_serves"),
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
-                "name": session["username"]
+                "name": session["username"],
+                "recipe_type": request.form.get("recipe_type")
             })
         return redirect(url_for('get_recipes'))
         
@@ -67,7 +68,8 @@ def update_recipe(id):
                 "recipe_serves": request.form.get("recipe_serves"),
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
-                "name": session["username"]
+                "name": session["username"],
+                "recipe_type": request.form.get("recipe_type")
             })
     
     return redirect(url_for("account"))
