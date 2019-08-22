@@ -2,62 +2,96 @@
 {% block content %}
 
         <div class="container">
-          <div class="recipe-row row">
-              <div class="col">
-            <h5 class="mb-0">
-  
-                  <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
-                  
-                  </h5>
-                  </div>
+          
+          <div class="row">
+            <div class="col">
+              <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+            </div>
           </div>
+          
+          <div class=" row">
+            <div class="col">
+              <h1>{{recipe.recipe_name}}</h1>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <h3>by <a href="#"><strong>{{recipe.name}}</strong></a></h3>
+              </div>
+          </div>
+          
+          <div class="recipe-row row">
+            <div class="col-md-3">Views: </div>
+            <div class="col-md-3">Starred: </div>
+            <div class="col-md-3">Rating: </div>
+            <div class="col-md-3">Your Rating: </div>
+          </div>
+          
+          <div class="row recipe-row">
+            <div class="col">{{recipe.recipe_description }}</div>
+          </div>
+          
+          <div class="recipe-row row">
+            <div class="col-md-3">Preparation Time: {{recipe.recipe_preptime}}</div>
+            <div class="col-md-3">Cooking Time: </div>
+            <div class="col-md-3">Serves: {{recipe.recipe_serves}} </div>
+            <div class="col-md-3">Difficulty rating: </div>
+          </div>
+          
            <div class="recipe-row row">
+            <div class="col-md-4">Diet: </div>
+            <div class="col-md-4">Allergens</div>
+            <div class="col-md-4">Meal Type: {{recipe.recipe_type}}</div>
+          </div>
+        
+          <!--Ingredients/Steps tabs-->
+          <div class="row recipe-row">
             <div class="col">
-            <strong>Type: {{recipe.recipe_type}}</strong>
+          
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#ingredients" role="tab" aria-controls="ingredients" aria-selected="true">Ingredients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#steps" role="tab" aria-controls="steps" aria-selected="false">Steps</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="ingredients" role="tabpanel" aria-labelledby="home-tab">
+                <h5>Ingredients</h5>
+                 <ul>
+                    {% for ingredient in recipe.recipe_ingredients %}
+                      <li>{{ingredient}}</li>
+                    {% endfor %}
+                  </ul>
+            </div>
+            <div class="tab-pane fade" id="steps" role="tabpanel" aria-labelledby="profile-tab">
+              <h5>Steps</h5>
+              <ul>
+                   {% for step in recipe.recipe_steps %}
+                    <li>{{step}}</li>
+                   {% endfor %}
+                </ul>
             </div>
           </div>
-          <div class="recipe-row row">
+          </div>
+          </div>
+      
+          <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
+          {% if session.username == recipe.name %}
+          <div class="row recipe-row">
             <div class="col">
-            <h5>Ingredients</h5>
-            <ul>
-                              {% for ingredient in recipe.recipe_ingredients %}
-                                  <li>{{ingredient}}</li>
-                              {% endfor %}
-                          </ul>
+                  <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-lg">Edit recipe</button></a>
+                  <a href="{{ url_for('delete_recipe') }}"><button type="button" class="btn btn-danger btn-lg">Delete recipe</button></a>
             </div>
           </div>
-          <div class="recipe-row row">
+          {% else %}
+          <div class="row">
             <div class="col">
-            <strong>Serves: {{recipe.recipe_serves}}</strong>
+              <a href="#"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
             </div>
           </div>
-          <div class="recipe-row row">
-            <div class="col">
-            <strong>Preptime: {{recipe.recipe_preptime}}</strong>
-            </div>
-          </div>
-          <div class="recipe-row row">
-            <div class="col">
-            <h5>Steps</h5>
-             <ul>
-                        {% for step in recipe.recipe_steps %}
-                            <li>{{step}}</li>
-                        {% endfor %}
-              </ul>
-              
-              </div>
+          {% endif %}
         </div>
-        {% if session.username == recipe.name %}
-              <div class="row recipe-row">
-                <div class="col">
-                  
-                <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-lg">Edit recipe</button></a>
-                <a href="{{ url_for('delete_recipe') }}"><button type="button" class="btn btn-danger btn-lg">Delete recipe</button></a>
-                </div>
-                
-              </div>
-             
-        {% endif %}
-          </div>
-
 {% endblock %}
