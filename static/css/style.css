@@ -112,3 +112,12 @@ legend
     background-color: #fafafa;
     border-radius: 0px 0px 5px 5px;
 }
+
+.search-result {
+    padding:20px;
+}
+
+.search-back {
+    background-color: #fafafa;
+    padding: 10px;
+}

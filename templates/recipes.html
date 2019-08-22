@@ -1,40 +1,26 @@
 {% extends 'base.html' %}
     {% block content %}
-    
-        
-        {% for recipe in recipes %}
-        
-        <div class="container">
-          <div class="recipe-row row">
-            <div class="col">
-            <h5 class="mb-0 search-result-header">
-  
-                  <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
-                  
-                  
-            </h5>
-            <div>
-              <strong>{{ recipe.recipe_description }}</strong>
+      <div class="container">
+        <h1 class="text-center">Search Results</h1>
+          <div class="row">
+            {% for recipe in recipes %}
+            <div class="search-result col-3">
+              <div class="search-back">
+                <div>
+                  <img src="" alt="recipe image">
+                </div>
+                  <h5>{{recipe.recipe_name}} by {{recipe.name}}</h5>
+                <div>
+                  <strong>{{ recipe.recipe_description }}</strong>
+                </div>
+                <div>
+                  <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
+                </div>
+              </div>
             </div>
-            <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
-            </div>
+             {% endfor %}
           </div>
-          
-          <!--<div class="recipe-row row">-->
-          <!--  <div class="col">-->
-            
-          <!--  </div>-->
-          <!--</div>-->
-          
-          <!--<div class="recipe-row row">-->
-          <!--  <div class="col">-->
-          <!--    <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>-->
-          <!--  </div>-->
-          <!--</div>-->
-          
         </div>
-            
-        {% endfor %}
     {% endblock %}
     
 
