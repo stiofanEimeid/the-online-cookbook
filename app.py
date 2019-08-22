@@ -36,7 +36,7 @@ def add_recipe():
         return render_template("addrecipe.html", recipes=mongo.db.recipes.find())
     return "Please login/register to add recipes"
     
-@app.route('/insert_recipe', methods=['POST'])
+@app.route('/insert_recipe', methods=['GET','POST'])
 def insert_recipe():
         recipes = mongo.db.recipes
         recipes.insert_one(
@@ -48,7 +48,8 @@ def insert_recipe():
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
                 "name": session["username"],
-                "recipe_type": request.form.get("recipe_type")
+                "recipe_type": request.form.get("recipe_type"),
+                "recipe_image": request.form.get("recipe_image")
             })
         return redirect(url_for('get_recipes'))
         
@@ -57,7 +58,7 @@ def edit_recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
     return render_template("editrecipe.html", recipe=recipe)
 
-@app.route('/update_recipe/<id>', methods=["POST"])
+@app.route('/update_recipe/<id>', methods=["GET", "POST"])
 def update_recipe(id):
     recipes = mongo.db.recipes
     recipes.update({'_id': ObjectId(id)},
@@ -69,7 +70,8 @@ def update_recipe(id):
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
                 "name": session["username"],
-                "recipe_type": request.form.get("recipe_type")
+                "recipe_type": request.form.get("recipe_type"),
+                "recipe_image": request.form.get("recipe_image")
             })
     
     return redirect(url_for("account"))
