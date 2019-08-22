@@ -37,7 +37,7 @@
         		<div class="field_wrapper">
         	        <div>
         	            <!--<input type="text" name="recipe_ingredient" placeholder="Ingredient no. 1" required/>-->
-        	            <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea>
+        	            <textarea class="form-control" name="recipe_ingredient" rows="1" value="" placeholder="Ingredient no. 1">{{ingredient}}</textarea>
         	        </div>
             	</div>
             	<a href="#" class="add_button" title="Add field"><button type="button" class="btn btn-primary">Add ingredient</button></a>
@@ -95,7 +95,7 @@
     		<legend>Recipe Image</legend>
         	
         	        <div>
-            <input type="text" name="recipe_image" class="form-control" value="{{ recipes.recipe_image }}">
+            <input type="text" name="recipe_image" class="form-control" id="recipe_image" placeholder="image url">
           	    </div>
         	</fieldset>
             </div>
