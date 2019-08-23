@@ -5,12 +5,12 @@ body {
 }
 
 .sleeve {
-    background-image: url(".././img/dose-juice-unsplash.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-   
-    height: 67.5vh;
+    /*background-image: url(".././img/dose-juice-unsplash.jpg");*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
+    background-color: black;
+    height: 65vh;
 }
 
 .logo-container {
@@ -23,6 +23,8 @@ body {
 	     -o-transform: translate(-50%, -50%);
 	        transform: translate(-50%, -50%);
 }
+
+
 
 h1 {
     color: #fafafa;
@@ -81,12 +83,18 @@ legend
     font-family: 'Lobster';
     border-radius: 5px 5px 5px 5px;
 }
+.all {
+    background-color: black;
+}
 
+.homepage {
+     background-color: #ffc31f;
+}
 
 
 .intro-section {
     padding: 50px;
-    background-color: #fafafa;
+    
 }
 
 .recipe-row {
