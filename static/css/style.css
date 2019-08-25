@@ -5,7 +5,6 @@ body {
 }
 
 .sleeve {
-
     background-color: black;
     height: 65vh;
 }
@@ -170,8 +169,6 @@ top: 12.5%;
 	animation-timing-function: linear;
 	animation-duration: 7s;
 	animation-iteration-count: infinite;
-
-
 }
 
 
