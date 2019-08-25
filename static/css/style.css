@@ -5,24 +5,21 @@ body {
 }
 
 .sleeve {
-    /*background-image: url(".././img/dose-juice-unsplash.jpg");*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: center center;*/
+
     background-color: black;
-    height: 65vh;
+    max-height: 65vh;
 }
 
-.logo-container {
-    position: absolute;
-	top: 40%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	    -ms-transform: translate(-50%, -50%);
-	   -moz-transform: translate(-50%, -50%);
-	     -o-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-}
+/*.logo-container {*/
+/*    position: absolute;*/
+/*	top: 40%;*/
+/*	left: 50%;*/
+/*	-webkit-transform: translate(-50%, -50%);*/
+/*	    -ms-transform: translate(-50%, -50%);*/
+/*	   -moz-transform: translate(-50%, -50%);*/
+/*	     -o-transform: translate(-50%, -50%);*/
+/*	        transform: translate(-50%, -50%);*/
+/*}*/
 
 
 
@@ -128,4 +125,67 @@ legend
 .search-back {
     background-color: #fafafa;
     padding: 10px;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.innerRing, .outerRing, .centerRing {
+width: 60%;
+margin-left: 30%;
+margin-right: 30%;
+height: auto;
+position: absolute;
+left: 0;
+top: 12.5%;
+}
+
+@keyframes revolving {
+	from {
+		transform: rotate(0deg);
+
+
+	}
+
+	to {
+		transform: rotate(360deg);
+
+	}
+
+}
+
+.outerRing {
+	animation-name: revolving;
+	animation-timing-function: linear;
+	animation-duration: 14s;
+	animation-iteration-count: infinite;
+
+}
+
+
+.innerRing {
+	animation-name: revolvingTwo;
+	animation-timing-function: linear;
+	animation-duration: 7s;
+	animation-iteration-count: infinite;
+
+
+}
+
+
+
+@keyframes revolvingTwo {
+	from {
+		transform: rotate(0deg);
+
+
+	}
+
+	to {
+		transform: rotate(360deg);
+
+	}
+
 }
