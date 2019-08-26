@@ -35,7 +35,7 @@
         	        <div>
         	            {% for ingredient in recipe.recipe_ingredients %}
         	            <!--<input type="text" name="recipe_ingredient" />-->
-        	            <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea>
+        	            <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
         	            {% endfor %}
         	        </div>
             	</div>
@@ -49,7 +49,12 @@
 		          <div class="field_wrapper2">
     	               <div>
     	               {% for step in recipe.recipe_steps %}
-    	                <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea>
+    	                   {% if loop.index = 0 %}
+    	                   <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea>
+    	                       {% else %}
+    	                    <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea><a href="#" class="remove_button2">&#10008;</a>
+    	                    {% endif %}
+    	                
     	                {% endfor %}
     	              </div>
         	       </div>

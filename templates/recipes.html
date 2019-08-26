@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
     {% block content %}
+    
       <div class="container">
+        <!--<div class="search-filter">-->
+        <!--  <div class="row">-->
+        <!--    <div class="col">Filter Results</div>-->
+        <!--  </div>-->
+        <!--</div>-->
+        
         <h1 class="text-center">Search Results</h1>
           <div class="row">
             {% for recipe in recipes %}
-            <div class="search-result col-3">
-              <div class="search-back">
+            <div class="search-block col-6 col-lg-4">
+              <!--Divides the row into four with each column containing a search result-->
+              <div class="search-result">
                 <div>
-                  <img src="" alt="recipe image">
+                  <!--<img src="recipe.recipe_image" alt="recipe image">-->
+                  <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
                 </div>
                   <h5>{{recipe.recipe_name}} by {{recipe.name}}</h5>
-                <div>
+                <div class="recipeDescription">
                   <strong>{{ recipe.recipe_description }}</strong>
                 </div>
                 <div>

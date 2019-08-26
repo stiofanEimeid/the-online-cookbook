@@ -1,5 +1,5 @@
 body {
-    background-color: #67A467;
+    /*background-color: #67A467;*/
     background-color: #ccdaf3;
     font-family: 'Nunito', sans-serif;
 }
@@ -24,12 +24,17 @@ body {
 
 h1 {
     color: #fafafa;
+    
 }
 
 h1, h2, .navbar-brand {
     font-family: 'Lobster', cursive;
+    
 }
 
+h5 {
+    margin: 0;
+}
 
 
 img {
@@ -39,6 +44,7 @@ img {
 
 .navbar {
     padding: 10px;
+    z-index: 1;
 }
 
 footer {
@@ -117,19 +123,32 @@ legend
     border-radius: 0px 0px 5px 5px;
 }
 
-.search-result {
-    padding:20px;
-}
-
-.search-back {
-    background-color: #fafafa;
-    padding: 10px;
-}
 
 .row {
     margin-left: 0;
     margin-right: 0;
 }
+
+/*Search page styles*/
+
+.recipeDescription {
+    height: 100px;
+}
+
+.search-block {
+    padding:20px;
+}
+
+.search-result {
+    background-color: #fafafa;
+    padding: 10px;
+    height: 400px;
+}
+
+
+/*homepage graphic classes*/
+
+/*The three rings are overlaid on top of one another using the position: absolute selector. */
 
 .innerRing, .outerRing, .centerRing {
 width: 40%;
@@ -139,20 +158,6 @@ height: auto;
 position: absolute;
 left: 0;
 top: 12.5%;
-}
-
-@keyframes revolving {
-	from {
-		transform: rotate(0deg);
-
-
-	}
-
-	to {
-		transform: rotate(360deg);
-
-	}
-
 }
 
 .outerRing {
@@ -171,7 +176,19 @@ top: 12.5%;
 	animation-iteration-count: infinite;
 }
 
+@keyframes revolving {
+	from {
+		transform: rotate(0deg);
 
+
+	}
+
+	to {
+		transform: rotate(360deg);
+
+	}
+
+}
 
 @keyframes revolvingTwo {
 	from {
@@ -185,4 +202,16 @@ top: 12.5%;
 
 	}
 
+}
+
+/*for large desktop screens*/
+
+@media only screen and (min-width: 2560px) {
+    .sleeve {
+        height: 75vh;
+    }
+    
+    .innerRing, .outerRing, .centerRing {
+        top: 7.5%;
+    }
 }
