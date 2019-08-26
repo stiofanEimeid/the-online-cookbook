@@ -34,8 +34,12 @@
         		<div class="field_wrapper">
         	        <div>
         	            {% for ingredient in recipe.recipe_ingredients %}
-        	            <!--<input type="text" name="recipe_ingredient" />-->
-        	            <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
+        	                 {% if loop.index == 1 %}
+        	                 <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea>
+        	           
+        	                    {% else %}
+        	                <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
+        	                {% endif %}
         	            {% endfor %}
         	        </div>
             	</div>
@@ -49,9 +53,10 @@
 		          <div class="field_wrapper2">
     	               <div>
     	               {% for step in recipe.recipe_steps %}
-    	                   {% if loop.index = 0 %}
+    	                   {% if loop.index == 1 %}
     	                   <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea>
     	                       {% else %}
+    	              
     	                    <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea><a href="#" class="remove_button2">&#10008;</a>
     	                    {% endif %}
     	                
@@ -108,6 +113,8 @@
             <button class="btn btn-primary" type="submit" name="action">Update Recipe</button>
         </div>
     </form>
+    
+    <!--return date and time of edit-->
     
 </div>
 

@@ -142,7 +142,7 @@ legend
 .search-result {
     background-color: #fafafa;
     padding: 10px;
-    height: 400px;
+    height: 425px;
 }
 
 
@@ -151,13 +151,13 @@ legend
 /*The three rings are overlaid on top of one another using the position: absolute selector. */
 
 .innerRing, .outerRing, .centerRing {
-width: 40%;
-margin-left: 30%;
-margin-right: 30%;
+width: 70%;
+margin-left: 15%;
+margin-right: 15%;
 height: auto;
 position: absolute;
 left: 0;
-top: 12.5%;
+top: 20%;
 }
 
 .outerRing {
@@ -205,6 +205,18 @@ top: 12.5%;
 }
 
 /*for large desktop screens*/
+
+
+
+
+@media only screen and (min-width: 1440px){
+    .innerRing, .outerRing, .centerRing {
+        width: 40%;
+        margin-left: 30%;
+        margin-right: 30%;
+        top: 12.5%;
+    }
+}
 
 @media only screen and (min-width: 2560px) {
     .sleeve {
