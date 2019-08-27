@@ -2,7 +2,7 @@ import os
 import pymongo
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_bcrypt import Bcrypt
-from datetime import datetime
+from datetime import date
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 
@@ -13,6 +13,8 @@ bcrypt = Bcrypt(app)
 app.config['MONGO_DBNAME'] = 'the-online-cookbook'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
+
+today = date.today()
 
 @app.route("/")
 @app.route("/home")
@@ -64,7 +66,9 @@ def insert_recipe():
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
                 "name": session["username"],
                 "recipe_type": request.form.get("recipe_type"),
-                "recipe_image": request.form.get("recipe_image")
+                "recipe_image": request.form.get("recipe_image"),
+                "date_created": today.strftime("%d/%m/%Y"),
+                "last_updated": ""
             })
         return redirect(url_for('get_recipes'))
         
@@ -86,7 +90,8 @@ def update_recipe(id):
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
                 "name": session["username"],
                 "recipe_type": request.form.get("recipe_type"),
-                "recipe_image": request.form.get("recipe_image")
+                "recipe_image": request.form.get("recipe_image"),
+                "last_updated": today.strftime("%d/%m/%Y")
             })
     
     return redirect(url_for("account"))
