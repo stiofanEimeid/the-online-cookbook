@@ -3,7 +3,7 @@ import pymongo
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_bcrypt import Bcrypt
 from datetime import datetime
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 
 # create instance of app in variable 'app'
@@ -19,9 +19,24 @@ mongo = PyMongo(app)
 def home():
     return render_template("home.html")
     
-@app.route("/recipes")
+    
+# search functionality begins
+
+@app.route("/recipes", methods=['GET', 'POST'])
 def get_recipes():
+    if request.method == 'POST':
+        if request.form.get("recipe_type") != 'All':
+            query = {"recipe_type": request.form.get("recipe_type")}
+            return render_template("recipes.html", recipes=mongo.db.recipes.find(query))
+        
+        else:
+            return render_template("recipes.html", recipes=mongo.db.recipes.find())
+        
+        
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    
+
+# search functionality ends
     
 @app.route("/recipe/<id>")
 def recipe(id):
@@ -81,7 +96,7 @@ def delete_recipe(id):
     mongo.db.recipes.remove({'_id': ObjectId(id)})
     return redirect(url_for('account'))
     
-    # also removes all recipes tied to the account
+    # also remove all recipes tied to the account (?)
     
 # create and update recipes in the database ends
 
