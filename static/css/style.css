@@ -1,8 +1,16 @@
+html {
+    height: 100%;
+}
+
 body {
     /*background-color: #67A467;*/
     background-color: #ccdaf3;
     font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
+
 
 .sleeve {
     background-color: black;
@@ -47,15 +55,20 @@ img {
     z-index: 1;
 }
 
+/*css-tricks code*/
+.content {
+    flex: 1 0 auto;
+}
+
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  flex-shrink: 0;
   background-color: #1a1a1a;
   color: #fafafa;
   text-align: center;
+  padding: 20px;
 }
+
+/*css-tricks code ends*/
 
 
 input {
