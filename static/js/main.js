@@ -41,3 +41,7 @@ $(document).ready(function(){
         x--; //Decrement field counter
     });
 });
+
+$(window).on("load",function(){
+     $(".loader-wrapper").fadeOut("slow");
+});
