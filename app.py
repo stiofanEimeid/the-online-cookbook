@@ -76,11 +76,11 @@ def update_recipe(id):
     
     return redirect(url_for("account"))
     
-@app.route('/delete_recipe')
-def delete_recipe():
-    # mongo.db.recipes.remove({'_id': ObjectId(id)})
-    # return redirect(url_for('account'))
-    return "Nothing here yet" 
+@app.route('/delete_recipe/<id>')
+def delete_recipe(id):
+    mongo.db.recipes.remove({'_id': ObjectId(id)})
+    return redirect(url_for('account'))
+    
     # also removes all recipes tied to the account
     
 # create and update recipes in the database ends
@@ -154,6 +154,7 @@ def account():
 def settings():
     return render_template('settings.html')
     
+
 # User functionality ends
 
 @app.errorhandler(404)
