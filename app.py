@@ -68,7 +68,8 @@ def insert_recipe():
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
                 "date_created": today.strftime("%d/%m/%Y"),
-                "last_updated": ""
+                "last_updated": "",
+                "tools": request.form.getlist("tool")
             })
         return redirect(url_for('get_recipes'))
         

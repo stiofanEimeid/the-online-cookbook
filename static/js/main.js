@@ -40,8 +40,11 @@ $(document).ready(function(){
         $(this).parent('div').remove(); //Remove field html
         x--; //Decrement field counter
     });
+    
+    
+ 
 });
 
-$(window).on("load",function(){
-     $(".loader-wrapper").fadeOut("slow");
-});
+   $(window).on("load",function(){
+         $(".loader-wrapper").fadeOut("slow");
+    });
