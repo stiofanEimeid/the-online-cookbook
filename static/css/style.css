@@ -14,7 +14,6 @@ body {
 
 
 .sleeve {
-    background-color: black;
     height: 65vh;
 }
 
@@ -222,7 +221,7 @@ legend
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #242f3f;
+  background-color: #5da2d5;
   background-color: black;
   display:flex;
   justify-content: center;
