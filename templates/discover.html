@@ -6,9 +6,16 @@
         </div>
         <!--Find and sort recipes by view count. Return the first 3 with the most views.-->
         <div class="row">
+            <div class="col text-center">
+                <h3>Total number of recipes: {{ total }}</h3></div>
+        </div>
+        
+        <!--Include breakdown by type/s -->
+        
+        <div class="row">
            <div class="col"><h2>Most viewed recipes</h2></div>
         </div>
-        <div class="row">
+        <div class="row recipe-row">
            {% for recipe in top_recipes %}
            <div class="col-4">
                <h3> {{ recipe.recipe_name }} </h3>
@@ -23,7 +30,7 @@
         <div class="row">
            <div class="col"><h2>Recently Submitted</h2></div>
         </div>
-        <div class="row">
+        <div class="row recipe-row">
            {% for recipe in most_recent %}
            <div class="col-4">
                <h3> {{ recipe.recipe_name }} </h3>
