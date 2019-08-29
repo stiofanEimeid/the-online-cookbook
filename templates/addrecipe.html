@@ -93,11 +93,23 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		      <legend>Diet</legend>
-        	        <div>
-        	            <label class="switch">Vegetarian
-                          <input type="checkbox" name="diet" value="Vegetarian">
-                          <span class="slider round"></span>
-                        </label>
+        	        <!--<div>-->
+        	        <!--    <label class="switch">Vegetarian-->
+                 <!--         <input type="checkbox" name="diet" value="Vegetarian">-->
+                 <!--         <span class="slider round"></span>-->
+                 <!--       </label>-->
+                 <!--   </div>-->
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch1" name="diet" value="Vegetarian">
+                      <label class="custom-control-label" for="customSwitch1">Vegetarian</label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch2" name="diet" value="Vegan">
+                      <label class="custom-control-label" for="customSwitch2">Vegan</label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch3" name="diet" value="Gluten-free">
+                      <label class="custom-control-label" for="customSwitch3">Gluten-free</label>
                     </div>
         	</fieldset>
         </div>
