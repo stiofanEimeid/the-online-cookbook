@@ -1,50 +1,51 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-<h1>My Account</h1>
+    <h1>My Account</h1>
+        <div class="row">
+            <div class="col">
+                Welcome, {{ session.username }}
+            </div>
+        </div>
+    
+       <div class="row recipe-row">
+                <div class="col">
+                    <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a>
+                </div>
+        </div>
+    
+        <h2>My Recipes</h2>
+        {% for recipe in recipes %}
+        <div class="row recipe-row">
+            <div class="col">
+                    <h5 class="mb-0">
+      
+                      <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
+                      
+                    </h5>
+            
+        
+                    <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>
+            </div>
+        </div>
+         {% endfor %}
+    
+    
+    
+    
+    <h5>Settings</h5>
+                         <div class="row">
+                            <div class="col"><a href="#">Change Password</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><a href="#">Delete Account</a></div>
+                        </div>
+    
+    
     <div class="row">
         <div class="col">
-            Welcome, {{ session.username }}
+            <a href="{{ url_for('logout') }}"><button type="button" class="btn btn-primary">Logout</button></a>
         </div>
     </div>
-
-   <div class="row recipe-row">
-            <div class="col">
-                <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a>
-            </div>
-    </div>
-
-    <h2>My Recipes</h2>
-    {% for recipe in recipes %}
-    <div class="row recipe-row">
-        <div class="col">
-                <h5 class="mb-0">
-  
-                  <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
-                  
-                </h5>
-        
-    
-                <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>
-        </div>
-    </div>
-     {% endfor %}
-
-
-
-
-<h5>Settings</h5>
-                     <div class="row">
-                        <div class="col"><a href="#">Change Password</a></div>
-                    </div>
-                    <div class="row">
-                        <div class="col"><a href="#">Delete Account</a></div>
-
-
-<div class="row">
-    <div class="col">
-        <a href="{{ url_for('logout') }}"><button type="button" class="btn btn-primary">Logout</button></a>
-    </div>
-</div>
 
 </div>
 {% endblock %}

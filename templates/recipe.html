@@ -21,6 +21,13 @@
               </div>
           </div>
           
+          <!--<div class="row">-->
+          <!--  <div class="col">Created: {{ recipe.date_created }}</div>-->
+          <!--  {% if recipe.last_updated %}-->
+          <!--  <div class="col">Last updated: {{ recipe.last_updated }}</div>-->
+          <!--  {% endif %}-->
+          <!--</div>-->
+          
           <div class="recipe-row row">
             <div class="col-md-3">Views: </div>
             <div class="col-md-3">Starred: </div>
@@ -117,22 +124,25 @@
           </div>
           {% endif %}
           
+          <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->
+          
+          {% if recipe.tools %}
             <div class="row">
               <div class="col">
                 <h2>Product Suggestions</h2>
               </div>
-            
             </div>
               {% for tool in recipe.tools %}
               <div class="row">
-                <div class="col">{{tool}}</div>
+                  <div class="col">{{tool}}</div>
               </div>
               <div class="row">
-              <div class="col col-6 col-md-4 col-lg-3">
-                <a href="{{ url_for('product', name=tool) }}"><button>Go to product page</button></a>
+                <div class="col col-6 col-md-4 col-lg-3">
+                  <a href="{{ url_for('product', name=tool) }}"><button>Go to product page</button></a>
+                </div>
               </div>
-            </div>
               {% endfor %}
+            {% endif %}
   
         </div>
         

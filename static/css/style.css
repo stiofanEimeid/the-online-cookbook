@@ -1,4 +1,4 @@
-html {
+html, body {
     height: 100%;
 }
 
@@ -7,7 +7,7 @@ body {
     font-family: 'Nunito', sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 
@@ -51,7 +51,7 @@ img {
 
 footer {
   flex-shrink: 0;
-  background-color: #1a1a1a;
+  background-color: #f78888;
   color: #fafafa;
   text-align: center;
   padding: 20px;
@@ -179,7 +179,7 @@ legend
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 /* On mouse-over, add a grey background color */
