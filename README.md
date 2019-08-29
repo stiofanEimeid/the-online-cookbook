@@ -126,6 +126,6 @@ Product Name | product_name | String
 
 ### Acknowledgements
 
-...
+Custom checkbox found at https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
 
 [**Jump to top &uarr;**](#table-of-contents)

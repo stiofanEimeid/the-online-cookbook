@@ -19,8 +19,7 @@ today = date.today()
 @app.route("/")
 @app.route("/home")
 def home():
-    top_recipes = mongo.db.recipes.find().sort("views", -1).limit(3)
-    return render_template("home.html", top_recipes=top_recipes)
+    return render_template("home.html")
     
 # search functionality begins
 
@@ -37,6 +36,11 @@ def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
     
 # search functionality ends
+
+@app.route("/discover")
+def discover():
+    top_recipes = mongo.db.recipes.find().sort("views", -1).limit(3)
+    return render_template("discover.html", top_recipes=top_recipes)
     
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
