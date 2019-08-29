@@ -75,7 +75,8 @@ def insert_recipe():
                 "recipe_image": request.form.get("recipe_image"),
                 "date_created": today.strftime("%d/%m/%Y"),
                 "last_updated": "",
-                "tools": request.form.getlist("tool")
+                "tools": request.form.getlist("tool"),
+                "diet": request.form.getlist("diet")
             })
         return redirect(url_for('get_recipes'))
         
@@ -98,7 +99,7 @@ def update_recipe(id):
                 "name": session["username"],
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
-                "last_updated": today.strftime("%d/%m/%Y")
+                "last_updated": today.strftime("%H:%M:%S, %d/%m/%Y")
             })
     
     return redirect(url_for("account"))
