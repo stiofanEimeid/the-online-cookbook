@@ -19,8 +19,8 @@ today = date.today()
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
-    
+    top_recipes = mongo.db.recipes.find().sort("views", -1).limit(3)
+    return render_template("home.html", top_recipes=top_recipes)
     
 # search functionality begins
 
@@ -34,15 +34,19 @@ def get_recipes():
         else:
             return render_template("recipes.html", recipes=mongo.db.recipes.find())
         
-        
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
     
-
 # search functionality ends
     
-@app.route("/recipe/<id>")
+@app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+    # Like option
+    # if request.method == "POST":
+    #     mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'likes': int(1)}})
+    # Like only once and attach like to user
+        
+    # recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
     if session.get('username') != recipe['name']:
         mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})
     return render_template("recipe.html", recipe=recipe)
@@ -179,8 +183,6 @@ def account():
     if 'username' in session:
         user = session['username']
         return render_template('account.html', recipes=mongo.db.recipes.find({ "name": user }))
-        
-        
         
     return "Please login to view your account"
     

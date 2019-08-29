@@ -29,8 +29,13 @@
           <!--</div>-->
           
           <div class="recipe-row row">
-            <div class="col-md-6">Views: {{ recipe.views }}</div>
-            <div class="col-md-6">Starred: </div>
+            <div class="col-md-4">Views: {{ recipe.views }}</div>
+            <div class="col-md-4">Starred: </div>
+            <div class="col-md-4">Likes: {{ recipe.likes }}
+              <!--<form action="{{ url_for('recipe', id=recipe._id) }}" method="POST">-->
+              <!--   <button class="btn btn-primary" type="submit" name="action">Like this recipe</button>-->
+              <!--</form>-->
+            </div>
             <!--<div class="col-md-3">Rating: </div>-->
             <!--<div class="col-md-3">Your Rating: </div>-->
           </div>
