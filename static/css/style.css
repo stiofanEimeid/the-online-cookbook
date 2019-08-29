@@ -3,9 +3,7 @@ html {
 }
 
 body {
-    /*background-color: #67A467;*/
-    /*background-color: #ccdaf3;*/
-    background-color: #90CCF4;
+    background-color: #ececec;
     font-family: 'Nunito', sans-serif;
     display: flex;
     flex-direction: column;
@@ -15,6 +13,10 @@ body {
 
 .sleeve {
     height: 65vh;
+}
+
+.homepageContainer {
+    background-color: #90CCF4;
 }
 
 h1 {

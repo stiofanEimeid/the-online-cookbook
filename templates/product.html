@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content%}
+    <div class="container">
+
+
+          <div class="row">
+            <div class="col">
+              <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+            </div>
+          </div>
+          
+          <div class=" row">
+            <div class="col">
+              <h1>{{product.product_name}}</h1>
+            </div>
+          </div>
+          
+
+          
+          <div class="row recipe-row">
+            <div class="col">{{product.product_description }}</div>
+          </div>
+          
+          <div class="recipe-row row">
+            <div class="col-md-6">Price: {{product.product_price}}</div>
+            <div class="col-md-6">Category: {{product.product_category}} </div>
+          </div>
+     
+
+
+          
+     
+          <div class="row">
+            <div class="col">
+              <a href="#"><button type="button" class="btn btn-success btn-lg">Buy product</button></a>
+            </div>
+          </div>
+
+          
+    </div>
+
+{% endblock %}

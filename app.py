@@ -45,6 +45,12 @@ def recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
     return render_template("recipe.html", recipe=recipe)
     
+    
+@app.route("/product/<name>")
+def product(name):
+    product = mongo.db.products.find_one({"product_name": name})
+    return render_template("product.html", product=product)
+    
 # create and update recipes in the database
     
 @app.route("/add_recipe")
@@ -110,7 +116,7 @@ def delete_recipe(id):
 
 @app.route('/products')
 def products():
-    return render_template("products.html")
+    return render_template("products.html", products=mongo.db.products.find())
  
 # User functionality begins
 
