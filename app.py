@@ -43,6 +43,8 @@ def get_recipes():
 @app.route("/recipe/<id>")
 def recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+    if session.get('username') != recipe['name']:
+        mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})
     return render_template("recipe.html", recipe=recipe)
     
     
