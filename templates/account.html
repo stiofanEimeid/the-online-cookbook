@@ -13,7 +13,7 @@
                 </div>
         </div>
     
-        <h2>My Recipes</h2>
+        <h3>My Recipes</h3>
         {% for recipe in recipes %}
         <div class="row recipe-row">
             <div class="col">
@@ -32,17 +32,17 @@
     
     
     
-    <h5>Settings</h5>
-                         <div class="row">
+        <h3>Settings</h3>
+                         <div class="row recipe-row">
                             <div class="col"><a href="#">Change Password</a></div>
                         </div>
-                        <div class="row">
+                        <div class="row recipe-row">
                             <div class="col"><a href="#">Delete Account</a></div>
                         </div>
     
     
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <a href="{{ url_for('logout') }}"><button type="button" class="btn btn-primary">Logout</button></a>
         </div>
     </div>
