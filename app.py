@@ -110,6 +110,7 @@ def update_recipe(id):
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
                 "name": session["username"],
+                "meal_type": request.form.get('meal_type'),
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
                 "last_updated": today.strftime("%H:%M:%S, %d/%m/%Y"),
