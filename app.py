@@ -40,7 +40,8 @@ def get_recipes():
 @app.route("/discover")
 def discover():
     top_recipes = mongo.db.recipes.find().sort("views", -1).limit(3)
-    return render_template("discover.html", top_recipes=top_recipes)
+    most_recent = mongo.db.recipes.find().sort("date_created", -1).limit(2)
+    return render_template("discover.html", top_recipes=top_recipes, most_recent=most_recent)
     
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
