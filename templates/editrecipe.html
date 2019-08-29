@@ -1,6 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Edit Recipe</h1>
+
+
+
 <div class="container">
+    <div class="row">
+      <div class="col"><h1>Edit Recipe</h1></div>
+    </div>
     <form action="{{ url_for('update_recipe', id=recipe._id) }}" method="POST">
         
           <div class="form-group">
@@ -23,6 +28,21 @@
                             <option value="Indian">Indian</option>
                             <option value="Chinese">Chinese</option>
                             <option value="Other">Other</option>
+                          </select>
+                    </div>
+        	    </fieldset>
+        </div>
+        
+         <div class="form-group">
+               <fieldset id="buildyourform">
+    		      <legend>Recipe Type</legend>
+        	        <div>
+                         <select name="meal_type" required>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Snack">Snack</option>
+                           
                           </select>
                     </div>
         	    </fieldset>
@@ -99,19 +119,23 @@
         	</fieldset>
         </div>
         
-                <div class="form-group">
+        <div class="form-group">
             <fieldset id="buildyourform">
     		      <legend>Diet</legend>
                     <div class="custom-control custom-switch">
                       <input type="checkbox" class="custom-control-input" id="customSwitch1" name="diet" value="Vegetarian">
-                      <label class="custom-control-label" for="customSwitch1">Vegetarian</label>
+                      <label class="custom-control-label" for="customSwitch1">Does not contain meat</label>
                     </div>
                     <div class="custom-control custom-switch">
                       <input type="checkbox" class="custom-control-input" id="customSwitch2" name="diet" value="Vegan">
-                      <label class="custom-control-label" for="customSwitch2">Vegan</label>
+                      <label class="custom-control-label" for="customSwitch2">Does not contain dairy</label>
+                    </div>
+                     <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch3" name="diet" value="Nut-free">
+                      <label class="custom-control-label" for="customSwitch2">Does not contain nuts</label>
                     </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitch3" name="diet" value="Gluten-free">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch4" name="diet" value="Gluten-free">
                       <label class="custom-control-label" for="customSwitch3">Gluten-free</label>
                     </div>
         	</fieldset>
