@@ -4,6 +4,12 @@
 
     
       <div class="container">
+        
+        <!--<form action="{{ url_for('get_recipes') }}" method="POST">-->
+        <!--  <input class="form-control" type="text" name="search_input" placeholder="Search recipes">-->
+        <!--  <button class="btn btn-primary" type="submit" name="action">Search</button>-->
+        <!--</form>-->
+        
             <form action="{{ url_for('get_recipes') }}" method="POST">
                 <select name="recipe_type">
                                     <option value="All" selected="selected">All</option>
@@ -42,8 +48,11 @@
               <!--Divides the row into four with each column containing a search result-->
               <div class="search-result">
                 <div>
+                  {% if recipe.recipe_image != "" %}
                   <img src="{{recipe.recipe_image}}" alt="recipe image">
-                  <!--<img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">-->
+                  {% else %}
+                  <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                  {% endif %}
                 </div>
                   <h5>{{recipe.recipe_name}} by {{recipe.name}}</h5>
                 <div class="recipeDescription">

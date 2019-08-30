@@ -33,6 +33,8 @@ def get_recipes():
         
         else:
             return render_template("recipes.html", recipes=mongo.db.recipes.find())
+            
+        # mongo.db.recipes.find({ $text: { $search: request.form.get("search_input")}})
     
     page = int(request.args.get('page', 1))
     all_recipes = mongo.db.recipes.count()
