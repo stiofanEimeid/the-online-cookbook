@@ -56,6 +56,30 @@
             </div>
              {% endfor %}
           </div>
+          
+          <!--Pagination-->
+          <div class="row">
+            <div class="col">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  {% for page_number in pages %}
+                    {% if page_number == page %}
+                    <li class="page-item"><a class="page-link" href="#">{{ page_number }}</a></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page_number) }}">{{ page_number }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                  
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          
+          
+          
+          
         </div>
     {% endblock %}
     

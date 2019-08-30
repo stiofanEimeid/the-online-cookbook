@@ -1,4 +1,5 @@
 import os
+import math
 import pymongo
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_bcrypt import Bcrypt
@@ -32,8 +33,14 @@ def get_recipes():
         
         else:
             return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    
+    page = int(request.args.get('page', 1))
+    all_recipes = mongo.db.recipes.count()
+    recipes_per_page = 4
+    pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
+    recipes = mongo.db.recipes.find().skip((page - 1) * recipes_per_page).limit(recipes_per_page)
+    return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
         
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
     
 # search functionality ends
 
