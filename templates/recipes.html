@@ -61,8 +61,15 @@
           <div class="row">
             <div class="col">
               <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <ul class="pagination justify-content-center">
+                  {% if page > 1  %} 
+                  <!--checks to see whether the first page is currently being viewed and if not, allows user to go back one page-->
+                  <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page-1) }}">Previous</a></li>
+                  {% else %}
+                  <li class="page-item"><a class="page-link" href="#/">Previous</a></li>
+                  {% endif %}
+                  
+                  
                   {% for page_number in pages %}
                     {% if page_number == page %}
                     <li class="page-item"><a class="page-link" href="#">{{ page_number }}</a></li>
@@ -71,7 +78,16 @@
                     {% endif %}
                   {% endfor %}
                   
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  {% if page < pages | count | int %} 
+                  <!--pipe converts page-count to integer, allowing it to be compared with page to determine if the user has any more pages to move through-->
+                  <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page+1) }}">Next</a></li>
+                  
+                  {% else %}
+                  <li class="page-item"><a class="page-link" href="#/">Next</a></li>
+                  
+                  {% endif %}
+                  
+                  
                 </ul>
               </nav>
             </div>
