@@ -29,12 +29,34 @@ def get_recipes():
     if request.method == 'POST':
         if request.form.get("recipe_type") != 'All':
             query = {"recipe_type": request.form.get("recipe_type")}
-            return render_template("recipes.html", recipes=mongo.db.recipes.find(query))
+            page = int(request.args.get('page', 1))
+            
+            
+            all_recipes = mongo.db.recipes.count()
+            recipes_per_page = 4
+            pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
+            recipes = mongo.db.recipes.find(query).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
+            return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
         
         else:
-            return render_template("recipes.html", recipes=mongo.db.recipes.find())
+            page = int(request.args.get('page', 1))
+            all_recipes = mongo.db.recipes.count()
+            recipes_per_page = 4
+            pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
+            recipes = mongo.db.recipes.find().skip((page - 1) * recipes_per_page).limit(recipes_per_page)
+            return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
             
-        # mongo.db.recipes.find({ $text: { $search: request.form.get("search_input")}})
+        # Full text search
+            
+        # mongo.db.recipes.create_index([('recipe_name', 'text')])
+        # search_request = str(request.args.get('search_request'))
+        # page = int(request.args.get('page', 1))
+        # all_recipes = mongo.db.recipes.count()
+        # recipes_per_page = 4
+        # pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
+        # recipes = mongo.db.recipes.find({ '$text': { '$search': search_request}}, {"score": {"$meta": 'textScore'}}).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
+        # return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
+        
     
     page = int(request.args.get('page', 1))
     all_recipes = mongo.db.recipes.count()
