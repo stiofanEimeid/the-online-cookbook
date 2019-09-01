@@ -44,25 +44,39 @@
 
 As a user, I want to find and share recipes. I want to be able to create an account that is secure and keeps track of the recipes I create, allowing me to update them and delete them as I please. 
 
-As a site owner, I want to promote a brand of cooking tools.
+As a site owner, I want to promote a brand of cooking tools to my users. 
 
 ### Design Choices
 
 **Fonts**
 
--Lobster
+The Lobster font was chosen for its vibrancy and energy in contrast to the nunito font to make important titles jump out to the user while complimenting aperitif's brand identity.
 
--Nunito
+The Nunito style was chosen for its sharpness and clarity to help convey a significant amount of information clearly. 
+
+Both fonts were sourced from GoogleFonts. 
 
 **Icons**
 
+Icons have been sourced from FontAwesome to help convey essential characteristics about recipes to users in an intuitive manner.
+
 **Colours**
+
+Yellow, blue and red, white and grey.
 
 **Styling**
 
+The recipe pages are intended to convey essential information about a particular recipe in an intuitive and effective manner. This intent informs the design process. Recipe pages are intended to be uncluttered. The largest groups of information, steps and ingredients, are contained in tabs that the user may switch between, preventing the user from being bombared with large amounts of text and keeping page space free from everything but the most relevant information at any one time.
+
 **Logo**
 
+The logo is a cartoon ape in a chef's hat, the ape in aperifif if you will. The imagery of the site is intended to be light-hearted and fun in order to make cooking accessible for those who are less confident in their cooking abilities. More generally, the imagery is intended to illustrate that this a site for those who are passionate about cooking but one that doesn't take itself too seriously. 
+
 **Background**
+
+The background consists of two wheels of food with the logo at the center, slowly revolving. The wheels are made up of images of food and cooking utensils. Both of these comprise the content being delivered to the user, recipes which they can search and add to along with kitchen products to help bring these recipes to life. 
+
+In addition, the wheels are meant to arrest the viewers attention and convey a sense of individuality about the site. It speaks to the vast array of possiblities in the world of cooking. 
 
 
 ### Wireframes
@@ -92,7 +106,6 @@ A product page displays products relevant to recipes submitted to the site. Duri
 ### Features left to implement 
 
 A forum for users to discuss cooking content. 
-
 
 ## Data Structure
 
@@ -149,7 +162,7 @@ Product Name | product_name | String
 
 ## Testing
 
-...
+Information on the testing process may be found in the [testing.md file](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/testing.md). 
 
 ## Deployment
 
