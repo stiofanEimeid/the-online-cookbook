@@ -41,9 +41,9 @@ img {
 }
 
 .navbar {
-    position: relative;
-    z-index: 1;
-    width: 100%;
+    /*position: relative;*/
+    /*z-index: 1;*/
+    /*width: 100%;*/
     padding: 10px;
 }
 
@@ -233,7 +233,7 @@ legend
   display:flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 .loader {
