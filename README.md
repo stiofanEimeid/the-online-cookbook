@@ -1,4 +1,10 @@
-# The Online Cookbook
+# Apéritif: The Online Cookbook
+
+# Stephen Byrne Portfolio
+
+Stream Three Project: Data-Centric Development - Code Institute 
+
+...
 
 ## Table of Contents
 1. [**UX**](#ux)
@@ -34,11 +40,11 @@
 
 #### User Goals
 
--taregt audience
+The target audience of the application are those who are relatively new to cooking and are curious about learning how to make new dishes. In addition, it hopes to attract those who are already passionate about cooking to share some of their favourite recipes with other users. Ideally, these groups would join together to create a thriving online community, one that is bound together by a love of cooking and learning more about it. 
 
--user goals
+Users seek the means to find a variety of recipes through an accessible interface that is easy to use. Frequent users or those with extensive experience in cooking may seek to add their recipes to the website to share with others as well as discover more recipes. 
 
--how aperitif meets these needs
+Aperitif is easy to use and visusally appealling. Filters help users find specific recipes quickly and easily. Unique recipe pages give users all the information they need in an effective manner... With an account, users may add and edit recipes as well as keep track of their favourite recipes. The product section of recipe pages provide additional information to give user's the best cooking experience possible.
 
 #### User Stories
 
