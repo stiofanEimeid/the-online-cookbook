@@ -172,11 +172,77 @@ Information on the testing process may be found in the [testing.md file](https:/
 
 ## Deployment
 
-...
+### 
+
+This project was written using the AWS Cloud IDE.
+
+Project code was pushed to Github and Heroku.
+
+MONGO_URI and SECRET_KEY config variables were saved to .bashrc, accessed from the terminal. 
 
 ### How to Run Code Locally
 
-...
+In order to run this project locally, the following tools are needed.
+
+Using an IDE of your choice, ensure the following are installed, Git, PIP and Python3. Access to MongoDB Atlas is also required.
+
+Create a virtual environment that contains the project's dependencies, and keeps those dependencies separate from those of other projects. 
+
+#### Cloning from Github
+
+In order to run a repository locally, the repository must be cloned. To clone the repository
+:
+1. Follow the link to the [routeRep GitHub repository](https://github.com/stiofanEimeid/the-online-cookbook).
+2. Under the repository name, click "Clone or download".
+3. In the Clone with HTTPs section, copy the clone URL for the repository. 
+4. In your preferred IDE, open the terminal.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type ```git clone```, and then paste the URL you copied in Step 3.
+```console
+git clone https://github.com/USERNAME/REPOSITORY
+```
+7. Press Enter. Your local clone will be created.
+
+Further reading and troubleshooting on how to clone a repository from GitHub may be found [here](https://help.github.com/en/articles/cloning-a-repository).
+
+To cut ties with this repository, type ```git remote rm origin``` into the terminal of your editor. In order to verify the terminal has been removed, type ```git remote -v``` to determine which remotes are still connected. 
+
+#### Running Site in IDE
+
+Create a virtual environment that contains the project's dependencies, and keeps those dependencies separate from those of other projects. 
+
+1.  Activate Python's built in virtual environment using the command python -m .venv venv where the second instance of venv is the name of the virtual environment and thus serves as a placeholder in this instance. 
+2. Activate the venv using the command .venv\Scripts\activate. Note: Successful activation of the virtual environment is indicated by the presence of (env) $ ... in the command terminal. Once finished working in the virtual environment, type in the command $ deactivate
+3. Pip may be upgraded with the command pip install --upgrade pip.
+4. Install any required modules using the command pip install -r requirements.txt
+5. Save config vars Secret Key and Mongo URI to venv.
+6. Run using the command Python3 app.py
+7. Site may be found running at http://127.0.0.1:8080/ 
+
+### Heroku
+
+In order to deploy to Heroku, please follow these steps: 
+
+1. Install the heroku API to your IDE of choice.
+2. Create a requirements.txt file using the command pip freeze > requirements.txt
+3. Create a Procfile using the command echo web: Python app.py > Procfile. (Note that 'app.py' is the name of this project's main Python file)
+4. Free Dynos
+5. Login to your account on Github. If you do not have a Github account, register here.  Create a new repository, name it copy the code that concerns cloning a repository from a remote server. 
+6. Input the command git init to the terminal and push the project to github using the following commands, git add ., git commit -m "Initial Commit", and finally Git push. You should be prompted for your Github username and password. 
+7. Create or login to your account on Heroku. Create a new app in your dashboard and name it. Set the region to Europe. 
+8. Under the settings tab of your account, enable automatic deploy by connecting to Github. Select the relevant repository with which to connect. This will enable your code to automatically update and deploy on heroku when you push Github.
+9. Var configs
+| Key | Value |
+ --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
+PORT | 5000
+SECRET_KEY | `<your_secret_key>`
+
+Note the placeholders for your username, password, cluster name and database name. 
+10. MongoDB cluster and collection names...
+11. With the site successfully deployed, you may now view it using the open app button. Problems with deployment may be found under the activity tab. 
 
 ## Credits
 
