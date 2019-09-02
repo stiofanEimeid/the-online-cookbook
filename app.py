@@ -64,7 +64,20 @@ def get_recipes():
         # recipes = mongo.db.recipes.find({ '$text': { '$search': search_request}}, {"score": {"$meta": 'textScore'}}).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         # return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
         
+        
+
+        # search_request = request.args['search_request']
+        
+        # page = int(request.args.get('page', 1))
+        # all_recipes = mongo.db.recipes.count()
+        # recipes_per_page = 4
+        # pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
+        
+        # recipes = mongo.db.recipe.find({'$text': {'$search': search_request}}, {"score": {"$meta": 'textScore'}}).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
     
+    
+        # return render_template('recipes.html', recipes=recipes,pages=pages, page=page, title="Search Results")
+        
     page = int(request.args.get('page', 1))
     all_recipes = mongo.db.recipes.count()
     recipes_per_page = 4
@@ -95,6 +108,15 @@ def recipe(id):
     if session.get('username') != recipe['name']:
         mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})
     return render_template("recipe.html", recipe=recipe)
+    
+@app.route("/recipe/<id>/favourite")
+def add_favourite(id):
+    mongo.db.users.update(
+        {"name": session.get('username') }, {"$push": {"favourites": ObjectId(id)}})
+    mongo.db.recipes.update(
+        {"_id": ObjectId(id)}, {"$inc": {"favourited": 1}})
+    return redirect(url_for('recipe', id=id))
+    
     
     
 @app.route("/product/<name>")
@@ -201,7 +223,7 @@ def login_form():
         return render_template("error2.html")
     
     return render_template("error2.html")
-        
+
     
 @app.route("/register", methods=["POST", "GET"])
 def register():
@@ -211,7 +233,7 @@ def register():
         
         if existing_user is None:
             hashpass = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
-            users.insert({'name' : request.form['username'], 'password': hashpass})
+            users.insert({'name' : request.form['username'], 'password': hashpass, 'favourites': []})
             session['username'] = request.form['username']
             return redirect(url_for('login')) # formerly 'index'
             

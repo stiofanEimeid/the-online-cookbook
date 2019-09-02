@@ -28,6 +28,23 @@
             </div>
         </div>
          {% endfor %}
+         
+        <h3>My Favourites</h3>
+        {% for recipe in recipes %}
+        <div class="row recipe-row">
+            <div class="col">
+                    <h5 class="mb-0">
+      
+                      <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
+                      
+                    </h5>
+            
+        
+                    <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>
+            </div>
+        </div>
+         {% endfor %}
+    
     
     
     

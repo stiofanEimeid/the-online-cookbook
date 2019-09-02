@@ -13,6 +13,7 @@ body {
 .sleeve {
     height: 65vh;
     position: relative;
+    overflow: hidden;
 }
 
 .homepageContainer {
@@ -269,13 +270,13 @@ legend
 /*The three rings are overlaid on top of one another using the position: absolute selector. */
 
 .innerRing, .outerRing, .centerRing {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     height: auto;
     position: absolute;
     left: 0;
-    top: 20%;
+    top: 5%;
 }
 
 .outerRing {

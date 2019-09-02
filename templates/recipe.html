@@ -128,7 +128,7 @@
           {% else %}
           <div class="row">
             <div class="col">
-              <a href="#"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+              <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
             </div>
           </div>
           {% endif %}
