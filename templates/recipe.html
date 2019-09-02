@@ -126,11 +126,12 @@
           </div>
           
           {% else %}
-          <div class="row">
-            <div class="col">
-              <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+          <!--Change to added if already added-->
+            <div class="row">
+              <div class="col">
+                <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+              </div>
             </div>
-          </div>
           {% endif %}
           
           <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->

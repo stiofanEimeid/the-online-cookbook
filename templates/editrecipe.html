@@ -63,13 +63,16 @@
             <fieldset id="buildyourform">
     		<legend>Add ingredients</legend>
         		<div class="field_wrapper">
-        	        <div>
+        	        
         	            {% for ingredient in recipe.recipe_ingredients %}
         	                 {% if loop.index == 1 %}
+        	                 <div>
         	                 <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea>
-        	           
+        	                 </div>
         	                    {% else %}
+        	                 <div>
         	                <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
+        	                </div>
         	                {% endif %}
         	            {% endfor %}
         	        </div>
@@ -82,17 +85,20 @@
             <fieldset id="buildyourform">
 		    <legend>Add steps</legend>
 		          <div class="field_wrapper2">
-    	               <div>
+    	               
     	               {% for step in recipe.recipe_steps %}
     	                   {% if loop.index == 1 %}
+    	                   <div>
     	                   <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea>
+    	                   </div>
     	                       {% else %}
-    	              
+    	                    <div>
     	                    <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea><a href="#" class="remove_button2">&#10008;</a>
+    	                    </div>
     	                    {% endif %}
     	                
     	                {% endfor %}
-    	              </div>
+    	              
         	       </div>
 	        </fieldset>
 	        <a href="#/" class="add_button2" title="Add field"><button type="button" class="btn btn-primary">Add step</button></a>
