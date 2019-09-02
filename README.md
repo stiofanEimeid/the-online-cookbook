@@ -231,16 +231,16 @@ In order to deploy to Heroku, please follow these steps:
 6. Input the command git init to the terminal and push the project to github using the following commands, git add ., git commit -m "Initial Commit", and finally Git push. You should be prompted for your Github username and password. 
 7. Create or login to your account on Heroku. Create a new app in your dashboard and name it. Set the region to Europe. 
 8. Under the settings tab of your account, enable automatic deploy by connecting to Github. Select the relevant repository with which to connect. This will enable your code to automatically update and deploy on heroku when you push Github.
-9. Var configs
+
+Var configs
 | Key | Value |
  --- | ---
-DEBUG | FALSE
 IP | 0.0.0.0
-MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
+MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`*
 PORT | 5000
 SECRET_KEY | `<your_secret_key>`
 
-Note the placeholders for your username, password, cluster name and database name. 
+*Note the placeholders for your username, password, cluster name and database name. 
 10. MongoDB cluster and collection names...
 11. With the site successfully deployed, you may now view it using the open app button. Problems with deployment may be found under the activity tab. 
 
