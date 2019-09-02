@@ -233,7 +233,8 @@ In order to deploy to Heroku, please follow these steps:
 8. Under the settings tab of your account, enable automatic deploy by connecting to Github. Select the relevant repository with which to connect. This will enable your code to automatically update and deploy on heroku when you push Github.
 
 Var configs
-| Key | Value |
+
+Key | Value 
  --- | ---
 IP | 0.0.0.0
 MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`*
