@@ -1,5 +1,6 @@
 <h1 align="center">
 <img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/ATOClogo.jpg" alt="Apéritif: The Online Cookbook Logo"/>
+
 Apéritif: The Online Cookbook
 </h1>
 
