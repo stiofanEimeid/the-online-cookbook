@@ -1,4 +1,28 @@
+
+
+
 $(document).ready(function(){
+    
+    document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        hideLoading();
+        $('.hideMe').removeClass('hideMe');
+    }, 2000);
+    return;
+    });
+    
+    function loadingAni() {
+    $(".loader-wrapper").css("display", "block");
+    return;
+    }
+
+    
+    function hideLoadingAni() {
+    $(".loader-wrapper").css("display", "none");
+    return;
+    }
+    
+    
     var maxField = 15; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
