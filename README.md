@@ -93,6 +93,31 @@ In addition, the wheels are meant to arrest the viewers attention and convey a s
 
 ## Features
 
+### Access
+
+Users may register an account and login to same through dedicated templates. Passwords are encrypted using bcrypt to ensure account integrity and prevent access to the account from anyone but the user. 
+
+Registering or logging in successfully brings users to their account page where they may follow a link to the add recipe page, see their added recipes and recipes they have favourited. Settings include changing their password or deleting their account altogether. Users are cautioned that deleting their account will remove all the content they have created for the site and that the process is irreversible. 
+Finally, they may logout from this page. 
+
+### Read
+
+Users may search or 'read' recipes contained in the database. They can define special criteria for their search using the filters provided, including meal origin(mexican, indian, italian, chinese etc), meal type(breakfast, lunch, dinner or snack), and diet type(vegetarian, vegan, dairy-free, gluten-free and nut-free). Search results are paginated with 8 results max for small screens and 12 for larger screens. Clicking on each result's respective "Go to Recipe" button brings users to a dedicated recipe page. 
+
+Recipe pages provide essential information about a recipe, an image of the recipe and links to pages of products that may help when following the recipe. 
+
+### Edit, Add and Delete Recipes
+
+Registered users may add recipes, update these recipes and finally delete the recipes. The add recipe and edit recipe pages consist of forms with spaces for essential information that will be displayed in individual recipe pages. registered users may dynamically add steps or ingredients up to a maximum of fifteen in each case. If users choose not to attach an image of the recipe to the form, a placeholder image will appear when the recipe's page is selected. 
+
+When registered users are taken to the page of a recipe they have created, they are given the option to update or delete the recipe. The user is asked to confirm their decision to remove their recipe if they click on the delete button - first, to encourage users to think twice about removing their recipe and secondly to prevent frustation for users who may click the button accidentally. If the user visits a recipe page that is not of their own creation, they are instead given the option of adding the recipe to their favourites. Favourites are vieweable from their account page and may be removed at any time if they see fit. 
+
+Users may search products on the product page. They are not given the option to add their own. 
+
+### Discover
+
+The discover page provides some statistics about the site, including most viewed recipes, most liked recipes, the proportion of recipes to users, and most popular categories of recipes. 
+
 ### Demo
 
 ...
@@ -112,6 +137,8 @@ A product page displays products relevant to recipes submitted to the site. Duri
 ### Features left to implement 
 
 A forum for users to discuss cooking content. 
+
+Should users forget their password, I would like to give them the option of creating a new one. As authetification was understood by me not to be a focus of the project, this feature was left to be implemented in the future. 
 
 ## Data Structure
 
