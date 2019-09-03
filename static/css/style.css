@@ -12,6 +12,7 @@ body {
 
 .sleeve {
     height: 65vh;
+    height: 80vh;
     position: relative;
     overflow: hidden;
 }
@@ -331,7 +332,7 @@ legend
         margin-left: 30%;
         margin-right: 30%;
         /*top: 20%;*/
-        top: 15%;
+        /*top: 15%;*/
       }
       
       .sleeve {
@@ -342,17 +343,17 @@ legend
  
  @media only screen and (min-width: 1440px){
     .innerRing, .outerRing, .centerRing {
-        top: 12.5%;
+        /*top: 12.5%;*/
     }
 }
  
  
  @media only screen and (min-width: 2560px) {
     .sleeve {
-        height: 75vh;
+        /*height: 75vh;*/
     }
     
     .innerRing, .outerRing, .centerRing {
-        top: 7.5%;
+        /*top: 7.5%;*/
     }
 }
