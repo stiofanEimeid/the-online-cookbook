@@ -1,13 +1,10 @@
-
-
-
 $(document).ready(function(){
     
     document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
         hideLoadingAni();
         $('.hideMe').removeClass('hideMe');
-    }, 2000);
+    }, 3000);
     return;
     });
     

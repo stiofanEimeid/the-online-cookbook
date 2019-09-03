@@ -149,7 +149,8 @@ legend
 .search-result {
     background-color: #fafafa;
     padding: 10px;
-    height: 425px;
+    /*height: 425px;*/
+    height: 100%; /*(based on largest card in row)*/
 }
 
 

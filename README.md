@@ -84,9 +84,11 @@ The recipe pages are intended to convey essential information about a particular
 
 The logo is a cartoon ape in a chef's hat, the ape in aperifif if you will. The imagery of the site is intended to be light-hearted and fun in order to make cooking accessible for those who are less confident in their cooking abilities. More generally, the imagery is intended to illustrate that this a site for those who are passionate about cooking but one that doesn't take itself too seriously. 
 
-**Background**
+**The Wheel**
 
 The background consists of two wheels of food with the logo at the center, slowly revolving. The wheels are made up of images of food and cooking utensils. Both of these comprise the content being delivered to the user, recipes which they can search and add to along with kitchen products to help bring these recipes to life. 
+
+Designed in SVG. 3 different wheels layered one on top of the other. 
 
 In addition, the wheels are meant to arrest the viewers attention and convey a sense of individuality about the site. It speaks to the vast array of possiblities in the world of cooking. 
 
