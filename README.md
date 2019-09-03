@@ -131,7 +131,7 @@ The discover page provides some statistics about the site, including most viewed
 If they so wish, users may register an account with the site that displays all the recipes they create.
 
 <div align="center">
-<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/flowchart.png" alt="Apéritif: The Online Cookbook Logo"/>
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/flowchartfinal.png" alt="Apéritif: The Online Cookbook Logo"/>
 </div>
 
 Users may search the recipes collection using a collection of filters whether they are registered or not. The filters are based on meal time and meal type.  
