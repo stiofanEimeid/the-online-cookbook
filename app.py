@@ -185,8 +185,6 @@ def delete_recipe(id):
     mongo.db.recipes.remove({'_id': ObjectId(id)})
     return redirect(url_for('account'))
     
-    # also remove all recipes tied to the account (?)
-    
 # create and update recipes in the database ends
 
 #Products Page
