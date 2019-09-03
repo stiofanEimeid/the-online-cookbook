@@ -275,11 +275,28 @@ def change_pw_form():
                 return redirect(url_for('account'))
     
     return render_template("error1.html")
+
+
+
+@app.route('/settings/delete_account')  
+def delete_account():
+        return render_template("deleteaccount.html")
     
-# @app.route('/settings/delete_account')
-# def delete_account():
-#     ...
-#     return render_template('home.html')
+@app.route('/settings/delete_account', methods=["POST", "GET"])
+def delete_account_form():
+    
+    users = mongo.db.users
+    recipes = mongo.db.recipes
+    username = session['username']
+    login_user = users.find_one({'name' : username })
+    
+    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
+        recipes.remove({"name": username})
+        session.clear()
+        users.remove({"name": username})
+        return redirect(url_for('home'))
+
+    return render_template('error1.html')
     
 
 # User functionality ends
