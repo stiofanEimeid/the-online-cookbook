@@ -1,10 +1,14 @@
 # Apéritif: The Online Cookbook
 
+<h1 align="center">
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/ATOClogo.jpg" alt="Apéritif: The Online Cookbook Logo"/>
+</h1>
+
 # Stephen Byrne Portfolio
 
 Stream Three Project: Data-Centric Development - Code Institute 
 
-...
+Apéritif: The Online Cookbook allows users to search recipes and add their own in a quick and easy manner. 
 
 ## Table of Contents
 1. [**UX**](#ux)
@@ -36,7 +40,9 @@ Stream Three Project: Data-Centric Development - Code Institute
 
 ## UX
 
-### Project Goals
+#### Project Goals
+
+....
 
 #### User Goals
 
@@ -68,7 +74,7 @@ Icons have been sourced from FontAwesome to help convey essential characteristic
 
 **Colours**
 
-Yellow, blue and red, white and grey.
+The main colour scheme of the site consisted of yellow(#f3d250), blue(#90CCF4) and red(f78888), white(#fafafa) and grey(#ececec).
 
 **Styling**
 
@@ -88,8 +94,6 @@ In addition, the wheels are meant to arrest the viewers attention and convey a s
 ### Wireframes
 
 ...
-
-
 
 ## Features
 
@@ -126,6 +130,8 @@ The discover page provides some statistics about the site, including most viewed
 
 If they so wish, users may register an account with the site that displays all the recipes they create.
 
+<!--User Flow Chart Here-->
+
 Users may search the recipes collection using a collection of filters whether they are registered or not. The filters are based on meal time and meal type.  
 
 Users who have registered with the site may submit their own recipes to be viewed by other users. They may also update the recipe or even delete it. Naturally, each user will only be able to edit and delete recipes they themselves have submitted.
@@ -141,6 +147,8 @@ A forum for users to discuss cooking content.
 Should users forget their password, I would like to give them the option of creating a new one. As authetification was understood by me not to be a focus of the project, this feature was left to be implemented in the future. 
 
 ## Data Structure
+
+I choose to use MongoDB, a 'NoSQl' database, in order to implement the knowledge I'd accrued from the module mini-project. In addition, I was aware the next milestone project would involve using a SQL. As such, this was my only opportunity to work with a NoSQL database for a milestone project. Suitability?
 
 The recipe collection and user collection share a common key-value pair, "username", which links the two collections. The recipe entry takes the username of the user who created it. Each recipe can only have one creator and may therefore be described as a one-to-one relationship between each recipe and the user who created it. However, a user can have many recipes attributed to them.  As such, a one-to-many relationship exists between the user and the recipes created by them. 
 
@@ -280,15 +288,21 @@ MongoDB troubleshooting ...
 
 ### Content
 
-...
+
 
 ### Media
 
-...
+Unsplash
+
+Color Scheme
+
+Recipe images
 
 ### Code
 
-...
+Pretty Printed
+w3 schools
+SVG wave
 
 ### Acknowledgements
 
