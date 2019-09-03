@@ -22,7 +22,13 @@
     <div class="row">
         <div class="col intro-section text-center">
             <p>Welcome to Aperitif! Aperitif allows you to search recipes and add your own to share and discuss with
-            other users. <a href="{{ url_for('register') }}">Sign up now</a> to experience all Aperitif has to offer!</p>
+            other users. 
+            {% if session.username %} 
+            <a href="{{ url_for('account') }}">Sign up now </a> 
+            {% else %}
+            <a href="{{ url_for('register') }}">Sign up now </a> 
+            {% endif %}
+            to experience all Aperitif has to offer!</p>
         </div>
     </div>
    

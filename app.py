@@ -117,8 +117,6 @@ def add_favourite(id):
         {"_id": ObjectId(id)}, {"$inc": {"favourited": 1}})
     return redirect(url_for('recipe', id=id))
     
-    
-    
 @app.route("/product/<name>")
 def product(name):
     product = mongo.db.products.find_one({"product_name": name})
@@ -258,7 +256,6 @@ def account():
 def settings():
     return render_template('settings.html')
     
-    
 @app.route('/settings/change_pw')
 def change_pw():
     return render_template("changepw.html")
@@ -276,8 +273,6 @@ def change_pw_form():
     
     return render_template("error1.html")
 
-
-
 @app.route('/settings/delete_account')  
 def delete_account():
         return render_template("deleteaccount.html")
@@ -294,6 +289,7 @@ def delete_account_form():
         recipes.remove({"name": username})
         session.clear()
         users.remove({"name": username})
+        # remove favourites
         return redirect(url_for('home'))
 
     return render_template('error1.html')
