@@ -5,7 +5,7 @@ $(document).ready(function(){
     
     document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
-        hideLoading();
+        hideLoadingAni();
         $('.hideMe').removeClass('hideMe');
     }, 2000);
     return;
