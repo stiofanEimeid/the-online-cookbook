@@ -258,6 +258,29 @@ def account():
 def settings():
     return render_template('settings.html')
     
+    
+@app.route('/settings/change_pw')
+def change_pw():
+    return render_template("changepw.html")
+    
+@app.route('/settings/change_pw', methods=["POST", "GET"])
+def change_pw_form():
+    
+    users = mongo.db.users
+    login_user = users.find_one({'name' : session['username']})
+    
+    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['old_password'].encode('utf-8')):
+                users.update_one({"name": session["username"]},
+                {"$set": {"password": bcrypt.generate_password_hash(request.form['new_password']).decode('utf-8')}})
+                return redirect(url_for('account'))
+    
+    return render_template("error1.html")
+    
+# @app.route('/settings/delete_account')
+# def delete_account():
+#     ...
+#     return render_template('home.html')
+    
 
 # User functionality ends
 
