@@ -55,8 +55,8 @@ def get_recipes():
             
         # Full text search
             
-        # mongo.db.recipes.create_index([('recipe_name', 'text')])
-        # search_request = str(request.args.get('search_request'))
+        # mongo.db.recipes.create_index([('recipe_name', pymongo.TEXT)])
+        # search_request = request.args.get('search_request')
         # page = int(request.args.get('page', 1))
         # all_recipes = mongo.db.recipes.count()
         # recipes_per_page = 4
