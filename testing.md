@@ -27,4 +27,6 @@ As a site owner, I want to promote a brand of cooking tools to my users. I sough
 
 ## Bugs Discovered
 
+Python logic in flask still works despite being commented out. 
+
 ## Further Testing 
