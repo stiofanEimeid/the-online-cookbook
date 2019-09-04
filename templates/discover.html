@@ -40,6 +40,20 @@
            </div>
            {% endfor %}
         </div>
+        
+            <div class="row">
+           <div class="col"><h2>Most Favourited</h2></div>
+        </div>
+        <div class="row recipe-row">
+           {% for recipe in most_favourited %}
+           <div class="col-4">
+               <h3> {{ recipe.recipe_name }} </h3>
+                <p> by {{ recipe.name }}</p>
+                <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
+           </div>
+           {% endfor %}
+        </div>
     </div>
     
     

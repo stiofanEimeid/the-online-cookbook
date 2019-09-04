@@ -126,12 +126,21 @@
           </div>
           
           {% else %}
-          <!--Change to added if already added-->
+            {% if session.username in recipe.favourited_by%}
+            <div class="row">
+              <div class="col">
+                <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-lg">Remove recipe from my favourites +</button></a>
+              </div>
+            </div>
+            
+            
+            {% else %}
             <div class="row">
               <div class="col">
                 <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
               </div>
             </div>
+            {% endif %}
           {% endif %}
           
           <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->
