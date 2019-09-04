@@ -33,7 +33,6 @@ def search():
         all_recipes = mongo.db.recipes.find({'$text': {'$search': str(search_request)}}).count()
         recipes_per_page = 4
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
-        
         recipes = mongo.db.recipes.find({ '$text': { '$search': str(search_request)}}, {"score": {"$meta": 'textScore'}}).sort('_id'
             , pymongo.ASCENDING).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
             
@@ -93,10 +92,12 @@ def recipe(id):
     
 @app.route("/recipe/<id>/favourite")
 def add_favourite(id):
-    mongo.db.users.update(
-        {"name": session.get('username') }, {"$push": {"favourites": ObjectId(id)}})
-    mongo.db.recipes.update(
-        {"_id": ObjectId(id)}, {"$inc": {"favourited": 1}})
+    # mongo.db.users.update(
+    #     {"name": session.get('username') }, {"$push": {"favourites": ObjectId(id)}})
+    # mongo.db.recipes.update(
+    #     {"_id": ObjectId(id)}, {"$inc": {"favourited": 1}})
+    user = session["username"]
+    mongo.db.recipes.update({ "_id": ObjectId(id)}, {"$push": {"favourited_by": user }})
     return redirect(url_for('recipe', id=id))
     
 @app.route("/product/<name>")
@@ -132,6 +133,7 @@ def insert_recipe():
                 "diet": request.form.getlist("diet"),
                 "views": 0,
                 "likes": 0,
+                "favourited_by": []
             })
         return redirect(url_for('get_recipes'))
         
@@ -228,7 +230,10 @@ def logout():
 def account():
     if 'username' in session:
         user = session['username']
-        return render_template('account.html', recipes=mongo.db.recipes.find({ "name": user }))
+        
+        favourites=mongo.db.recipes.find({"favourited_by": user})
+        recipes = mongo.db.recipes.find({ "name": user })
+        return render_template('account.html', recipes=recipes, favourites=favourites)
         
     return "Please login to view your account"
     
