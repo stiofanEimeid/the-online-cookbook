@@ -8,17 +8,17 @@ var navbar = document.querySelector(".navbar");
 
 
 function openNav() {
-  sidebar.style.width = "250px";
-  navbar.style.marginLeft= "250px";
-  content.style.marginLeft= "250px";
-  footer.style.marginLeft= "250px";
+//   sidebar.style.width = "250px";
+  navbar.style.marginLeft= "0";
+  content.style.marginLeft= "0";
+  footer.style.marginLeft= "0";
 }
 
 function closeNav() {
-  sidebar.style.width = "0";
-  navbar.style.marginLeft = "0";
-  content.style.marginLeft= "0";
-  footer.style.marginLeft= "0";
+//   sidebar.style.width = "0";
+  navbar.style.marginLeft = "-250px";
+  content.style.marginLeft= "-250px";
+  footer.style.marginLeft= "-250px";
 }
 
 openbtn.addEventListener("click", openNav, false);
