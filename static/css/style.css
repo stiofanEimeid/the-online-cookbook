@@ -261,15 +261,14 @@ legend
   font-size: 25px;
   
   /*color: #818181;*/
-  
+  background-color: #fafafa;
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
   color: #f1f1f1;
-  
- background-color: #1a1a1a;
+  background-color: #1a1a1a;
 }
 
 .sidebar .closebtn {
@@ -281,11 +280,8 @@ legend
   cursor: pointer;
 }
 
-.sidebarList {
-    list-style-type: none;
-    
-    background-color: #fafafa;
-}
+
+
 
 .openbtn {
   font-size: 20px;
@@ -301,6 +297,11 @@ legend
 .openbtn:hover {
   background-color: #111;
   color: #f8f9fa;
+}
+
+.closebtn:hover {
+  color: #f1f1f1;
+  background-color: #1a1a1a;
 }
 
 .content, .navbar, .footer {

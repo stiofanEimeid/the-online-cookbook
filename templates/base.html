@@ -11,36 +11,20 @@
 <body>
   
 <div id="mySidebar" class="sidebar">
-  <span class="closebtn">X</span>
+  <span class="closebtn">Close X</span>
   <!--<a href="#/" class="closebtn">X</a>-->
-  <ul class="sidebarList">
-  <li>
   <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
-  </li>
   {% if session.username %}
-  <li>
         <a class="nav-link" href="{{url_for('account')}}">Account</a>
-  </li>
   {% else %}
-    <li>
         <a class="nav-link" href="{{url_for('login')}}">Login</a>
-        </li>
   {% endif %}
-  <li>
   <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
-  </li>
-  <li>
   <a class="nav-link" href="{{url_for('products')}}">Products</a>
-  </li>
-  <li>
   <a class="nav-link" href="{{url_for('discover')}}">Discover</a>
   {% if session.username %}
-  </li>
-  <li>
   <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
-  </li>
   {% endif %}
-  </ul>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
