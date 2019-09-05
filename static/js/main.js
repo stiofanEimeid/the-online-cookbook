@@ -55,12 +55,17 @@ $(document).ready(function(){
     //   overlay only displayed when sidebar selected
        $(".openbtn").click(function(){
         $(".overlay").css("display", "block")
-        $(".sidebar").css("transform", "translate(0%)")
+        $(".sidebar").css("transform", "translateX(0%)")
+        // Push content sideways
+        $(".content", ".navbar", ".footer").css("transform", "translateX(250px)")
+        
       });
 
       $(".closebtn").click(function(){
         $(".overlay").css("display", "none")
-        $(".sidebar").css("transform", "translate(-100%)")
+        $(".sidebar").css("transform", "translateX(-100%)")
+        // Push content back
+        $(".content", ".navbar", ".footer").css("transform", "translateX(-250px)")
       });
 
     

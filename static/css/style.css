@@ -258,13 +258,13 @@ legend
 }
 
 
-.translateMe {
-    transform: translate(-100%);
-}
+/*.translateMe {*/
+/*    transform: translate(-100%);*/
+/*}*/
 
-.translateMe2 {
-    transform: translate(0%);
-}
+/*.translateMe2 {*/
+/*    transform: translate(0%);*/
+/*}*/
 
 .sidebar a {
   padding: 8px 8px 8px 32px;
