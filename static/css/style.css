@@ -57,6 +57,7 @@ img {
 .content {
     flex: 1 0 auto;
     /*push content off-screen when menu is open:*/
+    /*thanks to https://stackoverflow.com/questions/48620689/how-to-push-elements-off-screen-using-html-and-css*/
     width: 100%;
     flex-wrap: nowrap;
     align-items: stretch;
@@ -245,6 +246,9 @@ legend
   top: 0;
   left: 0;
   background-color: #111;
+  
+  background-color: #ececec;
+  
   overflow-x: hidden;
   transition: 0.5s;
   transition-timing-function: ease;
@@ -255,13 +259,17 @@ legend
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  
+  /*color: #818181;*/
+  
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
   color: #f1f1f1;
+  
+ background-color: #1a1a1a;
 }
 
 .sidebar .closebtn {
@@ -274,6 +282,8 @@ legend
 
 .sidebarList {
     list-style-type: none;
+    
+    background-color: #fafafa;
 }
 
 .openbtn {
