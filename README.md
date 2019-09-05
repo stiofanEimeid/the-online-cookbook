@@ -310,6 +310,8 @@ SVG wave
 
 ### Acknowledgements
 
+Dynamic form field generation https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
+
 Custom checkbox found at https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
 
 [**Jump to top &uarr;**](#table-of-contents)
