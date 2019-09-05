@@ -80,6 +80,7 @@ $(document).ready(function(){
           $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
+         $('body').removeClass('.overflowHidden')
          $(".content, .navbar, .footer").addClass("untranslateMe")
          $(".content, .navbar, .footer").removeClass("translateMe")
         // $(".content", ".navbar", ".footer").css("transform", "translateX(-250px)")
