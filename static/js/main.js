@@ -18,9 +18,9 @@ $(document).ready(function(){
     return;
     }
     
-    $(window).on("load",function(){
-         $(".loader-wrapper").fadeOut("slow");
-    });
+    // $(window).on("load",function(){
+    //      $(".loader-wrapper").fadeOut("slow");
+    // });
     // navbar
       
     
