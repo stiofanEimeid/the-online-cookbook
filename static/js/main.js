@@ -1,31 +1,33 @@
 // side functionality
-var openbtn = document.querySelector(".openbtn");
-var closebtn = document.querySelector(".closebtn");
-var content = document.querySelector(".content");
-var footer = document.querySelector(".footer");
-var sidebar = document.getElementById("mySidebar");
-var navbar = document.querySelector(".navbar");
+// var openbtn = document.querySelector(".openbtn");
+// var closebtn = document.querySelector(".closebtn");
+// var content = document.querySelector(".content");
+// var footer = document.querySelector(".footer");
+// var sidebar = document.getElementById("mySidebar");
+// var navbar = document.querySelector(".navbar");
 
 
-function openNav() {
-  sidebar.style.width = "250px";
-  navbar.style.marginLeft= "250px";
-  content.style.marginLeft= "250px";
-  footer.style.marginLeft= "250px";
-}
+// function openNav() {
+//   sidebar.style.width = "250px";
+//   navbar.style.marginLeft= "250px";
+//   content.style.marginLeft= "250px";
+//   footer.style.marginLeft= "250px";
+// }
 
-function closeNav() {
-  sidebar.style.width = "0";
-  navbar.style.marginLeft = "0";
-  content.style.marginLeft= "0";
-  footer.style.marginLeft= "0";
-}
+// function closeNav() {
+//   sidebar.style.width = "0";
+//   navbar.style.marginLeft = "0";
+//   content.style.marginLeft= "0";
+//   footer.style.marginLeft= "0";
+// }
 
-openbtn.addEventListener("click", openNav, false);
-closebtn.addEventListener("click", closeNav, false);
+// openbtn.addEventListener("click", openNav, false);
+// closebtn.addEventListener("click", closeNav, false);
 
 
 $(document).ready(function(){
+    
+    
     
     // document.addEventListener("DOMContentLoaded", function () {
     // setTimeout(function () {
@@ -53,10 +55,12 @@ $(document).ready(function(){
     //   overlay only displayed when sidebar selected
        $(".openbtn").click(function(){
         $(".overlay").css("display", "block")
+        $(".sidebar").css("transform", "translate(0%)")
       });
 
       $(".closebtn").click(function(){
         $(".overlay").css("display", "none")
+        $(".sidebar").css("transform", "translate(-100%)")
       });
 
     
