@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    overflow-x: hidden
 }
 
 body {
@@ -55,6 +56,10 @@ img {
 /*css-tricks code*/
 .content {
     flex: 1 0 auto;
+    /*push content off-screen when menu is open:*/
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: stretch;
 }
 
 footer {
