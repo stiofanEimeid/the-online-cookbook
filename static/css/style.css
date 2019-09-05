@@ -264,11 +264,11 @@ legend
     transition-timing-function: ease;
 }
 
-/*.untranslateMe {*/
-/*    transform: translate(0%);*/
-/*    transition: 0.5s;*/
-/*    transition-timing-function: ease;*/
-/*}*/
+.untranslateMe {
+    transform: translate(0%);
+    transition: 0.5s;
+    transition-timing-function: ease;
+}
 
 .sidebar a {
   padding: 8px 8px 8px 32px;

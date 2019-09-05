@@ -57,7 +57,8 @@ $(document).ready(function(){
         $(".overlay").css("display", "block")
         $(".sidebar").css("transform", "translateX(0%)")
         // Push content sideways
-        $(".content, .navbar, .footer").css("transform", "translateX(250px)")
+        $(".content, .navbar, .footer").addClass("translateMe")
+        // $(".content, .navbar, .footer").css("transform", "translateX(250px)")
         
       });
 
@@ -65,7 +66,9 @@ $(document).ready(function(){
         $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
-        $(".content, .navbar, .footer").css("transform", "translateX(0px)")
+         $(".content, .navbar, .footer").addClass("untranslateMe")
+         $(".content, .navbar, .footer").removeClass("translateMe")
+        // $(".content, .navbar, .footer").css("transform", "translateX(0px)")
       });
       
     //   $(".overlay").click(function(){
