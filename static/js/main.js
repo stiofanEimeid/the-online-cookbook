@@ -57,7 +57,7 @@ $(document).ready(function(){
         $(".overlay").css("display", "block")
         $(".sidebar").css("transform", "translateX(0%)")
         // Push content over
-        $('html body').addClass('.overflowHidden')
+        $('html, body').addClass('.overflowHidden')
         $(".content, .navbar, .footer").removeClass("untranslateMe")
         $(".content, .navbar, .footer").addClass("translateMe")
         
