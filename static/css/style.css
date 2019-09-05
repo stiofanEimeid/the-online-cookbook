@@ -267,6 +267,10 @@ legend
   margin-left: 50px;
 }
 
+.sidebarList {
+    list-style-type: none;
+}
+
 .openbtn {
   font-size: 20px;
   cursor: pointer;
