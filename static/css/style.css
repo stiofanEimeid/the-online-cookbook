@@ -46,7 +46,7 @@ img {
 
 .navbar {
     position: fixed;
-    z-index: 9999;
+    z-index: 997;
     width: 100%;
     padding: 10px;
     /*margin-left: 0;*/
@@ -242,6 +242,7 @@ legend
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
+  transition-timing-function: ease;
   padding-top: 60px;
 }
 
@@ -282,8 +283,8 @@ legend
 
 .content, .navbar, .footer {
   transition: margin-left .5s;
+  transition-timing-function: ease;
   /*padding: 16px;*/
-  z-index: 997;
 }
 
 
