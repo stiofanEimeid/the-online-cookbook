@@ -11,7 +11,7 @@
 <body>
   
 <div id="mySidebar" class="sidebar">
-  <a href="#/" class="closebtn">×</a>
+  <a href="#/" class="closebtn">Close ×</a>
   <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
   {% if session.username %}
         <a class="nav-link" href="{{url_for('account')}}">Account</a>
@@ -21,6 +21,9 @@
   <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
   <a class="nav-link" href="{{url_for('products')}}">Products</a>
   <a class="nav-link" href="{{url_for('discover')}}">Discover</a>
+  {% if session.username %}
+  <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+  {% endif %}
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
