@@ -280,7 +280,7 @@ legend
 
 .content, .navbar, .footer {
   transition: margin-left .5s;
-  padding: 16px;
+  /*padding: 16px;*/
   z-index: 997;
 }
 
