@@ -124,23 +124,29 @@
               </div>
             </div>
           </div>
-          
-          {% else %}
-            {% if session.username in recipe.favourited_by%}
-            <div class="row">
-              <div class="col">
-                <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-lg">Remove recipe from my favourites +</button></a>
-              </div>
-            </div>
-            
-            
+          {% if session.username %}
             {% else %}
-            <div class="row">
-              <div class="col">
-                <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+              {% if session.username in recipe.favourited_by%}
+              <div class="row">
+                <div class="col">
+                  <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-lg">Remove recipe from my favourites +</button></a>
+                </div>
               </div>
-            </div>
+              
+              
+              {% else %}
+              <div class="row">
+                <div class="col">
+                  <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+                </div>
+              </div>
+              {% endif %}
             {% endif %}
+            
+          {% else %}
+          <div class="row">
+            <div class="col"><p>Login to add recipe to your favourites</p></div>
+          </div>
           {% endif %}
           
           <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->

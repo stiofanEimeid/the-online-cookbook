@@ -3,7 +3,8 @@ import math
 import pymongo
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_bcrypt import Bcrypt
-from datetime import date
+# from datetime import date
+from time import gmtime, strftime  
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 
@@ -15,7 +16,7 @@ app.config['MONGO_DBNAME'] = 'the-online-cookbook'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
 
-today = date.today()
+# today = date.today()
 
 @app.route("/")
 @app.route("/home")
@@ -136,7 +137,7 @@ def insert_recipe():
                 "name": session["username"],
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
-                "date_created": today.strftime("%d/%m/%Y"),
+                "date_created": strftime("%Y-%m-%d %H:%M:%S", gmtime()),
                 "last_updated": "",
                 "tools": request.form.getlist("tool"),
                 "diet": request.form.getlist("diet"),
@@ -166,7 +167,7 @@ def update_recipe(id):
                 "meal_type": request.form.get('meal_type'),
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
-                "last_updated": today.strftime("%H:%M:%S, %d/%m/%Y"),
+                "last_updated": strftime("%Y-%m-%d %H:%M:%S", gmtime()),
                  "tools": request.form.getlist("tool"),
                 "diet": request.form.getlist("diet")
             })
