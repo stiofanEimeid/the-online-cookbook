@@ -3,6 +3,10 @@ html, body {
     overflow-x: hidden
 }
 
+.overflowXHidden {
+    overflow-x: hidden
+}
+
 body {
     background-color: #ececec;
     font-family: 'Nunito', sans-serif;
