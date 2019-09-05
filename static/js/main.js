@@ -1,22 +1,22 @@
 $(document).ready(function(){
     
-    document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        hideLoadingAni();
-        $('.hideMe').removeClass('hideMe');
-    }, 3000);
-    return;
-    });
+    // document.addEventListener("DOMContentLoaded", function () {
+    // setTimeout(function () {
+    //     hideLoadingAni();
+    //     $('.hideMe').removeClass('hideMe');
+    // }, 3000);
+    // return;
+    // });
     
-    function loadingAni() {
-    $(".loader-wrapper").css("display", "block");
-    return;
-    }
+    // function loadingAni() {
+    // $(".loader-wrapper").css("display", "block");
+    // return;
+    // }
     
-     function hideLoadingAni() {
-    $(".loader-wrapper").css("display", "none");
-    return;
-    }
+    //  function hideLoadingAni() {
+    // $(".loader-wrapper").css("display", "none");
+    // return;
+    // }
     
     // $(window).on("load",function(){
     //      $(".loader-wrapper").fadeOut("slow");
