@@ -51,6 +51,7 @@ img {
     width: 100%;
     padding: 10px;
     /*margin-left: 0;*/
+    height: 8vh;
 }
 
 /*css-tricks code*/
@@ -61,6 +62,7 @@ img {
     width: 100%;
     flex-wrap: nowrap;
     align-items: stretch;
+    margin-top: 8vh;
 }
 
 footer {
@@ -412,7 +414,8 @@ legend
     height: auto;
     position: absolute;
     left: 0;
-    top: 5%;
+    /*top: 5%;*/
+    top: 12.5%;
 }
 
 .outerRing {
