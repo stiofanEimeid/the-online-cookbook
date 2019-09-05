@@ -74,7 +74,7 @@ def get_recipes():
 def discover():
     recipes = mongo.db.recipes
     top_recipes = recipes.find().sort("views", -1).limit(3)
-    most_recent = recipes.find().sort("date_created", -1).limit(3)
+    most_recent = recipes.find().sort("time_created", -1).limit(3)
     most_favourited = recipes.find().sort("favourites", -1 ).limit(3)
     total = recipes.count()
     return render_template("discover.html", top_recipes=top_recipes, most_recent=most_recent, total=total, most_favourited=most_favourited)
@@ -137,7 +137,7 @@ def insert_recipe():
                 "name": session["username"],
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
-                "date_created": strftime("%Y-%m-%d %H:%M:%S", gmtime()),
+                "time_created": strftime("%H:%M:%S %Y-%m-%d", gmtime()),
                 "last_updated": "",
                 "tools": request.form.getlist("tool"),
                 "diet": request.form.getlist("diet"),
@@ -167,7 +167,7 @@ def update_recipe(id):
                 "meal_type": request.form.get('meal_type'),
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
-                "last_updated": strftime("%Y-%m-%d %H:%M:%S", gmtime()),
+                "last_updated": strftime("%H:%M:%S %Y-%m-%d", gmtime()),
                  "tools": request.form.getlist("tool"),
                 "diet": request.form.getlist("diet")
             })
