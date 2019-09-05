@@ -1,9 +1,10 @@
-var openbtn = document.querySelector(".openbtn")
-var closebtn = document.querySelector(".closebtn")
-var content = document.querySelector(".content")
-var footer = document.querySelector(".footer")
-var sidebar = document.getElementById("mySidebar")
-var navbar = document.querySelector(".navbar")
+// side functionality
+var openbtn = document.querySelector(".openbtn");
+var closebtn = document.querySelector(".closebtn");
+var content = document.querySelector(".content");
+var footer = document.querySelector(".footer");
+var sidebar = document.getElementById("mySidebar");
+var navbar = document.querySelector(".navbar");
 
 
 function openNav() {
@@ -49,7 +50,7 @@ $(document).ready(function(){
     // });
     // navbar
       
-    
+    //   overlay only displayed when sidebar selected
        $(".openbtn").click(function(){
         $(".overlay").css("display", "block")
       });

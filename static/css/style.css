@@ -235,7 +235,7 @@ legend
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
   top: 0;
   left: 0;
   background-color: #111;
@@ -278,7 +278,7 @@ legend
   background-color: #444;
 }
 
-#main {
+.content, .navbar, .footer {
   transition: margin-left .5s;
   padding: 16px;
   z-index: 997;
@@ -294,12 +294,8 @@ legend
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
-  z-index: 9998;
+  z-index: 998;
 }
-
-
-
-
 
 /*loading animation*/
 
