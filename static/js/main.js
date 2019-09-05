@@ -57,7 +57,7 @@ $(document).ready(function(){
         $(".overlay").css("display", "block")
         $(".sidebar").css("transform", "translateX(0%)")
         // Push content over
-        $('body').addClass('.overflowXHidden')
+        $('html').addClass('.overflowHidden')
         $(".content, .navbar, .footer").removeClass("untranslateMe")
         $(".content, .navbar, .footer").addClass("translateMe")
         
@@ -69,7 +69,7 @@ $(document).ready(function(){
         $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
-         $('body').removeClass('.overflowXHidden')
+         $('html').removeClass('.overflowHidden')
          $(".content, .navbar, .footer").addClass("untranslateMe")
          $(".content, .navbar, .footer").removeClass("translateMe")
          
