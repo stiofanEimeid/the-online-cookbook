@@ -45,10 +45,11 @@ img {
 }
 
 .navbar {
-    /*position: relative;*/
-    /*z-index: 1;*/
-    /*width: 100%;*/
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
     padding: 10px;
+    /*margin-left: 0;*/
 }
 
 /*css-tricks code*/
@@ -272,6 +273,7 @@ legend
   color: white;
   padding: 10px 15px;
   border: none;
+  pointer-events: auto; /*restores click functionality disabled by fixed positioning of parent container element(navbar)*/
 }
 
 .openbtn:hover {
@@ -283,6 +285,7 @@ legend
   /*padding: 16px;*/
   z-index: 997;
 }
+
 
 .overlay {
   position: fixed;
