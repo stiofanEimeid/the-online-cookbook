@@ -9,9 +9,9 @@ body {
     flex-direction: column;
 }
 
-.hideme {
-    display: none;
-}
+/*.hideme {*/
+/*    display: none;*/
+/*}*/
 
 .sleeve {
     height: 65vh;
