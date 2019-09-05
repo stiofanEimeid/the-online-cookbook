@@ -13,35 +13,25 @@ $(document).ready(function(){
     return;
     }
     
-    //   $(window).on("load",function(){
-    //      $(".loader-wrapper").fadeOut("slow");
-    // });
-
-    
-    function hideLoadingAni() {
+     function hideLoadingAni() {
     $(".loader-wrapper").css("display", "none");
     return;
     }
     
-            $("#sidebar").mCustomScrollbar({
-            theme: "minimal"
-        });
+    $(window).on("load",function(){
+         $(".loader-wrapper").fadeOut("slow");
+    });
+    // navbar
+      
+    
+       $(".openbtn").click(function(){
+        $(".overlay").css("display", "block")
+      });
 
-        $('#dismiss, .overlay').on('click', function () {
-            // hide sidebar
-            $('#sidebar').removeClass('active');
-            // hide overlay
-            $('.overlay').removeClass('active');
-        });
+      $(".closebtn").click(function(){
+        $(".overlay").css("display", "none")
+      });
 
-        $('#sidebarCollapse').on('click', function () {
-            // open sidebar
-            $('#sidebar').addClass('active');
-            // fade in the overlay
-            $('.overlay').addClass('active');
-            $('.collapse.in').toggleClass('in');
-            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-        });
     
     
     var maxField = 15; //Input fields increment limitation

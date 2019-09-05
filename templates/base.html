@@ -7,43 +7,136 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
+    
+<style>
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+  z-index: 997;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9998;
+  cursor: pointer;
+}
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
 </head>
 <body>
+  
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+  {% if session.username %}
+        <a class="nav-link" href="{{url_for('account')}}">Account</a>
+  {% else %}
+        <a class="nav-link" href="{{url_for('login')}}">Login</a>
+  {% endif %}
+  <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
+  <a class="nav-link" href="{{url_for('products')}}">Products</a>
+  <a class="nav-link" href="{{url_for('discover')}}">Discover</a>
+</div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light hideMe">
-  <a class="navbar-brand" href="{{url_for('home')}}">Aperitif</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<button class="openbtn" onclick="openNav()">☰ Menu</button> 
+</nav>
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light hideMe">-->
+<!--  <a class="navbar-brand" href="{{url_for('home')}}">Aperitif</a>-->
+<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"></span>-->
+<!--  </button>-->
  
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
-      </li>
-      {% if session.username %}
-      <li class="nav-item">
-        <a class="nav-link" href="{{url_for('account')}}">Account</a>
-      </li>
-      {% else %}
-      <li class="nav-item">
-        <a class="nav-link" href="{{url_for('login')}}">Login</a>
-      </li>
-      {% endif %}
-      <li class="nav-item">
-        <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url_for('products')}}">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{url_for('discover')}}">Discover</a>
-      </li>
-    </ul>
-  </div>
+<!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--    <ul class="navbar-nav mr-auto">-->
+<!--      <li class="nav-item active">-->
+<!--        <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>-->
+<!--      </li>-->
+<!--      {% if session.username %}-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="{{url_for('account')}}">Account</a>-->
+<!--      </li>-->
+<!--      {% else %}-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="{{url_for('login')}}">Login</a>-->
+<!--      </li>-->
+<!--      {% endif %}-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="{{url_for('get_recipes')}}">Recipes</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="{{url_for('products')}}">Products</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="{{url_for('discover')}}">Discover</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
 
-</nav>
+<!--</nav>-->
 
 <div class="content hideMe">
 
@@ -53,14 +146,36 @@
 <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
-
-<footer class="hideMe">
+<div class="overlay"></div>
+<footer class="footer hideMe">
   @aperitif
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{url_for('static', filename='js/main.js')}}"></script>
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementsByClassName("content").style.marginLeft= "250px";
+  document.getElementsByClassName("footer").style.marginLeft= "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementsByClassName("content").style.marginLeft= "0";
+  document.getElementsByClassName("footer").style.marginLeft= "0";
+}
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
