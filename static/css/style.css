@@ -258,12 +258,16 @@ legend
 }
 
 
-/*.translateMe {*/
-/*    transform: translate(-100%);*/
-/*}*/
+.translateMe {
+    transform: translateX(250px);
+    transition: 0.5s;
+    transition-timing-function: ease;
+}
 
-/*.translateMe2 {*/
+/*.untranslateMe {*/
 /*    transform: translate(0%);*/
+/*    transition: 0.5s;*/
+/*    transition-timing-function: ease;*/
 /*}*/
 
 .sidebar a {

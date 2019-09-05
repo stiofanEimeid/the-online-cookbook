@@ -65,7 +65,7 @@ $(document).ready(function(){
         $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
-        $(".content, .navbar, .footer").css("transform", "translateX(-250px)")
+        $(".content, .navbar, .footer").css("transform", "translateX(0px)")
       });
       
     //   $(".overlay").click(function(){
