@@ -54,7 +54,11 @@ img {
     width: 100%;
     padding: 10px;
     /*margin-left: 0;*/
-    height: 8vh;
+    height: 100px;
+}
+
+.navbar-brand {
+    font-size: 2rem;
 }
 
 /*css-tricks code*/
@@ -65,7 +69,7 @@ img {
     width: 100%;
     flex-wrap: nowrap;
     align-items: stretch;
-    margin-top: 8vh;
+    margin-top: 100px;
 }
 
 footer {
@@ -258,7 +262,7 @@ legend
   overflow-x: hidden;
   transition: 0.5s;
   transition-timing-function: ease;
-  padding-top: 60px;
+  padding-top: 100px;
   transform: translateX(-100%);
 }
 
@@ -334,6 +338,7 @@ legend
   /*color: white;*/
   padding: 10px 15px;
   border: none;
+  font-size: 1.5rem;
   pointer-events: auto; /*restores click functionality disabled by fixed positioning of parent container element(navbar)*/
 }
 
