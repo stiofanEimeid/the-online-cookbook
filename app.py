@@ -32,7 +32,7 @@ def search():
         search_request = request.args.get('search_request')
         page = int(request.args.get('page', 1))
         all_recipes = mongo.db.recipes.find({'$text': {'$search': str(search_request)}}).count()
-        recipes_per_page = 4
+        recipes_per_page = 8
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
         recipes = mongo.db.recipes.find({ '$text': { '$search': str(search_request)}}, {"score": {"$meta": 'textScore'}}).sort('_id'
             , pymongo.ASCENDING).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
@@ -54,7 +54,7 @@ def get_recipes():
           
         page = int(request.args.get('page', 1))
         all_recipes = mongo.db.recipes.count({'$and': filters})
-        recipes_per_page = 4
+        recipes_per_page = 8
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
         recipes = mongo.db.recipes.find({'$and': filters}).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         # variable containing string that lists filters used in search
@@ -63,7 +63,7 @@ def get_recipes():
     else:
         page = int(request.args.get('page', 1))
         all_recipes = mongo.db.recipes.count()
-        recipes_per_page = 4
+        recipes_per_page = 8
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
         recipes = mongo.db.recipes.find().skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         return render_template("recipes.html", recipes=recipes, pages=pages, page=page)

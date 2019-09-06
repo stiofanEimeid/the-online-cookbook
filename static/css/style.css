@@ -17,6 +17,11 @@ body {
 /*    display: none;*/
 /*}*/
 
+.image-container {
+    height: 278.39px;
+}
+
+
 .sleeve {
     height: 65vh;
     height: 80vh;
@@ -44,8 +49,9 @@ h5 {
 
 
 img {
-   max-width: 100%;
-   max-height: 100%;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
 
 .navbar {
@@ -80,7 +86,12 @@ footer {
   padding: 20px;
 }
 
-/*Bootstrapious sidebar*/
+/*Search Results*/
+
+/*.card {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
 
 
 
@@ -163,7 +174,7 @@ legend
 }
 
 .search-block {
-    padding:20px;
+    padding:10px;
 }
 
 .search-result {
@@ -305,8 +316,8 @@ legend
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  
+  font-size: 60px;
+  padding-bottom: 5px;
   /*color: #818181;*/
   background-color: #fafafa;
   display: block;

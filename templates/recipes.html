@@ -48,27 +48,33 @@
        
               
         <h1 class="text-center">Search Results</h1>
+        <div class="searchResults">
           
           <div class="row">
               {% for recipe in recipes %}
-                <div class="search-block col-6 col-md-4 col-lg-3">
+                <div class="search-block col-12 col-md-6 col-lg-4">
                   <div class="card">
+                    <div class="image-container">
+                      
                     {% if recipe.recipe_image != "" %}
                           <img src="{{recipe.recipe_image}}" alt="recipe image">
                     {% else %}
                           <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
                     {% endif %}
+           
+                    </div>
                     <div class="card-body">
-                      <h5 class="card-title">{{recipe.recipe_name}}</h5>
-                      <h6 class="card-title">by {{recipe.name}}</h6>
-                      <p class="card-text text-truncate">{{ recipe.recipe_description }}</p>
-                      <p class="card-text"><small class="text-muted">Last updated {{recipe.last_updated}}</small></p>
+                      <div class="card-title text-truncate">{{recipe.recipe_name}}</div>
+                      <div class="card-title">by {{recipe.name}}</div>
+                      <!--<p class="card-text text-truncate">{{ recipe.recipe_description }}</p>-->
+                      <!--<p class="card-text"><small class="text-muted">Last updated {{recipe.last_updated}}</small></p>-->
                       <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
                     </div>
                   </div>
                 </div>
                {% endfor %}
             </div>
+        </div>
 
         <!--<div class="row">-->
           <!--  {% for recipe in recipes %}-->
@@ -137,8 +143,12 @@
           
           
         </div>
+  
+    
+    
     {% endblock %}
     
+
 
 
   
