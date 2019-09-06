@@ -246,7 +246,7 @@ legend
 .sidebar {
   height: 100%;
   width: 0;
-  width: 250px;
+  width: 30%;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -497,6 +497,10 @@ legend
  @media only screen and (min-width: 1440px){
     .innerRing, .outerRing, .centerRing {
         /*top: 12.5%;*/
+    }
+    
+    .sidebar {
+        width: 75%;
     }
 }
  
