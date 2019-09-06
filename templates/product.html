@@ -2,28 +2,33 @@
     <div class="container">
 
           <div class="row">
-            <div class="col">
+            <div class="col-12 col-md-6">
               <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+            </div>
+            <div class="col-12 col-md-6">
+              <h1>{{product.product_name}}</h1>
+              <p>Price: {{product.product_price}}</p>
+              <p>Category: {{product.product_category}}</p>
             </div>
           </div>
           
-          <div class=" row">
-            <div class="col">
-              <h1>{{product.product_name}}</h1>
-            </div>
-          </div>
+          <!--<div class=" row">-->
+          <!--  <div class="col">-->
+          <!--    <h1>{{product.product_name}}</h1>-->
+          <!--  </div>-->
+          <!--</div>-->
   
           <div class="row recipe-row">
             <div class="col">{{product.product_description }}</div>
           </div>
           
-          <div class="recipe-row row">
-            <div class="col-md-6">Price: {{product.product_price}}</div>
-            <div class="col-md-6">Category: {{product.product_category}} </div>
-          </div>
+          <!--<div class="recipe-row row">-->
+          <!--  <div class="col-md-6">Price: {{product.product_price}}</div>-->
+          <!--  <div class="col-md-6">Category: {{product.product_category}} </div>-->
+          <!--</div>-->
 
           <div class="row">
-            <div class="col">
+            <div class="col text-center">
               <!--<a href="#"><button type="button" class="btn btn-success btn-lg">Buy product</button></a>-->
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Buy Now</button>
               
