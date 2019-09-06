@@ -265,19 +265,25 @@ legend
 
 .translateMe {
     
-	animation-name: pushOut;
-	animation-timing-function: ease;
-	animation-duration: .5s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
+	/*animation-name: pushOut;*/
+	/*animation-timing-function: ease;*/
+	/*animation-duration: .5s;*/
+	/*animation-iteration-count: 1;*/
+	/*animation-fill-mode: forwards;*/
+	transition: 0.5s;
+    transition-timing-function: ease;
+	transform: translateX(250px)
 }
 
 .untranslateMe {
-    animation-name: pushBack;
-	animation-timing-function: ease;
-	animation-duration: .5s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
+ /*   animation-name: pushBack;*/
+	/*animation-timing-function: ease;*/
+	/*animation-duration: .5s;*/
+	/*animation-iteration-count: 1;*/
+	/*animation-fill-mode: forwards;*/
+	transition: 0.5s;
+    transition-timing-function: ease;
+	transform: translateX(0px)
 }
 
 @keyframes pushOut {
