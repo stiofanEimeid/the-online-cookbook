@@ -57,7 +57,8 @@ $(document).ready(function(){
         $(".overlay").css("display", "block")
         $(".sidebar").css("transform", "translateX(0%)")
         // Push content over
-        $(".content, .navbar, .footer").addClass('.overflowHidden')
+        $("body").css('overflow', 'hidden')
+        
         // $(".content, .navbar, .footer").removeClass("untranslateMe")
         // $(".content, .navbar, .footer").addClass("translateMe")
         
@@ -69,7 +70,7 @@ $(document).ready(function(){
         $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
-         $(".content, .navbar, .footer").removeClass('.overflowHidden')
+         $("body").css('overflow', 'visible')
         //  $(".content, .navbar, .footer").addClass("untranslateMe")
         //  $(".content, .navbar, .footer").removeClass("translateMe")
          
@@ -80,7 +81,8 @@ $(document).ready(function(){
           $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
-         $('body').removeClass('.overflowHidden')
+        //  $('body').removeClass('.overflowHidden')
+        $("body").css('overflow', 'visible')
          $(".content, .navbar, .footer").addClass("untranslateMe")
          $(".content, .navbar, .footer").removeClass("translateMe")
         // $(".content", ".navbar", ".footer").css("transform", "translateX(-250px)")

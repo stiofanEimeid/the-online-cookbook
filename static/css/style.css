@@ -2,9 +2,9 @@ html, body {
     height: 100%;
 }
 
-.overflowHidden {
-    overflow: hidden;
-}
+/*.overflowHidden {*/
+/*    overflow: hidden;*/
+/*}*/
 
 body {
     background-color: #ececec;
@@ -250,7 +250,7 @@ legend
 .sidebar {
   height: 100%;
   width: 0;
-  width: 30%;
+  width: 75%;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -505,7 +505,7 @@ legend
     }
     
     .sidebar {
-        width: 75%;
+        width: 35%;
     }
 }
  
