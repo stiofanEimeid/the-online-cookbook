@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        <div class="container">
+        <div class="container-fluid">
           
           <div class="row">
             
@@ -147,37 +147,61 @@
           <!--</div>-->
         
             <!--Ingredients/Steps tabs-->
-            <div class="row recipe-row">
-              <div class="col">
             
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#ingredients" role="tab" aria-controls="ingredients" aria-selected="true">Ingredients</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#steps" role="tab" aria-controls="steps" aria-selected="false">Steps</a>
-                  </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="ingredients" role="tabpanel" aria-labelledby="home-tab">
-                      <h5>Ingredients</h5>
+          <div class="row recipe-row">
+            <div class="col">
+              <h5>Ingredients</h5>
                        <ul>
                           {% for ingredient in recipe.recipe_ingredients %}
                             <li>{{ingredient}}</li>
                           {% endfor %}
                         </ul>
-                  </div>
-                  <div class="tab-pane fade" id="steps" role="tabpanel" aria-labelledby="profile-tab">
-                    <h5>Steps</h5>
-                    <ul>
-                         {% for step in recipe.recipe_steps %}
-                          <li>{{step}}</li>
-                         {% endfor %}
-                      </ul>
-                </div>
-              </div>
             </div>
           </div>
+          
+          <div class="row recipe-row">
+            <div class="col">
+              <h5>Steps</h5>
+                       <ol>
+                          {% for step in recipe.recipe_steps %}
+                            <li>{{step}}</li>
+                          {% endfor %}
+                        </ol>
+            </div>
+          </div>
+          <!--  <div class="row recipe-row">-->
+          <!--    <div class="col">-->
+            
+          <!--      <ul class="nav nav-tabs" id="myTab" role="tablist">-->
+          <!--        <li class="nav-item">-->
+          <!--          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#ingredients" role="tab" aria-controls="ingredients" aria-selected="true">Ingredients</a>-->
+          <!--        </li>-->
+          <!--        <li class="nav-item">-->
+          <!--          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#steps" role="tab" aria-controls="steps" aria-selected="false">Steps</a>-->
+          <!--        </li>-->
+          <!--      </ul>-->
+          <!--      <div class="tab-content" id="myTabContent">-->
+          <!--          <div class="tab-pane fade show active" id="ingredients" role="tabpanel" aria-labelledby="home-tab">-->
+          <!--            <h5>Ingredients</h5>-->
+          <!--             <ul>-->
+          <!--                {% for ingredient in recipe.recipe_ingredients %}-->
+          <!--                  <li>{{ingredient}}</li>-->
+          <!--                {% endfor %}-->
+          <!--              </ul>-->
+          <!--        </div>-->
+          <!--        <div class="tab-pane fade" id="steps" role="tabpanel" aria-labelledby="profile-tab">-->
+          <!--          <h5>Steps</h5>-->
+          <!--          <ul>-->
+          <!--               {% for step in recipe.recipe_steps %}-->
+          <!--                <li>{{step}}</li>-->
+          <!--               {% endfor %}-->
+          <!--            </ul>-->
+          <!--      </div>-->
+          <!--    </div>-->
+          <!--  </div>-->
+          <!--</div>-->
+          
+       
       
           <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
           <!--{% if session.username == recipe.name %}-->
