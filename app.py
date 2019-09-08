@@ -51,12 +51,21 @@ def get_recipes():
         if request.form.get("meal_type") != "All":
             query2 = {"meal_type": request.form.get("meal_type")}
             filters.append(query2)
-          
+            
+        if request.form.get("diet") != "All":
+            query3 = {"diet": { "$all": [request.form.get("diet")] }}
+            filters.append(query3)
+            
+        if filters != []:
+            search_request = {'$and': filters}
+        else: 
+            search_request = {}
+            
         page = int(request.args.get('page', 1))
-        all_recipes = mongo.db.recipes.count({'$and': filters})
+        all_recipes = mongo.db.recipes.count(search_request)
         recipes_per_page = 12
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
-        recipes = mongo.db.recipes.find({'$and': filters}).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
+        recipes = mongo.db.recipes.find(search_request).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         # variable containing string that lists filters used in search
         return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
 

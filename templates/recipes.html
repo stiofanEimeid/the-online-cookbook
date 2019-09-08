@@ -5,27 +5,42 @@
         <form action="{{ url_for('search', search_request=search_request) }}">
           <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
           <button class="btn btn-primary" type="submit" name="action">Search</button>
+        
         </form>
         
             <form action="{{ url_for('get_recipes') }}" method="POST">
+              <div class="row">
+              <div class="col-4">
                 <select name="recipe_type">
-                                    <option value="All" selected="selected">All</option>
+                                    <option selected="selected" value="All">No filter selected</option>
                                     <option value="Italian">Italian</option>
                                     <option value="Mexican">Mexican</option>
                                     <option value="Indian">Indian</option>
                                     <option value="Chinese">Chinese</option>
                                     <option value="Other">Other</option>
                 </select>
-                
-                 <select name="meal_type" required>
-                           <option value="All" selected="selected">All</option>
+                </div>
+                <div class="col-4">
+                 <select name="meal_type">
+                           <option selected="selected" value="All">No filter selected</option>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
                             <option value="Dinner">Dinner</option>
                             <option value="Snack">Snack</option>
                            
                 </select>
-                
+                </div>
+                <div class="col-4">
+                  
+                     <select name="diet">
+                           <option selected="selected" value="All">No filter selected</option>
+                            <option value="Gluten-free">Gluten-free</option>
+                            <option value="Nut-free">Nut-free</option>
+                            <option value="Vegan">Vegan</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                           
+                    </select>
+                </div>
                  <!--search by preparation time-->
 
                       <!--search by diet-->
@@ -41,10 +56,12 @@
                       <!--search by most discussed-->
                       
                       <!--search by new/old -->
-                
+                <div class="col-12 text-center">
                 <button class="btn btn-primary" type="submit" name="action">Filter Results</button>
-              
+                </div>
+                </div>
             </form>
+            
        
               
         <h1 class="text-center">Search Results</h1>
