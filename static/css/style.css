@@ -34,7 +34,7 @@ body {
     font-size: 2em;
 }
 
-.container-fluid {
+.container-fluid, .container {
     font-size: 2em;
 }
 
