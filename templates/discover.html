@@ -4,13 +4,21 @@
         <div class="row">
             <div class="col text-center"><h1>Discover</h1></div>
         </div>
-        <!--Find and sort recipes by view count. Return the first 3 with the most views.-->
+    
         <div class="row">
             <div class="col text-center">
                 <h3>Total number of recipes: {{ total }}</h3></div>
-        </div>
+            </div>
+            <div class="col text-center">
+                <h3>Total number of users: {{ user_total }}</h3></div>
+            </div>
+            
         
         <!--Include breakdown by type/s -->
+        
+        <!--Cuisine pie chart-->
+        
+        <!--New usser/recipes per month graphs-->
         
         <div class="row">
            <div class="col"><h2>Most viewed recipes</h2></div>
@@ -18,38 +26,43 @@
         <div class="row recipe-row">
            {% for recipe in top_recipes %}
            <div class="col-4">
-               <h3> {{ recipe.recipe_name }} </h3>
+               <h3 class="text-truncate"> {{ recipe.recipe_name }} </h3>
                 <p> by {{ recipe.name }}</p>
+                <div class="image-container">
                 <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                </div>
                 <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
            </div>
            {% endfor %}
         </div>
         
+        
+        <!--<div class="row">-->
+        <!--   <div class="col"><h2>Recently Submitted</h2></div>-->
+        <!--</div>-->
+        <!--<div class="row recipe-row">-->
+        <!--   {% for recipe in most_recent %}-->
+        <!--   <div class="col-4">-->
+        <!--       <h3> {{ recipe.recipe_name }} </h3>-->
+        <!--        <p> by {{ recipe.name }}</p>-->
+        <!--        <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">-->
+        <!--        <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>-->
+        <!--   </div>-->
+        <!--   {% endfor %}-->
+        <!--</div>-->
         
         <div class="row">
-           <div class="col"><h2>Recently Submitted</h2></div>
-        </div>
-        <div class="row recipe-row">
-           {% for recipe in most_recent %}
-           <div class="col-4">
-               <h3> {{ recipe.recipe_name }} </h3>
-                <p> by {{ recipe.name }}</p>
-                <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
-           </div>
-           {% endfor %}
-        </div>
-        
-            <div class="row">
-           <div class="col"><h2>Most Favourited</h2></div>
+           <div class="col">
+               <h2>Most Favourited</h2></div>
         </div>
         <div class="row recipe-row">
            {% for recipe in most_favourited %}
            <div class="col-4">
-               <h3> {{ recipe.recipe_name }} </h3>
+               <h3 class="text-truncate"> {{ recipe.recipe_name }} </h3>
                 <p> by {{ recipe.name }}</p>
+                <div class="image-container">
                 <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                </div>
                 <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
            </div>
            {% endfor %}

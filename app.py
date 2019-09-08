@@ -82,11 +82,13 @@ def get_recipes():
 @app.route("/discover")
 def discover():
     recipes = mongo.db.recipes
+    users = mongo.db.users
     top_recipes = recipes.find().sort("views", -1).limit(3)
     most_recent = recipes.find().sort("time_created", -1).limit(3)
     most_favourited = recipes.find().sort("favourites", -1 ).limit(3)
     total = recipes.count()
-    return render_template("discover.html", top_recipes=top_recipes, most_recent=most_recent, total=total, most_favourited=most_favourited)
+    user_total = users.count()
+    return render_template("discover.html", top_recipes=top_recipes, most_recent=most_recent, total=total, most_favourited=most_favourited, user_total=user_total)
     
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
