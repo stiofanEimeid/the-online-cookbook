@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
     {% block content %}
       <div class="container">
-        
+      <div class="text-center">
         <form action="{{ url_for('search', search_request=search_request) }}">
           <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
           <button class="btn btn-primary" type="submit" name="action">Search</button>
         
         </form>
-        
+      </div>
             <form action="{{ url_for('get_recipes') }}" method="POST">
               <div class="row">
               <div class="col-4">
+                Cuisine:<br>
                 <select name="recipe_type">
                                     <option selected="selected" value="All">No filter selected</option>
                                     <option value="Italian">Italian</option>
@@ -21,6 +22,7 @@
                 </select>
                 </div>
                 <div class="col-4">
+                  Meal time:<br>
                  <select name="meal_type">
                            <option selected="selected" value="All">No filter selected</option>
                             <option value="Breakfast">Breakfast</option>
@@ -31,7 +33,7 @@
                 </select>
                 </div>
                 <div class="col-4">
-                  
+                  Diet:<br>
                      <select name="diet">
                            <option selected="selected" value="All">No filter selected</option>
                             <option value="Gluten-free">Gluten-free</option>
