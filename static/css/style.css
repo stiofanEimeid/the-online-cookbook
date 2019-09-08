@@ -144,9 +144,9 @@ legend
     padding: 50px;
 }
 
-.nav-item {
-    width: 50%;
-}
+/*.nav-item {*/
+/*    width: 50%;*/
+/*}*/
 
 .nav-link {
     width: 100%;
@@ -254,6 +254,11 @@ legend
 
 /*sidebar*/
 
+.closeBtnContainer {
+    height: 100px;
+    position: relative;
+}
+
 .sidebar {
   height: 100%;
   width: 0;
@@ -269,7 +274,6 @@ legend
   overflow-x: hidden;
   transition: 0.5s;
   transition-timing-function: ease;
-  padding-top: 100px;
   transform: translateX(-100%);
 }
 
