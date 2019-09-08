@@ -180,6 +180,11 @@ legend
     height: 100%; /*(based on largest card in row)*/
 }
 
+/*tab contents*/
+
+.tab-pane {
+    padding: 20px;
+}
 
 /*form-elements*/
 

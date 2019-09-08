@@ -1,17 +1,27 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-    <h1 class="text-center">My Account</h1>
-        <div class="row">
-            <div class="col">
-                Welcome, {{ session.username }}
+    <!--<h1 class="text-center">My Account</h1>-->
+    
+        <div class="row recipe-row">
+            <div class="col-12 col-md-4">
+                <div class="image-container">
+                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <div class="col-12">{{ session.username }}</div>
+                    <div class="col-12">Member since: </div>
+                    <div class="col-12">Recipes: </div>
+                </div>
             </div>
         </div>
     
-       <div class="row recipe-row">
-                <div class="col">
-                    <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a>
-                </div>
-        </div>
+       <!--<div class="row recipe-row">-->
+       <!--         <div class="col">-->
+       <!--             <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a>-->
+       <!--         </div>-->
+       <!-- </div>-->
         
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
           <li class="nav-item">
@@ -27,38 +37,96 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-recipes" role="tabpanel" aria-labelledby="pills-recipes-tab">
                   <h3>My Recipes</h3>
-                    {% for recipe in recipes %}
-                    <div class="row recipe-row">
-                        <div class="col">
-                                <h5 class="mb-0">
-                  
-                                  <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>
+          
+                     <div class="row">
+                          {% for recipe in recipes %}
+                            <div class="search-block col-12 col-md-6 col-lg-4">
+                              <div class="card">
+                                <div class="image-container">
                                   
-                                </h5>
+                                {% if recipe.recipe_image != "" %}
+                                      <img src="{{recipe.recipe_image}}" alt="recipe image">
+                                {% else %}
+                                      <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                                {% endif %}
+                       
+                                </div>
+                                <div class="card-body">
+                                  <div class="card-title text-truncate">{{recipe.recipe_name}}</div>
+                                  <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
+                                </div>
+                              </div>
+                            </div>
+                           {% endfor %}
+                     </div>
+                          <!--{% for recipe in recipes %}-->
+                    
+                    
+                    <!--<div class="row recipe-row">-->
+                    <!--    <div class="col">-->
+                    <!--            <h5 class="mb-0">-->
+                  
+                    <!--              <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>-->
+                                  
+                    <!--            </h5>-->
                         
                     
-                                <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>
-                        </div>
-                    </div>
-                     {% endfor %}
+                    <!--            <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                    <!-- {% endfor %}-->
+                     
           </div>
+          
+               
           <div class="tab-pane fade" id="pills-favourites" role="tabpanel" aria-labelledby="pills-favourites-tab">
                       
             <h3>My Favourites</h3>
-            {% for favourite in favourites %}
-            <div class="row recipe-row">
-                <div class="col">
-                        <h5 class="mb-0">
+            
+      
+            
+            <div class="row">
+                          {% for favourite in favourites %}
+                            <div class="search-block col-12 col-md-6 col-lg-4">
+                              <div class="card">
+                                <div class="image-container">
+                                  
+                                  {% if favourite.recipe_image != "" %}
+                                        <img src="{{favourite.recipe_image}}" alt="recipe image">
+                                  {% else %}
+                                        <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                                  {% endif %}
+                         
+                                </div>
+                                
+                                <div class="card-body">
+                                  <div class="card-title text-truncate">{{favourite.recipe_name}} by <strong>{{favourite.name}}</strong></div>
+                                  <a href="{{ url_for('recipe', id=favourite._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
+                                </div>
+                            </div>
+                          </div>
+                            
+                           {% endfor %}
+            </div>
+            
+            
+            <!--{% for favourite in favourites %}-->
+            <!--<div class="row recipe-row">-->
+            <!--    <div class="col">-->
+            <!--            <h5 class="mb-0">-->
           
-                          <strong>{{favourite.recipe_name}}</strong>
+            <!--              <strong>{{favourite.recipe_name}}</strong>-->
                           
-                        </h5>
+            <!--            </h5>-->
                 
             
-                        <a href="{{ url_for('recipe', id=favourite._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>
-                </div>
-            </div>
-             {% endfor %}
+            <!--            <a href="{{ url_for('recipe', id=favourite._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>-->
+            <!--    </div>-->
+            <!--</div>-->
+            <!-- {% endfor %}-->
+             
+             
+             
           </div>
           <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
                 <h3>Settings</h3>
@@ -71,51 +139,6 @@
     
           </div>
         </div>
-    
-        <!--<h3>My Recipes</h3>-->
-        <!--{% for recipe in recipes %}-->
-        <!--<div class="row recipe-row">-->
-        <!--    <div class="col">-->
-        <!--            <h5 class="mb-0">-->
-      
-        <!--              <strong>{{recipe.recipe_name}}</strong> by <strong>{{recipe.name}}</strong>-->
-                      
-        <!--            </h5>-->
-            
-        
-        <!--            <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>-->
-        <!--    </div>-->
-        <!--</div>-->
-        <!-- {% endfor %}-->
-         
-        <!--<h3>My Favourites</h3>-->
-        <!--{% for favourite in favourites %}-->
-        <!--<div class="row recipe-row">-->
-        <!--    <div class="col">-->
-        <!--            <h5 class="mb-0">-->
-      
-        <!--              <strong>{{favourite.recipe_name}}</strong>-->
-                      
-        <!--            </h5>-->
-            
-        
-        <!--            <a href="{{ url_for('recipe', id=favourite._id) }}"><button type="button" class="btn btn-primary">Go to recipe</button></a>-->
-        <!--    </div>-->
-        <!--</div>-->
-        <!-- {% endfor %}-->
-    
-    
-    
-    
-    
-        <!--<h3>Settings</h3>-->
-        <!--                 <div class="row recipe-row">-->
-        <!--                    <div class="col"><a href="{{ url_for('change_pw') }}">Change Password</a></div>-->
-        <!--                </div>-->
-        <!--                <div class="row recipe-row">-->
-        <!--                    <div class="col"><a href="{{ url_for('delete_account') }}">Delete Account</a></div>-->
-        <!--                </div>-->
-    
     
     <div class="row">
         <div class="col text-center">
