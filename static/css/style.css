@@ -542,6 +542,12 @@ legend
 
  }
  
+ @media only screen and (min-width: 1366px){
+     .container-fluid, .container {
+    font-size: 2em;
+    }
+ }
+ 
  @media only screen and (min-width: 1440px){
     .innerRing, .outerRing, .centerRing {
         /*top: 12.5%;*/
