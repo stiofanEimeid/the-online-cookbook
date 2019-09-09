@@ -2,38 +2,39 @@
     //   function(){ $(this).addClass('inverse') },
     //   function(){ $(this).removeClass('inverse') }
     // );
-         var recipeData = $.get('/data')
-        // var recipeData = {
-        //   Italian: 4, 
-        //   Mexican: 3, 
-        //   Other: 8, 
-        // }
-        var recipeInput = [
-            {"Type": "Mexican", "Amount": recipeData["Mexican"]},
-             
-            {"Type": "Italian", "Amount": recipeData["Italian"] },
-          
-            {"Type": "Other", "Amount": recipeData["Other"]  }
-           
-         ];
-         
-         var ndx = crossfilter(recipeInput);
-            var type_dim = ndx.dimension(dc.pluck('Type'));
-            var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
-            dc.pieChart('#chart-here')
-                .height(330)
-                .radius(90)
-                .transitionDuration(1500)
-                .dimension(type_dim)
-                .group(amount);
+         //  var recipeData = {
+        //           "Italian": 4, 
+        //           "Mexican": 3, 
+        //           "Other": 4
+        //         }
+     // d3.json( "{{url_for('data') }}", makeChart)
+     
+    //  [{"Type": "Mexican", "Amount": 3 }, {"Type": "Italian", "Amount": 4 }, {"Type": "Other", "Amount": 3 }]
+    
+//     d3.json("{{ url_for('data') }}").then(function(data) {
+//   console.log(data[0]);
+//     });
+  
+        // console.log(recipeData)
+        //  var ndx = crossfilter(recipeData);
+        //     var type_dim = ndx.dimension(dc.pluck('Type'));
+        //     var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
+        //     dc.pieChart('#chart-here')
+        //         .height(330)
+        //         .radius(90)
+        //         .transitionDuration(1500)
+        //         .dimension(type_dim)
+        //         .group(amount);
 
         
-        dc.renderAll();
+        // dc.renderAll();
+         
 
 $(document).ready(function(){
-    
+
   
-        
+     
+ 
      var back = ["#90CCF4", "#f78888", "#f3d250"]
     //  var rand = back[Math.floor(Math.random()*back.length)];
      
@@ -156,3 +157,4 @@ $(document).ready(function(){
     });
  
 });
+

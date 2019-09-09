@@ -93,13 +93,16 @@ def discover():
  
 
 
-@app.route("/data")
-def data():
-    mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
-    italian = mongo.db.recipes.find({"recipe_type": "Italian"}).count()
-    other = mongo.db.recipes.find({"recipe_type": "Other"}).count()
-    return jsonify({ "Mexican": 20, "Italian": 5, "Other": 10
-            })
+# @app.route("/data")
+# def data():
+#     mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
+#     italian = mongo.db.recipes.find({"recipe_type": "Italian"}).count()
+#     other = mongo.db.recipes.find({"recipe_type": "Other"}).count()
+    # return jsonify([{ "Mexican": mexican, "Italian": italian, "Other": other
+    #         }])
+    # return jsonify([{"Type": "Mexican", "Amount": mexican }, {"Type": "Italian", "Amount": italian }, {"Type": "Other", "Amount": other }])
+            
+        
     
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
