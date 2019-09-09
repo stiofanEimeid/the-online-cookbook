@@ -24,14 +24,22 @@
 // openbtn.addEventListener("click", openNav, false);
 // closebtn.addEventListener("click", closeNav, false);
 
-
+// $('.card').hover(
+    //   function(){ $(this).addClass('inverse') },
+    //   function(){ $(this).removeClass('inverse') }
+    // );
 
 
 $(document).ready(function(){
     
+    
+     var back = ["#90CCF4", "#f78888", "#f3d250"]
+     var rand = back[Math.floor(Math.random()*back.length)];
+     
     $('.card').hover(
-       function(){ $(this).addClass('inverse') },
-       function(){ $(this).removeClass('inverse') }
+       
+       function(){ $(this).css('background-color', rand) },
+       function(){ $(this).css('background-color', '#fff') }
     );
     
     $('.step').click(
