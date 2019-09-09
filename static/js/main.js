@@ -34,11 +34,13 @@ $(document).ready(function(){
     
     
      var back = ["#90CCF4", "#f78888", "#f3d250"]
-     var rand = back[Math.floor(Math.random()*back.length)];
+    //  var rand = back[Math.floor(Math.random()*back.length)];
      
     $('.card').hover(
        
-       function(){ $(this).css('background-color', rand) },
+       function(){
+           var rand = back[Math.floor(Math.random()*back.length)];
+           $(this).css('background-color', rand) },
        function(){ $(this).css('background-color', '#fff') }
     );
     
