@@ -10,8 +10,13 @@
       </div>
             <form action="{{ url_for('get_recipes') }}" method="POST">
               <div class="row">
+                <div class="col-4">Cusine: </div>
+                <div class="col-4">Dish: </div>
+                <div class="col-4">Diet: </div>
+              </div>
+              <div class="row">
               <div class="col-4 custom-select" style="width:200px;">
-                Cuisine:<br>
+                
                 <select name="recipe_type">
                                     <option selected="selected" value="All">All</option>
                                     <option value="Italian">Italian</option>
@@ -22,8 +27,8 @@
                 </select>
                 </div>
                 <div class="col-4">
-                  Meal time:<br>
-                 <select name="meal_type">
+               
+                 <select name="meal_type custom-select" style="width:200px;">
                            <option selected="selected" value="All">All</option>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
@@ -32,8 +37,8 @@
                            
                 </select>
                 </div>
-                <div class="col-4">
-                  Diet:<br>
+                <div class="col-4 custom-select" style="width:200px;">
+              
                      <select name="diet">
                            <option selected="selected" value="All">-</option>
                             <option value="Gluten-free">Gluten-free</option>
