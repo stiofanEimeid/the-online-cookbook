@@ -29,7 +29,17 @@
 
 $(document).ready(function(){
     
+    $('.card').hover(
+       function(){ $(this).addClass('inverse') },
+       function(){ $(this).removeClass('inverse') }
+    );
     
+    $('.step').click(
+        function(){ $(this).toggleClass("strikeMe")},
+        );
+    $('.ingredient').click(
+        function(){ $(this).toggleClass("strikeMe")},
+        );
     
     // document.addEventListener("DOMContentLoaded", function () {
     // setTimeout(function () {

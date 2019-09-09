@@ -262,6 +262,21 @@ legend
   transform: rotate(45deg);
 }
 
+
+/*cards*/
+
+.card {
+    padding: 20px;
+}
+
+.inverse {
+    background-color: black;
+    color: white;
+}
+
+.strikeMe {
+    text-decoration: line-through;
+}
 /*sidebar*/
 
 .closeBtnContainer {
@@ -326,7 +341,7 @@ legend
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 4em;
+  font-size: 3.5em;
   padding-bottom: 5px;
   /*color: #818181;*/
   background-color: #fafafa;
