@@ -7,27 +7,27 @@
         //           "Mexican": 3, 
         //           "Other": 4
         //         }
-     // d3.json( "{{url_for('data') }}", makeChart)
-     
-    //  [{"Type": "Mexican", "Amount": 3 }, {"Type": "Italian", "Amount": 4 }, {"Type": "Other", "Amount": 3 }]
-    
-//     d3.json("{{ url_for('data') }}").then(function(data) {
-//   console.log(data[0]);
-//     });
   
-        // console.log(recipeData)
-        //  var ndx = crossfilter(recipeData);
-        //     var type_dim = ndx.dimension(dc.pluck('Type'));
-        //     var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
-        //     dc.pieChart('#chart-here')
-        //         .height(330)
-        //         .radius(90)
-        //         .transitionDuration(1500)
-        //         .dimension(type_dim)
-        //         .group(amount);
+     queue()
+    .defer(d3.json, "/data")
+    .await(makeGraph);
+    
+    function makeGraph(error, myDataJson) {
+        var ndx = crossfilter(myDataJson);
+            var type_dim = ndx.dimension(dc.pluck('Type'));
+            var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
+            dc.pieChart('#chart-here')
+                .height(330)
+                .radius(90)
+                .transitionDuration(1500)
+                .dimension(type_dim)
+                .group(amount);
 
-        
-        // dc.renderAll();
+        dc.renderAll();
+};
+  
+     
+         
          
 
 $(document).ready(function(){
