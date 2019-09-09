@@ -1,6 +1,7 @@
 import os
 import math
 import pymongo
+import json
 from flask import Flask, render_template, redirect, request, url_for, session, flash, jsonify
 from flask_bcrypt import Bcrypt
 # from datetime import date
@@ -94,11 +95,11 @@ def discover():
 
 @app.route("/data")
 def data():
-    recipes = mongo.db.recipes.find().count()
     mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
     italian = mongo.db.recipes.find({"recipe_type": "Italian"}).count()
     other = mongo.db.recipes.find({"recipe_type": "Other"}).count()
-    return jsonify({"Recipes":  recipes, 'Mexican': mexican, "Other": other, "Italian": italian })
+    return jsonify({ "Mexican": 20, "Italian": 5, "Other": 10
+            })
     
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
