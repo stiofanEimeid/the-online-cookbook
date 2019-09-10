@@ -529,9 +529,9 @@ legend
 
  @media screen and (orientation:landscape) {
       .innerRing, .outerRing, .centerRing {
-        width: 40%;
-        margin-left: 30%;
-        margin-right: 30%;
+        width: 35%;
+        margin-left: 32.5%;
+        margin-right: 32.5%;
         /*top: 20%;*/
         /*top: 15%;*/
         top: 2%;
@@ -545,35 +545,38 @@ legend
  
  /*ipads*/
  
- @media only screen and (min-width: 1024px){
+ @media only screen and (min-width: 768px){
       .container-fluid, .container {
     font-size: 1em;
     }
     
       .innerRing, .outerRing, .centerRing {
+         
+         top: 7.5%;
+     }
+     
+    .sidebar {
+        width: 35%;
+    }
+ }
+ 
+ @media only screen and (orientation: landscape) and (min-height: 768px){
+     .innerRing, .outerRing, .centerRing {
+         
          top: 15%;
      }
  }
  
- @media only screen and (min-width: 1440px){
-    .innerRing, .outerRing, .centerRing {
-        /*top: 12.5%;*/
-    }
-    
-    .sidebar {
-        width: 35%;
-    }
-    
-   
-}
+ 
+/* @media only screen and (min-width: 1440px){*/
+/*    .sidebar {*/
+/*        width: 35%;*/
+/*    }*/
+/*}*/
  
  /*desktops*/
  
  @media only screen and (min-width: 2560px) {
-    .sleeve {
-        /*height: 75vh;*/
-    }
-    
     .innerRing, .outerRing, .centerRing {
         top: 2.5%;
     }
