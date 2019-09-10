@@ -108,11 +108,6 @@ def data():
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
-    # Like option
-    # if request.method == "POST":
-    #     mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'likes': int(1)}})
-    # Like only once and attach like to user
-        
     # recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
     if session.get('username') != recipe['name']:
         mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})

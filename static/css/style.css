@@ -261,7 +261,7 @@ legend
 
 .card {
     padding: 5px;
-    background-color: none;
+    background-color: #ececec !important;
     border: none;
 }
 
