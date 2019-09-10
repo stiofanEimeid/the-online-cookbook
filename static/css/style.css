@@ -260,7 +260,9 @@ legend
 /*cards*/
 
 .card {
-    padding: 20px;
+    padding: 5px;
+    background-color: none;
+    border: none;
 }
 
 .inverse {
