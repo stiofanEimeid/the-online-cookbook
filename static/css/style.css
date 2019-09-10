@@ -8,9 +8,15 @@ html, body {
 
 body {
     background-color: #ececec;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', Verdana, sans-serif;
     display: flex;
     flex-direction: column;
+}
+
+.sticky-button {
+    position: fixed;
+    right: 0;
+    top: 50%;
 }
 
 /*.hideme {*/
@@ -31,12 +37,9 @@ body {
 
 .homepageContainer {
     background-color: #90CCF4;
-    /*font-size: 2em;*/
+
 }
 
-/*.container-fluid, .container {*/
-    /*font-size: 2em;*/
-/*}*/
 
 
 h1, h2, .navbar-brand {
@@ -64,9 +67,9 @@ img {
     height: 70px;
 }
 
-.navbar-brand {
+/*.navbar-brand {*/
     /*font-size: 2rem;*/
-}
+/*}*/
 
 /*css-tricks code*/
 .content {
@@ -266,7 +269,7 @@ legend
 /*sidebar*/
 
 .closeBtnContainer {
-    height: 100px;
+    height: 70px;
     position: relative;
 }
 
@@ -347,7 +350,7 @@ legend
   /*font-size: 36px;*/
   /*margin-left: 50px;*/
   cursor: pointer;
-  padding: 20px;
+  padding: 5px;
 }
 
 
