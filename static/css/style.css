@@ -132,12 +132,6 @@ legend
      background-color: #f3d250;
 }
 
-
-.intro-section {
-    padding: 50px;
-    
-}
-
 .recipe-row {
     background-color: #fafafa;
     border-radius: 5px;
@@ -560,7 +554,8 @@ legend
     /*}*/
  }
  
- @media only screen and (min-height: 1024px) and (min-width: 768px)
+ /*@media only screen and (min-height: 1024px) and (min-width: 768px)*/
+ @media only screen and (min-width: 768px)
  {
       .innerRing, .outerRing, .centerRing {
          
@@ -585,12 +580,6 @@ legend
      }
  }
  
- 
-/* @media only screen and (min-width: 1440px){*/
-/*    .sidebar {*/
-/*        width: 35%;*/
-/*    }*/
-/*}*/
  
  /*desktops*/
  
