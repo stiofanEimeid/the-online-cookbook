@@ -65,7 +65,7 @@ body {
 
 
 .sleeve {
-    height: calc(95vh - 170px);
+    height: calc(92.5vh - 170px);
     position: relative;
     overflow: hidden;
 }
@@ -501,7 +501,7 @@ legend
     /*left: 0;*/
     /*top: 5%;*/
     /*top: 17.5%;*/
-    margin-top: calc((95vh - 170px - 90vw)/2)
+    margin-top: calc((92.5vh - 170px - 90vw)/2)
 }
 
 .outerRing {
@@ -562,7 +562,7 @@ legend
         margin-left: 32.5%;
         margin-right: 32.5%;
         /*top: 7.5%;*/
-        margin-top: calc((95vh - 170px - 35vw)/2)
+        margin-top: calc((92.5vh - 170px - 35vw)/2)
       }
       
       .sleeve {
