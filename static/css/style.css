@@ -18,6 +18,8 @@ body {
     right: 0;
     top: 50%;
     pointer-events: auto;
+    display: flex;
+    flex-direction: column;
 }
  .sticky-button-one {
   background-color: green;
