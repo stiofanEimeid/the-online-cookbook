@@ -17,6 +17,9 @@ body {
     position: fixed;
     right: 0;
     top: 50%;
+    pointer-events: auto;
+    background-color: green;
+    color: #fff;
 }
 
 /*.hideme {*/
