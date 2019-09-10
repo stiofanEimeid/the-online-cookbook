@@ -13,15 +13,21 @@ body {
     flex-direction: column;
 }
 
-.sticky-button {
+.sticky-button-container {
     position: fixed;
     right: 0;
     top: 50%;
     pointer-events: auto;
-    background-color: green;
+}
+ .sticky-button-one {
+  background-color: green;
     color: #fff;
 }
 
+ .sticky-button-two {
+  background-color: red;
+    color: #fff;
+}
 /*.hideme {*/
 /*    display: none;*/
 /*}*/

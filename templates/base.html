@@ -77,8 +77,12 @@
 <!--  </div>-->
 
 <!--</nav>-->
-<div class="sticky-button"><a href="{{ url_for('add_recipe') }}"><button><strong>+</strong></button></a></div>
+{% if session.username %}
+<div class="sticky-button-container">
+  <a href="{{ url_for('add_recipe') }}"><button class="sticky-button-one"><strong>+</strong></button></a></div>
+  <a href="{{ url_for('account') }}"><button class="sticky-button-two"><strong>Go</strong></button></a></div>
 <div class="content hideMe">
+{% endif %}
 
         {% block content %} {% endblock %}
         
