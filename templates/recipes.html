@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
     {% block content %}
       <div class="container">
-      <div class="text-center">
+      <h1 class="text-center">Search Recipes</h1>
+      <div class="search-box text-center">
         <form action="{{ url_for('search', search_request=search_request) }}">
           <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
           <button class="btn btn-primary" type="submit" name="action">Search</button>
         
         </form>
       </div>
+      <div class="search-filters">
+      
             <form action="{{ url_for('get_recipes') }}" method="POST">
               <div class="row">
               <div class="col-4">
@@ -43,30 +46,16 @@
                            
                     </select>
                 </div>
-                 <!--search by preparation time-->
-
-                      <!--search by diet-->
-                      
-                      <!--search by recommended-->
-                      
-                      <!--search by prep time-->
-                      
-                      <!--search by most viewed-->
-                      
-                      <!--search by highest rated-->
-                      
-                      <!--search by most discussed-->
-                      
                       <!--search by new/old -->
                 <div class="col-12 text-center">
-                <button class="btn btn-primary" type="submit" name="action">Filter Results</button>
+                <button class="search-button btn btn-primary" type="submit" name="action">Filter Results</button>
                 </div>
                 </div>
             </form>
-            
+        </div>  
        
               
-        <h1 class="text-center">Search Results</h1>
+        <h2 class="text-center results">Results</h1>
         <div class="searchResults">
           
           <div class="row">
@@ -157,14 +146,8 @@
               </nav>
             </div>
           </div>
-          
-          
-          
-          
         </div>
-  
-    
-    
+
     {% endblock %}
     
 

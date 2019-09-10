@@ -13,6 +13,22 @@ body {
     flex-direction: column;
 }
 
+.search-box {
+    padding: 50px;
+}
+
+.search-filters {
+    padding: 20px;
+}
+
+.search-button {
+    margin: 10px;
+}
+
+.results {
+    border-bottom: 1px solid black;
+}
+
 .sticky-button-container {
     position: fixed;
     right: 0;
