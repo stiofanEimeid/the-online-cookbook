@@ -13,9 +13,9 @@ body {
     flex-direction: column;
 }
 
-.container {
-    margin-top: 70px;
-}
+/*.container {*/
+/*    margin-top: 70px;*/
+/*}*/
 
 .menu-span {
     display: none;
