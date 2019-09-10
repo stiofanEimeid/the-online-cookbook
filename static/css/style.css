@@ -543,10 +543,16 @@ legend
 
  }
  
+ /*ipads*/
+ 
  @media only screen and (min-width: 1024px){
-     .container-fluid, .container {
-    font-size: 2em;
+      .container-fluid, .container {
+    font-size: 1em;
     }
+    
+      .innerRing, .outerRing, .centerRing {
+         top: 15%;
+     }
  }
  
  @media only screen and (min-width: 1440px){
@@ -557,8 +563,11 @@ legend
     .sidebar {
         width: 35%;
     }
+    
+   
 }
  
+ /*desktops*/
  
  @media only screen and (min-width: 2560px) {
     .sleeve {
@@ -566,6 +575,6 @@ legend
     }
     
     .innerRing, .outerRing, .centerRing {
-        /*top: 7.5%;*/
+        top: 2.5%;
     }
 }
