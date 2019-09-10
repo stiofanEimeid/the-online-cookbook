@@ -61,7 +61,7 @@ img {
     width: 100%;
     padding: 10px;
     /*margin-left: 0;*/
-    height: 100px;
+    height: 70px;
 }
 
 .navbar-brand {
@@ -76,7 +76,7 @@ img {
     width: 100%;
     flex-wrap: nowrap;
     align-items: stretch;
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 footer {
@@ -373,7 +373,7 @@ legend
   /*background-color: #111;*/
   background-color: #f8f9fa;
   /*color: white;*/
-  padding: 10px 15px;
+  /*padding: 10px 15px;*/
   border: none;
   font-size: 1.5rem;
   pointer-events: auto; /*restores click functionality disabled by fixed positioning of parent container element(navbar)*/
@@ -534,7 +534,7 @@ legend
         margin-right: 32.5%;
         /*top: 20%;*/
         /*top: 15%;*/
-        top: 2%;
+        top: 7.5%;
       }
       
       .sleeve {
@@ -545,20 +545,20 @@ legend
  
  /*ipads*/
  
- /*@media only screen and (orientation:landscape) and (min-width: 768px){*/
+ @media only screen and (orientation:landscape) and (min-width: 812px){
  /*     .container-fluid, .container {*/
  /*   font-size: 1em;*/
  /*   }*/
     
-     /* .innerRing, .outerRing, .centerRing {*/
+      .innerRing, .outerRing, .centerRing {
          
-     /*    top: 7.5%;*/
-     /*}*/
+         top: 0.5%;
+     }
      
     /*.sidebar {*/
     /*    width: 35%;*/
     /*}*/
- /*}*/
+ }
  
  @media only screen and (min-height: 1024px) and (min-width: 768px)
  {
@@ -596,6 +596,6 @@ legend
  
  @media only screen and (min-width: 2560px) {
     .innerRing, .outerRing, .centerRing {
-        top: 2.5%;
+        top: 7.5%;
     }
 }
