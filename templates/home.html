@@ -16,70 +16,71 @@
 
 
   
-<div class="homepage container">
-    
-    
-    <div class="row">
-        <div class="col intro-section text-center">
-            <h1 class="text-center">Aperitif</h1>
-            <p>Welcome to Aperitif! Aperitif allows you to search recipes and add your own to share and discuss with
-            other users. 
-            {% if session.username %} 
-            <a href="{{ url_for('account') }}">Sign up now </a> 
-            {% else %}
-            <a href="{{ url_for('register') }}">Sign up now </a> 
-            {% endif %}
-            to experience all Aperitif has to offer!</p>
-        </div>
-    </div>
-    
-
-   
-
-   
-      <div class="row">
+    <div class="homepage">
+        <div class="container">
         
-        <div class="col-md-6 intro-section">
-            <h2>Search</h2>
-            <p>Search our recipes to find something to eat that's just right/</p>
-        </div>
-        <div class="col-md-6 intro-section">
-            <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-6 intro-section">
-            <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-        </div>
-        <div class="col-md-6 intro-section">
-            <h2>Add and Edit</h2>
-            <p>Share your own recipes with the rest of the community</p>
-        </div>
-    </div>
-    
-          <div class="row">
         
-        <div class="col-md-6 intro-section">
-            <h2>Discover</h2>
-            <p>Check out the statistics page for a breakdown of the data</p>
+            <div class="row">
+                <div class="col intro-section text-center">
+                    <h1 class="text-center">Aperitif</h1>
+                    <p>Welcome to Aperitif! Aperitif allows you to search recipes and add your own to share and discuss with
+                    other users. 
+                    {% if session.username %} 
+                    <a href="{{ url_for('account') }}">Sign up now </a> 
+                    {% else %}
+                    <a href="{{ url_for('register') }}">Sign up now </a> 
+                    {% endif %}
+                    to experience all Aperitif has to offer!</p>
+                </div>
+            </div>
+            
+        
+           
+        
+           
+              <div class="row">
+                
+                <div class="col-md-6 intro-section">
+                    <h2>Search</h2>
+                    <p>Search our recipes to find something to eat that's just right/</p>
+                </div>
+                <div class="col-md-6 intro-section">
+                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 intro-section">
+                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                </div>
+                <div class="col-md-6 intro-section">
+                    <h2>Add and Edit</h2>
+                    <p>Share your own recipes with the rest of the community</p>
+                </div>
+            </div>
+            
+                  <div class="row">
+                
+                <div class="col-md-6 intro-section">
+                    <h2>Discover</h2>
+                    <p>Check out the statistics page for a breakdown of the data</p>
+                </div>
+                <div class="col-md-6 intro-section">
+                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 intro-section">
+                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                </div>
+                <div class="col-md-6 intro-section">
+                    <h2>Enjoy your meal</h2>
+                    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum scelerisque mattis lobortis. </p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 intro-section">
-            <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-6 intro-section">
-            <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-        </div>
-        <div class="col-md-6 intro-section">
-            <h2>Enjoy your meal</h2>
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum scelerisque mattis lobortis. </p>
-        </div>
-    </div>
-    
-</div>   
+    </div>   
     
 </div>
 
