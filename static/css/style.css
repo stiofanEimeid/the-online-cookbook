@@ -472,7 +472,7 @@ legend
     position: absolute;
     left: 0;
     /*top: 5%;*/
-    top: 12.5%;
+    top: 17.5%;
 }
 
 .outerRing {
@@ -545,7 +545,7 @@ legend
  
  /*ipads*/
  
- @media only screen and (min-width: 768px){
+ @media only screen and (orientation:landscape) and (min-width: 768px){
       .container-fluid, .container {
     font-size: 1em;
     }
@@ -559,6 +559,8 @@ legend
         width: 35%;
     }
  }
+ 
+ 
  
  @media only screen and (orientation: landscape) and (min-height: 768px){
      .innerRing, .outerRing, .centerRing {
