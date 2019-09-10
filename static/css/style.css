@@ -65,7 +65,7 @@ body {
 
 
 .sleeve {
-    height: 80vh;
+    height: calc(100vh - 170px);
     position: relative;
     overflow: hidden;
 }
@@ -75,6 +75,10 @@ body {
 
 }
 
+.trough {
+    height: 100px;
+    background-color: #f3d250;
+}
 
 
 h1, h2, .navbar-brand {
@@ -492,11 +496,12 @@ legend
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    height: auto;
+    /*height: auto;*/
     position: absolute;
-    left: 0;
+    /*left: 0;*/
     /*top: 5%;*/
-    top: 17.5%;
+    /*top: 17.5%;*/
+    margin-top: calc((100vh - 170px - 90vw)/2)
 }
 
 .outerRing {
@@ -556,7 +561,8 @@ legend
         width: 35%;
         margin-left: 32.5%;
         margin-right: 32.5%;
-        top: 7.5%;
+        /*top: 7.5%;*/
+        margin-top: calc((100vh - 170px - 35vw)/2)
       }
       
       .sleeve {
@@ -567,22 +573,22 @@ legend
  
  /*ipads*/
  
- @media only screen and (orientation:landscape) and (min-width: 812px){
+ /*@media only screen and (orientation:landscape) and (min-width: 812px){*/
 
     
-      .innerRing, .outerRing, .centerRing {
+ /*     .innerRing, .outerRing, .centerRing {*/
          
-         top: 0.5%;
-     }
+         /*top: 0.5%;*/
+ /*    }*/
 
- }
+ /*}*/
  
  /*@media only screen and (min-height: 1024px) and (min-width: 768px)*/
  @media only screen and (min-width: 768px)
  {
       .innerRing, .outerRing, .centerRing {
          
-         top: 7.5%;
+         /*top: 7.5%;*/
      }
     
        .sidebar {
@@ -599,7 +605,7 @@ legend
  @media only screen and (orientation: landscape) and (min-height: 768px){
      .innerRing, .outerRing, .centerRing {
          
-         top: 15%;
+         /*top: 15%;*/
      }
  }
  
@@ -608,6 +614,6 @@ legend
  
  @media only screen and (min-width: 2560px) {
     .innerRing, .outerRing, .centerRing {
-        top: 7.5%;
+        /*top: 7.5%;*/
     }
 }
