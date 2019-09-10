@@ -13,6 +13,10 @@ body {
     flex-direction: column;
 }
 
+.menu-span {
+    display: none;
+}
+
 .search-box {
     padding: 50px;
 }
@@ -579,6 +583,10 @@ legend
     
        .sidebar {
         width: 35%;
+    }
+    
+    .menu-span {
+        display: inline;
     }
  }
  
