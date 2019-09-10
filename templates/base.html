@@ -38,7 +38,7 @@
     <a class="navbar-brand" href="{{url_for('home')}}">Aperitif</a>
   </div>
   {% if session.username %}
-  <a href="{{url_for('account') }}">Account</a>
+  <a href="{{url_for('account') }}">My Account</a>
   {% else %}
   <a href="{{url_for('login') }}">Login/Register</a>
   {% endif %}
@@ -78,10 +78,10 @@
 
 <!--</nav>-->
 {% if session.username %}
-<div class="sticky-button-container">
-  <a href="{{ url_for('add_recipe') }}"><button class="sticky-button-one"><strong>+</strong></button></a>
-  <a href="{{ url_for('account') }}"><button class="sticky-button-two"><strong>A</strong></button></a>
-</div>
+<!--<div class="sticky-button-container">-->
+<!--  <a href="{{ url_for('add_recipe') }}"><button class="sticky-button-one"><strong>+</strong></button></a>-->
+<!--  <a href="{{ url_for('account') }}"><button class="sticky-button-two"><strong>A</strong></button></a>-->
+<!--</div>-->
   
 <div class="content hideMe">
 {% endif %}
