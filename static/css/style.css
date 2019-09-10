@@ -545,17 +545,33 @@ legend
  
  /*ipads*/
  
- @media only screen and (orientation:landscape) and (min-width: 768px){
-      .container-fluid, .container {
-    font-size: 1em;
-    }
+ /*@media only screen and (orientation:landscape) and (min-width: 768px){*/
+ /*     .container-fluid, .container {*/
+ /*   font-size: 1em;*/
+ /*   }*/
     
+     /* .innerRing, .outerRing, .centerRing {*/
+         
+     /*    top: 7.5%;*/
+     /*}*/
+     
+    /*.sidebar {*/
+    /*    width: 35%;*/
+    /*}*/
+ /*}*/
+ 
+ @media only screen and (min-height: 1024px) and (min-width: 768px)
+ {
       .innerRing, .outerRing, .centerRing {
          
          top: 7.5%;
      }
      
-    .sidebar {
+          .container-fluid, .container {
+    font-size: 1em;
+    }
+    
+       .sidebar {
         width: 35%;
     }
  }
