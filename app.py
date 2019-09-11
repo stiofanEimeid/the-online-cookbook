@@ -275,7 +275,7 @@ def account():
 def change_avatar():
     return render_template("changeavatar.html")
     
-@app.route('/change_avatar')
+@app.route('/change_avatar', methods=["POST"])
 def change_avatar_form():
     profile = mongo.db.find_one({"name": session['username']})
     profile.update_one({'avatar': request.form.get("avatar")})
