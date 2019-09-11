@@ -5,7 +5,11 @@
         <div class="row recipe-row">
             <div class="col-12 col-md-4">
                 <div class="image-container">
+                    {% if user.avatar %}
+                    <img src="..static/img/avatars/{{ user.avatar }}.png" alt="User Avatar">
+                    {% else %}
                     <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                    {% endif %}
                 </div>
             </div>
             <div class="col-12 col-md-8">

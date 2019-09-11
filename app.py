@@ -265,7 +265,8 @@ def account():
         
         favourites=mongo.db.recipes.find({"favourited_by": user})
         recipes = mongo.db.recipes.find({ "name": user })
-        return render_template('account.html', recipes=recipes, favourites=favourites)
+        user = mongo.db.users.find({"name": user})
+        return render_template('account.html', recipes=recipes, favourites=favourites, user=user)
         
     return "Please login to view your account"
     
