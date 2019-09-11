@@ -5,22 +5,22 @@
     <form method=POST action="{{ url_for('register') }}">
       <div class="form-group">
         <label for="exampleInputEmail1">Username</label><br>
-        <input type="text" class="form-control" name="username" placeholder="Username" minlength="2" maxlength="10">
+        <input type="text" class="form-control" name="username" placeholder="Username" minlength="2" maxlength="10" required>
         <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label><br>
-        <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" maxlength="16">
+        <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" maxlength="16" required>
       </div>
       
       <div class="form-group">
       <h3>Choose an avatar: </h3>
         <label>
-          <input class="avatarRadio" type="radio" name="avatar" value="avatar1" checked>
+          <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar1.png" checked>
           <img src="../static/img/avatars/avatar1.png" alt="First Avatar">
         </label>
         <label>
-          <input class="avatarRadio" type="radio" name="avatar" value="avatar2">
+          <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar2.png">
           <img src="../static/img/avatars/avatar2.png" alt="Second Avatar">
         </label>
       </div>
