@@ -85,13 +85,21 @@
               <div class="col-12 col-md-6 col-lg-4">Diet: 
               {% for diet_type in recipe.diet %}
               {% if diet_type == "Gluten-free" %}
-              <span>GF</span>
+              <div class="diet-image-container">
+                <img src="../static/img/diet/no-gluten.png" alt="no gluten image">
+              </div>
               {% elif diet_type == "Vegan" %}
-              <span>V</span>
+              <div class="diet-image-container">
+                <img src="../static/img/diet/no-dairy.png" alt="no dairy image">
+              </div>
               {% elif diet_type == "Vegetarian" %}
-              <span>VT</span>
+              <div class="diet-image-container">
+                <img src="../static/img/diet/no-meat.png" alt="no meat image">
+              </div>
               {% elif diet_type == "Nut-free" %}
-              <span>Nut-free</span>
+             <div class="diet-image-container">
+                <img src="../static/img/diet/no-nuts.png" alt="no nuts image">
+              </div>
               {% endif %}
               {% endfor %}
               </div>
