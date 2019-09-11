@@ -244,7 +244,8 @@ def register():
         
         if existing_user is None:
             hashpass = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
-            users.insert({'name' : request.form['username'], 'password': hashpass, 'favourites': []})
+            avatar = request.form.get("avatar")
+            users.insert({'name' : request.form['username'], 'password': hashpass, 'favourites': [], 'avatar': avatar})
             session['username'] = request.form['username']
             return redirect(url_for('login')) # formerly 'index'
             
