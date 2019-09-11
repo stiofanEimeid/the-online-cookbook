@@ -277,8 +277,10 @@ def change_avatar():
     
 @app.route('/change_avatar', methods=["POST"])
 def change_avatar_form():
-    profile = mongo.db.find_one({"name": session['username']})
-    profile.update_one({'avatar': request.form.get("avatar")})
+    users = mongo.db.users
+    users.update_one({"name": session["username"]},
+    {"$set": {'avatar': request.form.get("avatar")}}
+    );
     return redirect(url_for('account'))
     
 @app.route('/settings')
