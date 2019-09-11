@@ -265,10 +265,21 @@ def account():
         
         favourites=mongo.db.recipes.find({"favourited_by": user})
         recipes = mongo.db.recipes.find({ "name": user })
-        profile = mongo.db.users.find({"name": user})
+        profile = mongo.db.users.find_one({"name": user})
         return render_template('account.html', recipes=recipes, favourites=favourites, profile=profile)
         
     return "Please login to view your account"
+   
+   
+@app.route('/change_avatar') 
+def change_avatar():
+    return render_template("changeavatar.html")
+    
+@app.route('/change_avatar')
+def change_avatar_form():
+    profile = mongo.db.find_one({"name": session['username']})
+    profile.update_one({'avatar': request.form.get("avatar")})
+    return redirect(url_for('account'))
     
 @app.route('/settings')
 def settings():
