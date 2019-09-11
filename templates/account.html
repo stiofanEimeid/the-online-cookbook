@@ -5,16 +5,14 @@
         <div class="row recipe-row">
             <div class="col-12 col-md-4">
                 <div class="image-container">
-                    {% if user.avatar %}
+                   
                     <img src="{{ user.avatar }}" alt="User Avatar">
-                    {% else %}
-                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                    {% endif %}
+                  
                 </div>
             </div>
             <div class="col-12 col-md-8">
                 <div class="row">
-                    <div class="col-12">{{ session.username }}</div>
+                    <div class="col-12">{{ user.name }}</div>
                     <div class="col-12">Member since: </div>
                     <div class="col-12">Recipes: </div>
                 </div>
