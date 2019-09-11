@@ -195,6 +195,27 @@ legend
     margin-right: 0;
 }
 
+/*Radio Button Styles*/
+
+/* HIDE RADIO */
+.avatarRadio  { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+.avatarRadio  + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+.avatarRadio :checked + img {
+  outline: 2px solid #f00;
+}
+
+
 /*Search page styles*/
 
 .recipeDescription {
