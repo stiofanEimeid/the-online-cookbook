@@ -124,10 +124,12 @@ img {
     padding: 10px;
     /*margin-left: 0;*/
     height: 70px;
+    background-color: #f8f9fa;
 }
 
 .nav-content {
     position: relative;
+    height: 50px;
 }
 
 .brandname {
@@ -455,6 +457,7 @@ legend
 
 
 .openbtn {
+  height: 100%;
   font-size: 20px;
   cursor: pointer;
   /*background-color: #111;*/
