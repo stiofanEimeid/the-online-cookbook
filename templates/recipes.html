@@ -1,60 +1,64 @@
 {% extends 'base.html' %}
     {% block content %}
       <div class="container">
-      <h1 class="text-center">Search Recipes</h1>
-      <div class="search-box text-center">
-        <form action="{{ url_for('search', search_request=search_request) }}">
-          <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
-          <button class="search-button btn btn-primary" type="submit" name="action">Search</button>
-        
-        </form>
-      </div>
-      <div class="search-filters">
-      
-            <form action="{{ url_for('get_recipes') }}" method="POST">
-              <div class="row">
-              <div class="col-4">
-                Cuisine:<br>
-                <select class="custom-select" name="recipe_type">
-                                    <option selected="selected" value="All">All</option>
-                                    <option value="Italian">Italian</option>
-                                    <option value="Mexican">Mexican</option>
-                                    <option value="Indian">Indian</option>
-                                    <option value="Chinese">Chinese</option>
-                                    <option value="Other">Other</option>
-                </select>
-                </div>
-                <div class="col-4">
-                  Meal time:<br>
-                 <select class="custom-select" name="meal_type">
-                           <option selected="selected" value="All">All</option>
-                            <option value="Breakfast">Breakfast</option>
-                            <option value="Lunch">Lunch</option>
-                            <option value="Dinner">Dinner</option>
-                            <option value="Snack">Snack</option>
-                           
-                </select>
-                </div>
-                <div class="col-4">
-                  Diet:<br>
-                     <select class="custom-select" name="diet">
-                           <option selected="selected" value="All">-</option>
-                            <option value="Gluten-free">Gluten-free</option>
-                            <option value="Nut-free">Nut-free</option>
-                            <option value="Vegan">Vegan</option>
-                            <option value="Vegetarian">Vegetarian</option>
-                           
-                    </select>
-                </div>
-                      <!--search by new/old -->
-                <div class="col-12 text-center">
-                <button class="search-button btn btn-primary" type="submit" name="action">Filter Results</button>
-                </div>
-                </div>
-            </form>
-        </div>  
-       
+      <div class="search">
+            <h1 class="text-center">Search Recipes</h1>
+            <div class="search-box text-center">
+              <form action="{{ url_for('search', search_request=search_request) }}">
+                <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
+                <button class="search-button btn btn-primary" type="submit" name="action">Search</button>
               
+              </form>
+            </div>
+            <div class="search-filters">
+            
+                  <form action="{{ url_for('get_recipes') }}" method="POST">
+                    <div class="row">
+                    <div class="col-12 col-md-4">
+                      Cuisine:<br>
+                      <select class="custom-select" name="recipe_type">
+                                          <option selected="selected" value="All">All</option>
+                                          <option value="Italian">Italian</option>
+                                          <option value="Mexican">Mexican</option>
+                                          <option value="Indian">Indian</option>
+                                          <option value="Chinese">Chinese</option>
+                                          <option value="Other">Other</option>
+                      </select>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        Meal time:<br>
+                       <select class="custom-select" name="meal_type">
+                                 <option selected="selected" value="All">All</option>
+                                  <option value="Breakfast">Breakfast</option>
+                                  <option value="Lunch">Lunch</option>
+                                  <option value="Dinner">Dinner</option>
+                                  <option value="Snack">Snack</option>
+                                 
+                      </select>
+                      </div>
+                      <div class="col-12 col-md-4">
+                        Diet:<br>
+                           <select class="custom-select" name="diet">
+                                 <option selected="selected" value="All">-</option>
+                                  <option value="Gluten-free">Gluten-free</option>
+                                  <option value="Nut-free">Nut-free</option>
+                                  <option value="Vegan">Vegan</option>
+                                  <option value="Vegetarian">Vegetarian</option>
+                                 
+                          </select>
+                      </div>
+                            <!--search by new/old -->
+                      <div class="col-12 text-center">
+                      <button class="search-button btn btn-primary" type="submit" name="action">Filter Results</button>
+                      </div>
+                      </div>
+                  </form>
+              </div>  
+              <div style="height: 75px; width: 100%;" >
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+              </div>
+       
+        </div>   
         <h2 class="text-center results">Results</h1>
         <div class="searchResults">
           

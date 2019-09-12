@@ -2,10 +2,6 @@ html, body {
     height: 100%;
 }
 
-/*.overflowHidden {*/
-/*    overflow: hidden;*/
-/*}*/
-
 body {
     background-color: #ececec;
     font-family: 'Nunito', Verdana, sans-serif;
@@ -13,12 +9,13 @@ body {
     flex-direction: column;
 }
 
-/*.container {*/
-/*    margin-top: 70px;*/
-/*}*/
 
 .menu-span {
     display: none;
+}
+
+.search {
+    background-color: #90CCF4;
 }
 
 .search-box {
@@ -103,6 +100,7 @@ h5 {
 .diet-image-container {
     height: 50px;
     width: 50px;
+    display: inline-block;
 }
 
 img {
