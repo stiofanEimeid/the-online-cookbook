@@ -102,16 +102,16 @@ def data():
     #         }])
     myData = json.dumps([{"Type": "Mexican", "Amount": mexican }, {"Type": "Italian", "Amount": italian }, {"Type": "Other", "Amount": other }])
     return myData
-            
         
-    
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
-    # recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+    products = mongo.db.products.aggregate([ { "$sample": { "size": 3 } } ])
+   
     if session.get('username') != recipe['name']:
         mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})
-    return render_template("recipe.html", recipe=recipe)
+    
+    return render_template("recipe.html", recipe=recipe, products=products)
     
 @app.route("/recipe/<id>/favourite")
 def add_favourite(id):

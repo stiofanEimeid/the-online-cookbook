@@ -175,26 +175,29 @@
                         </ol>
             </div>
           </div>
+     
           
           <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->
           
-          {% if recipe.tools %}
+          <!--{% if products %}-->
             <div class="row">
               <div class="col">
                 <h2>Product Suggestions</h2>
               </div>
             </div>
-              {% for tool in recipe.tools %}
+              
               <div class="row">
-                  <div class="col">{{tool}}</div>
-              </div>
-              <div class="row">
-                <div class="col col-6 col-md-4 col-lg-3">
-                  <a href="{{ url_for('product', name=tool) }}"><button  type="button" class="btn btn-success btn-lg">Visit Product Page</button></a>
+                {% for product in products %}
+                  <div class="col-4">{{product.product_name}}
+                  <div class="image-container">
+                    <img src="{{ product.product_image}}">
+                  </div>
+                  <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-lg">Visit Product Page</button></a>
                 </div>
+                {% endfor %}
               </div>
-              {% endfor %}
-            {% endif %}
+              
+            <!--{% endif %}-->
   
         </div>
         
