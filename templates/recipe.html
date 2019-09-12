@@ -188,11 +188,11 @@
               
               <div class="row">
                 {% for product in products %}
-                  <div class="col-4">{{product.product_name}}
-                  <div class="image-container">
-                    <img src="{{ product.product_image}}">
-                  </div>
-                  <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-lg">Visit Product Page</button></a>
+                  <div class="col-12 col-md-4">{{product.product_name}}
+                    <div class="image-container">
+                      <img src="{{ product.product_image}}">
+                    </div>
+                    <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-lg">Visit Product Page</button></a>
                 </div>
                 {% endfor %}
               </div>
