@@ -1,8 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="container">
-    <div class="row">
+    <div class="row heading-box">
         <div class="col text-center"><h1>Add Recipe</h1></div>
+         <div style="height: 75px; width: 100%;" >
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+         </div>
     </div>
     
     <form action="{{ url_for('insert_recipe') }}" method="POST">
@@ -139,21 +142,21 @@
         	
         	        <div>
         	        <div class="row">
-        	            <div class="col-4">
-        	           <label class="checkboxContainer">Pan
-                          <input type="checkbox" checked="checked" name="tool" value="Pan">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkboxContainer">Spatula
-                          <input type="checkbox" name="tool" value="Spatula">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkboxContainer">Blender
-                          <input type="checkbox" name="tool" value="Blender">
-                          <span class="checkmark"></span>
-                        </label>
+        	            <div class="col-6 col-md-4">
+            	           <label class="checkboxContainer">Pan
+                              <input type="checkbox" checked="checked" name="tool" value="Pan">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="checkboxContainer">Spatula
+                              <input type="checkbox" name="tool" value="Spatula">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="checkboxContainer">Blender
+                              <input type="checkbox" name="tool" value="Blender">
+                              <span class="checkmark"></span>
+                            </label>
         	            </div>
-        	            <div class="col-4">
+        	            <div class="col-6 col-md-4">
         	                   <label class="checkboxContainer">Whisk
                           <input type="checkbox" name="tool" value="Whisk">
                           <span class="checkmark"></span>
@@ -169,7 +172,7 @@
                           <span class="checkmark"></span>
                         </label>
         	            </div>
-        	            <div class="col-4">
+        	            <div class="col-6 col-md-4">
         	                    
                         <label class="checkboxContainer">Cutting-board
                           <input type="checkbox" name="tool" value="Cutting-board">
