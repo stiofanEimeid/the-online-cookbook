@@ -53,12 +53,47 @@
                     <div class="row">
            <div class="col-12"><h2>Most viewed recipes</h2></div>
            <div class="col-12">
-                <ol>
-                    {% for recipe in top_recipes %}
-                    <li>{{recipe.recipe_name}} by {{recipe.name}} <a href="{{ url_for('recipe', id=recipe._id) }}"><br>
-                    <button type="button" class="btn btn-primary">Go to Recipe</button></a> </li>
-                    {% endfor %}
-                </ol>
+               
+               <div class="row">
+                   {% for recipe in top_recipes %}
+                   <div class="col-6">
+                          <div class="image-container">
+                      
+                            {% if recipe.recipe_image != "" %}
+                                  <img src="{{recipe.recipe_image}}" alt="recipe image">
+                            {% else %}
+                                  <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                            {% endif %}
+           
+                        </div>
+                        
+                   </div>
+                   <div class="col-6">
+                       <div class="row">
+                           <div class="col-12">{{loop.index}}. {{recipe.recipe_name}}</div>
+                           <div class="col-12">by {{recipe.name}}</div>
+                           <div class="col-12">More info</div>
+                           <!--<div class="col-12">-->
+                           <!--    <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a>-->
+                           <!--</div>-->
+                       </div>
+                   </div>
+                   <div class="col-12">
+                
+                            <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a>
+                      
+                   </div>
+                   {% endfor %}
+               </div>
+               
+                <!--<ol>-->
+                <!--    {% for recipe in top_recipes %}-->
+                <!--    <li>{{recipe.recipe_name}} by {{recipe.name}} <a href="{{ url_for('recipe', id=recipe._id) }}"><br>-->
+                <!--    <button type="button" class="btn btn-primary">Go to Recipe</button></a> </li>-->
+                <!--    {% endfor %}-->
+                <!--</ol>-->
+                
+                
            </div>
         </div>
                 

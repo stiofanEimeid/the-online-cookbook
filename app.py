@@ -160,7 +160,6 @@ def insert_recipe():
                 "recipe_image": request.form.get("recipe_image"),
                 "time_created": strftime("%H:%M:%S %Y-%m-%d", gmtime()),
                 "last_updated": "",
-                "tools": request.form.getlist("tool"),
                 "diet": request.form.getlist("diet"),
                 "views": 0,
                 "favourites": 0,
@@ -189,7 +188,6 @@ def update_recipe(id):
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
                 "last_updated": strftime("%H:%M:%S %Y-%m-%d", gmtime()),
-                 "tools": request.form.getlist("tool"),
                 "diet": request.form.getlist("diet")
             })
     
