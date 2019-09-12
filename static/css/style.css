@@ -117,13 +117,31 @@ img {
    object-fit: cover;
 }
 
-.navbar {
+.navbar-wrapper {
     position: fixed;
     z-index: 997;
     width: 100%;
     padding: 10px;
     /*margin-left: 0;*/
     height: 70px;
+}
+
+.nav-content {
+    position: relative;
+}
+
+.brandname {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-login {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /*.navbar-brand {*/

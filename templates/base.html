@@ -32,16 +32,20 @@
   {% endif %}
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar-wrapper">
+  <div class="nav-content">
   <button class="openbtn">☰<span class="menu-span"> Menu</span></button> 
-  <div class="navbar-nav mx-auto">
-    <a class="navbar-brand" href="{{url_for('home')}}">Aperitif</a>
+  <div class="brandname">
+    <a href="{{url_for('home')}}"><h1>Aperitif</h1></a>
   </div>
-  {% if session.username %}
-  <a href="{{url_for('account') }}">My Account</a>
-  {% else %}
-  <a href="{{url_for('login') }}">Login/Register</a>
-  {% endif %}
+    <div class="nav-login">
+    {% if session.username %}
+    <a href="{{url_for('account') }}">My Account</a>
+    {% else %}
+    <a href="{{url_for('login') }}">Login/Register</a>
+    {% endif %}
+    </div>
+  </div>
 </nav>
 <!--<nav class="navbar navbar-expand-lg navbar-light bg-light hideMe">-->
 <!--  <a class="navbar-brand" href="{{url_for('home')}}">Aperitif</a>-->
