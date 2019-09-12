@@ -146,7 +146,7 @@
             
           <div class="row recipe-row">
             <div class="col">
-              <h5>Ingredients</h5>
+              <h2 class="text-center">Ingredients</h2>
                        <ul class="no-list-style">
                           {% for ingredient in recipe.recipe_ingredients %}
                             {% if loop.index % 2 == 0 %}
@@ -162,7 +162,7 @@
           
           <div class="row recipe-row">
             <div class="col">
-              <h5>Steps</h5>
+              <h2 class="text-center">Steps</h2>
                        <ol class="no-list-style" >
                           {% for step in recipe.recipe_steps %}
                             {% if loop.index % 2 == 0 %}
@@ -180,13 +180,11 @@
           <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->
           
           <!--{% if products %}-->
-            <div class="row">
-              <div class="col">
+            <div class="row recipe-row">
+              <div class="col-12 text-center">
                 <h2>Product Suggestions</h2>
               </div>
-            </div>
-              
-              <div class="row">
+           
                 {% for product in products %}
                   <div class="col-12 col-md-4">{{product.product_name}}
                     <div class="image-container">

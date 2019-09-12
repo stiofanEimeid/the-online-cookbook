@@ -9,8 +9,12 @@ body {
     flex-direction: column;
 }
 
+
+
+
 .no-list-style {
     list-style-type: none;
+    padding: 0;
 }
 
 .grey {
