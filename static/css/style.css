@@ -9,6 +9,14 @@ body {
     flex-direction: column;
 }
 
+.no-list-style {
+    list-style-type: none;
+}
+
+.grey {
+    background-color: #ececec;
+}
+
 
 .menu-span {
     display: none;
