@@ -2,7 +2,7 @@
     {% block content %}
       <div class="container">
       <div class="heading-box">
-            <h1 class="text-center">Search Recipes</h1>
+            <h1 class="text-center search-header">Search Recipes</h1>
             <div class="search-box text-center">
               <form action="{{ url_for('search', search_request=search_request) }}">
                 <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
@@ -59,7 +59,7 @@
               </div>
        
         </div>   
-        <h2 class="text-center results">Results</h1>
+        <h2 class="text-center results">Search Results</h1>
         <div class="searchResults">
           
           <div class="row">

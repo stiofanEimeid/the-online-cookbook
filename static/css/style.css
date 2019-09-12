@@ -26,12 +26,16 @@ body {
     background-color: #90CCF4;
 }
 
+.search-header {
+    padding-top: 25px;
+}
+
 .search-box {
-    padding: 50px;
+    padding: 25px 50px 25px 50px;
 }
 
 .search-filters {
-    padding: 20px;
+    padding: 0px 50px;
 }
 
 .search-button {
