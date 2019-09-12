@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content%}
     <div class="container">
 
-          <div class="row">
+          <div class="row heading-box">
             <div class="col-12 col-md-6">
               <img src="{{product.product_image}}" alt="recipe image">
             </div>
@@ -10,6 +10,9 @@
               <p>Price: {{product.product_price}}</p>
               <p>Category: {{product.product_category}}</p>
             </div>
+             <div style="height: 75px; width: 100%;" >
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+              </div>
           </div>
           
           <!--<div class=" row">-->
