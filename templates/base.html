@@ -34,16 +34,16 @@
 <nav class="navbar-wrapper">
   <div class="nav-content">
   <button class="openbtn">☰<span class="menu-span"> Menu</span></button> 
-  <div class="brandname">
+  <div class="nav-login">
    <a href="{{url_for('home')}}"><h1>Aperitif</h1></a>
   </div>
-    <div class="nav-login">
-    {% if session.username %}
-    <a href="{{url_for('account') }}">My Account</a>
-    {% else %}
-    <a href="{{url_for('login') }}">Login/Register</a>
-    {% endif %}
-    </div>
+    <!--<div class="nav-login">-->
+    <!--{% if session.username %}-->
+    <!--<a href="{{url_for('account') }}">My Account</a>-->
+    <!--{% else %}-->
+    <!--<a href="{{url_for('login') }}">Login/Register</a>-->
+    <!--{% endif %}-->
+    <!--</div>-->
   </div>
 </nav>
 
