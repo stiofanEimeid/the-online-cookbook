@@ -104,10 +104,24 @@ def data():
 
 @app.route("/data2")
 def data2():
-    mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1}).count()
-    italian = mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1}).count()
-    other = mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1}).count()
-    myData = json.dumps([{"Type": "Mexican", "Views": mexican }, {"Type": "Italian", "Views": italian }, {"Type": "Other", "Views": other }])
+    mexican = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
+    italian = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1, "_id":0}))
+    other = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1, "_id":0}))
+    
+    total_mexican = 0
+    for i in range(len(mexican)):
+        total_mexican += mexican[i]["views"]
+        
+    total_italian = 0
+    for i in range(len(italian)):
+        total_italian += italian[i]["views"]
+    
+    total_other = 0 
+    for i in range(len(other)):
+        total_other += other[i]["views"]
+
+    
+    myData = json.dumps([{"Type": "Mexican", "Views": total_mexican }, {"Type": "Italian", "Views": total_italian }, {"Type": "Other", "Views": total_other }])
     return myData
     
 # View a recipe

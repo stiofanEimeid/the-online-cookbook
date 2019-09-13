@@ -18,7 +18,7 @@ window.onscroll = function() {
     // .defer(d3.json, "/data2")
     .await(makeGraph);
     
-    function makeGraph(error, myDataJson) {
+    function makeGraph(error, myDataJson, myOtherDataJson) {
         var ndx = crossfilter(myDataJson);
             var type_dim = ndx.dimension(dc.pluck('Type'));
             var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
@@ -28,6 +28,15 @@ window.onscroll = function() {
                 .transitionDuration(1500)
                 .dimension(type_dim)
                 .group(amount);
+                
+            // var type2_dim = ndx.dimension(dc.pluck('Type'));
+            // var views =  type2_dim.group().reduceSum(dc.pluck('Views'));
+            // dc.pieChart('#another-chart-here')
+            //     .height(330)
+            //     .radius(90)
+            //     .transitionDuration(1500)
+            //     .dimension(type2_dim)
+            //     .group(views);
 
         dc.renderAll();
 };
