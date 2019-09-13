@@ -142,6 +142,7 @@ img {
     /*margin-left: 0;*/
     height: 70px;
     background-color: #f8f9fa;
+    transition: top 0.3s;
 }
 
 .nav-content {

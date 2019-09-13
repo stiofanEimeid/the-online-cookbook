@@ -1,13 +1,14 @@
-// $('.card').hover(
-    //   function(){ $(this).addClass('inverse') },
-    //   function(){ $(this).removeClass('inverse') }
-    // );
-         //  var recipeData = {
-        //           "Italian": 4, 
-        //           "Mexican": 3, 
-        //           "Other": 4
-        //         }
-  
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".navbar-wrapper").style.top = "0";
+  } else {
+    document.querySelector(".navbar-wrapper").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
      queue()
     .defer(d3.json, "/data")
     .await(makeGraph);
