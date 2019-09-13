@@ -184,6 +184,10 @@ img {
     padding-top: 1em;
 }
 
+.intro-section {
+    padding-top: 1em;
+}
+
 footer {
   flex-shrink: 0;
   background-color: #f78888;
