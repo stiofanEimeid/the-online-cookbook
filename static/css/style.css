@@ -2,14 +2,6 @@ html, body {
     height: 100%;
 }
 
-/* apply a natural box layout model to all elements, but allowing components to change */
-/*html {*/
-/*  box-sizing: border-box;*/
-/*}*/
-/**, *:before, *:after {*/
-/*  box-sizing: inherit;*/
-/*}*/
-
 body {
     background-color: #ececec;
     font-family: 'Nunito', Verdana, sans-serif;
@@ -169,10 +161,6 @@ img {
     transform: translateY(-50%);
 }
 
-/*.navbar-brand {*/
-    /*font-size: 2rem;*/
-/*}*/
-
 /*css-tricks code*/
 .content {
     flex: 1 0 auto;
@@ -244,13 +232,6 @@ legend
     padding: 10px;
 }
 
-.padding {
-    padding: 50px;
-}
-
-/*.nav-item {*/
-/*    width: 50%;*/
-/*}*/
 
 .nav-link {
     width: 100%;

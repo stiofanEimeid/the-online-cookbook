@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-
+<div class="container">
         <h1 class="text-center">Change Password</h1>
         <div class="container padding">
             <form method=POST action="{{ url_for('change_pw_form') }}"> 
@@ -16,5 +16,5 @@
             </form>
         </div>
 
-
+</div>
 {% endblock %}

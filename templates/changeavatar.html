@@ -1,22 +1,23 @@
 {% extends 'base.html' %} {% block content %}
-<form method=POST action="{{ url_for('change_avatar_form') }}">
-      <div class="form-group">
-      <h3>Choose an avatar: </h3>
-        <label>
-          <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar1.png" checked>
-          <img src="../static/img/avatars/avatar1.png" alt="First Avatar">
-        </label>
-        <label>
-          <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar2.png">
-          <img src="../static/img/avatars/avatar2.png" alt="Second Avatar">
-        </label>
-         <label>
-          <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar3.png">
-          <img src="../static/img/avatars/avatar3.png" alt="Third Avatar">
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Change Avatar</button>
-    
-</form>
-
+<div class="container">
+  <form method=POST action="{{ url_for('change_avatar_form') }}">
+        <div class="form-group">
+        <h3>Choose an avatar: </h3>
+          <label>
+            <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar1.png" checked>
+            <img src="../static/img/avatars/avatar1.png" alt="First Avatar">
+          </label>
+          <label>
+            <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar2.png">
+            <img src="../static/img/avatars/avatar2.png" alt="Second Avatar">
+          </label>
+           <label>
+            <input class="avatarRadio" type="radio" name="avatar" value="../static/img/avatars/avatar3.png">
+            <img src="../static/img/avatars/avatar3.png" alt="Third Avatar">
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Change Avatar</button>
+      
+  </form>
+</div>
 {% endblock %}
