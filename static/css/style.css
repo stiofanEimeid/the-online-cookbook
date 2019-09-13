@@ -86,7 +86,7 @@ body {
 
 
 .sleeve {
-    height: calc(90vh - 170px);
+    height: calc(80vh - 70px);
     position: relative;
     overflow: hidden;
 }
@@ -97,13 +97,13 @@ body {
 }
 
 .trough {
-    height: 100px;
+    /*height: 100px;*/
     background-color: #f3d250;
     padding: 10px;
 }
 
 
-h1, h2, .navbar-brand {
+h1, h2, .navbar-brand, .trough {
     font-family: 'Lobster', cursive;
     
 }
@@ -580,7 +580,7 @@ legend
     /*left: 0;*/
     /*top: 5%;*/
     /*top: 17.5%;*/
-    margin-top: calc((90vh - 170px - 90vw)/2)
+    margin-top: calc((80vh - 70px - 90vw)/2)
 }
 
 .outerRing {
@@ -641,7 +641,7 @@ legend
         margin-left: 32.5%;
         margin-right: 32.5%;
         /*top: 7.5%;*/
-        margin-top: calc((90vh - 170px - 35vw)/2)
+        margin-top: calc((80vh - 70px - 35vw)/2)
       }
       
       .sleeve {
