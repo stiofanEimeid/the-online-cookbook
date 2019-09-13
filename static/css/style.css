@@ -50,7 +50,7 @@ body {
     border-bottom: 1px solid black;
 }
 
-.fadeMe {
+.fadeMe1, .fadeMe2 {
     opacity: 0;
 }
 

@@ -37,9 +37,9 @@ window.onscroll = function() {
 
 $(document).ready(function(){
 
-//   $(".fadeMe").hide().each(function(i) {
-//   $(this).delay(i*1500).fadeIn(1500);
-// });
+  $(".fadeMe1").each(function(i) {
+  $(this).animate({'opacity':'1'},3000);
+});
 
 // intro fadeIn (tcloniger code)
     
@@ -47,7 +47,7 @@ $(document).ready(function(){
     $(window).scroll( function(){
     
         /* Check the location of each desired element */
-        $('.fadeMe').each( function(i){
+        $('.fadeMe2').each( function(i){
             
             var bottom_of_object = $(this).position().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
