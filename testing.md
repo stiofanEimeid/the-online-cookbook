@@ -25,8 +25,44 @@ As a site owner, I want to promote a brand of cooking tools to my users. I sough
 
 ## Manual Testing
 
+### Responsiveness
+
+### Registering
+
+Duplicate names...
+
+### Logging In/Out
+
+### Account Settings
+
+#### Deleting Account
+
+#### Changing Password
+
+#### Changing Avatar
+
+### Recipes
+
+#### Creating and Updating Recipes
+
+Duplicates...
+
+When someone other than the author tries to edit a recipe...
+
+#### Reading Recipes
+
+#### Deleting Recipes
+
+### Products
+
+Users attempting to buy a product will be greeted by a modal advising them that a checkout functionality for buying products is currently unavailable.
+
 ## Bugs Discovered
 
 Python logic in flask still works despite being commented out. 
+
+100vh is not really 100vh on mobile.
+
+CSS fires on page load with Chrome.
 
 ## Further Testing 

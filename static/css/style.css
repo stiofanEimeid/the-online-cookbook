@@ -13,6 +13,11 @@ html {
   scroll-behavior: smooth;
 }
 
+h1 a:link, h1 a:visited, h1 a:hover, h1:active {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
 .no-list-style {
     list-style-type: none;
     padding: 0;
