@@ -50,6 +50,11 @@ body {
     border-bottom: 1px solid black;
 }
 
+.fadeMe {
+    opacity: 0;
+}
+
+
 .subhead {
   font-size: 2em;
   font-family: 'Lobster', cursive;

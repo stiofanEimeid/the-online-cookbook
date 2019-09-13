@@ -37,9 +37,32 @@ window.onscroll = function() {
 
 $(document).ready(function(){
 
-  $(".fadeMe").hide().each(function(i) {
-  $(this).delay(i*1500).fadeIn(1500);
-});
+//   $(".fadeMe").hide().each(function(i) {
+//   $(this).delay(i*1500).fadeIn(1500);
+// });
+
+// intro fadeIn (tcloniger code)
+    
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+        /* Check the location of each desired element */
+        $('.fadeMe').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},3000);
+                    
+            }
+            
+        }); 
+    
+    });
+    
      
  
      var back = ["#90CCF4", "#f78888", "#f3d250"]
