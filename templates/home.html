@@ -12,7 +12,16 @@
     </div>
 <div class="trough text-center">
     <h1>Aperitif</h1>
-    <!--<div>&#9660;</div>-->
+    <div class="intro-section text-center">
+                    <p>Aperitif allows you to search recipes and add your own to share and discuss with
+                    other users. 
+                    {% if session.username %} 
+                    <a href="{{ url_for('account') }}">Sign up now </a> 
+                    {% else %}
+                    <a href="{{ url_for('register') }}">Sign up now </a> 
+                    {% endif %}
+                    to experience all Aperitif has to offer!</p>
+    </div>
 </div>
 
 
@@ -23,18 +32,18 @@
         <div class="container">
         
         
-            <div class="row">
-                <div class="col intro-section text-center">
-                    <p>Welcome to Aperitif! Aperitif allows you to search recipes and add your own to share and discuss with
-                    other users. 
-                    {% if session.username %} 
-                    <a href="{{ url_for('account') }}">Sign up now </a> 
-                    {% else %}
-                    <a href="{{ url_for('register') }}">Sign up now </a> 
-                    {% endif %}
-                    to experience all Aperitif has to offer!</p>
-                </div>
-            </div>
+            <!--<div class="row">-->
+            <!--    <div class="col intro-section text-center">-->
+            <!--        <p>Welcome to Aperitif! Aperitif allows you to search recipes and add your own to share and discuss with-->
+            <!--        other users. -->
+            <!--        {% if session.username %} -->
+            <!--        <a href="{{ url_for('account') }}">Sign up now </a> -->
+            <!--        {% else %}-->
+            <!--        <a href="{{ url_for('register') }}">Sign up now </a> -->
+            <!--        {% endif %}-->
+            <!--        to experience all Aperitif has to offer!</p>-->
+            <!--    </div>-->
+            <!--</div>-->
               <div class="row">
                 
                 <div class="col-md-6 order-2 order-md-1 intro-section">
