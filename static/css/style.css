@@ -50,23 +50,27 @@ body {
     border-bottom: 1px solid black;
 }
 
-.sticky-button-container {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    pointer-events: auto;
-    display: flex;
-    flex-direction: column;
-}
- .sticky-button-one {
-  background-color: green;
-    color: #fff;
+.subhead {
+  initial-letter: 2;
 }
 
- .sticky-button-two {
-  background-color: red;
-    color: #fff;
-}
+/*.sticky-button-container {*/
+/*    position: fixed;*/
+/*    right: 0;*/
+/*    top: 50%;*/
+/*    pointer-events: auto;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+/* .sticky-button-one {*/
+/*  background-color: green;*/
+/*    color: #fff;*/
+/*}*/
+
+/* .sticky-button-two {*/
+/*  background-color: red;*/
+/*    color: #fff;*/
+/*}*/
 /*.hideme {*/
 /*    display: none;*/
 /*}*/
