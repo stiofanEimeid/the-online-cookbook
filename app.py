@@ -95,34 +95,51 @@ def data():
     mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
     italian = mongo.db.recipes.find({"recipe_type": "Italian"}).count()
     other = mongo.db.recipes.find({"recipe_type": "Other"}).count()
+    
+    
+    mexican2 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
+    italian2 = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1, "_id":0}))
+    other2 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1, "_id":0}))
+    
+    total_mexican = 0
+    for i in range(len(mexican2)):
+        total_mexican += mexican2[i]["views"]
+        
+    total_italian = 0
+    for i in range(len(italian2)):
+        total_italian += italian2[i]["views"]
+    
+    total_other = 0 
+    for i in range(len(other2)):
+        total_other += other2[i]["views"]
     # return jsonify([{ "Mexican": mexican, "Italian": italian, "Other": other
     #         }])
     #Passes a json object that may be rendered by the d3 function in main.js
-    myData = json.dumps([{"Type": "Mexican", "Amount": mexican }, {"Type": "Italian", "Amount": italian }, {"Type": "Other", "Amount": other }])
+    myData = json.dumps([{"Type": "Mexican", "Amount": mexican, "Views": total_mexican }, {"Type": "Italian", "Amount": italian, "Views": total_italian }, {"Type": "Other", "Amount": other, "Views": total_other }])
     return myData
     
 
-@app.route("/data2")
-def data2():
-    mexican = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
-    italian = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1, "_id":0}))
-    other = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1, "_id":0}))
+# @app.route("/data2")
+# def data2():
+#     mexican2 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
+#     italian2 = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1, "_id":0}))
+#     other2 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1, "_id":0}))
     
-    total_mexican = 0
-    for i in range(len(mexican)):
-        total_mexican += mexican[i]["views"]
+#     total_mexican = 0
+#     for i in range(len(mexican2)):
+#         total_mexican += mexican2[i]["views"]
         
-    total_italian = 0
-    for i in range(len(italian)):
-        total_italian += italian[i]["views"]
+#     total_italian = 0
+#     for i in range(len(italian2)):
+#         total_italian += italian2[i]["views"]
     
-    total_other = 0 
-    for i in range(len(other)):
-        total_other += other[i]["views"]
+#     total_other = 0 
+#     for i in range(len(other2)):
+#         total_other += other2[i]["views"]
 
     
-    myData = json.dumps([{"Type": "Mexican", "Views": total_mexican }, {"Type": "Italian", "Views": total_italian }, {"Type": "Other", "Views": total_other }])
-    return myData
+#     myData = json.dumps([{"Type": "Mexican", "Views": total_mexican }, {"Type": "Italian", "Views": total_italian }, {"Type": "Other", "Views": total_other }])
+#     return myData
     
 # View a recipe
         
