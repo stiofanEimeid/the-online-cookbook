@@ -50,8 +50,16 @@ body {
     border-bottom: 1px solid black;
 }
 
-.subhead::first-letter  {
-  initial-letter: 2;
+.subhead {
+  font-size: 2em;
+  font-family: 'Nunito', Verdana, sans-serif;
+}
+
+.subhead p::first-letter {
+  color: #c69c6d;
+  float: left;
+  font-size: 5em;
+  margin: 0 .2em 0 0;
 }
 
 /*.sticky-button-container {*/
