@@ -99,7 +99,7 @@ body {
 .trough {
     /*height: 100px;*/
     background-color: #f3d250;
-    padding: 10px;
+    /*padding: 10px;*/
 }
 
 
@@ -676,6 +676,10 @@ legend
     
     .menu-span {
         display: inline;
+    }
+    
+    .trough {
+        font-size: 1.75em;
     }
  }
  
