@@ -343,7 +343,7 @@ def change_pw_form():
                 {"$set": {"password": bcrypt.generate_password_hash(request.form['new_password']).decode('utf-8')}})
                 return redirect(url_for('account'))
     
-    return render_template("error1.html")
+    return render_template("error2.html")
 
 @app.route('/settings/delete_account')  
 def delete_account():
