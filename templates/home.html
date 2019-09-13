@@ -12,14 +12,20 @@
     </div>
 <div class="trough text-center">
     <div class="intro-section text-center">
+        {% if session.username %}
+        <h1>Apéritif</h1>
+        {% else %}
+        <div>Search recipes and add your own with <strong>Aperitif!</strong> <br>
+        <a href="{{ url_for('register') }}">Sign up now </a> to experience all Aperitif has to offer!</div>
+        {% endif %}
                    
-                    <div>Search recipes and add your own with <strong>Aperitif!</strong> <br>
-                    {% if session.username %} 
-                    <a href="{{ url_for('account') }}">Sign up now </a> 
-                    {% else %}
-                    <a href="{{ url_for('register') }}">Sign up now </a> 
-                    {% endif %}
-                    to experience all Aperitif has to offer!</div>
+                    <!--<div>Search recipes and add your own with <strong>Aperitif!</strong> <br>-->
+                    <!--{% if session.username %} -->
+                    <!--<a href="{{ url_for('account') }}">Sign up now </a> -->
+                    <!--{% else %}-->
+                    <!--<a href="{{ url_for('register') }}">Sign up now </a> -->
+                    <!--{% endif %}-->
+                    <!--to experience all Aperitif has to offer!</div>-->
     </div>
     <div style="height: 60px; width: 100%;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
            </div>
