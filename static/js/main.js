@@ -37,7 +37,9 @@ window.onscroll = function() {
 
 $(document).ready(function(){
 
-  
+  $(".fadeMe").hide().each(function(i) {
+  $(this).delay(i*1500).fadeIn(1500);
+});
      
  
      var back = ["#90CCF4", "#f78888", "#f3d250"]
