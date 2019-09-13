@@ -101,6 +101,15 @@ def data():
     myData = json.dumps([{"Type": "Mexican", "Amount": mexican }, {"Type": "Italian", "Amount": italian }, {"Type": "Other", "Amount": other }])
     return myData
     
+
+@app.route("/data2")
+def data2():
+    mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1}).count()
+    italian = mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1}).count()
+    other = mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1}).count()
+    myData = json.dumps([{"Type": "Mexican", "Views": mexican }, {"Type": "Italian", "Views": italian }, {"Type": "Other", "Views": other }])
+    return myData
+    
 # View a recipe
         
 @app.route("/recipe/<id>", methods=['GET', 'POST'])

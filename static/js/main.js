@@ -15,6 +15,7 @@ window.onscroll = function() {
 // Credit: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
      queue()
     .defer(d3.json, "/data")
+    // .defer(d3.json, "/data2")
     .await(makeGraph);
     
     function makeGraph(error, myDataJson) {
