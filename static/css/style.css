@@ -50,7 +50,7 @@ body {
     border-bottom: 1px solid black;
 }
 
-.subhead {
+.subhead::first-letter  {
   initial-letter: 2;
 }
 
