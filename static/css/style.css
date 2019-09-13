@@ -178,6 +178,11 @@ img {
     margin-top: 70px;
 }
 
+.about-title {
+    background-color: #f78888;
+    color: #fff;
+}
+
 footer {
   flex-shrink: 0;
   background-color: #f78888;
@@ -219,7 +224,7 @@ legend
 
 
 .homepage {
-     background-color: #f3d250;
+     background-color: #ececec;
 }
 
 .recipe-row {
