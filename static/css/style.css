@@ -52,10 +52,10 @@ body {
 
 .subhead {
   font-size: 2em;
-  font-family: 'Nunito', Verdana, sans-serif;
+  font-family: 'Lobster', cursive;
 }
 
-.subhead p::first-letter {
+.subhead>p::first-letter {
   color: #c69c6d;
   float: left;
   font-size: 5em;

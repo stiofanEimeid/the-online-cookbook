@@ -1,3 +1,5 @@
+
+
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
@@ -8,7 +10,9 @@ window.onscroll = function() {
     document.querySelector(".navbar-wrapper").style.top = "-70px";
   }
   prevScrollpos = currentScrollPos;
-}
+};
+
+// Credit: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
      queue()
     .defer(d3.json, "/data")
     .await(makeGraph);
