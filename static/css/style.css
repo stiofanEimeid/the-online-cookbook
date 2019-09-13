@@ -11,6 +11,7 @@ html, body {
 /*}*/
 
 body {
+    background-color: #ececec;
     font-family: 'Nunito', Verdana, sans-serif;
     display: flex;
     flex-direction: column;
@@ -92,7 +93,12 @@ body {
 
 .homepageContainer {
     background-color: #90CCF4;
+    padding-top: 70px;
 
+}
+
+.container {
+    padding-top: 70px;
 }
 
 .trough {
@@ -125,10 +131,6 @@ h5 {
     height: 50px;
     width: 50px;
     display: inline-block;
-}
-
-.container {
-    background-color: #ececec;
 }
 
 img {
@@ -173,14 +175,12 @@ img {
 
 /*css-tricks code*/
 .content {
-    background-color: #90CCF4;
     flex: 1 0 auto;
     /*push content off-screen when menu is open:*/
     /*thanks to https://stackoverflow.com/questions/48620689/how-to-push-elements-off-screen-using-html-and-css*/
     width: 100%;
     flex-wrap: nowrap;
     align-items: stretch;
-    padding-top: 70px;
 }
 
 .about-title {
