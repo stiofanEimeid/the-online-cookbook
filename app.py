@@ -4,7 +4,6 @@ import pymongo
 import json
 from flask import Flask, render_template, redirect, request, url_for, session, flash, jsonify
 from flask_bcrypt import Bcrypt
-# from datetime import date
 from time import gmtime, strftime  
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
@@ -16,8 +15,6 @@ bcrypt = Bcrypt(app)
 app.config['MONGO_DBNAME'] = 'the-online-cookbook'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 mongo = PyMongo(app)
-
-# today = date.today()
 
 @app.route("/")
 @app.route("/home")
@@ -53,7 +50,7 @@ def get_recipes():
             query2 = {"meal_type": request.form.get("meal_type")}
             filters.append(query2)
             
-        if request.form.get("diet") != "All":
+        if request.form.get("diet") != "None":
             query3 = {"diet": { "$all": [request.form.get("diet")] }}
             filters.append(query3)
             
@@ -100,8 +97,11 @@ def data():
     other = mongo.db.recipes.find({"recipe_type": "Other"}).count()
     # return jsonify([{ "Mexican": mexican, "Italian": italian, "Other": other
     #         }])
+    #Passes a json object that may be rendered by the d3 function in main.js
     myData = json.dumps([{"Type": "Mexican", "Amount": mexican }, {"Type": "Italian", "Amount": italian }, {"Type": "Other", "Amount": other }])
     return myData
+    
+# View a recipe
         
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
@@ -112,7 +112,8 @@ def recipe(id):
         mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})
     
     return render_template("recipe.html", recipe=recipe, products=products)
-    
+
+# Add and remove favourites 
 @app.route("/recipe/<id>/favourite")
 def add_favourite(id):
     # mongo.db.users.update(
@@ -130,12 +131,7 @@ def remove_favourite(id):
     mongo.db.recipes.update({ "_id": ObjectId(id)}, {"$pull": {"favourited_by": user }})
     mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'favourites': int(-1)}})
     return redirect(url_for('recipe', id=id))
-    
-@app.route("/product/<name>")
-def product(name):
-    product = mongo.db.products.find_one({"product_name": name})
-    return render_template("product.html", product=product)
-    
+
 # create and update recipes in the database
     
 @app.route("/add_recipe")
@@ -200,13 +196,18 @@ def delete_recipe(id):
     
 # create and update recipes in the database ends
 
-#Products Page
+#Products Pages
 
 @app.route('/products')
 def products():
     return render_template("products.html", products=mongo.db.products.find())
- 
-# User functionality begins
+
+@app.route("/product/<name>")
+def product(name):
+    product = mongo.db.products.find_one({"product_name": name})
+    return render_template("product.html", product=product)
+    
+# Login/Registration functionality begins
 
 @app.route('/login') # formerly 'index' & 'index'
 def login():
@@ -255,6 +256,8 @@ def register():
 def logout():
     session.clear()
     return redirect(url_for('home'))
+    
+# Account and account settings
     
 @app.route('/account')
 def account():

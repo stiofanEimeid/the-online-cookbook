@@ -82,29 +82,6 @@ $(document).ready(function(){
     $('.ingredient').click(
         function(){ $(this).toggleClass("strikeMe")},
         );
-    
-    // document.addEventListener("DOMContentLoaded", function () {
-    // setTimeout(function () {
-    //     hideLoadingAni();
-    //     $('.hideMe').removeClass('hideMe');
-    // }, 3000);
-    // return;
-    // });
-    
-    // function loadingAni() {
-    // $(".loader-wrapper").css("display", "block");
-    // return;
-    // }
-    
-    //  function hideLoadingAni() {
-    // $(".loader-wrapper").css("display", "none");
-    // return;
-    // }
-    
-    // $(window).on("load",function(){
-    //      $(".loader-wrapper").fadeOut("slow");
-    // });
-    // navbar
       
     //   overlay only displayed when sidebar selected
        $(".openbtn").click(function(){

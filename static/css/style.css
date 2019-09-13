@@ -9,9 +9,6 @@ body {
     flex-direction: column;
 }
 
-
-
-
 .no-list-style {
     list-style-type: none;
     padding: 0;
@@ -56,43 +53,14 @@ body {
 
 
 .subhead {
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: 'Lobster', cursive;
 }
-
-/*.subhead>p::first-letter {*/
-/*  color: #c69c6d;*/
-/*  float: left;*/
-/*  font-size: 5em;*/
-/*  margin: 0 .2em 0 0;*/
-/*}*/
-
-/*.sticky-button-container {*/
-/*    position: fixed;*/
-/*    right: 0;*/
-/*    top: 50%;*/
-/*    pointer-events: auto;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
-/* .sticky-button-one {*/
-/*  background-color: green;*/
-/*    color: #fff;*/
-/*}*/
-
-/* .sticky-button-two {*/
-/*  background-color: red;*/
-/*    color: #fff;*/
-/*}*/
-/*.hideme {*/
-/*    display: none;*/
-/*}*/
 
 .image-container {
     /*height: 278.39px;*/
     height: 200px;
 }
-
 
 .sleeve {
     height: calc(80vh - 70px);
@@ -111,9 +79,7 @@ body {
 }
 
 .trough {
-    /*height: 100px;*/
     background-color: #f3d250;
-    /*padding: 10px;*/
 }
 
 
@@ -483,9 +449,6 @@ legend
   padding: 5px;
 }
 
-
-
-
 .openbtn {
   height: 100%;
   font-size: 20px;
@@ -515,7 +478,6 @@ legend
   /*padding: 16px;*/
 }
 
-
 .overlay {
   position: fixed;
   display: none;
@@ -529,58 +491,6 @@ legend
   z-index: 998;
 }
 
-
-
-/*custom select styles*/
-
-
-
-/*loading animation*/
-
-/*.loader-wrapper {*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  position: absolute;*/
-/*  top: 0;*/
-/*  left: 0;*/
-/*  background-color: #5da2d5;*/
-/*  background-color: black;*/
-/*  display:flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*  z-index: 1;*/
-/*}*/
-
-/*.loader {*/
-/*  display: inline-block;*/
-/*  width: 30px;*/
-/*  height: 30px;*/
-/*  position: relative;*/
-/*  border: 4px solid #Fff;*/
-/*  animation: loader 2s infinite ease;*/
-/*}*/
-
-/*.loader-inner {*/
-/*  vertical-align: top;*/
-/*  display: inline-block;*/
-/*  width: 100%;*/
-/*  background-color: #fff;*/
-/*  animation: loader-inner 2s infinite ease-in;*/
-/*}*/
-/*@keyframes loader {*/
-/*  0% { transform: rotate(0deg);}*/
-/*  25% { transform: rotate(180deg);}*/
-/*  50% { transform: rotate(180deg);}*/
-/*  75% { transform: rotate(360deg);}*/
-/*  100% { transform: rotate(360deg);}*/
-/*}*/
-/*@keyframes loader-inner {*/
-/*  0% { height: 0%;}*/
-/*  25% { height: 0%;}*/
-/*  50% { height: 100%;}*/
-/*  75% { height: 100%;}*/
-/*  100% { height: 0%;}*/
-/*}*/
 
 /*The three rings are overlaid on top of one another using the position: absolute selector. */
 
@@ -653,7 +563,6 @@ legend
         width: 35%;
         margin-left: 32.5%;
         margin-right: 32.5%;
-        /*top: 7.5%;*/
         margin-top: calc((80vh - 70px - 35vw)/2)
       }
       
@@ -665,23 +574,8 @@ legend
  
  /*ipads*/
  
- /*@media only screen and (orientation:landscape) and (min-width: 812px){*/
-
-    
- /*     .innerRing, .outerRing, .centerRing {*/
-         
-         /*top: 0.5%;*/
- /*    }*/
-
- /*}*/
- 
- /*@media only screen and (min-height: 1024px) and (min-width: 768px)*/
  @media only screen and (min-width: 768px)
  {
-      .innerRing, .outerRing, .centerRing {
-         
-         /*top: 7.5%;*/
-     }
     
        .sidebar {
         width: 35%;
@@ -695,21 +589,5 @@ legend
         font-size: 1.75em;
     }
  }
+
  
- 
- 
- @media only screen and (orientation: landscape) and (min-height: 768px){
-     .innerRing, .outerRing, .centerRing {
-         
-         /*top: 15%;*/
-     }
- }
- 
- 
- /*desktops*/
- 
- @media only screen and (min-width: 2560px) {
-    .innerRing, .outerRing, .centerRing {
-        /*top: 7.5%;*/
-    }
-}
