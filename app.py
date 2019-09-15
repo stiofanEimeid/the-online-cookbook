@@ -158,10 +158,6 @@ def recipe(id):
 # Add and remove favourites 
 @app.route("/recipe/<id>/favourite")
 def add_favourite(id):
-    # mongo.db.users.update(
-    #     {"name": session.get('username') }, {"$push": {"favourites": ObjectId(id)}})
-    # mongo.db.recipes.update(
-    #     {"_id": ObjectId(id)}, {"$inc": {"favourited": 1}})
     user = session["username"]
     mongo.db.recipes.update({ "_id": ObjectId(id)}, {"$push": {"favourited_by": user }})
     mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'favourites': int(1)}})
@@ -251,26 +247,28 @@ def product(name):
     
 # Login/Registration functionality begins
 
-@app.route('/login') # formerly 'index' & 'index'
+@app.route('/login') 
 def login():
     if 'username' in session:
-        # return 'You are logged in as ' + session['username']
-        # flash('Logged in successfully')
         return redirect(url_for('account'))
         
         
     return render_template('login.html')
     
-@app.route("/login", methods=["POST"]) # formerly 'index' & 'login'
+@app.route("/login", methods=["POST"]) 
 def login_form():
         
     users = mongo.db.users
-    login_user = users.find_one({'name' : request.form['username']})
+    # changed
+    login_user = users.find_one({'name_lowercase' : request.form['username'].lower()})
+   
     
     if login_user:
         if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
+            
                 session['username'] = request.form['username']
-                return redirect(url_for('login')) # formerly 'index'
+                
+                return redirect(url_for('login')) 
                 
         return render_template("error2.html")
     
@@ -281,14 +279,18 @@ def login_form():
 def register():
     if request.method == "POST":
         users = mongo.db.users
-        existing_user = users.find_one({'name' : request.form['username']})
+        # changed
+        existing_user = users.find_one({'name_lowercase' : request.form['username'].lower()}) 
         
         if existing_user is None:
             hashpass = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
             avatar = request.form.get("avatar")
-            users.insert({'name' : request.form['username'], 'password': hashpass, 'favourites': [], 'avatar': avatar, "member_since": strftime("%H:%M:%S %Y-%m-%d", gmtime())})
-            session['username'] = request.form['username']
-            return redirect(url_for('login')) # formerly 'index'
+            # changed
+            users.insert({'name' : request.form['username'], 'name_lowercase' : request.form['username'].lower(), 'password': hashpass, 'favourites': [], 'avatar': avatar, "member_since": strftime("%H:%M:%S %Y-%m-%d", gmtime())})
+            
+            session['username'] = request.form['username'].lower()
+            
+            return redirect(url_for('login')) 
             
         return render_template("error1.html")
         
