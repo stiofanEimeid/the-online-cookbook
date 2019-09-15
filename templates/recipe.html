@@ -1,132 +1,130 @@
 {% extends 'base.html' %}
 {% block content %}
         <div class="container">
-          <div class="row heading-box">
-            <div class="col-12 col-md-6">
-                  {% if recipe.recipe_image != "" %}
-                  <img src="{{recipe.recipe_image}}" alt="recipe image">
-                  {% else %}
-                  <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                  {% endif %}
-            </div>
-          
-            <div class="col-12 col-md-6">
-              
-              
-              
-              <div class="row">
-                <div class="col-12">
-                <h1>{{recipe.recipe_name}}</h1>
-                </div>
-                
-                <div class="col-12">
-                <h3>by <a href="#"><strong>{{recipe.name}}</strong></a></h3>
-                </div>
-                
-                <div class="col-12">
-                <p>Views: {{ recipe.views }} | Favourites: {{ recipe.favourites | length}}</p>
-                
-                
-                </div>
-              <div class="col-12 col-md-6 col-lg-4">Preparation Time: {{recipe.recipe_preptime}} </div>
-              <div class="col-12 col-md-6 col-lg-4">Cooking Time: </div>
-              <div class="col-12 col-md-6 col-lg-4">Serves: {{recipe.recipe_serves}}</div>
-              <div class="col-12 col-md-6">Diet: 
-              {% for diet_type in recipe.diet %}
-              {% if diet_type == "Gluten-free" %}
-              <div class="diet-image-container">
-                <img src="../static/img/diet/no-gluten.png" alt="no gluten image">
+          <div class="heading-box-container">
+            <div class="row heading-box">
+              <div class="col-12 col-md-6">
+                    {% if recipe.recipe_image != "" %}
+                    <img src="{{recipe.recipe_image}}" alt="recipe image">
+                    {% else %}
+                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                    {% endif %}
               </div>
-              {% elif diet_type == "Vegan" %}
-              <div class="diet-image-container">
-                <img src="../static/img/diet/no-dairy.png" alt="no dairy image">
-              </div>
-              {% elif diet_type == "Vegetarian" %}
-              <div class="diet-image-container">
-                <img src="../static/img/diet/no-meat.png" alt="no meat image">
-              </div>
-              {% elif diet_type == "Nut-free" %}
-             <div class="diet-image-container">
-                <img src="../static/img/diet/no-nuts.png" alt="no nuts image">
-              </div>
-              {% endif %}
-              {% endfor %}
-              </div>
-              <div class="col-12 col-md-6">Cuisine: {{recipe.recipe_type}}</div>
-                
-                
-                
-              </div>
-            
-            
-            
-            
-                        <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
-            {% if session.username %}
-            {% if session.username == recipe.name %}
-            <div class="row">
-              <div class="col-6">
-                    <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Edit recipe</button></a>
-              </div>
-              <div class="col-6">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                      Delete Recipe
-                    </button>
-              </div>
-            </div>
-          
-          <!-- Delete Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  Are you sure you want to delete this recipe?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <a href="{{ url_for('delete_recipe', id=recipe._id) }}"><button type="button" class="btn btn-danger">Delete recipe</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-              {% else %}
-                {% if session.username in recipe.favourited_by%}
+              <div class="col-12 col-md-6">
                 <div class="row">
-                  <div class="col">
-                    <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-lg">Remove recipe from my favourites +</button></a>
+                  <div class="col-12">
+                    <h1>{{recipe.recipe_name}}</h1>
+                  </div>
+                  <div class="col-12">
+                    <h3>by <a href="#"><strong>{{recipe.name}}</strong></a></h3>
+                    </div>
+                    <div class="col-12">
+                    <p>Views: {{ recipe.views }} | Favourites: {{ recipe.favourites | length}}</p>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4">Preparation Time: {{recipe.recipe_preptime}} </div>
+                  <div class="col-12 col-md-6 col-lg-4">Cooking Time: </div>
+                  <div class="col-12 col-md-6 col-lg-4">Serves: {{recipe.recipe_serves}}</div>
+                  <div class="col-12 col-md-6">Diet: 
+                    {% for diet_type in recipe.diet %}
+                    {% if diet_type == "Gluten-free" %}
+                    <div class="diet-image-container">
+                      <img src="../static/img/diet/no-gluten.png" alt="no gluten image">
+                    </div>
+                    {% elif diet_type == "Vegan" %}
+                    <div class="diet-image-container">
+                      <img src="../static/img/diet/no-dairy.png" alt="no dairy image">
+                    </div>
+                    {% elif diet_type == "Vegetarian" %}
+                    <div class="diet-image-container">
+                      <img src="../static/img/diet/no-meat.png" alt="no meat image">
+                    </div>
+                    {% elif diet_type == "Nut-free" %}
+                   <div class="diet-image-container">
+                    <img src="../static/img/diet/no-nuts.png" alt="no nuts image">
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                  <div class="col-12 col-md-6">
+                    Cuisine: {{recipe.recipe_type}}
                   </div>
                 </div>
-                
-                  
-                  {% else %}
+                          <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
+                {% if session.username %}
+                {% if session.username == recipe.name %}
+                <div class="row">
+                  <div class="col-6">
+                        <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Edit recipe</button></a>
+                  </div>
+                <div class="col-6">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                        Delete Recipe
+                      </button>
+                </div>
+              </div>
+            
+            <!-- Delete Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to delete this recipe?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <a href="{{ url_for('delete_recipe', id=recipe._id) }}"><button type="button" class="btn btn-danger">Delete recipe</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+                {% else %}
+                  {% if session.username in recipe.favourited_by%}
                   <div class="row">
                     <div class="col">
-                      <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+                      <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-lg">Remove recipe from my favourites +</button></a>
                     </div>
                   </div>
-                  {% endif %}
-              {% endif %}
-                
-              {% else %}
-              <div class="row">
-                <div class="col"><p>Login to add recipe to your favourites</p></div>
+                  
+                    
+                    {% else %}
+                    <div class="row">
+                      <div class="col">
+                        <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+                      </div>
+                    </div>
+                    {% endif %}
+                {% endif %}
+                  
+                {% else %}
+                <div class="row">
+                  <div class="col"><p>Login to add recipe to your favourites</p></div>
+                </div>
+                {% endif %}
+                </div>
+              <!--<div class="col-12">-->
+              <!--    <div style="height: 25px; width: 100%;" >-->
+              <!--      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #90CCF4;"></path></svg>-->
+              <!--    </div>-->
+              <!--</div>-->
+              <div style="height: 25px; width: 100%;" >
+                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #90CCF4;"></path></svg>
               </div>
-              {% endif %}
-              </div>
-              
-              
-              <div style="height: 75px; width: 100%;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-              </div>
-            
             </div>
+          
+            
+          </div>
+          
+          <div style="height: 25px; width: 100%; background-color: #90CCF4;" >
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+          </div>
+          
            
           <div class="row recipe-row">
             <div class="col">

@@ -32,8 +32,13 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     display: none;
 }
 
-.heading-box {
+.heading-box-container {
     background-color: #90CCF4;
+    padding:10px;
+}
+
+.heading-box {
+    background-color: #fff;
 }
 
 .search-header {
@@ -63,7 +68,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 
 .subhead {
   font-size: 1.5em;
-  font-family: 'Lobster', cursive;
 }
 
 .image-container {

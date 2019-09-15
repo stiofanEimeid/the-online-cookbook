@@ -316,4 +316,6 @@ Custom checkbox found at https://www.w3schools.com/howto/howto_css_custom_checkb
 
 Custom radio box: https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons
 
+https://www.favicon-generator.org/
+
 [**Jump to top &uarr;**](#table-of-contents)
