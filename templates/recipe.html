@@ -16,7 +16,7 @@
                     <h1>{{recipe.recipe_name}}</h1>
                   </div>
                   <div class="col-12">
-                    <h3>by <a href="#"><strong>{{recipe.name}}</strong></a></h3>
+                    <h3>by <a href="#"><strong>{{author}}</strong></a></h3>
                     </div>
                     <div class="col-12">
                     <p>Views: {{ recipe.views }} | Favourites: {{ recipe.favourites | length}}</p>
@@ -51,7 +51,7 @@
                 </div>
                           <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
                 {% if session.username %}
-                {% if session.username == recipe.name %}
+                {% if session.username == author %}
                 <div class="row">
                   <div class="col-6">
                         <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Edit recipe</button></a>
