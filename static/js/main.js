@@ -38,10 +38,31 @@ window.onscroll = function() {
 
         dc.renderAll();
 }
+
+var ref = $('#info-box-one');        
+        var popup = $('#popup');
+        popup.hide();
+        
+        ref.click(function(){
+                popup.show(); 
+                var popper = new Popper(ref,popup,{
+                        placement: 'top',
+                        modifiers: {
+                                flip: {
+                                        behavior: ['left', 'right', 'top','bottom']
+                                },
+                                offset: { 
+                                        enabled: true,
+                                        offset: '0,10'
+                                }
+                        }
+                });
+        });
+
   
 $(document).ready(function(){
     
-    $('[data-toggle="tooltip"]').tooltip();   
+
 
   $(".fadeMe1").each(function(i) {
   $(this).animate({'opacity':'1'},3000);
