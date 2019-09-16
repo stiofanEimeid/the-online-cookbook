@@ -88,7 +88,7 @@
                     </div>
                     <div class="card-body">
                       <div class="card-title text-truncate">{{recipe.recipe_name}}</div>
-                      <div class="card-title">by {{author}}</div>
+                      <div class="card-title">by {{recipe.author}}</div>
                       <!--<p class="card-text text-truncate">{{ recipe.recipe_description }}</p>-->
                       <!--<p class="card-text"><small class="text-muted">Last updated {{recipe.last_updated}}</small></p>-->
                       <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>

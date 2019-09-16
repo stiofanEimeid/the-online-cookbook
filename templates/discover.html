@@ -71,7 +71,7 @@
                                         </div>
                           
                                     <div>{{loop.index}}. {{recipe.recipe_name}}</div>
-                                    <div>by {{recipe.name}}</div>
+                                    <div>by {{recipe.author}}</div>
                                     <div>
                                             <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a>
                                     </div>
@@ -87,7 +87,7 @@
           
                                        <div class="col-12">
                                             <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
-                                            <div>by {{recipe.name}}</div>
+                                            <div>by {{recipe.author}}</div>
                                             <div>
                                                 <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a></div>
                                         </div>
@@ -118,7 +118,7 @@
                                         </div>
                           
                                     <div>{{loop.index}}. {{recipe.recipe_name}}</div>
-                                    <div>by {{recipe.name}}</div>
+                                    <div>by {{recipe.author}}</div>
                                     <div>
                                             <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a>
                                     </div>
@@ -134,7 +134,7 @@
           
                                        <div class="col-12">
                                             <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
-                                            <div>by {{recipe.name}}</div>
+                                            <div>by {{recipe.author}}</div>
                                             <div>
                                                 <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a></div>
                                         </div>
@@ -161,7 +161,7 @@
                             <div class="col-12">
                                      <ol>
                                         {% for recent in most_recent %}
-                                        <li>{{recent.recipe_name}} by {{recent.name}} <a href="{{ url_for('recipe', id=recent._id) }}"><br>
+                                        <li>{{recent.recipe_name}} by {{recent.author}} <a href="{{ url_for('recipe', id=recent._id) }}"><br>
                                         <button type="button" class="btn btn-primary">Go to Recipe</button></a> </li>
                                         {% endfor %}
                                     </ol>
