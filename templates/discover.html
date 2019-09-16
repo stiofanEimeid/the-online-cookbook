@@ -59,6 +59,7 @@
          
                             <div class="col-12 col-md-5">
                             {% for recipe in top_recipe %}
+                            <a href="{{ url_for('recipe', id=recipe._id) }}">
                   
                                         <div class="image-container">
                                                   
@@ -73,8 +74,9 @@
                                     <div>{{loop.index}}. {{recipe.recipe_name}}</div>
                                     <div>by {{recipe.author}}</div>
                                     <div>
-                                            <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a>
+                                          
                                     </div>
+                              </a>
                             {% endfor %}          
                             </div>
                         
@@ -82,46 +84,39 @@
                         
                     <div class="col-12 col-md-7">
                           <div class="row">
-                              {% for recipe in top_recipes[2:5]%}
-        
-          
+                              {% for recipe in top_recipes[2:6]%}
+                             
                                        <div class="col-12">
+                                            <a href="{{ url_for('recipe', id=recipe._id) }}">
                                             <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
                                             <div>by {{recipe.author}}</div>
-                                            <div>
-                                                <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a></div>
+                                             </a>  
                                         </div>
+                                      
                                {% endfor %}
-                                        
-                    
                           </div>
                           </div>
-
         </div>
-        
         
         <div class="row recipe-row">
             <div class="col-12"><h2 class='text-center'>Most Favourited Recipes</h2></div>
-                   
-         
                             <div class="col-12 col-md-5">
                             {% for recipe in top_favourite %}
-                  
+                            <a href="{{ url_for('recipe', id=recipe._id) }}">
                                         <div class="image-container">
-                                                  
                                                         {% if recipe.recipe_image != "" %}
                                                               <img src="{{recipe.recipe_image}}" alt="recipe image">
                                                         {% else %}
                                                               <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
                                                         {% endif %}
-                                       
                                         </div>
                           
                                     <div>{{loop.index}}. {{recipe.recipe_name}}</div>
                                     <div>by {{recipe.author}}</div>
                                     <div>
-                                            <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a>
+                                            
                                     </div>
+                                    </a>
                             {% endfor %}          
                             </div>
                         
@@ -129,15 +124,17 @@
                         
                     <div class="col-12 col-md-7">
                           <div class="row">
-                              {% for recipe in most_favourited[2:5]%}
+                              {% for recipe in most_favourited[2:6]%}
+                                   
         
           
                                        <div class="col-12">
+                                           <a href="{{ url_for('recipe', id=recipe._id) }}"> 
                                             <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
                                             <div>by {{recipe.author}}</div>
-                                            <div>
-                                                <a href="{{ url_for('recipe', id=recipe._id) }}"> <button type="button" class="btn btn-primary">Go to Recipe</button></a></div>
+                                       </a>
                                         </div>
+                                  
                                {% endfor %}
                                         
                     
@@ -161,8 +158,13 @@
                             <div class="col-12">
                                      <ol>
                                         {% for recent in most_recent %}
-                                        <li>{{recent.recipe_name}} by {{recent.author}} <a href="{{ url_for('recipe', id=recent._id) }}"><br>
-                                        <button type="button" class="btn btn-primary">Go to Recipe</button></a> </li>
+                                          {% if loop.index % 2 == 0 %}
+                                        <li class="grey"> <a href="{{ url_for('recipe', id=recent._id) }}">
+                                        {{recent.recipe_name}} by {{recent.author}}</a> </li>
+                                       {% else %}
+                                          <li> <a href="{{ url_for('recipe', id=recent._id) }}">
+                                        {{recent.recipe_name}} by {{recent.author}}</a> </li>
+                                         {% endif %}
                                         {% endfor %}
                                     </ol>
                             </div>

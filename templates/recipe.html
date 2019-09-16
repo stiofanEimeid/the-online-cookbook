@@ -18,13 +18,13 @@
                   <div class="col-12">
                     <h3>by <a href="#"><strong>{{recipe.author}}</strong></a></h3>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 border">
                     <p>Views: {{ recipe.views }} | Favourites: {{ recipe.favourited_by | length}}</p>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4">Preparation Time: {{recipe.recipe_preptime}} </div>
-                  <div class="col-12 col-md-6 col-lg-4">Cooking Time: </div>
-                  <div class="col-12 col-md-6 col-lg-4">Serves: {{recipe.recipe_serves}}</div>
-                  <div class="col-12 col-md-6">Diet: 
+                  <div class="col-12 col-md-6 col-lg-4 border">Preparation Time: {{recipe.recipe_preptime}} </div>
+                  <div class="col-12 col-md-6 col-lg-4 border">Cooking Time: </div>
+                  <div class="col-12 col-md-6 col-lg-4 border">Serves: {{recipe.recipe_serves}}</div>
+                  <div class="col-12 col-md-6 border">Diet: 
                     {% for diet_type in recipe.diet %}
                     {% if diet_type == "Gluten-free" %}
                     <div class="diet-image-container">
@@ -45,7 +45,7 @@
                     {% endif %}
                     {% endfor %}
                   </div>
-                  <div class="col-12 col-md-6">
+                  <div class="col-12 col-md-6 border">
                     Cuisine: {{recipe.recipe_type}}
                   </div>
                 </div>
@@ -135,7 +135,7 @@
             
           <div class="row recipe-row">
             <div class="col">
-              <h2 class="text-center">Ingredients</h2>
+              <h2 class="text-center">Ingredients<img data-toggle="tooltip" title="Mark off ingredients as you go by touching or clicking them" class="info-box-container" src="../static/img/icons8-info-24.png"></h2>
                        <ul class="no-list-style">
                           {% for ingredient in recipe.recipe_ingredients %}
                             {% if loop.index % 2 == 0 %}
@@ -151,7 +151,7 @@
           
           <div class="row recipe-row">
             <div class="col">
-              <h2 class="text-center">Steps</h2>
+              <h2 class="text-center">Steps<a href="#/" data-toggle="tooltip" title="Mark off ingredients as you go by touching or clicking them"><img class="info-box-container" src="../static/img/icons8-info-24.png"></a></h2>
                        <ol class="no-list-style" >
                           {% for step in recipe.recipe_steps %}
                             {% if loop.index % 2 == 0 %}

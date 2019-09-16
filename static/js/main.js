@@ -40,6 +40,8 @@ window.onscroll = function() {
 }
   
 $(document).ready(function(){
+    
+    $('[data-toggle="tooltip"]').tooltip();   
 
   $(".fadeMe1").each(function(i) {
   $(this).animate({'opacity':'1'},3000);
