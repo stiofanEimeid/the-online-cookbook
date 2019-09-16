@@ -138,7 +138,7 @@
               <h2 class="text-center">Ingredients <div id="popup">
               Mark off ingredients as you go by tapping or clicking them.
         </div>
-        <img id="info-box-one" class="info-box-container" src="../static/img/icons8-info-24.png"></h2>
+        <img data-toggle="tooltip" data-placement="top" title="Cross off ingredients as you go by tapping or clicking them" class="info-box-container" src="../static/img/icons8-info-24.png"></h2>
                        <ul class="no-list-style">
                           {% for ingredient in recipe.recipe_ingredients %}
                             {% if loop.index % 2 == 0 %}
@@ -154,7 +154,7 @@
           
           <div class="row recipe-row">
             <div class="col">
-              <h2 class="text-center">Steps<img id="info-box-two" class="info-box-container" src="../static/img/icons8-info-24.png"></h2>
+              <h2 class="text-center">Steps<img data-toggle="tooltip" data-placement="top" title="Cross off steps as you go by tapping or clicking them" class="info-box-container" src="../static/img/icons8-info-24.png"></h2>
                        <ol class="no-list-style" >
                           {% for step in recipe.recipe_steps %}
                             {% if loop.index % 2 == 0 %}
