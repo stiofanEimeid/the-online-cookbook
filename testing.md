@@ -31,10 +31,20 @@ Clicking on a card will bring the user to that recipe's individual page.
 
 Search options include text search and search by filter. Filters include cuisine, dietary requirements and meal-time.
 
+Dietary options...
+
+Pagination..
+
+Individual recipe pages provide fundamental information as well as a recipe image at the top of the page.
+
+Clicking on each ingredient or step adds strikes them out or adds a text-decoration property of 'line-through' so users can more easily keep track of the cooking materials and process.
+
 2. **Add, update and delete my own recipes.**
 
 Only registered and logged in users may add recipes to the database. If the user attempts to navigate to the add recipe page without registering or logging in, they will be met with an error message prompting them to login or register. 
 Registered users may add recipes at any time using the add recipe tab contained in the navbar or by selecting the add recipe button in their account page under the 'My Recipes' tab. All recipes must have at least one step or ingredient. Both steps and ingredients may be dynamically added and removed. Once the user is satisfied with the recipe they have written, they may submit it to the database. The date and time of submission is noted and passed into the document. 
+
+What fields are required?
 
 Users may edit or delete any and all of their recipes by navigating to each recipes resptive page. If the session username matches the author of the recipe, the user will be given the option to edit or delete their recipe if they so wish. 
 If a user decides to edit the recipe, they will be taken to a page that mirrors the page they used to upload the recipe in the first place, with each input area occupied by the current details of the recipe. Users may delete all but one of the recipes steps and/or ingredients. Once the user is happy with their changes, they may submit the recipe. A note is made of when the edit took place and contained in the recipe document.
@@ -89,13 +99,15 @@ Because this is purely an asethetic choice and not bearing on the integrity of a
 
 1. **Promote a brand of cooking tools to my users.**
 
+Users may view a selection of products directly through the products link in the navbar. Each product has an individual page similar to recipes. 
+
 I sought to accomplish this by making a direct connection between the recipes users were making and viewing and the tools I wished to promote and sell. Each individual recipe page features a random selection of three of nine tools. The tools are presented to users as facilitating their needs and interests. Users can click through to each of the three products' individual page, where a larger image of the product along with a description, a price and an option to buy appear.
 
 Users attempting to buy a product will be greeted by a modal advising them that a checkout functionality for buying products is currently unavailable.
 
 2. **Observe trends in the content being submitted to the website by way of a statistics dashboard**
 
-Some site statistics are represented in the Discover template. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. Two pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed. This may be used potentially to taylor cooking utensils and applicances to users in the future to determine what areas of cooking are most popular to users.
+Some site statistics are represented in the Discover template. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. Two pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed. This may be used potentially to taylor cooking utensils and applicances to users in the future to determine what areas of cooking are most popular to users. Further scales may be added once larger amounts of data are available.
 
 In addition, there are sections that show the user four recipes are the most viewed, another four that are most favourited and finally a list of recent submissions. In order to promote user engagement, users may be rewarded for appearing in the most-viewed or most-favourited sections. Rewards may take the form of discounts on cooking products. 
 

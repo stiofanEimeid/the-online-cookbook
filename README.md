@@ -92,6 +92,8 @@ Designed in SVG. 3 different wheels layered one on top of the other.
 
 In addition, the wheels are meant to arrest the viewers attention and convey a sense of individuality about the site. It speaks to the vast array of possiblities in the world of cooking. 
 
+Visual Consistency
+
 
 ### Wireframes
 
@@ -144,9 +146,11 @@ A product page displays products relevant to recipes submitted to the site. Duri
 
 ### Features left to implement 
 
-A forum for users to discuss cooking content. 
+A forum for users to discuss cooking content / add comments to recipes
 
 Should users forget their password, I would like to give them the option of creating a new one. As authetification was understood by me not to be a focus of the project, this feature was left to be implemented in the future. 
+
+Checkout functionality
 
 ## Data Structure
 
