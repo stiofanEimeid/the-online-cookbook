@@ -1,5 +1,3 @@
-
-
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
@@ -39,12 +37,8 @@ window.onscroll = function() {
                 .group(views);
 
         dc.renderAll();
-};
+}
   
-     
-         
-         
-
 $(document).ready(function(){
 
   $(".fadeMe1").each(function(i) {
@@ -73,10 +67,7 @@ $(document).ready(function(){
     
     });
     
-     
- 
-     var back = ["#90CCF4", "#f78888", "#f3d250"]
-    //  var rand = back[Math.floor(Math.random()*back.length)];
+     var back = ["#90CCF4", "#f78888", "#f3d250"];
      
     $('.card').hover(
        
@@ -129,8 +120,9 @@ $(document).ready(function(){
         // $(".content", ".navbar", ".footer").css("transform", "translateX(-250px)")
       });
 
-    
-    
+
+// https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
+
     var maxField = 15; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper

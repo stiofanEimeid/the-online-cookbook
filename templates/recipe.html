@@ -167,24 +167,26 @@
      
           
           <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->
-          
-          <!--{% if products %}-->
-            <div class="row recipe-row">
-              <div class="col-12 text-center">
-                <h2>Product Suggestions</h2>
-              </div>
-           
-                {% for product in products %}
-                  <div class="col-12 col-md-4">{{product.product_name}}
-                    <div class="image-container">
-                      <img src="{{ product.product_image}}">
+        
+                <div class="row">
+                    <div class="col-12 text-center">
+                      <h2>Product Suggestions</h2>
                     </div>
-                    <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-lg">Visit Product Page</button></a>
-                </div>
-                {% endfor %}
+                    {% for product in products %}
+                    <div class="search-block col-12 col-md-4">
+                      <div class="card">
+                        <div class="image-container">
+                            <img src="{{ product.product_image}}">
+                        </div>
+                        <div class="card-body">
+                          <div class="card-title text-truncate">{{product.product_name}}</div>
+                            <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-lg">Visit Product Page</button></a>
+                        </div>
+                      </div>
+                    </div>
+                 {% endfor %}
               </div>
               
-            <!--{% endif %}-->
   
         </div>
         

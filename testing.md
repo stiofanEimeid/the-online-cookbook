@@ -27,6 +27,14 @@ As a site owner, I want to promote a brand of cooking tools to my users. I sough
 
 ### Responsiveness
 
+The application was tested across browsers on mobile phone, laptop, tablet and desktop. 
+
+<div align="center">
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/flowchartfinal.png" alt="User login and registration flowchart"/>
+</div>
+
+The flowchart documents all the eventualities of a user trying to gain access to the database. 
+
 ### Registering
 
 Usernames may be a maximum of eight characters long. Passwords must be between eight and twelve characters inclusive. 
