@@ -120,40 +120,19 @@ def data():
     myData = json.dumps([{"Type": "Mexican", "Amount": mexican, "Views": total_mexican }, {"Type": "Italian", "Amount": italian, "Views": total_italian }, {"Type": "Other", "Amount": other, "Views": total_other }])
     return myData
     
-
-# @app.route("/data2")
-# def data2():
-#     mexican2 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
-#     italian2 = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1, "_id":0}))
-#     other2 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1, "_id":0}))
-    
-#     total_mexican = 0
-#     for i in range(len(mexican2)):
-#         total_mexican += mexican2[i]["views"]
-        
-#     total_italian = 0
-#     for i in range(len(italian2)):
-#         total_italian += italian2[i]["views"]
-    
-#     total_other = 0 
-#     for i in range(len(other2)):
-#         total_other += other2[i]["views"]
-
-    
-#     myData = json.dumps([{"Type": "Mexican", "Views": total_mexican }, {"Type": "Italian", "Views": total_italian }, {"Type": "Other", "Views": total_other }])
-#     return myData
-    
 # View a recipe
         
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
     products = mongo.db.products.aggregate([ { "$sample": { "size": 3 } } ])
+    author = mongo.db.users.collection.find_one(
+        {"_id": ObjectId(recipe.get("author"))})["username"]
    
     if session.get('username') != recipe['name']:
         mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})
     
-    return render_template("recipe.html", recipe=recipe, products=products)
+    return render_template("recipe.html", recipe=recipe, author=author, products=products)
 
 # Add and remove favourites 
 @app.route("/recipe/<id>/favourite")
@@ -189,7 +168,7 @@ def insert_recipe():
                 "recipe_serves": request.form.get("recipe_serves"),
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
-                "name": session["username"],
+                "author": mongo.db.users.find_one({"name_lowercase": session['username']})["_id"],
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
                 "time_created": strftime("%H:%M:%S %Y-%m-%d", gmtime()),
@@ -217,7 +196,6 @@ def update_recipe(id):
                 "recipe_serves": request.form.get("recipe_serves"),
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
-                "name": session["username"],
                 "meal_type": request.form.get('meal_type'),
                 "recipe_type": request.form.get("recipe_type"),
                 "recipe_image": request.form.get("recipe_image"),
@@ -266,7 +244,7 @@ def login_form():
     if login_user:
         if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
             
-                session['username'] = request.form['username']
+                session['username'] = request.form['username'].lower()
                 
                 return redirect(url_for('login')) 
                 
@@ -303,14 +281,15 @@ def logout():
     
 # Account and account settings
     
-@app.route('/account')
+@app.route('/account',  methods=['GET','POST'])
 def account():
     if 'username' in session:
-        user = session['username']
+        username = session['username']
+        user = mongo.db.users.find_one({"name_lowercase": username }) 
         
-        favourites=mongo.db.recipes.find({"favourited_by": user})
-        recipes = mongo.db.recipes.find({ "name": user })
-        profile = mongo.db.users.find_one({"name": user})
+        favourites = mongo.db.recipes.find({"favourited_by": user['name'] })
+        recipes = mongo.db.recipes.find({"author": user['_id']} )
+        profile = mongo.db.users.find_one({"name": user['name']})
         return render_template('account.html', recipes=recipes, favourites=favourites, profile=profile)
         
     return "Please login to view your account"
@@ -323,7 +302,7 @@ def change_avatar():
 @app.route('/change_avatar', methods=["POST"])
 def change_avatar_form():
     users = mongo.db.users
-    users.update_one({"name": session["username"]},
+    users.update_one({"name_lowercase": session["username"]},
     {"$set": {'avatar': request.form.get("avatar")}}
     );
     return redirect(url_for('account'))
@@ -340,7 +319,7 @@ def change_pw():
 def change_pw_form():
     
     users = mongo.db.users
-    login_user = users.find_one({'name' : session['username']})
+    login_user = users.find_one({'name_lowercase' : session['username']})
     
     if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['old_password'].encode('utf-8')):
                 users.update_one({"name": session["username"]},
@@ -359,7 +338,7 @@ def delete_account_form():
     users = mongo.db.users
     recipes = mongo.db.recipes
     username = session['username']
-    login_user = users.find_one({'name' : username })
+    login_user = users.find_one({'name_lowercase' : username })
     
     if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
         recipes.remove({"name": username})
