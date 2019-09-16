@@ -61,7 +61,11 @@ In addition, usernames may not be changed once a user has registered although th
 
 An avatar is preselected for the user although they may change it during registration or any time after through the settings found on their account page.
 
+If registration is successful, users will be brought to their account page where they can view their avatar, recipes, favourites and access account settings.
+
 ### Logging In/Out
+
+Users may login with a case-insensitive version of their username along with their password. If either the username or password is incorrect, the user will be prompted by an error message asking them to login again or register a new account. The user does not know whether the username or the password or both were correct in the interest of greater security to the database. Upon successfully logging in, users are brought to their account page.
 
 Users may log out from their account or from the navbar. The session is cleared of the user's username. 
 
