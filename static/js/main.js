@@ -45,6 +45,8 @@ $(document).ready(function(){
     
 $('#myTooltip').tooltip();
 
+$('mySecondTooltip').tooltip();
+
   $(".fadeMe1").each(function(i) {
   $(this).animate({'opacity':'1'},3000);
 });
