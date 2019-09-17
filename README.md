@@ -97,16 +97,16 @@ Visual Consistency
 
 ### Wireframes
 
-[Home Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Home%20page.png)
-[Registration Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Registration%20Page.png)
-[Login Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Login.png)
-[Account Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Account%20Page.png)
-[Add/Edit Recipe Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Add_Edit%20Recipe.png)
-[Recipe Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Recipe%20Page.png)
-[Recipe Search Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Search%20Results.png)
-[Product Search Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Product%20Search.png)
-[Product Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Product%20Page.png)
-[Statistics Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Discover.png)
+* [Home Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Home%20page.png)
+* [Registration Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Registration%20Page.png)
+* [Login Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Login.png)
+* [Account Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Account%20Page.png)
+* [Add/Edit Recipe Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Add_Edit%20Recipe.png)
+* [Recipe Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Recipe%20Page.png)
+* [Recipe Search Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Search%20Results.png)
+* [Product Search Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Product%20Search.png)
+* [Product Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Product%20Page.png)
+* [Statistics Page](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/wireframes/Discover.png)
 
 ## Features
 
