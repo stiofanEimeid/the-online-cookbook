@@ -402,6 +402,7 @@ legend {
 }
 
 .sidebar {
+  font-family: 'Lobster', cursive;
   height: 100%;
   width: 0;
   width: 75%;
@@ -459,6 +460,11 @@ legend {
   padding-bottom: 5px;
   display: block;
   transition: 0.3s;
+}
+
+.sidebar a:link, .sidebar a:visited, .sidebar a:hover, .sidebar:active {
+    text-decoration: none;
+    color: #1a1a1a;
 }
 
 .sidebar a:hover {
