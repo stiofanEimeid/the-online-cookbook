@@ -85,7 +85,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 }
 
 .image-container {
-    /*height: 278.39px;*/
     height: 200px;
 }
 
@@ -172,6 +171,7 @@ img {
 }
 
 /*css-tricks code*/
+
 .content {
     flex: 1 0 auto;
     /*push content off-screen when menu is open:*/
@@ -217,8 +217,7 @@ input {
 	display: inline;
 }
 
-fieldset
-{
+fieldset {
     border: solid 1px #000;
     padding:10px;
     display:block;
@@ -226,8 +225,8 @@ fieldset
     margin:5px 0px;
     border-radius: 5px 5px 5px 5px;
 }
-legend
-{
+
+legend {
     padding:0px 10px;
     background:black;
     color:#FFF;
@@ -410,10 +409,7 @@ legend
   z-index: 999;
   top: 0;
   left: 0;
-  background-color: #111;
-  
-  background-color: #ececec;
-  
+  background-color: #90CCF4;
   overflow-x: hidden;
   transition: 0.5s;
   transition-timing-function: ease;
@@ -457,26 +453,25 @@ legend
 /*}*/
 
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 30px;
   text-decoration: none;
-  /*font-size: 3.5em;*/
+  font-size: 2.5em;
   padding-bottom: 5px;
-  /*color: #818181;*/
-  background-color: #fafafa;
+  color: #fff;
   display: block;
   transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
-  background-color: #1a1a1a;
+  color: #90CCF4;
+  background-color: #f3d250;
 }
 
 .sidebar .closebtn {
   position: absolute;
   top: 25%;
   right: 25px;
-  /*font-size: 36px;*/
+  font-size: 25px;
   /*margin-left: 50px;*/
   cursor: pointer;
   padding: 5px;
@@ -508,7 +503,6 @@ legend
 .content, .navbar, .footer {
   transition: margin-left .5s;
   transition-timing-function: ease;
-  /*padding: 16px;*/
 }
 
 .overlay {
@@ -613,6 +607,12 @@ legend
        .sidebar {
         width: 35%;
     }
+    
+    .sidebar a {
+        font-size: 3em;
+    }
+    
+      
     
     .menu-span {
         display: inline;
