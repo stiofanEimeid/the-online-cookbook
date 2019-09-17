@@ -206,9 +206,15 @@ input {
   width: 50%;  
 }
 
+
+
 .form-control {
 	width: 100%;
-	/*display: inline;*/
+}
+
+.form-control .reduce {
+	width: 80%;
+	display: inline;
 }
 
 fieldset
