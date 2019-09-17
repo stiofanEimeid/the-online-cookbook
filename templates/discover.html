@@ -85,13 +85,23 @@
                     <div class="col-12 col-md-7">
                           <div class="row">
                               {% for recipe in top_recipes[2:6]%}
+                              {% if loop.index % 2 != 0 %}
                              
-                                       <div class="col-12">
+                                       <div class="col-12 grey">
                                             <a href="{{ url_for('recipe', id=recipe._id) }}">
                                             <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
                                             <div>by {{recipe.author}}</div>
                                              </a>  
                                         </div>
+                                {% else %}
+                                          <div class="col-12">
+                                            <a href="{{ url_for('recipe', id=recipe._id) }}">
+                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
+                                            <div>by {{recipe.author}}</div>
+                                             </a>  
+                                        </div>
+                                
+                                {% endif %}
                                       
                                {% endfor %}
                           </div>
@@ -125,7 +135,15 @@
                     <div class="col-12 col-md-7">
                           <div class="row">
                               {% for recipe in most_favourited[2:6]%}
-                                   
+                                        {% if loop.index % 2 != 0 %}
+                                        
+                                          <div class="col-12 grey">
+                                           <a href="{{ url_for('recipe', id=recipe._id) }}"> 
+                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
+                                            <div>by {{recipe.author}}</div>
+                                       </a>
+                                        </div>
+                                {% else %}
         
           
                                        <div class="col-12">
@@ -134,7 +152,7 @@
                                             <div>by {{recipe.author}}</div>
                                        </a>
                                         </div>
-                                  
+                                     {% endif %}
                                {% endfor %}
                                         
                     
