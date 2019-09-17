@@ -252,6 +252,7 @@ legend {
     width: 100%;
     color: #1a1a1a;
     font-family: 'Lobster', cursive;
+    padding-left: 50px;
 }
 
 .tab-pane {
