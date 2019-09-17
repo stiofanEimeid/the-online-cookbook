@@ -212,7 +212,7 @@ input {
 	width: 100%;
 }
 
-.form-control .reduce {
+.form-control.reduce {
 	width: 80%;
 	display: inline;
 }
