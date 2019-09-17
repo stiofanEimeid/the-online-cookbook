@@ -70,11 +70,11 @@
         	            {% for ingredient in recipe.recipe_ingredients %}
         	                 {% if loop.index == 1 %}
         	                 <div>
-        	                 <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea>
+        	                 <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea>
         	                 </div>
         	                    {% else %}
         	                 <div>
-        	                <textarea class="form-control" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
+        	                <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
         	                </div>
         	                {% endif %}
         	            {% endfor %}
@@ -92,11 +92,11 @@
     	               {% for step in recipe.recipe_steps %}
     	                   {% if loop.index == 1 %}
     	                   <div>
-    	                   <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea>
+    	                   <textarea class="form-control reduce" name="recipe_step" rows="2" value="">{{step}}</textarea>
     	                   </div>
     	                       {% else %}
     	                    <div>
-    	                    <textarea class="form-control" name="recipe_step" rows="2" value="">{{step}}</textarea><a href="#" class="remove_button2">&#10008;</a>
+    	                    <textarea class="form-control reduce" name="recipe_step" rows="2" value="">{{step}}</textarea><a href="#" class="remove_button2">&#10008;</a>
     	                    </div>
     	                    {% endif %}
     	                
