@@ -90,8 +90,6 @@ def discover():
     user_total = users.count()
     return render_template("discover.html", top_recipes=top_recipes,  top_recipe= top_recipe, most_recent=most_recent, recipe_total=recipe_total,  top_favourite= top_favourite, most_favourited=most_favourited, user_total=user_total)
  
-
-
 @app.route("/data")
 def data():
     mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
@@ -114,8 +112,7 @@ def data():
     total_other = 0 
     for i in range(len(other2)):
         total_other += other2[i]["views"]
-    # return jsonify([{ "Mexican": mexican, "Italian": italian, "Other": other
-    #         }])
+
     #Passes a json object that may be rendered by the d3 function in main.js
     myData = json.dumps([{"Type": "Mexican", "Amount": mexican, "Views": total_mexican }, {"Type": "Italian", "Amount": italian, "Views": total_italian }, {"Type": "Other", "Amount": other, "Views": total_other }])
     return myData
