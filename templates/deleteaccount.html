@@ -1,8 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-  Warning: Deleting your account will remove your account and the recipes connected to that account. Are you sure you wish to proceed? 
   
+ 
   <h1 class="text-center">Delete Account</h1>
+   <div class="alert alert-danger" role="alert">
+    Warning: Deleting your account will remove your account and the recipes connected to that account. Are you sure you wish to proceed? 
+    </div>
           <div class="container padding">
               <form method=POST action="{{ url_for('delete_account_form') }}"> 
                 <div class="form-group">
