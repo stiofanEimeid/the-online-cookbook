@@ -42,7 +42,7 @@ Apéritif: The Online Cookbook allows users to search recipes and add their own 
 
 #### Project Goals
 
-....
+The goal of this project is to build a database that allows users to carry out each CRUD operation: Creating, Reading, Updating and Deleting recipes. Although authentification is not expected I have included login functionality and user accounts in order to keep user recipes secure. 
 
 #### User Goals
 
