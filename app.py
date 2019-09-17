@@ -187,6 +187,7 @@ def edit_recipe(id):
 def update_recipe(id):
     recipes = mongo.db.recipes
     recipes.update({'_id': ObjectId(id)},
+    { "$set":
             {
                 "recipe_name": request.form.get("recipe_name"),
                 "recipe_preptime": request.form.get("recipe_preptime"),
@@ -199,6 +200,7 @@ def update_recipe(id):
                 "recipe_image": request.form.get("recipe_image"),
                 "last_updated": strftime("%H:%M:%S %d-%m-%Y", gmtime()),
                 "diet": request.form.getlist("diet")
+            }
             })
     
     return redirect(url_for("account"))

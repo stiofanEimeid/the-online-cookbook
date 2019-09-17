@@ -8,7 +8,7 @@ Apéritif: The Online Cookbook
 
 Stream Three Project: Data-Centric Development - Code Institute 
 
-Apéritif: The Online Cookbook allows users to search recipes and add their own in a quick and easy manner. 
+Apéritif: The Online Cookbook allows users to search recipes and add their own in a quick and easy manner. A live version of the site may be found here: [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
 
 ## Table of Contents
 1. [**UX**](#ux)
