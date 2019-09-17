@@ -42,14 +42,19 @@
         
        
         <div class="row recipe-row">
-            <div class="col-12 col-md-6" align="center"> 
-             <h4>Breakdown by Cuisine for Recipes Submitted</h4>
+            <div class="col-12 col-md-4" align="center"> 
+             <h4>Cusine of Recipes Submitted</h4>
              <div id="chart-here"></div>
             </div>
               
-            <div class="col-12 col-md-6"> 
-                <h4>Breakdown by Cuisine for Recipes Viewed</h4>
+            <div class="col-12 col-md-4"> 
+                <h4>Cusine of Recipes Viewed</h4>
                      <div id="another-chart-here"></div>
+            </div>
+            
+               <div class="col-12 col-md-4"> 
+                <h4>Cusine of Recipes Favourited</h4>
+                     <div id="final-chart-here"></div>
             </div>
         </div>
         
@@ -71,8 +76,8 @@
                                        
                                         </div>
                           
-                                    <div>{{loop.index}}. {{recipe.recipe_name}}</div>
-                                    <div>by {{recipe.author}}</div>
+                                    <div>{{loop.index}}. {{recipe.recipe_name}} by {{recipe.author}}</div>
+                                    <div> Views: {{ recipe.views }}</div>
                                     <div>
                                           
                                     </div>
@@ -82,22 +87,22 @@
                         
         
                         
-                    <div class="col-12 col-md-7">
+                    <div class="col-12 col-md-7 no-padding">
                           <div class="row">
                               {% for recipe in top_recipes[2:6]%}
                               {% if loop.index % 2 != 0 %}
                              
                                        <div class="col-12 grey">
                                             <a href="{{ url_for('recipe', id=recipe._id) }}">
-                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
-                                            <div>by {{recipe.author}}</div>
+                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}} by {{recipe.author}}</div>
+                                            <div> Views: {{ recipe.views }}</div>
                                              </a>  
                                         </div>
                                 {% else %}
                                           <div class="col-12">
                                             <a href="{{ url_for('recipe', id=recipe._id) }}">
-                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
-                                            <div>by {{recipe.author}}</div>
+                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}} by {{recipe.author}}</div>
+                                            <div> Views: {{ recipe.views }}</div>
                                              </a>  
                                         </div>
                                 
@@ -121,8 +126,8 @@
                                                         {% endif %}
                                         </div>
                           
-                                    <div>{{loop.index}}. {{recipe.recipe_name}}</div>
-                                    <div>by {{recipe.author}}</div>
+                                    <div>{{loop.index}}. {{recipe.recipe_name}} by {{recipe.author}}</div>
+                                    <div> Views: {{ recipe.views }}</div>
                                     <div>
                                             
                                     </div>
@@ -132,15 +137,15 @@
                         
         
                         
-                    <div class="col-12 col-md-7">
+                    <div class="col-12 col-md-7 no-padding">
                           <div class="row">
                               {% for recipe in most_favourited[2:6]%}
                                         {% if loop.index % 2 != 0 %}
                                         
                                           <div class="col-12 grey">
                                            <a href="{{ url_for('recipe', id=recipe._id) }}"> 
-                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
-                                            <div>by {{recipe.author}}</div>
+                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}} by {{recipe.author}}</div>
+                                            <div> Favourites: {{ recipe.favourites }}</div>
                                        </a>
                                         </div>
                                 {% else %}
@@ -148,8 +153,8 @@
           
                                        <div class="col-12">
                                            <a href="{{ url_for('recipe', id=recipe._id) }}"> 
-                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}}</div>
-                                            <div>by {{recipe.author}}</div>
+                                            <div>{{loop.index + 1}}. {{recipe.recipe_name}} by {{recipe.author}}</div>
+                                            <div> Favourites: {{ recipe.favourites }}</div>
                                        </a>
                                         </div>
                                      {% endif %}
@@ -178,10 +183,11 @@
                                         {% for recent in most_recent %}
                                           {% if loop.index % 2 == 0 %}
                                         <li class="grey"> <a href="{{ url_for('recipe', id=recent._id) }}">
-                                        {{recent.recipe_name}} by {{recent.author}}</a> </li>
+                                        {{recent.recipe_name}} by {{recent.author}}</a> 
+                                        Submitted: {{ recent.time_created }}</li>
                                        {% else %}
                                           <li> <a href="{{ url_for('recipe', id=recent._id) }}">
-                                        {{recent.recipe_name}} by {{recent.author}}</a> </li>
+                                        {{recent.recipe_name}} by {{recent.author}}</a> Submitted: {{ recent.time_created }}</li>
                                          {% endif %}
                                         {% endfor %}
                                     </ol>

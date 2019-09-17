@@ -406,9 +406,12 @@ legend {
     height: 70px;
     position: relative;
     background-color: #ececec;
-    border-left: 2px solid grey;
+    border-right: 2px solid grey;
 }
 
+.no-padding {
+    padding: 0;
+}
 .sidebar {
   height: 100%;
   width: 0;

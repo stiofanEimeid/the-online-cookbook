@@ -112,9 +112,25 @@ def data():
     total_other = 0 
     for i in range(len(other2)):
         total_other += other2[i]["views"]
+        
+    mexican3 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"favourites": 1, "_id":0}))
+    italian3 = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"favourites": 1, "_id":0}))
+    other3 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"favourites": 1, "_id":0}))
+    
+    total_mexican2 = 0
+    for i in range(len(mexican3)):
+        total_mexican2 += mexican3[i]["favourites"]
+        
+    total_italian2 = 0
+    for i in range(len(italian3)):
+        total_italian2 += italian3[i]["favourites"]
+    
+    total_other2 = 0 
+    for i in range(len(other3)):
+        total_other2 += other3[i]["favourites"]
 
     #Passes a json object that may be rendered by the d3 function in main.js
-    myData = json.dumps([{"Type": "Mexican", "Amount": mexican, "Views": total_mexican }, {"Type": "Italian", "Amount": italian, "Views": total_italian }, {"Type": "Other", "Amount": other, "Views": total_other }])
+    myData = json.dumps([{"Type": "Mexican", "Amount": mexican, "Views": total_mexican, "Favourites": total_mexican2}, {"Type": "Italian", "Amount": italian, "Views": total_italian, "Favourites": total_italian2 }, {"Type": "Other", "Amount": other, "Views": total_other, "Favourites": total_other2 }])
     return myData
     
 # View a recipe
