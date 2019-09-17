@@ -164,23 +164,31 @@ Title | DB Key | Data type
 --- | --- | --- 
 Recipe ID | _id | Object ID 
 Name | recipe_name | String 
-Preparation Time | recipe_preptime | Integer 
-Serves | recipe_serves | Integer 
+Preparation Time | recipe_preptime | Integer32
+Serves | recipe_serves | Integer32
 Ingredients | receipe_ingredients | Array 
 Steps | recipe_steps | Array 
-Allergens | recipe_allergens | Boolean 
+Dietary Requirements | diet | Array
 Description | recipe_description | String 
-Username | username | String
-Image | recipe_imgURL | String
+Author| author | String
+Image | recipe_image | String
+Views | views | Integer32
+Favourites | favourites | Integer32
+Favourited By | favourited-by | Array
+Time Created | time_created | String
+Last Updated | last_updated | String
 
 ### User Collection
 
 Title | DB Key | Data Type 
 --- | --- | --- 
 User ID | _id | Object ID
-Name | username | String
-Email | user_email | String
+Username | name | String
+Lowercase username | name_lowercase | String
 Password | user_pw | String
+Favourites | favourites | Array
+Avatar | avatar | String
+Member Since | member_since | String
 
 ### Product Collection
 
@@ -188,6 +196,9 @@ Title | DB Key | Data Type
 --- | --- | --- 
 Product ID | _id | Object ID 
 Product Name | product_name | String
+Product Image | product_image | String
+Product Description | product_description | String
+Product Price | product_price | String
 
 ## Technologies Used
 
