@@ -24,7 +24,7 @@ window.onscroll = function() {
             var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
             dc.pieChart('#chart-here')
                 .height(330)
-                .radius(90)
+                .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
                 .group(amount)
@@ -35,7 +35,7 @@ window.onscroll = function() {
             var views =  type_dim.group().reduceSum(dc.pluck('Views'));
             dc.pieChart('#another-chart-here')
                 .height(330)
-                .radius(90)
+                .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
                 .group(views)
@@ -44,11 +44,15 @@ window.onscroll = function() {
             var favourites =  type_dim.group().reduceSum(dc.pluck('Favourites'));  
             dc.pieChart('#final-chart-here')
                 .height(330)
-                .radius(90)
+                .width(330)
+                .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
                 .group(favourites)
                 .colors(d3.scale.ordinal().range([ '#90ccf4', '#f3d250']));
+                
+     
+            
 
         dc.renderAll();
 }
