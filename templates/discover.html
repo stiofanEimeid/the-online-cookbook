@@ -12,10 +12,10 @@
                 <div class="row">
                    
                     <div class="col-6">
-                        <p>Total number of recipes: {{ recipe_total }}</p>
+                        <h2>Total number of recipes: {{ recipe_total }}</h2>
                     </div>
                     <div class="col-6">
-                        <p>Total number of users: {{ user_total }}</p>
+                        <h2>Total number of users: {{ user_total }}</h2>
                     </div>
                   
                 </div>
@@ -32,46 +32,47 @@
     </div>
          
         <div class="row recipe-row">
-            <div class="col-12 col-md-4" align="center"> 
+            <div class="col-12 col-md-4 text-center"> 
              <h4>Cusine of Recipes Submitted</h4>
              <div id="chart-here"></div>
             </div>
               
-            <div class="col-12 col-md-4"> 
+            <div class="col-12 col-md-4 text-center"> 
                 <h4>Cusine of Recipes Viewed</h4>
                      <div id="another-chart-here"></div>
             </div>
             
-               <div class="col-12 col-md-4"> 
+               <div class="col-12 col-md-4 text-center"> 
                 <h4>Cusine of Recipes Favourited</h4>
                      <div id="final-chart-here"></div>
             </div>
         </div>
         
       <div class="row recipe-row">
-            <div class="col-12"><h2 class='text-center'>Most Viewed Recipes</h2></div>
-            <div class="col">
+            <div class="col-12"><h3 class='text-center'>Most Viewed Recipes</h3></div>
+            <div class="col ">
             <ol>
                  {% for recipe in top_recipes %}
                  
                   {% if loop.index == 1%}
-                      <a href="{{ url_for('recipe', id=recipe._id) }}"><div class="image-container">
-                                                  
+                            <li>
+                             <div class="row">
+                                 <div class="col-12 col-md-9 my-auto no padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
+                                    {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }}
+                                 </div>
+                                 <div class="col-12 col-md-3 no padding">
+                                 <a href="{{ url_for('recipe', id=recipe._id) }}">
+                                     <div class="image-container no-padding">
                                                         {% if recipe.recipe_image != "" %}
                                                               <img src="{{recipe.recipe_image}}" alt="recipe image">
                                                         {% else %}
                                                               <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
                                                         {% endif %}
-                                       
-                                        </div></a>
-                   <li> 
-                 
-                                        <a href="{{ url_for('recipe', id=recipe._id) }}">{{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }} <br>
-                    
-                   
-                  </li>
-                  
-                  
+                                     </div>
+                                 </a>
+                                 </div>
+                             </div> 
+                        </li>
                   {% else %}
                         {% if loop.index % 2 == 0 %}
                      <li class="grey">   <a href="{{ url_for('recipe', id=recipe._id) }}">{{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }} <br>
@@ -90,102 +91,88 @@
                   {% endfor %}   
             </ol>
             </div>
-                     
-      
-                   
-
         </div>
         
               <div class="row recipe-row">
-            <div class="col-12"><h2 class='text-center'>Most Favourited Recipes</h2></div>
+            <div class="col-12"><h3 class='text-center'>Most Favourited Recipes</h3></div>
             <div class="col">
             <ol>
                      {% for recipe in most_favourited %}
                  
                   {% if loop.index == 1%}
-                    <a href="{{ url_for('recipe', id=recipe._id) }}"> <div class="image-container">
-                                                  
+                     <li>
+                             <div class="row">
+                                 <div class="col-12 col-md-9 my-auto no padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
+                                    {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Favourites: {{ recipe.favourites }}
+                                 </div>
+                                 <div class="col-12 col-md-3 no padding">
+                                 <a href="{{ url_for('recipe', id=recipe._id) }}">
+                                     <div class="image-container no-padding">
                                                         {% if recipe.recipe_image != "" %}
                                                               <img src="{{recipe.recipe_image}}" alt="recipe image">
                                                         {% else %}
                                                               <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
                                                         {% endif %}
-                                       
-                                        </div></a>
-                   <li> 
-               
-                           <a href="{{ url_for('recipe', id=recipe._id) }}"> {{recipe.recipe_name}} by {{recipe.author}}  </a> <br> Favourites: {{ recipe.favourites }} <br>
-                    
-                  
-                    
-                      
-                  </li>
-                  
-                  
+                                     </div>
+                                 </a>
+                                 </div>
+                             </div> 
+                        </li>
                   {% else %}
                    {% if loop.index % 2 == 0 %}
                      <li class="grey"> <a href="{{ url_for('recipe', id=recipe._id) }}"> {{recipe.recipe_name}} by {{recipe.author}}  </a>  <br> Favourites: {{ recipe.favourites }}
-                
-                   
                   </li>
-                        
                         {% else %}
                   <li> <a href="{{ url_for('recipe', id=recipe._id) }}"> {{recipe.recipe_name}} by {{recipe.author}}  </a> <br> Favourites: {{ recipe.favourites }}
-                   
-                    
                   </li>
                         {% endif %}
-                
                   {% endif %}
-
                   {% endfor %}   
             </ol>
             </div>
-                     
-      
-                   
-
         </div>
         
-        
-           
-                      <div class="row recipe-row">
-                           <div class="col-12">
-                               <h2 class='text-center'>Recently Submitted</h2>
-                            </div>
-                            <div class="col-12">
-                                     <ol>
-                                        {% for recent in most_recent %}
-                                         {% if loop.index ==1 %}
-                                              <a href="{{ url_for('recipe', id=recent._id) }}"> <div class="image-container">
-                                                  
+        <div class="row recipe-row">
+            <div class="col-12">
+                <h3 class='text-center'>Recently Submitted</h3>
+            </div>
+            <div class="col-12">
+                <ol>
+                    {% for recent in most_recent %}
+                        {% if loop.index ==1 %}
+                                             
+                        <li>
+                             <div class="row">
+                                 <div class="col-12 col-md-9 my-auto no padding"><a href="{{ url_for('recipe', id=recent._id) }}">
+                                    {{recent.recipe_name}} by {{recent.author}}</a> <br> Submitted: {{ recent.time_created }}
+                                 </div>
+                                 <div class="col-12 col-md-3 no padding">
+                                 <a href="{{ url_for('recipe', id=recent._id) }}">
+                                     <div class="image-container no-padding">
                                                         {% if recent.recipe_image != "" %}
                                                               <img src="{{recent.recipe_image}}" alt="recipe image">
                                                         {% else %}
                                                               <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
                                                         {% endif %}
-                                       
-                                        </div></a>
-                 <li> <a href="{{ url_for('recipe', id=recent._id) }}">
-                                        {{recent.recipe_name}} by {{recent.author}}</a> <br> Submitted: {{ recent.time_created }}</li>
-                                         
-                                         {% else %}
-                                        
-                                        
-                                        
-                                        
-                                          {% if loop.index % 2 == 0 %}
-                                        <li class="grey"> <a href="{{ url_for('recipe', id=recent._id) }}">
-                                        {{recent.recipe_name}} by {{recent.author}}</a> <br>
-                                        Submitted: {{ recent.time_created }}</li>
-                                       {% else %}
-                                          <li> <a href="{{ url_for('recipe', id=recent._id) }}">
-                                        {{recent.recipe_name}} by {{recent.author}}</a> <br> Submitted: {{ recent.time_created }}</li>
-                                         {% endif %}
-                                         {% endif %}
-                                        {% endfor %}
-                                    </ol>
-                            </div>
-                     </div>
+                                     </div>
+                                 </a>
+                                 </div>
+                             </div> 
+                        </li>
+                        {% else %}
+                            {% if loop.index % 2 == 0 %}
+                                <li class="grey"> <a href="{{ url_for('recipe', id=recent._id) }}">
+                                {{recent.recipe_name}} by {{recent.author}}</a> <br>
+                                Submitted: {{ recent.time_created }}</li>
+                            {% else %}
+                                <li> <a href="{{ url_for('recipe', id=recent._id) }}">
+                                {{recent.recipe_name}} by {{recent.author}}</a> <br> 
+                                Submitted: {{ recent.time_created }}</li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
     </div>
     {% endblock %}

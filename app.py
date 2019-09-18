@@ -34,8 +34,12 @@ def search():
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
         recipes = mongo.db.recipes.find({ '$text': { '$search': str(search_request)}}, {"score": {"$meta": 'textScore'}}).sort('_id'
             , pymongo.ASCENDING).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
+        recipes_count = recipes.count()
+        display_result = page * recipes_per_page if (
+                page * recipes_per_page) < recipes.count(
+                ) else recipes.count()
             
-        return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
+        return render_template("recipes.html", recipes=recipes, pages=pages, page=page, recipes_count = recipes_count, display_result=display_result)
 
 @app.route("/recipes", methods=['GET', 'POST'])
 def get_recipes():
@@ -65,7 +69,9 @@ def get_recipes():
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
         recipes = mongo.db.recipes.find(search_request).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         # variable containing string that lists filters used in search
-        return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
+        recipes_count = recipes.count()
+        display_result = recipes_count if recipes_count < page * recipes_per_page else page * recipes_per_page
+        return render_template("recipes.html", recipes=recipes, pages=pages, page=page, recipes_count=recipes_count, display_result=display_result)
 
     else:
         page = int(request.args.get('page', 1))
@@ -73,7 +79,11 @@ def get_recipes():
         recipes_per_page = 12
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
         recipes = mongo.db.recipes.find().skip((page - 1) * recipes_per_page).limit(recipes_per_page)
-        return render_template("recipes.html", recipes=recipes, pages=pages, page=page)
+        recipes_count = recipes.count()
+        display_result = page * recipes_per_page if (
+                page * recipes_per_page) < recipes.count(
+                ) else recipes.count()
+        return render_template("recipes.html", recipes=recipes, pages=pages, page=page, recipes_count=recipes_count, display_result=display_result)
     
 # search functionality ends
 

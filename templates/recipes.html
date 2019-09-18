@@ -75,8 +75,22 @@
           
           <div class="row">
             
+          {% if recipes_count %}
+           <div class="col-12 text-center"> Showing {{ (page * 12) - (11) }}-
+              {{ display_result }} of
+              {{ recipes_count }}
+              Recipes </div>
+              
+         
+          
+          
+              
+          {% endif %}
+            
            
               {% for recipe in recipes %}
+              
+             
                
                 
               
@@ -105,8 +119,20 @@
              
               
               {% else %}
-                <div>Oops! Nothing here</div>
+                <div class="text-center">Oops! Zero matching documents were found.</div>
              {% endfor %}
+             
+                {% if recipes_count %}
+           <div class="col-12 text-center"> Showing {{ (page * 12) - (11) }}-
+              {{ display_result }} of
+              {{ recipes_count }}
+              Recipes </div>
+              
+         
+          
+          
+              
+          {% endif %}
             </div>
         </div>
   
