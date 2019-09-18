@@ -47,7 +47,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 }
 
 .heading-box-container {
-    background-color: #90CCF4;
+    background-color: #052031;
     padding:10px;
 }
 
@@ -248,7 +248,7 @@ legend {
 }
 
 
-.nav-link {
+.sidebar.nav-link {
     width: 100%;
     background-color: #052031;
     color: #fff;
