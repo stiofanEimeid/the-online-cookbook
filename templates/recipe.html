@@ -25,7 +25,7 @@
                     <p><strong>Favourites: {{ recipe.favourited_by | length}}</strong></p>
                   </div>
                   <div class="col-12 cell">Preparation Time: {{recipe.recipe_preptime}} </div>
-                  <div class="col-12 cell">Cooking Time: {{recipe.cooking_time}}</div>
+                  <div class="col-12 cell">Cooking Time: {{recipe.recipe_cooktime}}</div>
                   <div class="col-12 cell">Serves: {{recipe.recipe_serves}}</div>
                   <div class="col-12 cell">Diet: 
                     {% for diet_type in recipe.diet %}
