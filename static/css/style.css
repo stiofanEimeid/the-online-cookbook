@@ -50,12 +50,12 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 }
 
 .heading-box-container {
-    background-color: #072c43;
-    color: #fff;
+    background-color: #90ccf4;
+    color: #072c43;
 }
 
 .heading-box {
-    background-color: #072c43;
+    background-color: #90ccf4;
     padding:10px;
 }
 
