@@ -222,7 +222,7 @@ def update_recipe(id):
                                 }
                         })
     
-    return redirect(url_for("account"))
+    return redirect(url_for("recipe", id=id))
     
 @app.route('/delete_recipe/<id>')
 def delete_recipe(id):
