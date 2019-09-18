@@ -34,6 +34,7 @@
     		      <legend>Recipe Type</legend>
         	        <div>
                          <select class='custom-select' name="recipe_type" required>
+                            <option value="">Choose</option>
                             <option value="Italian">Italian</option>
                             <option value="Mexican">Mexican</option>
                             <option value="Indian">Indian</option>
@@ -49,6 +50,7 @@
     		      <legend>Recipe Type</legend>
         	        <div>
                          <select class='custom-select' name="meal_type" required>
+                             <option value="">Choose</option>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
                             <option value="Dinner">Dinner</option>
@@ -65,7 +67,7 @@
         		<div class="field_wrapper">
         	        <div>
 
-        	            <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" placeholder="Ingredient no. 1">{{ingredient}}</textarea>
+        	            <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" placeholder="Ingredient no. 1" required>{{ingredient}}</textarea>
         	        </div>
             	</div>
             	<a href="#/" class="add_button" title="Add field"><button type="button" class="btn btn-primary">Add ingredient</button></a><!--#/ as href prevents page from jumping when link is clicked-->
@@ -91,7 +93,7 @@
     		<legend>Recipe Preptime</legend>
         	
         	        <div>
-            <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Insert number">
+            <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Insert number" required>
             </div>
         	</fieldset>
           </div>
@@ -101,7 +103,7 @@
     		      <legend>Recipe Serves</legend>
         	
         	        <div>
-            <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Insert number">
+            <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Insert number" required>
             </div>
         	</fieldset>
           </div>

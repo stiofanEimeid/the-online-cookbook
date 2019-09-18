@@ -16,7 +16,7 @@
                     <h1>{{recipe.recipe_name}}</h1>
                   </div>
                   <div class="col-12">
-                    <h3>by <a href="#"><strong>{{recipe.author}}</strong></a></h3>
+                    <h3>by <strong>{{recipe.author}}</strong> </h3>
                     </div>
                     <div class="col-6">
                     <p><strong>Views: {{ recipe.views }}</strong></p>
@@ -91,7 +91,7 @@
                   {% if session.username in recipe.favourited_by%}
                   <div class="row">
                     <div class="col no-padding">
-                      <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-block">Remove recipe from my favourites +</button></a>
+                      <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-block">Remove recipe from my favourites - </button></a>
                     </div>
                   </div>
                   
@@ -99,7 +99,7 @@
                     {% else %}
                     <div class="row">
                       <div class="col no-padding">
-                        <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-block">Add recipe to my favourites +</button></a>
+                        <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-block"> Add recipe to my favourites + </button></a>
                       </div>
                     </div>
                     {% endif %}

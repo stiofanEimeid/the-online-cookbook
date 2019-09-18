@@ -37,6 +37,7 @@
     		      <legend>Recipe Type</legend>
         	        <div>
                          <select class='custom-select' name="recipe_type" required>
+                            <option value="">Choose</option>
                             <option value="Italian" {{ 'selected' if recipe.recipe_type == "Italian" else '' }}>Italian</option>
                             <option value="Mexican" {{ 'selected' if recipe.recipe_type == "Mexican" else '' }}>Mexican</option>
                             <option value="Indian" {{ 'selected' if recipe.recipe_type == "Indian" else '' }}>Indian</option>
@@ -52,6 +53,7 @@
     		      <legend>Recipe Type</legend>
         	        <div>
                          <select class='custom-select' name="meal_type" required>
+                             <option value="">Choose</option>
                             <option value="Breakfast" {{ 'selected' if recipe.meal_type == "Breakfast" else '' }}>Breakfast</option>
                             <option value="Lunch" {{ 'selected' if recipe.meal_type == "Lunch" else '' }}>Lunch</option>
                             <option value="Dinner" {{ 'selected' if recipe.meal_type == "Dinner" else '' }}>Dinner</option>
@@ -70,7 +72,7 @@
         	            {% for ingredient in recipe.recipe_ingredients %}
         	                 {% if loop.index == 1 %}
         	                 <div>
-        	                 <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea>
+        	                 <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" required>{{ingredient}}</textarea>
         	                 </div>
         	                    {% else %}
         	                 <div>
@@ -92,7 +94,7 @@
     	               {% for step in recipe.recipe_steps %}
     	                   {% if loop.index == 1 %}
     	                   <div>
-    	                   <textarea class="form-control reduce" name="recipe_step" rows="2" value="">{{step}}</textarea>
+    	                   <textarea class="form-control reduce" name="recipe_step" rows="2" value="" required>{{step}}</textarea>
     	                   </div>
     	                       {% else %}
     	                    <div>
@@ -112,7 +114,7 @@
     		<legend>Recipe Preptime</legend>
         	
         	        <div>
-            <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}">
+            <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}" required>
             </div>
         	</fieldset>
           </div>
@@ -123,7 +125,7 @@
         	
         	        <div>
             
-            <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}">
+            <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}" required>
             </div>
         	</fieldset>
           </div>
