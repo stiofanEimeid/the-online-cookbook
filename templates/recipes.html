@@ -2,8 +2,9 @@
     {% block content %}
       <div class="container">
     <div class="heading-box-container"> 
+    <h1 class="text-center search-header">Search Recipes</h1>
       <div class="heading-box">
-            <h1 class="text-center search-header">Search Recipes</h1>
+            
             <div class="search-box text-center">
               <form action="{{ url_for('search', search_request=search_request) }}">
                 <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
@@ -57,7 +58,7 @@
               </div>  
               
               <div style="height: 25px; width: 100%;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #052031;"></path></svg>
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #072c43;"></path></svg>
               </div>    
               
               </div>
@@ -67,7 +68,7 @@
        
         </div> 
         
-          <div style="height: 25px; width: 100%; background-color: #052031" >
+          <div style="height: 25px; width: 100%; background-color: #072c43" >
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
               </div>
         <h2 class="text-center results">Search Results</h1>

@@ -15,7 +15,7 @@ html {
 
 h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     text-decoration: none;
-    color: #1a1a1a;
+    color: #072c43;
 }
 
 .no-list-style {
@@ -49,6 +49,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 .heading-box-container {
     background-color: #072c43;
     padding:10px;
+    color: #fff;
 }
 
 .heading-box {
@@ -111,7 +112,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 
 h1, h2, .navbar-brand, .trough {
     font-family: 'Lobster', cursive;
-    color: #fff;
+    color: #072c43;
     
 }
 
@@ -157,18 +158,19 @@ img {
     height: 50px;
 }
 
-.brandname {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+/*.brandname {*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*    top: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*}*/
 
-.nav-login {
+.nav-brand {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    color: #072c43
 }
 
 /*css-tricks code*/
@@ -409,7 +411,7 @@ legend {
 .sidebar {
   height: 100%;
   width: 0;
-  width: 75%;
+  width: 65%;
   background-color: #072c43;
   position: fixed;
   z-index: 999;
