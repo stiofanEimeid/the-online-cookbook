@@ -181,12 +181,14 @@ def insert_recipe():
             {
                 "recipe_name": request.form.get("recipe_name"),
                 "recipe_preptime": request.form.get("recipe_preptime"),
+                "recipe_cooktime": request.form.get("recipe_cooktime"),
                 "recipe_description": request.form.get("recipe_description"),
                 "recipe_serves": request.form.get("recipe_serves"),
                 "recipe_steps":  request.form.getlist('recipe_step'),
                 "recipe_ingredients": request.form.getlist('recipe_ingredient'),
-                "author": session['username'],
+                "meal_type": request.form.get('meal_type'),
                 "recipe_type": request.form.get("recipe_type"),
+                "author": session['username'],
                 "recipe_image": request.form.get("recipe_image"),
                 "time_created": strftime("%H:%M:%S %d-%m-%Y", gmtime()),
                 "last_updated": "",
@@ -210,6 +212,7 @@ def update_recipe(id):
                                 {
                                     "recipe_name": request.form.get("recipe_name"),
                                     "recipe_preptime": request.form.get("recipe_preptime"),
+                                    "recipe_cooktime": request.form.get("recipe_cooktime"),
                                     "recipe_description": request.form.get("recipe_description"),
                                     "recipe_serves": request.form.get("recipe_serves"),
                                     "recipe_steps":  request.form.getlist('recipe_step'),
