@@ -47,7 +47,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 }
 
 .heading-box-container {
-    background-color: #052031;
+    background-color: #072c43;
     padding:10px;
 }
 
@@ -398,7 +398,7 @@ legend {
 .closeBtnContainer {
     height: 70px;
     position: relative;
-    background-color: #052031;
+    background-color: #072c43;
     color: #fff;
  
 }
@@ -410,7 +410,7 @@ legend {
   height: 100%;
   width: 0;
   width: 75%;
-  background-color: #052031;
+  background-color: #072c43;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -429,13 +429,13 @@ legend {
   display: block;
   transition: 0.3s;
   color: #f8f9fa;
-  border: 2px solid #052031;
+  border: 2px solid #072c43;
   border-bottom-right-radius: 35px;
   margin-bottom: 10px;
 }
 
 .sidebar a:hover {
-  color: #052031 ;
+  color: #072c43;
   background-color: #f8f9fa;
 }
 
@@ -463,13 +463,13 @@ legend {
 }
 
 .openbtn:hover {
-  background-color: #052031;
+  background-color: #072c43;
   color: #f8f9fa;
 }
 
 .closebtn:hover {
-  color: #052031 ;
-  background-color: #fff;
+  color: #072c43;
+  background-color: #f8f9fa;
 }
 
 .content, .navbar, .footer {
