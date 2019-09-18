@@ -401,8 +401,8 @@ legend {
 .closeBtnContainer {
     height: 70px;
     position: relative;
-    background-color: #072c43;
-    color: #fff;
+    background-color: #f8f9fa;
+    color: #072c43;
  
 }
 
@@ -413,7 +413,7 @@ legend {
   height: 100%;
   width: 0;
   width: 65%;
-  background-color: #072c43;
+  background-color: #f8f9fa;
   position: fixed;
   z-index: 999;
   top: 0;
@@ -431,15 +431,15 @@ legend {
   padding-bottom: 5px;
   display: block;
   transition: 0.3s;
-  color: #f8f9fa;
-  border: 2px solid #072c43;
+  color: #072c43;
+  border: 2px solid #f8f9fa;
   border-bottom-right-radius: 35px;
   margin-bottom: 10px;
 }
 
 .sidebar a:hover {
-  color: #072c43;
-  background-color: #f8f9fa;
+  color: #f8f9fa;
+  background-color: #072c43;
 }
 
 .sidebar .closebtn {
@@ -466,13 +466,13 @@ legend {
 }
 
 .openbtn:hover {
-  background-color: #072c43;
-  color: #f8f9fa;
+  background-color: #f8f9fa;
+  color: #072c43;
 }
 
 .closebtn:hover {
-  color: #072c43;
-  background-color: #f8f9fa;
+  color: #f8f9fa;
+  background-color: #072c43;
 }
 
 .content, .navbar, .footer {
