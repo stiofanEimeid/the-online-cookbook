@@ -144,11 +144,11 @@ $('#mySecondTooltip').tooltip();
 
 // https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
 
-    var maxField = 15; //Input fields increment limitation
+    var maxField = 20; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
     var x = 1; //Initial field counter is 1
-    var maxField2 = 15; //Input fields increment limitation
+    var maxField2 = 20; //Input fields increment limitation
     var addButton2 = $('.add_button2'); //Add button selector
     var wrapper2 = $('.field_wrapper2'); //Input field wrapper
     var y = 1; //Initial field counter is 1
