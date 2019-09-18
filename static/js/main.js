@@ -27,7 +27,10 @@ window.onscroll = function() {
                 .radius(90)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(amount);
+                .group(amount)
+                .colors(d3.scale.ordinal().range([ '#90ccf4', '#f3d250']));
+                
+                // ordinalColors(['#1f78b4', '#b2df8a', '#cab2d6'...])
                 
             var views =  type_dim.group().reduceSum(dc.pluck('Views'));
             dc.pieChart('#another-chart-here')
@@ -35,7 +38,8 @@ window.onscroll = function() {
                 .radius(90)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(views);
+                .group(views)
+                .colors(d3.scale.ordinal().range([ '#90ccf4', '#f3d250']));
                 
             var favourites =  type_dim.group().reduceSum(dc.pluck('Favourites'));  
             dc.pieChart('#final-chart-here')
@@ -43,7 +47,8 @@ window.onscroll = function() {
                 .radius(90)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(favourites);
+                .group(favourites)
+                .colors(d3.scale.ordinal().range([ '#90ccf4', '#f3d250']));
 
         dc.renderAll();
 }
@@ -106,10 +111,7 @@ $('#mySecondTooltip').tooltip();
         // Push content over
         $("body").css('overflow', 'hidden')
         
-        // $(".content, .navbar, .footer").removeClass("untranslateMe")
-        // $(".content, .navbar, .footer").addClass("translateMe")
-        
-        // $(".content, .navbar, .footer").css("transform", "translateX(250px)")
+
         
       });
 
@@ -118,21 +120,17 @@ $('#mySecondTooltip').tooltip();
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
          $("body").css('overflow', 'visible')
-        //  $(".content, .navbar, .footer").addClass("untranslateMe")
-        //  $(".content, .navbar, .footer").removeClass("translateMe")
-         
-        // $(".content, .navbar, .footer").css("transform", "translateX(0px)")
+     
       });
       
       $(".overlay").click(function(){
           $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
         // Push content back
-        //  $('body').removeClass('.overflowHidden')
         $("body").css('overflow', 'visible')
          $(".content, .navbar, .footer").addClass("untranslateMe")
          $(".content, .navbar, .footer").removeClass("translateMe")
-        // $(".content", ".navbar", ".footer").css("transform", "translateX(-250px)")
+       
       });
 
 

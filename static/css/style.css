@@ -427,42 +427,6 @@ legend {
   transform: translateX(-100%);
 }
 
-
-/*.translateMe {*/
-    
-	/*animation-name: pushOut;*/
-	/*animation-timing-function: ease;*/
-	/*animation-duration: .5s;*/
-	/*animation-iteration-count: 1;*/
-	/*animation-fill-mode: forwards;*/
-/*	transition: 0.5s;*/
-/*    transition-timing-function: ease;*/
-/*	transform: translateX(250px)*/
-/*}*/
-
-/*.untranslateMe {*/
- /*   animation-name: pushBack;*/
-	/*animation-timing-function: ease;*/
-	/*animation-duration: .5s;*/
-	/*animation-iteration-count: 1;*/
-	/*animation-fill-mode: forwards;*/
-	/*transition: 0.5s;*/
- /*   transition-timing-function: ease;*/
-	/*transform: translateX(0px)*/
-/*}*/
-
-/*@keyframes pushOut {*/
-/*    from {transform: translateX(0px)}*/
-    
-/*    to {transform: translateX(250px)}*/
-/*}*/
-
-/*@keyframes pushBack {*/
-/*    from {transform: translateX(250px)}*/
-    
-/*    to {transform: translateX(0px)}*/
-/*}*/
-
 .sidebar a {
   padding: 8px 8px 8px 30px;
   text-decoration: none;
@@ -471,8 +435,6 @@ legend {
   display: block;
   transition: 0.3s;
 }
-
-
 
 .sidebar a:hover {
   color: #fff;

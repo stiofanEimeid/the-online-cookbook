@@ -270,7 +270,6 @@ def login_form():
     
     return render_template("error2.html")
 
-    
 @app.route("/register", methods=["POST", "GET"])
 def register():
     if request.method == "POST":
@@ -370,14 +369,6 @@ def delete_account_form():
     return render_template('error1.html')
     
 # User functionality ends
-
-# @app.errorhandler(404)
-# def page_not_found(error):
-#     return render_template('404.html'), 404
-    
-# @app.errorhandler(500)
-# def something_wrong(error):
-#     return render_template('500.html'), 500
 
 if __name__ == '__main__':
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
