@@ -255,7 +255,8 @@ legend {
     /*font-family: 'Lobster', cursive;*/
     padding-left: 50px;
     border: 2px solid #052031;
-    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 35px;
+    margin-bottom: 10px;
 }
 
 .tab-pane {
@@ -405,8 +406,9 @@ legend {
 .closeBtnContainer {
     height: 70px;
     position: relative;
-    background-color: #ececec;
-    border-right: 2px solid grey;
+    background-color: #052031;
+    color: #fff;
+ 
 }
 
 .no-padding {
@@ -430,7 +432,7 @@ legend {
 .sidebar a {
   padding: 8px 8px 8px 30px;
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 2em;
   padding-bottom: 5px;
   display: block;
   transition: 0.3s;
@@ -447,7 +449,6 @@ legend {
   right: 25px;
   font-size: 25px;
   /*margin-left: 50px;*/
-  color: #fff;
   cursor: pointer;
   padding: 5px;
 }
@@ -584,7 +585,7 @@ legend {
     }
     
     .sidebar a {
-        font-size: 2.75em;
+        font-size: 2.5em;
     }
     
       
