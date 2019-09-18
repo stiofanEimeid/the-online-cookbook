@@ -57,10 +57,10 @@
                   {% if loop.index == 1%}
                             <li>
                              <div class="row">
-                                 <div class="col-12 col-md-9 my-auto no padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
+                                 <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
                                     {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }}
                                  </div>
-                                 <div class="col-12 col-md-3 no padding">
+                                 <div class="col-12 col-md-3 no-padding">
                                  <a href="{{ url_for('recipe', id=recipe._id) }}">
                                      <div class="image-container no-padding">
                                                         {% if recipe.recipe_image != "" %}
@@ -102,10 +102,10 @@
                   {% if loop.index == 1%}
                      <li>
                              <div class="row">
-                                 <div class="col-12 col-md-9 my-auto no padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
+                                 <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
                                     {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Favourites: {{ recipe.favourites }}
                                  </div>
-                                 <div class="col-12 col-md-3 no padding">
+                                 <div class="col-12 col-md-3 no-padding">
                                  <a href="{{ url_for('recipe', id=recipe._id) }}">
                                      <div class="image-container no-padding">
                                                         {% if recipe.recipe_image != "" %}
@@ -143,10 +143,10 @@
                                              
                         <li>
                              <div class="row">
-                                 <div class="col-12 col-md-9 my-auto no padding"><a href="{{ url_for('recipe', id=recent._id) }}">
+                                 <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recent._id) }}">
                                     {{recent.recipe_name}} by {{recent.author}}</a> <br> Submitted: {{ recent.time_created }}
                                  </div>
-                                 <div class="col-12 col-md-3 no padding">
+                                 <div class="col-12 col-md-3 no-padding">
                                  <a href="{{ url_for('recipe', id=recent._id) }}">
                                      <div class="image-container no-padding">
                                                         {% if recent.recipe_image != "" %}

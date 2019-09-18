@@ -35,9 +35,7 @@ def search():
         recipes = mongo.db.recipes.find({ '$text': { '$search': str(search_request)}}, {"score": {"$meta": 'textScore'}}).sort('_id'
             , pymongo.ASCENDING).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         recipes_count = recipes.count()
-        display_result = page * recipes_per_page if (
-                page * recipes_per_page) < recipes.count(
-                ) else recipes.count()
+        display_result = recipes_count if recipes_count < page * recipes_per_page else page * recipes_per_page
             
         return render_template("recipes.html", recipes=recipes, pages=pages, page=page, recipes_count = recipes_count, display_result=display_result)
 
@@ -80,9 +78,7 @@ def get_recipes():
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
         recipes = mongo.db.recipes.find().skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         recipes_count = recipes.count()
-        display_result = page * recipes_per_page if (
-                page * recipes_per_page) < recipes.count(
-                ) else recipes.count()
+        display_result = recipes_count if recipes_count < page * recipes_per_page else page * recipes_per_page
         return render_template("recipes.html", recipes=recipes, pages=pages, page=page, recipes_count=recipes_count, display_result=display_result)
     
 # search functionality ends
@@ -210,21 +206,21 @@ def edit_recipe(id):
 def update_recipe(id):
     recipes = mongo.db.recipes
     recipes.update({'_id': ObjectId(id)},
-    { "$set":
-            {
-                "recipe_name": request.form.get("recipe_name"),
-                "recipe_preptime": request.form.get("recipe_preptime"),
-                "recipe_description": request.form.get("recipe_description"),
-                "recipe_serves": request.form.get("recipe_serves"),
-                "recipe_steps":  request.form.getlist('recipe_step'),
-                "recipe_ingredients": request.form.getlist('recipe_ingredient'),
-                "meal_type": request.form.get('meal_type'),
-                "recipe_type": request.form.get("recipe_type"),
-                "recipe_image": request.form.get("recipe_image"),
-                "last_updated": strftime("%H:%M:%S %d-%m-%Y", gmtime()),
-                "diet": request.form.getlist("diet")
-            }
-            })
+                        { "$set":
+                                {
+                                    "recipe_name": request.form.get("recipe_name"),
+                                    "recipe_preptime": request.form.get("recipe_preptime"),
+                                    "recipe_description": request.form.get("recipe_description"),
+                                    "recipe_serves": request.form.get("recipe_serves"),
+                                    "recipe_steps":  request.form.getlist('recipe_step'),
+                                    "recipe_ingredients": request.form.getlist('recipe_ingredient'),
+                                    "meal_type": request.form.get('meal_type'),
+                                    "recipe_type": request.form.get("recipe_type"),
+                                    "recipe_image": request.form.get("recipe_image"),
+                                    "last_updated": strftime("%H:%M:%S %d-%m-%Y", gmtime()),
+                                    "diet": request.form.getlist("diet")
+                                }
+                        })
     
     return redirect(url_for("account"))
     
