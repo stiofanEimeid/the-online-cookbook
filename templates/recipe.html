@@ -18,13 +18,16 @@
                   <div class="col-12">
                     <h3>by <a href="#"><strong>{{recipe.author}}</strong></a></h3>
                     </div>
-                    <div class="col-12 border">
-                    <p>Views: {{ recipe.views }} | Favourites: {{ recipe.favourited_by | length}}</p>
+                    <div class="col-6 border">
+                    <p>Views: {{ recipe.views }}</p>
                   </div>
-                  <div class="col-12 col-md-6 col-lg-4 border">Preparation Time: {{recipe.recipe_preptime}} </div>
-                  <div class="col-12 col-md-6 col-lg-4 border">Cooking Time: </div>
-                  <div class="col-12 col-md-6 col-lg-4 border">Serves: {{recipe.recipe_serves}}</div>
-                  <div class="col-12 col-md-6 border">Diet: 
+                  <div class="col-6 border">
+                    <p>Favourites: {{ recipe.favourited_by | length}}</p>
+                  </div>
+                  <div class="col-12 border">Preparation Time: {{recipe.recipe_preptime}} </div>
+                  <div class="col-12 border">Cooking Time: {{recipe.cooking_time}}</div>
+                  <div class="col-12 border">Serves: {{recipe.recipe_serves}}</div>
+                  <div class="col-12 border">Diet: 
                     {% for diet_type in recipe.diet %}
                     {% if diet_type == "Gluten-free" %}
                     <div class="diet-image-container">
@@ -45,7 +48,7 @@
                     {% endif %}
                     {% endfor %}
                   </div>
-                  <div class="col-12 col-md-6 border">
+                  <div class="col-12 border">
                     Cuisine: {{recipe.recipe_type}}
                   </div>
                 </div>
@@ -53,11 +56,11 @@
                 {% if session.username %}
                 {% if session.username == recipe.author %}
                 <div class="row">
-                  <div class="col-6">
-                        <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Edit recipe</button></a>
+                  <div class="col-6 no-padding">
+                        <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-block">Edit recipe</button></a>
                   </div>
-                <div class="col-6">
-                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                <div class="col-6 no-padding">
+                      <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModal">
                         Delete Recipe
                       </button>
                 </div>
@@ -87,16 +90,16 @@
                 {% else %}
                   {% if session.username in recipe.favourited_by%}
                   <div class="row">
-                    <div class="col">
-                      <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-lg">Remove recipe from my favourites +</button></a>
+                    <div class="col no-padding">
+                      <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-block">Remove recipe from my favourites +</button></a>
                     </div>
                   </div>
                   
                     
                     {% else %}
                     <div class="row">
-                      <div class="col">
-                        <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-lg">Add recipe to my favourites +</button></a>
+                      <div class="col no-padding">
+                        <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-block">Add recipe to my favourites +</button></a>
                       </div>
                     </div>
                     {% endif %}
@@ -104,7 +107,9 @@
                   
                 {% else %}
                 <div class="row">
-                  <div class="col"><p>Login to add recipe to your favourites</p></div>
+                  <div class="col no-padding">
+                    <a href="{{ url_for('login') }}"><button type="button" class="btn btn-success btn-block">Login to add, edit and favourite recipes</button></a>
+                  </div>
                 </div>
                 {% endif %}
                 </div>
@@ -185,7 +190,7 @@
                         </div>
                         <div class="card-body text-center">
                           <div class="card-title text-truncate">{{product.product_name}}</div>
-                            <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-lg">Visit Product Page</button></a>
+                            <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-block">Visit Product Page</button></a>
                         </div>
                       </div>
                     </div>

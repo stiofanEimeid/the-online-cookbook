@@ -365,13 +365,13 @@ def delete_account_form():
     
 # User functionality ends
 
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template('404.html'), 404
+# @app.errorhandler(404)
+# def page_not_found(error):
+#     return render_template('404.html'), 404
     
-@app.errorhandler(500)
-def something_wrong(error):
-    return render_template('500.html'), 500
+# @app.errorhandler(500)
+# def something_wrong(error):
+#     return render_template('500.html'), 500
 
 if __name__ == '__main__':
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
