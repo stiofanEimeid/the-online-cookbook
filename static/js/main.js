@@ -61,6 +61,10 @@ window.onscroll = function() {
   
 $(document).ready(function(){
     
+$("#cancel-button").submit(function(e) {
+    e.preventDefault();
+});
+    
 $('#myTooltip').tooltip();
 
 $('#mySecondTooltip').tooltip();

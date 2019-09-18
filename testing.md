@@ -125,4 +125,6 @@ Python logic in flask still works despite being commented out.
 
 CSS fires on page load with Chrome.
 
+Form update despite non-submission
+
 ## Further Testing 
