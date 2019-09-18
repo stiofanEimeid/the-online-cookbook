@@ -27,9 +27,12 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     background-color: #ececec;
 }
 
-.border {
-   border: 5px solid grey;
+.cell {
+   border: 5px solid white;
    border-radius: 10px;
+   background-color: white;
+   color: black;
+   margin-bottom: 10px;
 }
 
 .padding-bottom {

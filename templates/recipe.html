@@ -18,16 +18,16 @@
                   <div class="col-12">
                     <h3>by <a href="#"><strong>{{recipe.author}}</strong></a></h3>
                     </div>
-                    <div class="col-6 border">
-                    <p>Views: {{ recipe.views }}</p>
+                    <div class="col-6">
+                    <p><strong>Views: {{ recipe.views }}</strong></p>
                   </div>
-                  <div class="col-6 border">
-                    <p>Favourites: {{ recipe.favourited_by | length}}</p>
+                  <div class="col-6">
+                    <p><strong>Favourites: {{ recipe.favourited_by | length}}</strong></p>
                   </div>
-                  <div class="col-12 border">Preparation Time: {{recipe.recipe_preptime}} </div>
-                  <div class="col-12 border">Cooking Time: {{recipe.cooking_time}}</div>
-                  <div class="col-12 border">Serves: {{recipe.recipe_serves}}</div>
-                  <div class="col-12 border">Diet: 
+                  <div class="col-12 cell">Preparation Time: {{recipe.recipe_preptime}} </div>
+                  <div class="col-12 cell">Cooking Time: {{recipe.cooking_time}}</div>
+                  <div class="col-12 cell">Serves: {{recipe.recipe_serves}}</div>
+                  <div class="col-12 cell">Diet: 
                     {% for diet_type in recipe.diet %}
                     {% if diet_type == "Gluten-free" %}
                     <div class="diet-image-container">
@@ -48,7 +48,7 @@
                     {% endif %}
                     {% endfor %}
                   </div>
-                  <div class="col-12 border">
+                  <div class="col-12 cell">
                     Cuisine: {{recipe.recipe_type}}
                   </div>
                 </div>
