@@ -111,6 +111,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 
 h1, h2, .navbar-brand, .trough {
     font-family: 'Lobster', cursive;
+    color: #fff;
     
 }
 
@@ -248,16 +249,7 @@ legend {
 }
 
 
-.sidebar.nav-link {
-    width: 100%;
-    background-color: #052031;
-    color: #fff;
-    /*font-family: 'Lobster', cursive;*/
-    padding-left: 50px;
-    border: 2px solid #052031;
-    border-bottom-right-radius: 35px;
-    margin-bottom: 10px;
-}
+
 
 .tab-pane {
     background-color: #fafafa;
@@ -430,17 +422,21 @@ legend {
 }
 
 .sidebar a {
-  padding: 8px 8px 8px 30px;
+  padding: 8px 8px 8px 35px;
   text-decoration: none;
   font-size: 2em;
   padding-bottom: 5px;
   display: block;
   transition: 0.3s;
+  color: #f8f9fa;
+  border: 2px solid #052031;
+  border-bottom-right-radius: 35px;
+  margin-bottom: 10px;
 }
 
 .sidebar a:hover {
   color: #052031 ;
-  background-color: #fff;
+  background-color: #f8f9fa;
 }
 
 .sidebar .closebtn {
