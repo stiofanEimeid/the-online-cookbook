@@ -33,7 +33,7 @@
                     <div class="diet-image-container">
                       <img src="../static/img/diet/no-gluten.png" alt="no gluten image">
                     </div>
-                    {% elif diet_type == "Vegan" %}
+                    {% elif diet_type == "Dairy-free" %}
                     <div class="diet-image-container">
                       <img src="../static/img/diet/no-dairy.png" alt="no dairy image">
                     </div>
@@ -129,7 +129,7 @@
           <div class="row recipe-row">
             <div class="col">
             {% if recipe.recipe_description %}
-              {{recipe.recipe_description }}
+              <p>{{recipe.recipe_description }}</p>
             {% else %}
                   {% if session.username == recipe.author %}
                    <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-lg">Add description now</button></a>
