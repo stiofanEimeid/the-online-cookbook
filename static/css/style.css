@@ -496,7 +496,7 @@ legend {
   z-index: 998;
 }
 
-p, li {
+p, ol, ul {
     overflow: auto;
 }
 
