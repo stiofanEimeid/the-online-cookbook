@@ -88,6 +88,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 
 .subhead {
   font-size: 1.5em;
+  background-color: #fafafa;
 }
 
 .image-container {
@@ -119,9 +120,7 @@ h1, h2, h3, h4, h5, h6, .nav-brand, .trough {
     font-family: 'Lobster', cursive;
 }
 
-/*h5 {*/
-/*    margin: 0;*/
-/*}*/
+
 
 .avatar-image {
     width: 100%;

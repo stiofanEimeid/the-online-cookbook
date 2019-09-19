@@ -27,8 +27,7 @@ window.onscroll = function() {
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(amount)
-                .colors(d3.scale.ordinal().range([ '#90ccf4', '#f3d250']));
+                .group(amount);
                 
                 // ordinalColors(['#1f78b4', '#b2df8a', '#cab2d6'...])
                 
@@ -109,17 +108,13 @@ $('#mySecondTooltip').tooltip();
         );
       
     //   overlay only displayed when sidebar selected
-       $(".openbtn .intro-button" ).click(function(){
+       $(".openbtn" ).click(function(){
         $(".overlay").css("display", "block")
         $(".sidebar").css("transform", "translateX(0%)")
         // Push content over
         $("body").css('overflow', 'hidden')
-        
-
-        
       });
       
-    //   ".intro-button"
 
       $(".closebtn").click(function(){
         $(".overlay").css("display", "none")

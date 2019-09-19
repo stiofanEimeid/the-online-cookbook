@@ -132,7 +132,9 @@
               <p>{{recipe.recipe_description }}</p>
             {% else %}
                   {% if session.username == recipe.author %}
+                  <div class="text-center">
                    <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-lg">Add description now</button></a>
+                   </div>
                    {% else %}
                   <p>No description added yet.</p>
                   {% endif %}
