@@ -98,45 +98,80 @@ def discover():
  
 @app.route("/data")
 def data():
-    mexican = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
-    italian = mongo.db.recipes.find({"recipe_type": "Italian"}).count()
+    south_america = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
+    europe = mongo.db.recipes.find( { '$or': [ {"recipe_type": "Italian"}, {"recipe_type": "UK"}, {"recipe_type": "Spanish"}, {"recipe_type": "Irish"}, {"recipe_type": "French"}] } ).count()
+    asia = mongo.db.recipes.find( { '$or': [ {"recipe_type": "Thai"}, {"recipe_type": "Japanese"}, {"recipe_type": "Chinese"}, {"recipe_type": "Indian"}] } ).count()
+    north_america = mongo.db.recipes.find({"recipe_type": "American"}).count()
+    africa = mongo.db.recipes.find({"recipe_type": "African"}).count()
     other = mongo.db.recipes.find({"recipe_type": "Other"}).count()
     
-    
-    mexican2 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
-    italian2 = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"views": 1, "_id":0}))
+    south_america2 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
+    europe2 = list(mongo.db.recipes.find({'$or': [ {"recipe_type": "Italian"}, {"recipe_type": "UK"}, {"recipe_type": "Spanish"}, {"recipe_type": "Irish"}, {"recipe_type": "French"}] }, {"views": 1, "_id":0}))
+    asia2 = list(mongo.db.recipes.find({ '$or': [ {"recipe_type": "Thai"}, {"recipe_type": "Japanese"}, {"recipe_type": "Chinese"}, {"recipe_type": "Indian"}] }, {"views": 1, "_id":0}))
+    north_america2 = list(mongo.db.recipes.find({"recipe_type": "American"}, {"views": 1, "_id":0}))
+    africa2 = list(mongo.db.recipes.find({"recipe_type": "African"}, {"views": 1, "_id":0}))
     other2 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1, "_id":0}))
     
-    total_mexican = 0
-    for i in range(len(mexican2)):
-        total_mexican += mexican2[i]["views"]
+    total_south_america = 0
+    for i in range(len(south_america2)):
+        total_south_america += south_america2[i]["views"]
         
-    total_italian = 0
-    for i in range(len(italian2)):
-        total_italian += italian2[i]["views"]
-    
+    total_asia = 0
+    for i in range(len(asia2)):
+        total_asia += asia2[i]["views"]
+        
+        
+    total_north_america = 0
+    for i in range(len(north_america2)):
+        total_north_america += north_america2[i]["views"]
+        
+    total_europe = 0
+    for i in range(len(europe2)):
+        total_europe += europe2[i]["views"]
+        
+    total_africa = 0
+    for i in range(len(africa2)):
+        total_africa += africa2[i]["views"]
+        
     total_other = 0 
     for i in range(len(other2)):
         total_other += other2[i]["views"]
         
-    mexican3 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"favourites": 1, "_id":0}))
-    italian3 = list(mongo.db.recipes.find({"recipe_type": "Italian"}, {"favourites": 1, "_id":0}))
-    other3 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"favourites": 1, "_id":0}))
-    
-    total_mexican2 = 0
-    for i in range(len(mexican3)):
-        total_mexican2 += mexican3[i]["favourites"]
         
-    total_italian2 = 0
-    for i in range(len(italian3)):
-        total_italian2 += italian3[i]["favourites"]
+    south_america3 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"favourites": 1, "_id":0}))
+    europe3 = list(mongo.db.recipes.find({'$or': [ {"recipe_type": "Italian"}, {"recipe_type": "UK"}, {"recipe_type": "Spanish"}, {"recipe_type": "Irish"}, {"recipe_type": "French"}] }, {"favourites": 1, "_id":0}))
+    asia3 = list(mongo.db.recipes.find({ '$or': [ {"recipe_type": "Thai"}, {"recipe_type": "Japanese"}, {"recipe_type": "Chinese"}, {"recipe_type": "Indian"}] }, {"favourites": 1, "_id":0}))
+    north_america3 = list(mongo.db.recipes.find({"recipe_type": "American"}, {"favourites": 1, "_id":0}))
+    africa3 = list(mongo.db.recipes.find({"recipe_type": "African"}, {"favourites": 1, "_id":0}))
+    other3 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"favourites": 1, "_id":0}))
+        
+    total_south_america2 = 0
+    for i in range(len(south_america3)):
+        total_south_america2 += south_america3[i]["favourites"]
+        
+    total_europe2 = 0
+    for i in range(len(europe3)):
+        total_europe2 += europe3[i]["favourites"]
+    
+    total_africa2 = 0 
+    for i in range(len(africa3)):
+        total_africa2 += africa3[i]["favourites"]
+        
+    total_north_america2 = 0
+    for i in range(len(north_america3)):
+        total_north_america2 += north_america3[i]["favourites"]
+        
+    total_asia2 = 0
+    for i in range(len(asia3)):
+        total_asia2 += asia3[i]["favourites"]
     
     total_other2 = 0 
     for i in range(len(other3)):
         total_other2 += other3[i]["favourites"]
 
     #Passes a json object that may be rendered by the d3 function in main.js
-    myData = json.dumps([{"Type": "Mexican", "Amount": mexican, "Views": total_mexican, "Favourites": total_mexican2}, {"Type": "Italian", "Amount": italian, "Views": total_italian, "Favourites": total_italian2 }, {"Type": "Other", "Amount": other, "Views": total_other, "Favourites": total_other2 }])
+    myData = json.dumps([{"Type": "South American", "Amount": south_america, "Views": total_south_america, "Favourites": total_south_america2}, {"Type": "North American", "Amount": north_america, "Views": total_north_america, "Favourites": total_north_america2}, {"Type": "European", "Amount": europe, "Views": total_europe, "Favourites": total_europe2 }, 
+    {"Type": "Asian", "Amount": asia, "Views": total_asia, "Favourites": total_asia2 }, {"Type": "African", "Amount": africa, "Views": total_africa, "Favourites": total_africa2 }, {"Type": "Other", "Amount": other, "Views": total_other, "Favourites": total_other2 }])
     return myData
     
 # View a recipe
