@@ -103,6 +103,11 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     width: 200px;
 }
 
+
+.marginAuto {
+    margin: 0 auto;
+}
+
 .sleeve {
     height: calc(80vh - 70px);
     position: relative;

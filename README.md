@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/ATOC_logo.png" alt="Apéritif: The Online Cookbook Logo"/>
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/ATOC_demo.png" alt="Apéritif: The Online Cookbook Logo"/>
 
 Apéritif: The Online Cookbook
 </h1>
