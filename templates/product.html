@@ -30,11 +30,11 @@
                 <h1>{{product.product_name}}</h1>
                 <p>Price: {{product.product_price}}</p>
                 <p>
-                  {% if in_stock == true %}
-                  In Stock
+                  {% if product.in_stock %}
+                  <span class="green">In Stock</span>
                   {% else %}
                   Out of stock. 
-                  {% endif %}
+                  <span class="red">{% endif %}</span>
                 </p>
               </div>
            
