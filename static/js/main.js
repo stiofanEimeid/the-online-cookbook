@@ -27,8 +27,7 @@ window.onscroll = function() {
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(amount)
-                .colors(d3.scale.ordinal().range([ '#1f78b4', '#b2df8a', '#cab2d6', '#b31e1e', '#b3b31e', '#b3691e', '#1eb3b3', '#b31eb3']));
+                .group(amount);
                 
                 
                 
@@ -38,8 +37,8 @@ window.onscroll = function() {
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(views)
-                .colors(d3.scale.ordinal().range([ '#1f78b4', '#b2df8a', '#cab2d6', '#b31e1e', '#b3b31e', '#b3691e', '#1eb3b3', '#b31eb3']));
+                .group(views);
+             
                 
             var favourites =  type_dim.group().reduceSum(dc.pluck('Favourites'));  
             dc.pieChart('#final-chart-here')
@@ -48,8 +47,7 @@ window.onscroll = function() {
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(favourites)
-                .colors(d3.scale.ordinal().range([ '#1f78b4', '#b2df8a', '#cab2d6', '#b31e1e', '#b3b31e', '#b3691e', '#1eb3b3', '#b31eb3']));
+                .group(favourites);
                 
      
             
