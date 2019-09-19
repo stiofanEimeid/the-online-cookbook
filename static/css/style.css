@@ -98,10 +98,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     border-bottom: 1px solid black;
 }
 
-.fadeMe1, .fadeMe2 {
-    opacity: 0;
-}
-
 
 .subhead {
   font-size: 1.5em;
