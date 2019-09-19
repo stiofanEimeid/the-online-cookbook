@@ -28,12 +28,23 @@
             <div class="row recipe-row">
               <div class="col-12 text-center">
                 <h1>{{product.product_name}}</h1>
-                <p>Price: {{product.product_price}} €9.99/£8.99</p>
+                <p>Price: {{product.product_price}}</p>
+                <p>
+                  {% if in_stock == true %}
+                  In Stock
+                  {% else %}
+                  Out of stock. 
+                  {% endif %}
+                </p>
               </div>
            
             <div class="col">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit eius, maiores. Consequatur at odio, nisi est nostrum nobis repellendus sint. Alias, amet sequi eum tenetur perspiciatis atque accusantium,voluptatem quisquam.
-              {{product.product_description }}</div>
+              <ul>
+                {% for item in product.product_description%}
+                <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
            
           </div>
           
