@@ -109,7 +109,7 @@ $('#mySecondTooltip').tooltip();
         );
       
     //   overlay only displayed when sidebar selected
-       $(".openbtn").click(function(){
+       $(".openbtn .intro-button" ).click(function(){
         $(".overlay").css("display", "block")
         $(".sidebar").css("transform", "translateX(0%)")
         // Push content over
@@ -118,6 +118,8 @@ $('#mySecondTooltip').tooltip();
 
         
       });
+      
+    //   ".intro-button"
 
       $(".closebtn").click(function(){
         $(".overlay").css("display", "none")
