@@ -60,7 +60,7 @@
                                  
                           </select>
                       </div>
-                            <!--search by new/old -->
+                     
                       <div class="col-12 text-center">
                       <button class="search-button btn btn-primary" type="submit" name="action">Filter Results</button>
                       </div>
@@ -79,7 +79,7 @@
              <div style="height: 25px; width: 100%; background-color: #f3d250;" >
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
           </div>
-           <div style="height: 25px; width: 100%; background-color: #f78888;" >
+           <div class="marginBottom"  style="height: 25px; width: 100%; background-color: #f78888;" >
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
           </div>
           
@@ -89,10 +89,9 @@
           <div class="row">
             
           {% if recipes_count %}
-           <div class="col-12 text-center"> Showing {{ (page * 12) - (11) }}-
-              {{ display_result }} of
-              {{ recipes_count }}
-              Recipes </div>
+           <div class="col-12 text-center searchCounter"> Showing {{ (page * 12) - (11) }}-
+              {{ display_result }} of {{ recipes_count }}
+              Recipes</div>
               
          
           

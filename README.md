@@ -1,7 +1,7 @@
 <h1 align="center">
-<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/ATOC_demo.png" alt="Apéritif: The Online Cookbook Logo"/>
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
 
-Apéritif: The Online Cookbook
+[Apéritif: The Online Cookbook](https://the-online-cookbook.herokuapp.com/)
 </h1>
 
 # Stephen Byrne Portfolio
@@ -135,9 +135,6 @@ Users may search products on the product page. They are not given the option to 
 
 The discover page provides some statistics about the site, including most viewed recipes, most liked recipes, the proportion of recipes to users, and most popular categories of recipes. 
 
-### Demo
-
-...
 
 ### Existing Features
 

@@ -108,6 +108,10 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     margin: 0 auto;
 }
 
+.marginBottom {
+    margin-bottom: 50px;
+}
+
 .sleeve {
     height: calc(80vh - 70px);
     position: relative;
@@ -129,7 +133,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 }
 
 
-h1, h2, h3, h4, h5, h6, .nav-brand, .trough {
+h1, h2, h3, h4, h5, h6, .nav-brand, .trough, .searchCounter {
     font-family: 'Lobster', cursive;
 }
 
