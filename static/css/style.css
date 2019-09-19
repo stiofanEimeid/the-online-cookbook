@@ -430,7 +430,7 @@ legend {
 .sidebar a {
   padding: 8px 8px 8px 35px;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.25em;
   padding-bottom: 5px;
   display: block;
   transition: 0.3s;
@@ -448,8 +448,8 @@ legend {
 .sidebar .closebtn {
   position: absolute;
   top: 25%;
-  right: 25px;
-  font-size: 25px;
+  right: 10px;
+  font-size: 22.5px;
   /*margin-left: 50px;*/
   cursor: pointer;
   padding: 5px;
@@ -590,7 +590,11 @@ p, ol, ul {
     }
     
     .sidebar a {
-        font-size: 2.5em;
+        font-size: 2em;
+    }
+    
+    .sidebar .closebtn {
+        font-size: 30px;
     }
     
       
