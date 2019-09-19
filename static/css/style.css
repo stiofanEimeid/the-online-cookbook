@@ -98,6 +98,11 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     height: 200px;
 }
 
+.logo-image-container {
+    height: 200px;
+    width: 200px;
+}
+
 .sleeve {
     height: calc(80vh - 70px);
     position: relative;

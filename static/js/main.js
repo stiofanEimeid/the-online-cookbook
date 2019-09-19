@@ -23,7 +23,8 @@ window.onscroll = function() {
             var type_dim = ndx.dimension(dc.pluck('Type'));
             var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
             dc.pieChart('#chart-here')
-                .height(330)
+                .height(300)
+                .width(300)
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
@@ -33,8 +34,10 @@ window.onscroll = function() {
                 
             var views =  type_dim.group().reduceSum(dc.pluck('Views'));
             dc.pieChart('#another-chart-here')
-                .height(330)
+                .height(300)
+                .width(300)
                 .radius(120)
+                .cy(150)
                 .transitionDuration(1500)
                 .dimension(type_dim)
                 .group(views);
