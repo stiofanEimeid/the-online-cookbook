@@ -20,6 +20,10 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     color: #072c43;
 }
 
+.btn-block a:link, .btn-block a:visited, .btn-block a:hover, .btn-block:active {
+    text-decoration: none;
+}
+
 .no-list-style {
     list-style-type: none;
     padding: 0;
@@ -127,9 +131,9 @@ h1, h2, h3, h4, h5, h6, .nav-brand, .trough {
 }
 
 .avatar-image-container {
-    height: 200px;
-    width: 200px;
-    margin: auto;
+    /*height: 200px;*/
+    /*width: 200px;*/
+    margin: 15px auto;
 }
 
 .diet-image-container {

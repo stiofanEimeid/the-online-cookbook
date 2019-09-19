@@ -28,25 +28,28 @@
                   <div class="col-12 cell">Cooking Time: {{recipe.recipe_cooktime}}</div>
                   <div class="col-12 cell">Serves: {{recipe.recipe_serves}}</div>
                   <div class="col-12 cell">Diet: 
+                  <ul>
                     {% for diet_type in recipe.diet %}
-                    {% if diet_type == "Gluten-free" %}
-                    <div class="diet-image-container">
-                      <img src="../static/img/diet/no-gluten.png" alt="no gluten image">
-                    </div>
-                    {% elif diet_type == "Dairy-free" %}
-                    <div class="diet-image-container">
-                      <img src="../static/img/diet/no-dairy.png" alt="no dairy image">
-                    </div>
-                    {% elif diet_type == "Vegetarian" %}
-                    <div class="diet-image-container">
-                      <img src="../static/img/diet/no-meat.png" alt="no meat image">
-                    </div>
-                    {% elif diet_type == "Nut-free" %}
-                   <div class="diet-image-container">
-                    <img src="../static/img/diet/no-nuts.png" alt="no nuts image">
-                    </div>
-                    {% endif %}
+                   <li>{{ diet_type }}</li>
+                   <!-- {% if diet_type == "Gluten-free" %}-->
+                   <!-- <div class="diet-image-container">-->
+                   <!--   <img src="../static/img/diet/no-gluten.png" alt="no gluten image">-->
+                   <!-- </div>-->
+                   <!-- {% elif diet_type == "Dairy-free" %}-->
+                   <!-- <div class="diet-image-container">-->
+                   <!--   <img src="../static/img/diet/no-dairy.png" alt="no dairy image">-->
+                   <!-- </div>-->
+                   <!-- {% elif diet_type == "Vegetarian" %}-->
+                   <!-- <div class="diet-image-container">-->
+                   <!--   <img src="../static/img/diet/no-meat.png" alt="no meat image">-->
+                   <!-- </div>-->
+                   <!-- {% elif diet_type == "Nut-free" %}-->
+                   <!--<div class="diet-image-container">-->
+                   <!-- <img src="../static/img/diet/no-nuts.png" alt="no nuts image">-->
+                   <!-- </div>-->
+                   <!-- {% endif %}-->
                     {% endfor %}
+                     </ul>
                   </div>
                   <div class="col-12 cell">
                     Cuisine: {{recipe.recipe_type}}

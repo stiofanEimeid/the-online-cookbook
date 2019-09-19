@@ -29,7 +29,7 @@ window.onscroll = function() {
                 .dimension(type_dim)
                 .group(amount);
                 
-                // ordinalColors(['#1f78b4', '#b2df8a', '#cab2d6'...])
+                // ordinalColors([...])
                 
             var views =  type_dim.group().reduceSum(dc.pluck('Views'));
             dc.pieChart('#another-chart-here')
@@ -38,7 +38,7 @@ window.onscroll = function() {
                 .transitionDuration(1500)
                 .dimension(type_dim)
                 .group(views)
-                .colors(d3.scale.ordinal().range([ '#90ccf4', '#f3d250']));
+                .colors(d3.scale.ordinal().range([ '#1f78b4', '#b2df8a', '#cab2d6']));
                 
             var favourites =  type_dim.group().reduceSum(dc.pluck('Favourites'));  
             dc.pieChart('#final-chart-here')

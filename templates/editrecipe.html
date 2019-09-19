@@ -48,11 +48,32 @@
         	        <div>
                          <select class='custom-select' name="recipe_type" required>
                             <option value="">Choose</option>
-                            <option value="Italian" {{ 'selected' if recipe.recipe_type == "Italian" else '' }}>Italian</option>
-                            <option value="Mexican" {{ 'selected' if recipe.recipe_type == "Mexican" else '' }}>Mexican</option>
-                            <option value="Indian" {{ 'selected' if recipe.recipe_type == "Indian" else '' }}>Indian</option>
+                            <option value="African" {{ 'selected' if recipe.recipe_type == "African" else '' }}>African</option>
+                            <option value="American" {{ 'selected' if recipe.recipe_type == "American" else '' }}>American</option>
                             <option value="Chinese" {{ 'selected' if recipe.recipe_type == "Chinese" else '' }}>Chinese</option>
+                            <option value="French" {{ 'selected' if recipe.recipe_type == "French" else '' }}>French</option>
+                            <option value="Indian" {{ 'selected' if recipe.recipe_type == "Indian" else '' }}>Indian</option>
+                            <option value="Irish" {{ 'selected' if recipe.recipe_type == "Irish" else '' }}>Irish</option>
+                            <option value="Italian" {{ 'selected' if recipe.recipe_type == "Italian" else '' }}>Italian</option>
+                            <option value="Japanese" {{ 'selected' if recipe.recipe_type == "Japanese" else '' }}>Japanese</option>
+                            <option value="Mexican" {{ 'selected' if recipe.recipe_type == "Mexican" else '' }}>Mexican</option>
+                            <option value="Spanish" {{ 'selected' if recipe.recipe_type == "Spanish" else '' }}>Spanish</option>
+                            <option value="Thai" {{ 'selected' if recipe.recipe_type == "Thai" else '' }}>Thai</option>
+                            <option value="UK" {{ 'selected' if recipe.recipe_type == "UK" else '' }}>UK</option>
                             <option value="Other" {{ 'selected' if recipe.recipe_type == "Other" else '' }}>Other</option>
+                            
+                         
+                            
+                         
+                              
+                           
+                            
+                           
+                           
+                           
+                      
+                            
+                        
                           </select>
                     </div>
         	    </fieldset>
@@ -63,10 +84,11 @@
     		      <legend>Meal Type</legend>
         	        <div>
                          <select class='custom-select' name="meal_type" required>
-                             <option value="">Choose</option>
+                            <option value="">Choose</option>
                             <option value="Breakfast" {{ 'selected' if recipe.meal_type == "Breakfast" else '' }}>Breakfast</option>
                             <option value="Lunch" {{ 'selected' if recipe.meal_type == "Lunch" else '' }}>Lunch</option>
                             <option value="Dinner" {{ 'selected' if recipe.meal_type == "Dinner" else '' }}>Dinner</option>
+                            <option value="Dessert" {{ 'selected' if recipe.meal_type == "Dessert" else '' }}>Dessert</option>
                             <option value="Snack" {{ 'selected' if recipe.meal_type == "Snack" else '' }}>Snack</option>
                            
                           </select>
@@ -168,6 +190,10 @@
                     <div class="custom-control custom-switch">
                       <input type="checkbox" class="custom-control-input" id="customSwitch4" name="diet" value="Gluten-free" {{ 'Checked' if "Gluten-free" in recipe.diet else '' }}>
                       <label class="custom-control-label" for="customSwitch4">Gluten-free</label>
+                    </div>
+                     <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch5" name="diet" value="Low-sugar" {{ 'Checked' if "Gluten-free" in recipe.diet else '' }}>
+                      <label class="custom-control-label" for="customSwitch5">Low in sugar</label>
                     </div>
         	</fieldset>
         </div>
