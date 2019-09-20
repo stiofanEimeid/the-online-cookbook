@@ -330,9 +330,13 @@ def login_form():
                 
                 return redirect(url_for('login')) 
                 
-        return render_template("error2.html")
+        else:
+            error_message = "Invalid username/password combination."
+            return render_template('error2.html', error_message=error_message)
     
-    return render_template("error2.html")
+    else:
+        error_message = "Invalid username/password combination."
+        return render_template('error2.html', error_message=error_message)
 
 @app.route("/register", methods=["POST", "GET"])
 def register():
@@ -377,7 +381,7 @@ def account():
         profile = mongo.db.users.find_one({"name": user })
         return render_template('account.html', recipes=recipes, recipe_count=recipe_count, favourites=favourites, profile=profile)
     else:
-        error_message = "Users must log in to view their account. "
+        error_message = "Users must log in to view their account."
         return render_template("error.html", error_message=error_message)
    
    
@@ -386,7 +390,7 @@ def change_avatar():
     if 'username' in session:
         return render_template("changeavatar.html")
     else:
-        error_message = "Users must log in to view account settings. "
+        error_message = "Users must log in to view account settings."
         return render_template("error.html", error_message=error_message)
       
     
@@ -418,14 +422,15 @@ def change_pw_form():
                 {"$set": {"password": bcrypt.generate_password_hash(request.form['new_password']).decode('utf-8')}})
                 return redirect(url_for('account'))
     else:
-        return render_template("error2.html")
+        error_message = "Your old password is incorrect."
+        return render_template('error2.html', error_message=error_message)
 
 @app.route('/settings/delete_account')  
 def delete_account():
     if 'username' in session:
         return render_template("deleteaccount.html")
     else:
-        error_message = "Users must log in to view account settings. "
+        error_message = "Users must log in to view account settings."
         return render_template("error.html", error_message=error_message)
     
 @app.route('/settings/delete_account', methods=["POST", "GET"])
@@ -443,7 +448,9 @@ def delete_account_form():
         # remove favourites
         return redirect(url_for('home'))
 
-    return render_template('error2.html')
+    else:
+        error_message = "Your password is incorrect."
+        return render_template('error2.html', error_message=error_message)
     
 # User functionality ends
 
