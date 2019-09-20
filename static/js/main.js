@@ -33,10 +33,11 @@ window.onscroll = function() {
                 .group(amount)
                 .on('pretransition', function(chart){
                     chart.selectAll('text.pie-slice').text( function(d) {
-                    return d.data.key + ' ' + Math.round(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%');
+                    return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
                     });
-                })
-                ;
+                });
+                
+                // https://stackoverflow.com/questions/25209971/add-percentages-to-the-pie-chart-label-in-dc-js
                 
                 
                 
@@ -47,7 +48,13 @@ window.onscroll = function() {
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(views);
+                .group(views)
+                .on('pretransition', function(chart){
+                    chart.selectAll('text.pie-slice').text( function(d) {
+                    return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+                    });
+                })
+                ;
              
                 
             var favourites =  type_dim.group().reduceSum(dc.pluck('Favourites'));  
@@ -57,7 +64,12 @@ window.onscroll = function() {
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(favourites);
+                .group(favourites)
+                on('pretransition', function(chart){
+                    chart.selectAll('text.pie-slice').text( function(d) {
+                    return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+                    });
+                });
                 
      
             
