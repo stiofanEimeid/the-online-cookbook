@@ -1,9 +1,13 @@
 <h1 align="center">
 
-[<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo"/>](https://the-online-cookbook.herokuapp.com/)
+<a href="https://the-online-cookbook.herokuapp.com/" target="_blank"><img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo"/></a>
 
 </h1>
 
+<div align="center">
+[Visit the site](https://the-online-cookbook.herokuapp.com/)
+
+</div>
 # Stephen Byrne Portfolio
 
 Stream Three Project: Data-Centric Development - Code Institute 
@@ -96,7 +100,7 @@ Visual Consistency
 
 **Demo**
 
-<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
 
 
 ### Wireframes
