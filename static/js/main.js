@@ -13,7 +13,16 @@ window.onscroll = function() {
 // Credit: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
      queue()
     .defer(d3.json, "/data")
+    .await(myTag)
     .await(makeGraph);
+    
+    function myTag(key, endAngle, startAngle){
+        var percentage = dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100);
+        if (percentage > 5){
+            return key + ' ' + Math.round(percentage) + '%';
+        }
+        
+    }
  
     
     function makeGraph(error, myDataJson) {
@@ -67,7 +76,7 @@ window.onscroll = function() {
                 .group(favourites)
                 .on('pretransition', function(chart){
                     chart.selectAll('text.pie-slice').text( function(d) {
-                    return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+                    return myTag(d.data.key, d.endAngle, d.startAngle);
                     });
                 });
     
