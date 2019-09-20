@@ -1,7 +1,7 @@
 <h1 align="center">
-<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
 
-[Apéritif: The Online Cookbook](https://the-online-cookbook.herokuapp.com/)
+[<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo"/>](https://the-online-cookbook.herokuapp.com/)
+
 </h1>
 
 # Stephen Byrne Portfolio
@@ -93,6 +93,10 @@ Designed in SVG. 3 different wheels layered one on top of the other.
 In addition, the wheels are meant to arrest the viewers attention and convey a sense of individuality about the site. It speaks to the vast array of possiblities in the world of cooking. 
 
 Visual Consistency
+
+**Demo**
+
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
 
 
 ### Wireframes
