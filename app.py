@@ -237,7 +237,11 @@ def insert_recipe():
 @app.route('/edit_recipe/<id>')
 def edit_recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
-    return render_template("editrecipe.html", recipe=recipe)
+    user = session['username']
+    if recipe["author"] == user:
+        return render_template("editrecipe.html", recipe=recipe)
+    else:
+        return "Access Denied: Only the author of this recipe may edit it"
 
 @app.route('/update_recipe/<id>', methods=["GET", "POST"])
 def update_recipe(id):
@@ -266,8 +270,14 @@ def update_recipe(id):
         
 @app.route('/delete_recipe/<id>')
 def delete_recipe(id):
-    mongo.db.recipes.remove({'_id': ObjectId(id)})
-    return redirect(url_for('account'))
+    user = session['username']
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+    if recipe["author"] == user:
+        mongo.db.recipes.remove({'_id': ObjectId(id)})
+        return redirect(url_for('account'))
+    else:
+        return "Permission Denied: Only the author of this recipe may delete it"
+    
     
 # create and update recipes in the database ends
 
@@ -356,7 +366,10 @@ def account():
    
 @app.route('/change_avatar') 
 def change_avatar():
-    return render_template("changeavatar.html")
+    if 'username' in session:
+        return render_template("changeavatar.html")
+    else:
+        return "Please login to access account settings"
     
 @app.route('/change_avatar', methods=["POST"])
 def change_avatar_form():
@@ -366,13 +379,16 @@ def change_avatar_form():
     );
     return redirect(url_for('account'))
     
-@app.route('/settings')
-def settings():
-    return render_template('settings.html')
+# @app.route('/settings')
+# def settings():
+#     return render_template('settings.html')
     
 @app.route('/settings/change_pw')
 def change_pw():
-    return render_template("changepw.html")
+    if 'username' in session:
+        return render_template("changepw.html")
+    else:
+        return "Please login to access account settings"
     
 @app.route('/settings/change_pw', methods=["POST", "GET"])
 def change_pw_form():
@@ -389,7 +405,10 @@ def change_pw_form():
 
 @app.route('/settings/delete_account')  
 def delete_account():
+    if 'username' in session:
         return render_template("deleteaccount.html")
+    else:
+        return "Please login to access account settings"
     
 @app.route('/settings/delete_account', methods=["POST", "GET"])
 def delete_account_form():
