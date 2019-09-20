@@ -236,12 +236,17 @@ def insert_recipe():
         
 @app.route('/edit_recipe/<id>')
 def edit_recipe(id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
-    user = session['username']
-    if recipe["author"] == user:
-        return render_template("editrecipe.html", recipe=recipe)
+    
+    if 'username' in session:
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+        user = session['username']
+        if recipe["author"] == user:
+            return render_template("editrecipe.html", recipe=recipe)
+        else:
+            
+            return "Access Denied: Only the author of this recipe may edit it"
     else:
-        return "Access Denied: Only the author of this recipe may edit it"
+        return "Please login to edit your recipes"
 
 @app.route('/update_recipe/<id>', methods=["GET", "POST"])
 def update_recipe(id):
@@ -270,13 +275,17 @@ def update_recipe(id):
         
 @app.route('/delete_recipe/<id>')
 def delete_recipe(id):
-    user = session['username']
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
-    if recipe["author"] == user:
-        mongo.db.recipes.remove({'_id': ObjectId(id)})
-        return redirect(url_for('account'))
+    
+    if 'username' in session:
+        user = session['username']
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+        if recipe["author"] == user:
+            mongo.db.recipes.remove({'_id': ObjectId(id)})
+            return redirect(url_for('account'))
+        else:
+            return "Permission Denied: Only the author of this recipe may delete it"
     else:
-        return "Permission Denied: Only the author of this recipe may delete it"
+        return "Please login to delete your recipe"
     
     
 # create and update recipes in the database ends
