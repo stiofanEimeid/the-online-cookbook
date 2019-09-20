@@ -14,6 +14,7 @@ window.onscroll = function() {
      queue()
     .defer(d3.json, "/data")
     .await(makeGraph);
+ 
     
     function makeGraph(error, myDataJson) {
         var ndx = crossfilter(myDataJson);
@@ -29,7 +30,13 @@ window.onscroll = function() {
                 .radius(120)
                 .transitionDuration(1500)
                 .dimension(type_dim)
-                .group(amount);
+                .group(amount)
+                .on('pretransition', (function(chart){
+                    chart.selectAll('text.pie-slice').text( function(d) {
+                    return d.data.key + ' ' + Math.round(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%');
+                    });
+                })
+                );
                 
                 
                 
