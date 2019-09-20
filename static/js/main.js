@@ -22,6 +22,7 @@ window.onscroll = function() {
         
             var type_dim = ndx.dimension(dc.pluck('Type'));
             var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
+            
             dc.pieChart('#chart-here')
                 .height(280)
                 .width(280)

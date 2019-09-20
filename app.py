@@ -207,7 +207,8 @@ def remove_favourite(id):
 def add_recipe():
     if 'username' in session:
         return render_template("addrecipe.html", recipes=mongo.db.recipes.find())
-    return "Please login/register to add recipes"
+    error_message = "You must be logged in to add recipes."
+    return render_template("error.html", error_message=error_message)
     
 @app.route('/insert_recipe', methods=['GET','POST'])
 def insert_recipe():
@@ -244,9 +245,11 @@ def edit_recipe(id):
             return render_template("editrecipe.html", recipe=recipe)
         else:
             
-            return "Access Denied: Only the author of this recipe may edit it"
+            error_message = "Permission denied: You may only edit your own recipes."
+            return render_template("error.html", error_message=error_message)
     else:
-        return "Please login to edit your recipes"
+        error_message = "You must be logged in to edit your recipes."
+        return render_template("error.html", error_message=error_message)
 
 @app.route('/update_recipe/<id>', methods=["GET", "POST"])
 def update_recipe(id):
@@ -283,9 +286,11 @@ def delete_recipe(id):
             mongo.db.recipes.remove({'_id': ObjectId(id)})
             return redirect(url_for('account'))
         else:
-            return "Permission Denied: Only the author of this recipe may delete it"
+            error_message = "Permission denied: You may only delete your own recipes."
+            return render_template("error.html", error_message=error_message)
     else:
-        return "Please login to delete your recipe"
+        error_message = "You must be logged in to delete your recipes."
+        return render_template("error.html", error_message=error_message)
     
     
 # create and update recipes in the database ends
@@ -347,7 +352,9 @@ def register():
             
             return redirect(url_for('login')) 
             
-        return render_template("error1.html")
+        else:
+            error_message="That username already exists."
+            return render_template("error.html", error_message=error_message)
         
     return render_template('register.html')
     
@@ -369,8 +376,9 @@ def account():
         recipe_count = recipes.count()
         profile = mongo.db.users.find_one({"name": user })
         return render_template('account.html', recipes=recipes, recipe_count=recipe_count, favourites=favourites, profile=profile)
-        
-    return "Please login to view your account"
+    else:
+        error_message = "Users must log in to view their account. "
+        return render_template("error.html", error_message=error_message)
    
    
 @app.route('/change_avatar') 
@@ -378,9 +386,11 @@ def change_avatar():
     if 'username' in session:
         return render_template("changeavatar.html")
     else:
-        return "Please login to access account settings"
+        error_message = "Users must log in to view account settings. "
+        return render_template("error.html", error_message=error_message)
+      
     
-@app.route('/change_avatar', methods=["POST"])
+@app.route('/settings/change_avatar', methods=["POST"])
 def change_avatar_form():
     users = mongo.db.users
     users.update_one({"name": session["username"]},
@@ -388,16 +398,14 @@ def change_avatar_form():
     );
     return redirect(url_for('account'))
     
-# @app.route('/settings')
-# def settings():
-#     return render_template('settings.html')
     
 @app.route('/settings/change_pw')
 def change_pw():
     if 'username' in session:
         return render_template("changepw.html")
     else:
-        return "Please login to access account settings"
+        error_message = "Users must log in to view account settings. "
+        return render_template("error.html", error_message=error_message)
     
 @app.route('/settings/change_pw', methods=["POST", "GET"])
 def change_pw_form():
@@ -409,15 +417,16 @@ def change_pw_form():
                 users.update_one({"name": session["username"]},
                 {"$set": {"password": bcrypt.generate_password_hash(request.form['new_password']).decode('utf-8')}})
                 return redirect(url_for('account'))
-    
-    return render_template("error2.html")
+    else:
+        return render_template("error2.html")
 
 @app.route('/settings/delete_account')  
 def delete_account():
     if 'username' in session:
         return render_template("deleteaccount.html")
     else:
-        return "Please login to access account settings"
+        error_message = "Users must log in to view account settings. "
+        return render_template("error.html", error_message=error_message)
     
 @app.route('/settings/delete_account', methods=["POST", "GET"])
 def delete_account_form():
@@ -434,9 +443,17 @@ def delete_account_form():
         # remove favourites
         return redirect(url_for('home'))
 
-    return render_template('error1.html')
+    return render_template('error2.html')
     
 # User functionality ends
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
+    
+@app.errorhandler(500)
+def something_went_wrong(error):
+    return render_template('500.html'), 500
 
 if __name__ == '__main__':
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')

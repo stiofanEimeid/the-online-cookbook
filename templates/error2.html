@@ -1,8 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
     <h1>Error</h1>
-    <p>Invalid username/password combination. Please try to <a href="{{ url_for('login') }}">login</a> again or <a href="{{ url_for('register') }}">register</a> a new account. </p>
+    <p>Invalid username/password combination. Please <a href="#/" onclick="location.href = document.referrer; return false;"> try again.</a>
 </div></p>
+
+<!--https://stackoverflow.com/questions/16253035/onclick-javascripthistory-go-1-not-working-in-chrome-->
     
 </div>
 {% endblock %}
