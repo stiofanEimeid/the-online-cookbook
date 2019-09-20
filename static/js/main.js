@@ -31,12 +31,12 @@ window.onscroll = function() {
                 .transitionDuration(1500)
                 .dimension(type_dim)
                 .group(amount)
-                .on('pretransition', (function(chart){
+                .on('pretransition', function(chart){
                     chart.selectAll('text.pie-slice').text( function(d) {
                     return d.data.key + ' ' + Math.round(dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%');
                     });
                 })
-                );
+                ;
                 
                 
                 
