@@ -528,8 +528,8 @@ p, ol, ul, .cell {
     overflow-wrap: break-word;
 }
 
-div.dc-chart {
-    float: none;
+.dc-chart {
+    float: none !important;
 }
 
 /*The three rings are overlaid on top of one another using the position: absolute selector. */
