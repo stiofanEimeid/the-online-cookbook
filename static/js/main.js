@@ -19,7 +19,7 @@ window.onscroll = function() {
     function myTag(key, endAngle, startAngle){
         var percentage = dc.utils.printSingleValue((endAngle - startAngle) / (2*Math.PI) * 100);
         if (percentage > 5){
-            return key + ' ' + Math.round(percentage) + '%';
+            return key + "( " + Math.round(percentage) + '%)';
         }
         
     }
@@ -42,7 +42,7 @@ window.onscroll = function() {
                 .group(amount)
                 .on('pretransition', function(chart){
                     chart.selectAll('text.pie-slice').text( function(d) {
-                    return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+                    return myTag(d.data.key, d.endAngle, d.startAngle);
                     });
                 });
                 
@@ -60,7 +60,7 @@ window.onscroll = function() {
                 .group(views)
                 .on('pretransition', function(chart){
                     chart.selectAll('text.pie-slice').text( function(d) {
-                    return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
+                    return myTag(d.data.key, d.endAngle, d.startAngle);
                     });
                 })
                 ;
