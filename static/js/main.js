@@ -17,7 +17,7 @@ window.onscroll = function() {
     .await(makeGraph);
     
     function myTag(key, endAngle, startAngle){
-        var percentage = dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100);
+        var percentage = dc.utils.printSingleValue((endAngle - startAngle) / (2*Math.PI) * 100);
         if (percentage > 5){
             return key + ' ' + Math.round(percentage) + '%';
         }
