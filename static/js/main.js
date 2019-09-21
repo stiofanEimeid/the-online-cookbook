@@ -24,7 +24,6 @@ window.onscroll = function() {
         }
      }
  
-    
     function makeGraph(error, myDataJson) {
         var ndx = crossfilter(myDataJson);
         
@@ -87,17 +86,21 @@ $(document).ready(function(){
 $('#myTooltip').tooltip();
 
 $('#mySecondTooltip').tooltip();
-
-     var back = ["#90CCF4", "#f78888", "#f3d250"];
+    
+    // Colour group
+    var back = ["#90CCF4", "#f78888", "#f3d250"];
      
     $('.card').hover(
        
        function(){
+        /* A random colour is chosen from the colour group and set as the 
+         card background on hover */
            var rand = back[Math.floor(Math.random()*back.length)];
            $(this).css('background-color', rand) },
        function(){ $(this).css('background-color', '#fff') }
     );
     
+    // Strike-through property toggled on click for steps and ingredients in recipe page
     $('.step').click(
         function(){ $(this).toggleClass("strikeMe")},
         );
@@ -109,7 +112,7 @@ $('#mySecondTooltip').tooltip();
        $(".openbtn" ).click(function(){
         $(".overlay").css("display", "block")
         $(".sidebar").css("transform", "translateX(0%)")
-        // Push content over
+        // Prevents user from scrolling through body while sidenav is open
         $("body").css('overflow', 'hidden')
       });
       
@@ -117,7 +120,7 @@ $('#mySecondTooltip').tooltip();
       $(".closebtn").click(function(){
         $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
-        // Push content back
+        // Allows user to scroll through body after closing sidenav
          $("body").css('overflow', 'visible')
      
       });
@@ -125,13 +128,11 @@ $('#mySecondTooltip').tooltip();
       $(".overlay").click(function(){
           $(".overlay").css("display", "none")
         $(".sidebar").css("transform", "translateX(-100%)")
-        // Push content back
+         // Allows user to scroll through body after closing sidenav
         $("body").css('overflow', 'visible')
-         $(".content, .navbar, .footer").addClass("untranslateMe")
-         $(".content, .navbar, .footer").removeClass("translateMe")
+         
        
       });
-
 
 // https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
 
