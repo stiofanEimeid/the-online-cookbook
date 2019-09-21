@@ -21,6 +21,13 @@ footer {
   padding: 20px;
 }
 
+/*General*/
+
+.card {
+    padding: 5px;
+    border: none;
+}
+
 .errorNumber {
     font-size: 150px;
     font-family: 'Lobster';
@@ -51,6 +58,24 @@ p, ol, ul, .cell {
     margin-right: 0;
 }
 
+.grey {
+    background-color: #ececec;
+}
+
+.subhead {
+  font-size: 1.5em;
+}
+
+.about-title {
+    background-color: #f78888;
+    color: #fff;
+    padding-top: 1em;
+}
+
+.intro-section {
+    padding-top: 1em;
+}
+
 /*image styles*/
 
 img {
@@ -62,10 +87,6 @@ img {
 .avatar-image {
     width: 100%;
     height: 100%;
-}
-
-.grey {
-    background-color: #ececec;
 }
 
 /*product page stock span styles*/
@@ -188,7 +209,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     padding:10px;
 }
 
-/*Search box styles*/
+/*Search styles*/
 
 .search-header {
     padding-top: 25px;
@@ -213,22 +234,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 .results {
     border-bottom: 1px solid black;
 }
-
-.subhead {
-  font-size: 1.5em;
-}
-
-.about-title {
-    background-color: #f78888;
-    color: #fff;
-    padding-top: 1em;
-}
-
-.intro-section {
-    padding-top: 1em;
-}
-
-/*Search page styles*/
 
 .search-block {
     padding:10px;
@@ -370,13 +375,6 @@ legend {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-/*cards*/
-
-.card {
-    padding: 5px;
-    border: none;
 }
 
 /*.inverse {*/
