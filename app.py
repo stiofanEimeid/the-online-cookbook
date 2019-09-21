@@ -582,9 +582,14 @@ def change_pw_form():
     Users must enter their old password before creating a new password for an
     extra layer of security.
     '''
-    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['old_password'].encode('utf-8')):
+    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'),
+                                  request.form['old_password'].encode(
+                                  'utf-8')):
                 users.update_one({"name": session["username"]},
-                {"$set": {"password": bcrypt.generate_password_hash(request.form['new_password']).decode('utf-8')}})
+                                 {"$set": {"password":
+                                  bcrypt.generate_password_hash(
+                                      request.form['new_password']).decode(
+                                          'utf-8')}})
                 return redirect(url_for('account'))
     else:
         error_message = "Your old password is incorrect."
@@ -611,7 +616,8 @@ def delete_account_form():
     Users must enter their old password before creating a new password for an
     extra layer of security.
     '''
-    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
+    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'),
+                                  request.form['password'].encode('utf-8')):
         recipes.remove({"name": username})
         session.clear()
         users.remove({"name": username})
