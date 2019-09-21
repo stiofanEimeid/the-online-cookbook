@@ -129,7 +129,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 }
 
 .homepageContainer {
-    background-color: #ececec;
+    background-color: #f3d250;
     padding-top: 70px;
 
 }
@@ -604,12 +604,14 @@ p, ol, ul, .cell {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-    }
+      .sidebar {
+          padding-top: 15px;
+          
+      }
+      .sidebar a {
+          font-size: 18px;}
+      }
     
-    
-
 
 @media screen and (orientation:landscape) {
       .innerRing, .outerRing, .centerRing {
