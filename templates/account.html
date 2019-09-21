@@ -1,13 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-  
     <div class="heading-box-container">
         <div class="row heading-box justify-content-center">
             <div class="col-8 col-md-4">
                 <div class="avatar-image-container">
-                   
                     <img class="avatar-image" src="{{ profile.avatar }}" alt="User Avatar">
-                  
                 </div>
             </div>
             <div class="col-12 col-md-8">
@@ -17,23 +14,19 @@
                     <div class="col-12 cell">Recipes: {{recipe_count}}</div>
                 </div>
             </div>
-            
-            
         </div>
-          <div style="height: 25px; width: 100%;" >
+        <div style="height: 25px; width: 100%;" >
                     <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
-            </div>
+        </div>
     </div>
-        
-                <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+    <div style="height: 25px; width: 100%; background-color: #f3d250;" >
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
-          </div>
-           <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
+    </div>
+    <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-          </div>
+    </div>
     
-        
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="pills-recipes-tab" data-toggle="pill" href="#pills-recipes" role="tab" aria-controls="pills-recipes" aria-selected="true">My Recipes</a>
           </li>
@@ -43,14 +36,14 @@
           <li class="nav-item">
             <a class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#pills-settings" role="tab" aria-controls="pills-settings" aria-selected="false">Settings</a>
           </li>
-        </ul>
-        <div class="tab-content marginBottom" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-recipes" role="tabpanel" aria-labelledby="pills-recipes-tab">
-              <div class="row">
+    </ul>
+    <div class="tab-content marginBottom" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-recipes" role="tabpanel" aria-labelledby="pills-recipes-tab">
+            <div class="row">
                   <div class="col"><h3>My Recipes | <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a></h3></div>
-              </div>
+            </div>
             
-                     <div class="row">
+            <div class="row">
                        
                         {% for recipe in recipes %}
                                
@@ -73,15 +66,13 @@
                                 </div>
                               
                         {% endfor %}
-                        
-                     </div>
-          </div>
+            </div>
+        </div>
           
-          <div class="tab-pane fade" id="pills-favourites" role="tabpanel" aria-labelledby="pills-favourites-tab">
+         <div class="tab-pane fade" id="pills-favourites" role="tabpanel" aria-labelledby="pills-favourites-tab">
             <div class="row">
              <div class="col"><h3>My Favourites</h3></div>
             </div>
-
             <div class="row">
                           {% for favourite in favourites %}
                             <div class="search-block col-12 col-md-6 col-lg-4">
@@ -102,35 +93,28 @@
                                 </div>
                             </div>
                           </div>
-                            
                            {% endfor %}
             </div>
-            
-          </div>
-          <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
-                
-                <div class="row">
-                    <div class="col"><h3>Settings</h3></div>
-                </div>
-                
-                         <div class="row settings-row">
-                            <div class="col"><a href="{{ url_for('change_avatar') }}">Change Avatar</a></div>
-                        </div>
-                         <div class="row settings-row">
-                            <div class="col"><a href="{{ url_for('change_pw') }}">Change Password</a></div>
-                        </div>
-                        <div class="row settings-row">
-                            <div class="col"><a href="{{ url_for('delete_account') }}">Delete Account</a></div>
-                        </div>
-    
-          </div>
         </div>
-    
+        <div class="tab-pane fade" id="pills-settings" role="tabpanel" aria-labelledby="pills-settings-tab">
+            <div class="row">
+                    <div class="col"><h3>Settings</h3></div>
+            </div>
+            <div class="row settings-row">
+                            <div class="col"><a href="{{ url_for('change_avatar') }}">Change Avatar</a></div>
+            </div>
+            <div class="row settings-row">
+                            <div class="col"><a href="{{ url_for('change_pw') }}">Change Password</a></div>
+            </div>
+            <div class="row settings-row">
+                            <div class="col"><a href="{{ url_for('delete_account') }}">Delete Account</a></div>
+            </div>
+        </div>
+    </div>
     <div class="row marginBottom">
         <div class="col text-center">
             <a href="{{ url_for('logout') }}"><button type="button" class="btn btn-primary">Logout</button></a>
         </div>
     </div>
-
 </div>
 {% endblock %}
