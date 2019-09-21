@@ -2,7 +2,7 @@
 /* global $ */
 /* global queue */
 /* global d3 */
-/* global crossfilter */
+/* global crossfilter*/
 
 $(document).ready(function(){
     
@@ -14,23 +14,22 @@ $('#mySecondTooltip').tooltip();
     var back = ["#90CCF4", "#f78888", "#f3d250"];
      
     $('.card').hover(
-       
        function(){
         /* A random colour is chosen from the colour group and set as the 
          card background on hover */
-         var rand = back[Math.floor(Math.random()*back.length)];
-         $(this).css('background-color', rand);
-           },
-       $(this).css('background-color', '#fff')
+           var rand = back[Math.floor(Math.random()*back.length)];
+           $(this).css('background-color', rand);
+       },
+            function(){ $(this).css('background-color', '#fff');
+       }
     );
     
     // Strike-through property toggled on click for steps and ingredients in recipe page
     $('.step').click(
-        $(this).toggleClass("strikeMe")
+        function(){ $(this).toggleClass("strikeMe");}
         );
-        
     $('.ingredient').click(
-        $(this).toggleClass("strikeMe")
+        function(){ $(this).toggleClass("strikeMe");}
         );
       
     //   overlay only displayed when sidebar selected
@@ -41,7 +40,6 @@ $('#mySecondTooltip').tooltip();
         $("body").css('overflow', 'hidden');
       });
       
-
       $(".closebtn").click(function(){
         $(".overlay").css("display", "none");
         $(".sidebar").css("transform", "translateX(-100%)");
@@ -182,3 +180,4 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 };
+
