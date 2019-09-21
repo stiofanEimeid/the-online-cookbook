@@ -18,17 +18,15 @@ window.onscroll = function() {
     
     function myTag(key, endAngle, startAngle){
         var percentage = dc.utils.printSingleValue((endAngle - startAngle) / (2*Math.PI) * 100);
+        // hide tag is less than 5% of the chart to prevent labels from overlapping
         if (percentage > 5){
-            return key + "( " + Math.round(percentage) + '%)';
+            return key + "(" + Math.round(percentage) + '%)';
         }
-        
-    }
+     }
  
     
     function makeGraph(error, myDataJson) {
         var ndx = crossfilter(myDataJson);
-        
-        
         
             var type_dim = ndx.dimension(dc.pluck('Type'));
             var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
@@ -50,7 +48,7 @@ window.onscroll = function() {
                 
                 
                 
-            var views =  type_dim.group().reduceSum(dc.pluck('Views'));
+            var views = type_dim.group().reduceSum(dc.pluck('Views'));
             dc.pieChart('#another-chart-here')
                 .height(280)
                 .width(280)
@@ -62,11 +60,10 @@ window.onscroll = function() {
                     chart.selectAll('text.pie-slice').text( function(d) {
                     return myTag(d.data.key, d.endAngle, d.startAngle);
                     });
-                })
-                ;
+                });
              
                 
-            var favourites =  type_dim.group().reduceSum(dc.pluck('Favourites'));  
+            var favourites = type_dim.group().reduceSum(dc.pluck('Favourites'));  
             dc.pieChart('#final-chart-here')
                 .height(280)
                 .width(280)

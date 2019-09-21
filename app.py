@@ -25,18 +25,36 @@ def home():
 
 @app.route("/recipe_text_search_results")
 def search():
+        '''
+        The wildcard index using the parameter $""
+        allows users to search for any value in the 
+        form of text in a recipe document.
+        '''
         mongo.db.recipes.create_index([("$**", pymongo.TEXT)])
-        
         search_request = request.args.get('search_request')
         page = int(request.args.get('page', 1))
         all_recipes = mongo.db.recipes.find({'$text': {'$search': str(search_request)}}).count()
+        '''
+        limits
+        The number twelve was chosen in the interest of symmetrical responsiveness.
+        On small screens each row will contain 1 recipe, for medium screens 3 recipes and
+        finally for large screens 4 recipes. Each of these numbers divides evenly
+        into 12 and so each full page of results will fill the container on each screen size.
+        '''
         recipes_per_page = 12
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
+        #query
         recipes = mongo.db.recipes.find({ '$text': { '$search': str(search_request)}}, {"score": {"$meta": 'textScore'}}).sort('_id'
             , pymongo.ASCENDING).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
         recipes_count = recipes.count()
+        '''
+        For use in the counter displaying the number of search results on the currently selected page
+        in the recipes template. The results per page will always be 12 until the last page (or the 
+        first page if there are less than twelve results). In that case, the top-end number x 
+        (e.g. showing 13 - x of x recipes ), will be the total number of recipes rather than the page
+        number multiplied by 12.
+        '''
         display_result = recipes_count if recipes_count < page * recipes_per_page else page * recipes_per_page
-            
         return render_template("recipes.html", recipes=recipes, pages=pages, page=page, recipes_count = recipes_count, display_result=display_result)
 
 @app.route("/recipes", methods=['GET', 'POST'])
@@ -44,6 +62,8 @@ def get_recipes():
     
     filters = []
     if request.method == 'POST':
+        # Gather each form input if the user has selected an option and append it to a list.
+        
         if request.form.get("recipe_type") != 'All':
             query = {"recipe_type": request.form.get("recipe_type")}
             filters.append(query)
@@ -65,13 +85,14 @@ def get_recipes():
         all_recipes = mongo.db.recipes.count(search_request)
         recipes_per_page = 12
         pages = range(1, int(math.ceil(all_recipes / recipes_per_page)) + 1)
+        # The list becomes the search query
         recipes = mongo.db.recipes.find(search_request).skip((page - 1) * recipes_per_page).limit(recipes_per_page)
-        # variable containing string that lists filters used in search
         recipes_count = recipes.count()
         display_result = recipes_count if recipes_count < page * recipes_per_page else page * recipes_per_page
         return render_template("recipes.html", recipes=recipes, pages=pages, page=page, recipes_count=recipes_count, display_result=display_result)
 
     else:
+        # Return all recipes if no options have been selected
         page = int(request.args.get('page', 1))
         all_recipes = mongo.db.recipes.count()
         recipes_per_page = 12
@@ -98,6 +119,8 @@ def discover():
  
 @app.route("/data")
 def data():
+    
+    # Retrieve the amount of recipes submitted pertaining to a given continent
     south_america = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
     europe = mongo.db.recipes.find( { '$or': [ {"recipe_type": "Italian"}, {"recipe_type": "UK"}, {"recipe_type": "Spanish"}, {"recipe_type": "Irish"}, {"recipe_type": "French"}] } ).count()
     asia = mongo.db.recipes.find( { '$or': [ {"recipe_type": "Thai"}, {"recipe_type": "Japanese"}, {"recipe_type": "Chinese"}, {"recipe_type": "Indian"}] } ).count()
@@ -105,6 +128,7 @@ def data():
     africa = mongo.db.recipes.find({"recipe_type": "African"}).count()
     other = mongo.db.recipes.find({"recipe_type": "Other"}).count()
     
+    # Determine the total number of views contained in each group and convert the cursor to a list 
     south_america2 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"views": 1, "_id":0}))
     europe2 = list(mongo.db.recipes.find({'$or': [ {"recipe_type": "Italian"}, {"recipe_type": "UK"}, {"recipe_type": "Spanish"}, {"recipe_type": "Irish"}, {"recipe_type": "French"}] }, {"views": 1, "_id":0}))
     asia2 = list(mongo.db.recipes.find({ '$or': [ {"recipe_type": "Thai"}, {"recipe_type": "Japanese"}, {"recipe_type": "Chinese"}, {"recipe_type": "Indian"}] }, {"views": 1, "_id":0}))
@@ -112,6 +136,7 @@ def data():
     africa2 = list(mongo.db.recipes.find({"recipe_type": "African"}, {"views": 1, "_id":0}))
     other2 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"views": 1, "_id":0}))
     
+    # Iterate through the lists and return the total number of views
     total_south_america = 0
     for i in range(len(south_america2)):
         total_south_america += south_america2[i]["views"]
@@ -137,14 +162,15 @@ def data():
     for i in range(len(other2)):
         total_other += other2[i]["views"]
         
-        
+    # Determine the total number of favourites contained in each group and convert the cursor to a list    
     south_america3 = list(mongo.db.recipes.find({"recipe_type": "Mexican"}, {"favourites": 1, "_id":0}))
     europe3 = list(mongo.db.recipes.find({'$or': [ {"recipe_type": "Italian"}, {"recipe_type": "UK"}, {"recipe_type": "Spanish"}, {"recipe_type": "Irish"}, {"recipe_type": "French"}] }, {"favourites": 1, "_id":0}))
     asia3 = list(mongo.db.recipes.find({ '$or': [ {"recipe_type": "Thai"}, {"recipe_type": "Japanese"}, {"recipe_type": "Chinese"}, {"recipe_type": "Indian"}] }, {"favourites": 1, "_id":0}))
     north_america3 = list(mongo.db.recipes.find({"recipe_type": "American"}, {"favourites": 1, "_id":0}))
     africa3 = list(mongo.db.recipes.find({"recipe_type": "African"}, {"favourites": 1, "_id":0}))
     other3 = list(mongo.db.recipes.find({"recipe_type": "Other"}, {"favourites": 1, "_id":0}))
-        
+    
+    # Iterate through the lists and return the total number of favourites
     total_south_america2 = 0
     for i in range(len(south_america3)):
         total_south_america2 += south_america3[i]["favourites"]
@@ -169,7 +195,7 @@ def data():
     for i in range(len(other3)):
         total_other2 += other3[i]["favourites"]
 
-    #Passes a json object that may be rendered by the d3 function in main.js
+    # The myData variable creates a json object containing the data that may be rendered by the d3 function in main.js
     myData = json.dumps([{"Type": "South American", "Amount": south_america, "Views": total_south_america, "Favourites": total_south_america2}, {"Type": "North American", "Amount": north_america, "Views": total_north_america, "Favourites": total_north_america2}, {"Type": "European", "Amount": europe, "Views": total_europe, "Favourites": total_europe2 }, 
     {"Type": "Asian", "Amount": asia, "Views": total_asia, "Favourites": total_asia2 }, {"Type": "African", "Amount": africa, "Views": total_africa, "Favourites": total_africa2 }, {"Type": "Other", "Amount": other, "Views": total_other, "Favourites": total_other2 }])
     return myData
@@ -179,8 +205,14 @@ def data():
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
+    '''
+    A random set of three of nine products are shown with title, link and image
+    respectivaly at the end of the page in the interest of promoting Apéritif's 
+    line of kitchenware.
+    '''
     products = mongo.db.products.aggregate([ { "$sample": { "size": 3 } } ])
     
+    # Only views by users other than the author contribute towards the recipe count
     if session.get('username') != recipe['author']:
         mongo.db.recipes.update({'_id': ObjectId(id)}, {'$inc': {'views': int(1)}})
     
@@ -205,6 +237,7 @@ def remove_favourite(id):
     
 @app.route("/add_recipe")
 def add_recipe():
+    # Only logged in users may add recipes
     if 'username' in session:
         return render_template("addrecipe.html", recipes=mongo.db.recipes.find())
     error_message = "You must be logged in to add recipes."
@@ -237,6 +270,8 @@ def insert_recipe():
         
 @app.route('/edit_recipe/<id>')
 def edit_recipe(id):
+    
+    # Only logged in users may edit recipes, specifically recipes that were authored by them
     
     if 'username' in session:
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
@@ -279,6 +314,8 @@ def update_recipe(id):
 @app.route('/delete_recipe/<id>')
 def delete_recipe(id):
     
+    # Only logged in users may delete recipes, specifically recipes that were authored by them
+    
     if 'username' in session:
         user = session['username']
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
@@ -319,22 +356,24 @@ def login():
 def login_form():
         
     users = mongo.db.users
-    # username is case insensitive by checking lowercase name value created at registration
+    # Username is case insensitive by checking lowercase name value created at registration
     login_user = users.find_one({'name_lowercase' : request.form['username'].lower()})
    
     
     if login_user:
         if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
-                  # session username is set to username chosen at registration
+                  # Session username is set to username chosen at registration
                 session['username'] = login_user['name']
                 
                 return redirect(url_for('login')) 
                 
         else:
+            # The user is not told whether the username or password or both were incorrect in the interest of security.
             error_message = "Invalid username/password combination."
             return render_template('error2.html', error_message=error_message)
     
     else:
+        # Again, the user is not told whether the username or password or both were incorrect.
         error_message = "Invalid username/password combination."
         return render_template('error2.html', error_message=error_message)
 
@@ -342,13 +381,20 @@ def login_form():
 def register():
     if request.method == "POST":
         users = mongo.db.users
-        # When creating a new username a cross-check of the chosen name in lowercase is run against usernames already in the database also rendered in lowercase to prevent duplicates, whereby users may share the same name save for case changes
+        '''
+         When creating a new username a cross-check of the chosen name in lowercase
+         is run against usernames already in the database also rendered in lowercase
+         to prevent duplicates, whereby users may share the same name save for case changes.
+         '''
         existing_user = users.find_one({'name_lowercase' : request.form['username'].lower()}) 
         
         if existing_user is None:
             hashpass = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
             avatar = request.form.get("avatar")
-            # a lowercase version of the username chosen is also created to make user's attempts to login case insensitive with regard to usernames
+            '''
+            Lowercase version of the username chosen is also created to make user's attempts
+            to login case insensitive with regard to usernames.
+            '''
             users.insert({'name' : request.form['username'], 'name_lowercase' : request.form['username'].lower(), 'password': hashpass, 'favourites': [], 'avatar': avatar, "member_since": strftime("%d-%m-%Y", gmtime())})
             
             # session username is set to chosen username
@@ -371,6 +417,7 @@ def logout():
     
 @app.route('/account')
 def account():
+    # Only logged in users may view the account page, based on session username. 
     if 'username' in session:
        
         user = session['username'] 
@@ -387,6 +434,7 @@ def account():
    
 @app.route('/change_avatar') 
 def change_avatar():
+    # Only logged in users may view account settings.
     if 'username' in session:
         return render_template("changeavatar.html")
     else:
@@ -396,6 +444,7 @@ def change_avatar():
     
 @app.route('/settings/change_avatar', methods=["POST"])
 def change_avatar_form():
+    # Only logged in users may view account settings.
     users = mongo.db.users
     users.update_one({"name": session["username"]},
     {"$set": {'avatar': request.form.get("avatar")}}
@@ -405,6 +454,7 @@ def change_avatar_form():
     
 @app.route('/settings/change_pw')
 def change_pw():
+    # Only logged in users may view account settings.
     if 'username' in session:
         return render_template("changepw.html")
     else:
@@ -417,6 +467,8 @@ def change_pw_form():
     users = mongo.db.users
     login_user = users.find_one({'name' : session['username']})
     
+    # Users must enter their old password before creating a new password for an extra layer of security.
+    
     if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['old_password'].encode('utf-8')):
                 users.update_one({"name": session["username"]},
                 {"$set": {"password": bcrypt.generate_password_hash(request.form['new_password']).decode('utf-8')}})
@@ -427,6 +479,7 @@ def change_pw_form():
 
 @app.route('/settings/delete_account')  
 def delete_account():
+    # Only logged in users may view account settings.
     if 'username' in session:
         return render_template("deleteaccount.html")
     else:
@@ -440,6 +493,8 @@ def delete_account_form():
     recipes = mongo.db.recipes
     username = session['username']
     login_user = users.find_one({'name' : username })
+    
+    #Users must enter their old password before creating a new password for an extra layer of security.
     
     if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
         recipes.remove({"name": username})
