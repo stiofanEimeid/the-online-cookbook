@@ -125,10 +125,11 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     height: calc(77.5vh - 70px);
     position: relative;
     overflow: hidden;
+    background-color: #90CCF4;
 }
 
 .homepageContainer {
-    background-color: #90CCF4;
+    background-color: #ececec;
     padding-top: 70px;
 
 }
@@ -605,17 +606,6 @@ p, ol, ul, .cell {
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
-
-    .sleeve {
-        height: 95vh;
-    }
-    
-    .innerRing, .outerRing, .centerRing {
-        width: 35%;
-        margin-left: 32.5%;
-        margin-right: 32.5%;
-        margin-top: calc((95vh - 70px - 35vw)/2)
-      }
     }
     
     
