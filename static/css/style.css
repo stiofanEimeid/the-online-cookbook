@@ -2,6 +2,10 @@ html, body {
     height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background-color: #ececec;
     font-family: 'Nunito', Verdana, sans-serif;
@@ -9,10 +13,41 @@ body {
     flex-direction: column;
 }
 
-html {
-  scroll-behavior: smooth;
+.padding-bottom {
+    padding-bottom: 60px;
 }
 
+.marginAuto {
+    margin: 0 auto;
+}
+
+.marginBottom {
+    margin-bottom: 60px;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*image styles*/
+
+img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+}
+
+.grey {
+    background-color: #ececec;
+}
+
+/*product page stock span styles*/
 .green {
    border: 3px solid green;
     border-radius: 10px;
@@ -27,6 +62,7 @@ html {
     padding: 5px;
 }
 
+/*Style removers*/
 
 h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     text-decoration: none;
@@ -42,10 +78,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     padding: 0;
 }
 
-.grey {
-    background-color: #ececec;
-}
-
 .cell {
    border: 5px solid white;
    border-radius: 10px;
@@ -54,9 +86,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
    margin-bottom: 10px;
 }
 
-.padding-bottom {
-    padding-bottom: 60px;
-}
+/*containers*/
 
 .info-box-container {
     height: 20px;
@@ -78,6 +108,8 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     padding:10px;
 }
 
+/*Search box styles*/
+
 .search-header {
     padding-top: 25px;
 }
@@ -94,10 +126,13 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     margin: 10px;
 }
 
+.searchCounter {
+    padding: 15px;
+}
+
 .results {
     border-bottom: 1px solid black;
 }
-
 
 .subhead {
   font-size: 1.5em;
@@ -112,15 +147,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     width: 200px;
 }
 
-
-.marginAuto {
-    margin: 0 auto;
-}
-
-.marginBottom {
-    margin-bottom: 60px;
-}
-
 .sleeve {
     height: calc(77.5vh - 70px);
     position: relative;
@@ -129,7 +155,7 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
 }
 
 .homepageContainer {
-    background-color: #f3d250;
+    background-color: #f78888;
     padding-top: 70px;
 
 }
@@ -147,16 +173,6 @@ h1, h2, h3, h4, h5, h6, .nav-brand, .trough, .searchCounter {
     font-family: 'Lobster', cursive;
 }
 
-.searchCounter {
-    padding: 15px;
-}
-
-
-.avatar-image {
-    width: 100%;
-    height: 100%;
-}
-
 .avatar-image-container {
     /*height: 200px;*/
     /*width: 200px;*/
@@ -169,11 +185,7 @@ h1, h2, h3, h4, h5, h6, .nav-brand, .trough, .searchCounter {
     display: inline-block;
 }
 
-img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-}
+/*navbar styles*/
 
 .navbar-wrapper {
     position: fixed;
@@ -191,13 +203,6 @@ img {
     height: 50px;
 }
 
-/*.brandname {*/
-/*    position: absolute;*/
-/*    left: 50%;*/
-/*    top: 50%;*/
-/*    transform: translate(-50%, -50%);*/
-/*}*/
-
 .nav-brand {
     position: absolute;
     right: 0;
@@ -206,12 +211,8 @@ img {
     color: #072c43
 }
 
-/*css-tricks code*/
-
 .content {
     flex: 1 0 auto;
-    /*push content off-screen when menu is open:*/
-    /*thanks to https://stackoverflow.com/questions/48620689/how-to-push-elements-off-screen-using-html-and-css*/
     width: 100%;
     flex-wrap: nowrap;
     align-items: stretch;
@@ -235,14 +236,9 @@ footer {
   padding: 20px;
 }
 
-/*css-tricks code ends*/
-
-
 input {
   width: 50%;  
 }
-
-
 
 .form-control {
 	width: 100%;
@@ -271,7 +267,6 @@ legend {
     border-radius: 5px 5px 5px 5px;
 }
 
-
 .homepage {
      background-color: #fafafa;
 }
@@ -293,17 +288,9 @@ legend {
     font-family: 'Lobster';
 }
 
-
-
 .tab-pane {
     background-color: #fafafa;
     border-radius: 0px 0px 5px 5px;
-}
-
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
 }
 
 /*Radio Button Styles*/
@@ -325,7 +312,6 @@ legend {
 .avatarRadio:checked + img {
   outline: 2px solid #f78888;
 }
-
 
 /*Search page styles*/
 
@@ -437,6 +423,7 @@ legend {
 .strikeMe {
     text-decoration: line-through;
 }
+
 /*sidebar*/
 
 .closeBtnContainer {
@@ -548,11 +535,7 @@ p, ol, ul, .cell {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    /*height: auto;*/
     position: absolute;
-    /*left: 0;*/
-    /*top: 5%;*/
-    /*top: 17.5%;*/
     margin-top: calc((77.5vh - 70px - 90vw)/2)
 }
 
@@ -575,15 +558,12 @@ p, ol, ul, .cell {
 @keyframes revolving {
 	from {
 		transform: rotate(0deg);
-
-
 	}
 
 	to {
 		transform: rotate(360deg);
 
 	}
-
 }
 
 @keyframes revolvingTwo {
@@ -597,7 +577,6 @@ p, ol, ul, .cell {
 		transform: rotate(360deg);
 
 	}
-
 }
 
 /*media queries*/
@@ -609,11 +588,14 @@ p, ol, ul, .cell {
           
       }
       .sidebar a {
-          font-size: 18px;}
+          font-size: 18px;
+          
       }
+}
     
 
-@media screen and (orientation:landscape) {
+@media screen and (orientation:landscape){
+    
       .innerRing, .outerRing, .centerRing {
         width: 35%;
         margin-left: 32.5%;
@@ -624,13 +606,11 @@ p, ol, ul, .cell {
       .sleeve {
           overflow: display;
       }
-
  }
  
  /*ipads*/
  
- @media only screen and (min-width: 768px)
- {
+ @media only screen and (min-width: 768px){
     
        .sidebar {
         width: 35%;
@@ -643,8 +623,6 @@ p, ol, ul, .cell {
     .sidebar .closebtn {
         font-size: 30px;
     }
-    
-      
     
     .menu-span {
         display: inline;
