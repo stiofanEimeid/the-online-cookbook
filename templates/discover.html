@@ -1,147 +1,126 @@
 {% extends 'base.html' %} 
     {% block content %}
     <div class="container">
-        
-     <div class="heading-box-container"> 
-       <h1 class="text-center">Discover</h1>
-        <div class="row heading-box">
-            <div class="col">
-          
-            </div>
-            <div class="col-12">
-                <div class="row">
-                   
-                    <div class="col-12 cell text-center">
-                       <h2> Total number of recipes: {{ recipe_total }} </h2>
-                    
-                        </h2>
+        <div class="heading-box-container"> 
+            <h1 class="text-center">Discover</h1>
+            <div class="row heading-box">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 cell text-center">
+                            <h2> Total number of recipes: {{ recipe_total }} </h2>
+                        </div>
+                        <div class="col-12 cell text-center">
+                            <h2> Total number of users: {{ user_total }}</h2>
+                        </div>
                     </div>
-                    
-                     <div class="col-12 cell text-center">
-                       <h2> Total number of users: {{ user_total }}</h2>
-                    
-                        </h2>
-                    </div>
-                  
                 </div>
             </div>
-            
-          
-        </div>
-        
             <div style="height: 25px; width: 100%;" >
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
             </div>
-    </div>
-    
-             <div style="height: 25px; width: 100%; background-color: #f3d250;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
-          </div>
-           <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
+        </div>
+        <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
+        </div>
+        <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-          </div>
-         
+        </div>
         <div class="row recipe-row">
             <div class="col-12 col-md-6 col-lg-4 text-center"> 
-             <h4>Cusine of Recipes Submitted</h4>
-             <div id="chart-here"></div>
+                <h4>Cusine of Recipes Submitted</h4>
+                 <div id="chart-here"></div>
             </div>
-              
             <div class="col-12 col-md-6 col-lg-4 text-center"> 
                 <h4>Cusine of Recipes Viewed</h4>
-                     <div id="another-chart-here"></div>
+                <div id="another-chart-here"></div>
             </div>
-            
-               <div class="col-12 col-lg-4 text-center"> 
+            <div class="col-12 col-lg-4 text-center"> 
                 <h4>Cusine of Recipes Favourited</h4>
-                     <div id="final-chart-here"></div>
+                <div id="final-chart-here"></div>
             </div>
         </div>
-        
-      <div class="row recipe-row">
-            <div class="col-12"><h3 class='text-center'>Most Viewed Recipes</h3></div>
-            <div class="col ">
-            <ol>
-                 {% for recipe in top_recipes %}
-                 
-                  {% if loop.index == 1%}
-                            <li>
-                             <div class="row">
-                                 <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
-                                    {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }}
-                                 </div>
-                                 <div class="col-12 col-md-3 no-padding">
-                                 <a href="{{ url_for('recipe', id=recipe._id) }}">
-                                     <div class="image-container no-padding">
-                                                        {% if recipe.recipe_image != "" %}
-                                                              <img src="{{recipe.recipe_image}}" alt="recipe image">
-                                                        {% else %}
-                                                              <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                                                        {% endif %}
-                                     </div>
-                                 </a>
-                                 </div>
-                             </div> 
-                        </li>
-                  {% else %}
-                        {% if loop.index % 2 == 0 %}
-                     <li class="grey">   <a href="{{ url_for('recipe', id=recipe._id) }}">{{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }} <br>
-                    
-                    
-                  </li>
-                        
-                        {% else %}
-                  <li>   <a href="{{ url_for('recipe', id=recipe._id) }}">{{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }}<br>
-                    
-                  
-                  </li>
-                        {% endif %}
-                  {% endif %}
-
-                  {% endfor %}   
-            </ol>
+        <div class="row recipe-row">
+            <div class="col-12">
+                <h3 class='text-center'>Most Viewed Recipes</h3>
             </div>
-        </div>
-        
-              <div class="row recipe-row">
-            <div class="col-12"><h3 class='text-center'>Most Favourited Recipes</h3></div>
             <div class="col">
-            <ol>
-                     {% for recipe in most_favourited %}
-                 
-                  {% if loop.index == 1%}
-                     <li>
-                             <div class="row">
-                                 <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
-                                    {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Favourites: {{ recipe.favourites }}
-                                 </div>
-                                 <div class="col-12 col-md-3 no-padding">
-                                 <a href="{{ url_for('recipe', id=recipe._id) }}">
-                                     <div class="image-container no-padding">
-                                                        {% if recipe.recipe_image != "" %}
-                                                              <img src="{{recipe.recipe_image}}" alt="recipe image">
-                                                        {% else %}
-                                                              <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                                                        {% endif %}
+                <ol>
+                    {% for recipe in top_recipes %}
+                        {% if loop.index == 1%}
+                            <li>
+                                <div class="row">
+                                    <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
+                                        {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }}
+                                    </div>
+                                    <div class="col-12 col-md-3 no-padding">
+                                        <a href="{{ url_for('recipe', id=recipe._id) }}">
+                                            <div class="image-container no-padding">
+                                                {% if recipe.recipe_image != "" %}
+                                                    <img src="{{recipe.recipe_image}}" alt="recipe image">
+                                                {% else %}
+                                                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                                                {% endif %}
+                                             </div>
+                                         </a>
                                      </div>
-                                 </a>
-                                 </div>
-                             </div> 
-                        </li>
-                  {% else %}
-                   {% if loop.index % 2 == 0 %}
-                     <li class="grey"> <a href="{{ url_for('recipe', id=recipe._id) }}"> {{recipe.recipe_name}} by {{recipe.author}}  </a>  <br> Favourites: {{ recipe.favourites }}
-                  </li>
+                                </div> 
+                            </li>
                         {% else %}
-                  <li> <a href="{{ url_for('recipe', id=recipe._id) }}"> {{recipe.recipe_name}} by {{recipe.author}}  </a> <br> Favourites: {{ recipe.favourites }}
-                  </li>
+                            {% if loop.index % 2 == 0 %}
+                                <li class="grey">
+                                    <a href="{{ url_for('recipe', id=recipe._id) }}">{{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }} <br>
+                                </li>
+                            {% else %}
+                                <li>   
+                                    <a href="{{ url_for('recipe', id=recipe._id) }}">{{recipe.recipe_name}} by {{recipe.author}}</a> <br> Views: {{ recipe.views }}<br>
+                                </li>
+                            {% endif %}
                         {% endif %}
-                  {% endif %}
-                  {% endfor %}   
-            </ol>
+                    {% endfor %}   
+                </ol>
             </div>
         </div>
-        
+        <div class="row recipe-row">
+            <div class="col-12"><h3 class='text-center'>
+                Most Favourited Recipes</h3>
+            </div>
+            <div class="col">
+                <ol>
+                    {% for recipe in most_favourited %}
+                        {% if loop.index == 1%}
+                            <li>
+                                <div class="row">
+                                    <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recipe._id) }}">
+                                        {{recipe.recipe_name}} by {{recipe.author}}</a> <br> Favourites: {{ recipe.favourites }}
+                                    </div>
+                                    <div class="col-12 col-md-3 no-padding">
+                                        <a href="{{ url_for('recipe', id=recipe._id) }}">
+                                            <div class="image-container no-padding">
+                                                                {% if recipe.recipe_image != "" %}
+                                                                      <img src="{{recipe.recipe_image}}" alt="recipe image">
+                                                                {% else %}
+                                                                      <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                                                                {% endif %}
+                                            </div>
+                                        </a>
+                                    </div>
+                                 </div> 
+                            </li>
+                        {% else %}
+                            {% if loop.index % 2 == 0 %}
+                                <li class="grey"> <a href="{{ url_for('recipe', id=recipe._id) }}"> {{recipe.recipe_name}} by {{recipe.author}}</a>  <br> Favourites: {{ recipe.favourites }}
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{{ url_for('recipe', id=recipe._id) }}"> {{recipe.recipe_name}} by {{recipe.author}}  </a>
+                                    <br> Favourites: {{ recipe.favourites }}
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}   
+                </ol>
+            </div>
+        </div>
         <div class="row recipe-row">
             <div class="col-12">
                 <h3 class='text-center'>Recently Submitted</h3>
@@ -150,25 +129,25 @@
                 <ol>
                     {% for recent in most_recent %}
                         {% if loop.index ==1 %}
-                                             
-                        <li>
-                             <div class="row">
-                                 <div class="col-12 col-md-9 my-auto no-padding"><a href="{{ url_for('recipe', id=recent._id) }}">
-                                    {{recent.recipe_name}} by {{recent.author}}</a> <br> Submitted: {{ recent.time_created }}
-                                 </div>
-                                 <div class="col-12 col-md-3 no-padding">
-                                 <a href="{{ url_for('recipe', id=recent._id) }}">
-                                     <div class="image-container no-padding">
-                                                        {% if recent.recipe_image != "" %}
-                                                              <img src="{{recent.recipe_image}}" alt="recipe image">
-                                                        {% else %}
-                                                              <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                                                        {% endif %}
-                                     </div>
-                                 </a>
-                                 </div>
-                             </div> 
-                        </li>
+                            <li>
+                                <div class="row">
+                                    <div class="col-12 col-md-9 my-auto no-padding">
+                                        <a href="{{ url_for('recipe', id=recent._id) }}">
+                                        {{recent.recipe_name}} by {{recent.author}}</a> <br> Submitted: {{ recent.time_created }}
+                                    </div>
+                                    <div class="col-12 col-md-3 no-padding">
+                                        <a href="{{ url_for('recipe', id=recent._id) }}">
+                                            <div class="image-container no-padding">
+                                                {% if recent.recipe_image != "" %}
+                                                    <img src="{{recent.recipe_image}}" alt="recipe image">
+                                                {% else %}
+                                                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                                                {% endif %}
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div> 
+                            </li>
                         {% else %}
                             {% if loop.index % 2 == 0 %}
                                 <li class="grey"> <a href="{{ url_for('recipe', id=recent._id) }}">

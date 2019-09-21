@@ -1,172 +1,155 @@
 {% extends 'base.html' %} {% block content %}
-
 <div class="container">
     <div class="heading-box-container">
     <div class="row heading-box">
-        <div class="col text-center"><h1>Add Recipe</h1></div>
-        
+        <div class="col text-center">
+            <h1>Add Recipe</h1>
+        </div>
     </div>
-       <div style="height: 25px; width: 100%;" >
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
-            </div>
+    <div style="height: 25px; width: 100%;">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
     </div>
-       <div style="height: 25px; width: 100%; background-color: #f3d250;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
-          </div>
-           <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-          </div>
-    
+    </div>
+    <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
+    </div>
+    <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+    </div>
     <form action="{{ url_for('insert_recipe') }}" method="POST">
-        
-       <div class="form-group">
+        <div class="form-group">
             <fieldset id="buildyourform">
-    		<legend>Recipe Name</legend>
-        	   <div>
+        		<legend>Recipe Name</legend>
+            	<div>
                     <input type="text" name="recipe_name" class="form-control" id="recipe_name" placeholder="Name" required>
-              </div>
+                </div>
         	</fieldset>
         </div>
-        
         <div class="form-group">
             <fieldset id="buildyourform">
-    		      <legend>Recipe Description</legend>
-        	
-        	        <div>
-                        <textarea class="form-control" name="recipe_description" id="recipe_description" rows="3"></textarea>
-                    </div>
+    		    <legend>Recipe Description</legend>
+        	    <div>
+                    <textarea class="form-control" name="recipe_description" id="recipe_description" rows="3"></textarea>
+                </div>
         	</fieldset>
         </div>
-        
         <div class="form-group">
-               <fieldset id="buildyourform">
-    		      <legend>Cuisine</legend>
-        	        <div>
-                         <select class='custom-select' name="recipe_type" required>
-                            <option value="">Choose</option>
-                            <option value="African">African</option>
-                            <option value="American">American</option>
-                            <option value="Chinese">Chinese</option>
-                            <option value="French">French</option>
-                            <option value="Indian">Indian</option>
-                            <option value="Irish">Irish</option>
-                            <option value="Italian">Italian</option>
-                            <option value="Japanese">Japanese</option>
-                            <option value="Mexican">Mexican</option>
-                            <option value="Spanish">Spanish</option>
-                            <option value="Thai">Thai</option>
-                            <option value="UK">UK</option>
-                            <option value="Other">Other</option>
-                          </select>
-                    </div>
-        	    </fieldset>
+            <fieldset id="buildyourform">
+    		    <legend>Cuisine</legend>
+        	    <div>
+                    <select class='custom-select' name="recipe_type" required>
+                        <option value="">Choose</option>
+                        <option value="African">African</option>
+                        <option value="American">American</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="French">French</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Irish">Irish</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Thai">Thai</option>
+                        <option value="UK">UK</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+        	</fieldset>
         </div>
-        
         <div class="form-group">
-               <fieldset id="buildyourform">
-    		      <legend>Meal Type</legend>
+            <fieldset id="buildyourform">
+    		    <legend>Meal Type</legend>
         	        <div>
-                         <select class='custom-select' name="meal_type" required>
-                             <option value="">Choose</option>
+                        <select class='custom-select' name="meal_type" required>
+                            <option value="">Choose</option>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
                             <option value="Dinner">Dinner</option>
                             <option value="Dessert">Dessert</option>
                             <option value="Snack">Snack</option>
                             <option value="Shake">Shake</option>
-                           
-                          </select>
+                        </select>
                     </div>
-        	    </fieldset>
-        </div>
-        
-                  <div class="form-group">
-             <fieldset id="buildyourform">
-    		<legend>Recipe Preptime</legend>
-        	
-        	        <div>
-            <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Insert number" required>
-            </div>
-        	</fieldset>
-          </div>
-          
-             <div class="form-group">
-            <fieldset id="buildyourform">
-    		<legend>Cooking Time</legend>
-        	
-        	        <div>
-            <input type="text" class="form-control" name="recipe_cooktime" id="recipe_cooktime" placeholder="Insert a length of time" required>
-            </div>
-        	</fieldset>
-          </div>
-          
-          <div class="form-group">
-            <fieldset id="buildyourform">
-    		      <legend>Recipe Serves</legend>
-        	
-        	        <div>
-            <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Insert number" required>
-            </div>
-        	</fieldset>
-          </div>
-        <div class="form-group">
-            <fieldset id="buildyourform">
-    		<legend>Add ingredients</legend>
-        		<div class="field_wrapper">
-        	        <div>
-
-        	            <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" placeholder="Ingredient" required>{{ingredient}}</textarea>
-        	        </div>
-            	</div>
-            	<a href="#/" class="add_button" title="Add field"><button type="button" class="btn btn-primary">Add ingredient</button></a><!--#/ as href prevents page from jumping when link is clicked-->
         	</fieldset>
         </div>
         <div class="form-group">
             <fieldset id="buildyourform">
-		    <legend>Add steps</legend>
-		          <div class="field_wrapper2">
-    	               <div>
-    	                <textarea class="form-control reduce" name="recipe_step" rows="2" placeholder="Step" required></textarea>
-    	              </div>
-        	       </div>
-        	       <a href="#/" class="add_button2" title="Add field"><button type="button" class="btn btn-primary">Add step</button></a> 
+        		<legend>Recipe Preptime</legend>
+            	<div>
+                    <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Insert number" required>
+                </div>
+        	</fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset id="buildyourform">
+        		<legend>Cooking Time</legend>
+            	<div>
+                    <input type="text" class="form-control" name="recipe_cooktime" id="recipe_cooktime" placeholder="Insert a length of time" required>
+                </div>
+        	</fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset id="buildyourform">
+        	    <legend>Recipe Serves</legend>
+            	<div>
+                    <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Insert number" required>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset id="buildyourform">
+        		<legend>Add ingredients</legend>
+            	<div class="field_wrapper">
+                	<div>
+                	    <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" placeholder="Ingredient" required>{{ingredient}}</textarea>
+                	</div>
+                </div>
+                <a href="#/" class="add_button" title="Add field"><button type="button" class="btn btn-primary">Add ingredient</button></a>
+                <!--#/ as href prevents page from jumping when link is clicked-->
+        	</fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset id="buildyourform">
+    		    <legend>Add steps</legend>
+    		          <div class="field_wrapper2">
+        	               <div>
+        	                   <textarea class="form-control reduce" name="recipe_step" rows="2" placeholder="Step" required></textarea>
+        	               </div>
+            	      </div>
+            	      <a href="#/" class="add_button2" title="Add field"><button type="button" class="btn btn-primary">Add step</button></a> 
 	        </fieldset>
         </div>
         <div class="form-group">
             <fieldset id="buildyourform">
-    		      <legend>Diet</legend>
+        		<legend>Diet</legend>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1" name="diet" value="Vegetarian">
+                    <label class="custom-control-label" for="customSwitch1">Does not contain meat</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch2" name="diet" value="Dairy-free">
+                    <label class="custom-control-label" for="customSwitch2">Does not contain dairy</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch3" name="diet" value="Nut-free">
+                    <label class="custom-control-label" for="customSwitch3">Does not contain nuts</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch4" name="diet" value="Gluten-free">
+                    <label class="custom-control-label" for="customSwitch4">Gluten-free</label>
+                </div>
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitch1" name="diet" value="Vegetarian">
-                      <label class="custom-control-label" for="customSwitch1">Does not contain meat</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitch2" name="diet" value="Dairy-free">
-                      <label class="custom-control-label" for="customSwitch2">Does not contain dairy</label>
-                    </div>
-                     <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitch3" name="diet" value="Nut-free">
-                      <label class="custom-control-label" for="customSwitch3">Does not contain nuts</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitch4" name="diet" value="Gluten-free">
-                      <label class="custom-control-label" for="customSwitch4">Gluten-free</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitch5" name="diet" value="Low-sugar">
-                      <label class="custom-control-label" for="customSwitch5">Low in sugar</label>
-                    </div>
+                    <input type="checkbox" class="custom-control-input" id="customSwitch5" name="diet" value="Low-sugar">
+                    <label class="custom-control-label" for="customSwitch5">Low in sugar</label>
+                </div>
         	</fieldset>
         </div>
-        
-
-        
         <div class="form-group">
             <fieldset id="buildyourform">
-    		<legend>Recipe Image</legend>
-        	
-        	        <div>
-                        <input type="text" name="recipe_image" class="form-control" id="recipe_image" placeholder="image url">
-          	    </div>
+        		<legend>Recipe Image</legend>
+                <div>
+                    <input type="text" name="recipe_image" class="form-control" id="recipe_image" placeholder="image url">
+              	</div>
         	</fieldset>
             </div>
         <div class="form-group text-center">
@@ -174,5 +157,4 @@
         </div>
     </form>
 </div>
-
 {% endblock %}
