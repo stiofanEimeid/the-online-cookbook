@@ -369,8 +369,7 @@ def edit_recipe(id):
         if recipe["author"] == user:
             return render_template("editrecipe.html", recipe=recipe)
         else:
-            error_message =
-            "Permission denied: You may only edit your own recipes."
+            error_message = "Denied: You may only edit your own recipes."
             return render_template("error.html", error_message=error_message)
     else:
         error_message = "You must be logged in to edit your recipes."
@@ -583,16 +582,10 @@ def change_pw_form():
     Users must enter their old password before creating a new password for an
     extra layer of security.
     '''
-    if
-    bcrypt.check_password_hash(login_user['password'].encode('utf-8'),
-                               request.form['old_password'].encode(
-                               'utf-8')):
-                                users.update_one({"name": session["username"]},
-                                                 {"$set": {"password":
-                                                  bcrypt.generate_password_hash
-                                                  (request.form['new_password']
-                                                   ).decode('utf-8')}})
-    return redirect(url_for('account'))
+    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['old_password'].encode('utf-8')):
+                users.update_one({"name": session["username"]},
+                {"$set": {"password": bcrypt.generate_password_hash(request.form['new_password']).decode('utf-8')}})
+                return redirect(url_for('account'))
     else:
         error_message = "Your old password is incorrect."
         return render_template('error2.html', error_message=error_message)
@@ -618,15 +611,12 @@ def delete_account_form():
     Users must enter their old password before creating a new password for an
     extra layer of security.
     '''
-    if bcrypt.check_password_hash(
-                                    login_user['password'].encode('utf-8'),
-                                    request.form['password'].encode('utf-8')):
-                                    recipes.remove({"name": username})
-                                    session.clear()
-                                    users.remove({"name": username})
-        # remove favourites
-    return redirect(url_for('home'))
+    if bcrypt.check_password_hash(login_user['password'].encode('utf-8'), request.form['password'].encode('utf-8')):
+        recipes.remove({"name": username})
+        session.clear()
+        users.remove({"name": username})
 
+        return redirect(url_for('home'))
     else:
         error_message = "Your password is incorrect."
         return render_template('error2.html', error_message=error_message)
