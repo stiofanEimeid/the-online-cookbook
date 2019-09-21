@@ -13,6 +13,27 @@ body {
     flex-direction: column;
 }
 
+footer {
+  flex-shrink: 0;
+  background-color: #f78888;
+  color: #fafafa;
+  text-align: center;
+  padding: 20px;
+}
+
+.errorNumber {
+    font-size: 150px;
+    font-family: 'Lobster';
+}
+
+h1, h2, h3, h4, h5, h6, .nav-brand, .trough, .searchCounter {
+    font-family: 'Lobster', cursive;
+}
+
+p, ol, ul, .cell {
+    overflow-wrap: break-word;
+}
+
 .padding-bottom {
     padding-bottom: 60px;
 }
@@ -48,6 +69,7 @@ img {
 }
 
 /*product page stock span styles*/
+
 .green {
    border: 3px solid green;
     border-radius: 10px;
@@ -64,6 +86,10 @@ img {
 
 /*Style removers*/
 
+.no-padding {
+    padding: 0;
+}
+
 h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     text-decoration: none;
     color: #072c43;
@@ -78,20 +104,74 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
     padding: 0;
 }
 
-.cell {
-   border: 5px solid white;
-   border-radius: 10px;
-   background-color: white;
-   color: black;
-   margin-bottom: 10px;
+.dc-chart {
+    float: none !important;
 }
 
 /*containers*/
+
+.content {
+    flex: 1 0 auto;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.recipe-row {
+    background-color: #fafafa;
+    border-radius: 5px;
+    margin: 10px 10px 60px 10px;
+    padding: 10px;
+}
+
+.settings-row {
+    margin: 10px;
+    padding: 10px;
+}
+
+.image-container {
+    height: 200px;
+}
+
+.logo-image-container {
+    height: 200px;
+    width: 200px;
+}
+
+.sleeve {
+    height: calc(77.5vh - 70px);
+    position: relative;
+    overflow: hidden;
+    background-color: #90CCF4;
+}
+
+.homepageContainer {
+    background-color: #f78888;
+    padding-top: 70px;
+}
+
+.homepage {
+     background-color: #fafafa;
+}
+
+.container {
+    padding-top: 70px;
+}
+
+.trough {
+    background-color: #f3d250;
+}
 
 .info-box-container {
     height: 20px;
     width: 20px;
     margin-left: 5px;
+}
+
+.avatar-image-container {
+    /*height: 200px;*/
+    /*width: 200px;*/
+    margin: 15px auto;
 }
 
 .menu-span {
@@ -138,86 +218,6 @@ h1 a:link, h1 a:visited, h1 a:hover, h1:active {
   font-size: 1.5em;
 }
 
-.image-container {
-    height: 200px;
-}
-
-.logo-image-container {
-    height: 200px;
-    width: 200px;
-}
-
-.sleeve {
-    height: calc(77.5vh - 70px);
-    position: relative;
-    overflow: hidden;
-    background-color: #90CCF4;
-}
-
-.homepageContainer {
-    background-color: #f78888;
-    padding-top: 70px;
-
-}
-
-.container {
-    padding-top: 70px;
-}
-
-.trough {
-    background-color: #f3d250;
-}
-
-
-h1, h2, h3, h4, h5, h6, .nav-brand, .trough, .searchCounter {
-    font-family: 'Lobster', cursive;
-}
-
-.avatar-image-container {
-    /*height: 200px;*/
-    /*width: 200px;*/
-    margin: 15px auto;
-}
-
-.diet-image-container {
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-}
-
-/*navbar styles*/
-
-.navbar-wrapper {
-    position: fixed;
-    z-index: 997;
-    width: 100%;
-    padding: 10px;
-    /*margin-left: 0;*/
-    height: 70px;
-    background-color: #f8f9fa;
-    transition: top 0.3s;
-}
-
-.nav-content {
-    position: relative;
-    height: 50px;
-}
-
-.nav-brand {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #072c43
-}
-
-.content {
-    flex: 1 0 auto;
-    width: 100%;
-    flex-wrap: nowrap;
-    align-items: stretch;
-}
-
 .about-title {
     background-color: #f78888;
     color: #fff;
@@ -228,13 +228,31 @@ h1, h2, h3, h4, h5, h6, .nav-brand, .trough, .searchCounter {
     padding-top: 1em;
 }
 
-footer {
-  flex-shrink: 0;
-  background-color: #f78888;
-  color: #fafafa;
-  text-align: center;
-  padding: 20px;
+/*Search page styles*/
+
+.search-block {
+    padding:10px;
 }
+
+.search-result {
+    background-color: #fafafa;
+    padding: 10px;
+    /*height: 425px;*/
+    height: 100%; /*(based on largest card in row)*/
+}
+
+/*tab contents*/
+
+.tab-pane {
+    padding: 20px;
+}
+
+.tab-pane {
+    background-color: #fafafa;
+    border-radius: 0px 0px 5px 5px;
+}
+
+/*form-elements*/
 
 input {
   width: 50%;  
@@ -267,32 +285,6 @@ legend {
     border-radius: 5px 5px 5px 5px;
 }
 
-.homepage {
-     background-color: #fafafa;
-}
-
-.recipe-row {
-    background-color: #fafafa;
-    border-radius: 5px;
-    margin: 10px 10px 60px 10px;
-    padding: 10px;
-}
-
-.settings-row {
-    margin: 10px;
-    padding: 10px;
-}
-
-.errorNumber {
-    font-size: 150px;
-    font-family: 'Lobster';
-}
-
-.tab-pane {
-    background-color: #fafafa;
-    border-radius: 0px 0px 5px 5px;
-}
-
 /*Radio Button Styles*/
 
 /* HIDE RADIO */
@@ -312,33 +304,6 @@ legend {
 .avatarRadio:checked + img {
   outline: 2px solid #f78888;
 }
-
-/*Search page styles*/
-
-.recipeDescription {
-    height: 100px;
-}
-
-.search-block {
-    padding:10px;
-}
-
-.search-result {
-    background-color: #fafafa;
-    padding: 10px;
-    /*height: 425px;*/
-    height: 100%; /*(based on largest card in row)*/
-}
-
-/*tab contents*/
-
-.tab-pane {
-    padding: 20px;
-}
-
-/*form-elements*/
-
-/*homepage graphic classes*/
 
 .checkboxContainer {
   display: block;
@@ -407,7 +372,6 @@ legend {
   transform: rotate(45deg);
 }
 
-
 /*cards*/
 
 .card {
@@ -415,13 +379,53 @@ legend {
     border: none;
 }
 
-.inverse {
-    background-color: black;
-    color: white;
-}
+/*.inverse {*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*}*/
+
+/*recipe page*/
 
 .strikeMe {
     text-decoration: line-through;
+}
+
+.recipeDescription {
+    height: 100px;
+}
+
+.cell {
+   border: 5px solid white;
+   border-radius: 10px;
+   background-color: white;
+   color: black;
+   margin-bottom: 10px;
+}
+
+/*navbar styles*/
+
+.navbar-wrapper {
+    position: fixed;
+    z-index: 997;
+    width: 100%;
+    padding: 10px;
+    /*margin-left: 0;*/
+    height: 70px;
+    background-color: #f8f9fa;
+    transition: top 0.3s;
+}
+
+.nav-content {
+    position: relative;
+    height: 50px;
+}
+
+.nav-brand {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #072c43
 }
 
 /*sidebar*/
@@ -431,12 +435,8 @@ legend {
     position: relative;
     background-color: #f8f9fa;
     color: #072c43;
- 
 }
 
-.no-padding {
-    padding: 0;
-}
 .sidebar {
   height: 100%;
   width: 0;
@@ -475,7 +475,6 @@ legend {
   top: 25%;
   right: 10px;
   font-size: 22.5px;
-  /*margin-left: 50px;*/
   cursor: pointer;
   padding: 5px;
 }
@@ -484,10 +483,8 @@ legend {
   height: 100%;
   font-size: 20px;
   cursor: pointer;
-  /*background-color: #111;*/
   background-color: #f8f9fa;
   color: #052031;
-  /*padding: 10px 15px;*/
   border: none;
   font-size: 1.5rem;
   pointer-events: auto; /*restores click functionality disabled by fixed positioning of parent container element(navbar)*/
@@ -503,11 +500,6 @@ legend {
   background-color: #072c43;
 }
 
-.content, .navbar, .footer {
-  transition: margin-left .5s;
-  transition-timing-function: ease;
-}
-
 .overlay {
   position: fixed;
   display: none;
@@ -521,13 +513,7 @@ legend {
   z-index: 998;
 }
 
-p, ol, ul, .cell {
-    overflow-wrap: break-word;
-}
-
-.dc-chart {
-    float: none !important;
-}
+/*homepage graphic classes*/
 
 /*The three rings are overlaid on top of one another using the position: absolute selector. */
 
@@ -544,9 +530,7 @@ p, ol, ul, .cell {
 	animation-timing-function: linear;
 	animation-duration: 14s;
 	animation-iteration-count: infinite;
-
 }
-
 
 .innerRing {
 	animation-name: revolvingTwo;
@@ -562,20 +546,16 @@ p, ol, ul, .cell {
 
 	to {
 		transform: rotate(360deg);
-
 	}
 }
 
 @keyframes revolvingTwo {
 	from {
 		transform: rotate(0deg);
-
-
 	}
 
 	to {
 		transform: rotate(360deg);
-
 	}
 }
 
@@ -585,17 +565,13 @@ p, ol, ul, .cell {
 @media screen and (max-height: 450px) {
       .sidebar {
           padding-top: 15px;
-          
       }
       .sidebar a {
           font-size: 18px;
-          
       }
 }
     
-
 @media screen and (orientation:landscape){
-    
       .innerRing, .outerRing, .centerRing {
         width: 35%;
         margin-left: 32.5%;
@@ -611,7 +587,6 @@ p, ol, ul, .cell {
  /*ipads*/
  
  @media only screen and (min-width: 768px){
-    
        .sidebar {
         width: 35%;
     }
@@ -632,5 +607,3 @@ p, ol, ul, .cell {
         font-size: 1.75em;
     }
  }
-
- 
