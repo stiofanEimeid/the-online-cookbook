@@ -609,7 +609,7 @@ p, ol, ul, .cell {
 
 @media screen and (max-height: 480px) and (orientation:landscape){
     .sleeve {
-        height: 75vh;
+        height: calc(95vh - 70px)
     }
     
     .innerRing, .outerRing, .centerRing {
@@ -620,11 +620,13 @@ p, ol, ul, .cell {
       }
     }
     
-    
 
-
-@media screen and (orientation:landscape) {
-      .innerRing, .outerRing, .centerRing {
+ /*ipads*/
+ 
+ @media only screen and (min-width: 768px)
+ {
+     
+           .innerRing, .outerRing, .centerRing {
         width: 35%;
         margin-left: 32.5%;
         margin-right: 32.5%;
@@ -634,13 +636,6 @@ p, ol, ul, .cell {
       .sleeve {
           overflow: display;
       }
-
- }
- 
- /*ipads*/
- 
- @media only screen and (min-width: 768px)
- {
     
        .sidebar {
         width: 35%;
