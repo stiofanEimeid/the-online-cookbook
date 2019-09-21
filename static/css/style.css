@@ -578,7 +578,7 @@ legend {
       }
       
       .sleeve {
-          overflow: display;
+          overflow: visible;
       }
  }
  

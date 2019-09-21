@@ -12,7 +12,7 @@ window.onscroll = function() {
 };
 
 // Credit: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-     queue()
+    queue()
     .defer(d3.json, "/data")
     .await(myTag)
     .await(makeGraph);
@@ -178,6 +178,5 @@ $('#mySecondTooltip').tooltip();
         $(this).parent('div').remove(); //Remove field html
         x--; //Decrement field counter
     });
- 
 });
 

@@ -17,6 +17,12 @@
 
 ## Automated Testing
 
+### Validation services
+The following validation services and linter were used to check the validity of the website code.
+- [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML.
+- [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
+- [JSHint](https://jshint.com/) was used to validate JavaScript.
+
 ## Client Stories Testing
 
 **As a user I want to**
