@@ -605,9 +605,7 @@ p, ol, ul, .cell {
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
-}
 
-@media screen and (max-height: 480px) and (orientation:landscape){
     .sleeve {
         height: 95vh;
     }
