@@ -1,86 +1,70 @@
 {% extends 'base.html' %} {% block content%}
-    <div class="container">
-        <div class="heading-box-container"> 
-
-          <div class="row heading-box">
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-6">
-                <img src="{{product.product_image}}" alt="recipe image">
-              </div>
-            </div>
-          
-         
+  <div class="container">
+    <div class="heading-box-container"> 
+      <div class="row heading-box">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6">
+            <img src="{{product.product_image}}" alt="recipe image">
           </div>
-          
-              <div style="height: 25px; width: 100%;" >
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
-            </div>
-          
         </div>
-        
-           <div style="height: 25px; width: 100%; background-color: #f3d250;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
-          </div>
-           <div class="marginBottom"  style="height: 25px; width: 100%; background-color: #f78888;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-          </div>
-          
-            <div class="row recipe-row">
-              <div class="col-12 text-center">
-                <h1>{{product.product_name}}</h1>
-                <p>Price: {{product.product_price}}</p>
-                <p>
-                  {% if product.in_stock %}
-                  <span class="green">In Stock</span>
-                  {% else %}
-                  Out of stock. 
-                  <span class="red">{% endif %}</span>
-                </p>
-              </div>
-           
-            <div class="col">
-              <ul>
-                {% for item in product.product_description%}
-                <li>{{ item }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-           
-          </div>
-          
-          
-          
-     
-
-          <div class="row marginBottom">
-            <div class="col text-center">
-              <!--<a href="#"><button type="button" class="btn btn-success btn-lg">Buy product</button></a>-->
-              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">Buy Now</button>
-              
-            </div>
-          </div>
-          
-          <!-- Buy Now Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Error</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  Checkout currently unavailable
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
+      </div>
+      <div style="height: 25px; width: 100%;" >
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
+      </div>
     </div>
+    <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
+    </div>
+    <div class="marginBottom"  style="height: 25px; width: 100%; background-color: #f78888;" >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+    </div>
+    <div class="row recipe-row">
+      <div class="col-12 text-center">
+        <h1>{{product.product_name}}</h1>
+          <p>Price: {{product.product_price}}</p>
+          <p>
+            {% if product.in_stock %}
+              <span class="green">In Stock</span>
+            {% else %}
+              <span class="red">Out of stock. </span>
+            {% endif %}
+            
+          </p>
+      </div>
+      <div class="col">
+        <ul>
+          {% for item in product.product_description%}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="row marginBottom">
+      <div class="col text-center">
+        <!--<a href="#"><button type="button" class="btn btn-success btn-lg">Buy product</button></a>-->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">Buy Now</button>
+      </div>
+    </div>
+    <!-- Buy Now Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Checkout currently unavailable
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
     
 <!--Credits-->
 
@@ -119,6 +103,5 @@
 <!--Blender-->
 
 <!--Image by <a href="https://pixabay.com/users/opaye-1806/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=10934">Yao Charlen</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=10934">Pixabay</a>-->
-
 
 {% endblock %}

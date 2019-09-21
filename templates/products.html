@@ -1,41 +1,39 @@
 {% extends 'base.html' %} {% block content%}
 <div class="container">
-        
-    <div class="heading-box-container"> 
-        
-        <div class="row heading-box">
-          <div class="col text-center">
-            <h1>Products</h1>
-            A selection of kitchen tools including utensils and applicances for the best cooking experience!</div>
-             
-        </div>
-        
-            <div style="height: 25px; width: 100%;" >
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
-            </div>
-        
+  <div class="heading-box-container"> 
+    <div class="row heading-box">
+      <div class="col text-center">
+          <h1>Products</h1>
+          A selection of kitchen tools including utensils and applicances for the best cooking experience!
+      </div>
     </div>
-            <div style="height: 25px; width: 100%; background-color: #f3d250;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
+    <div style="height: 25px; width: 100%;" >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
+    </div>
+  </div>
+  <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
+  </div>
+  <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+  </div>
+  <div class="row">
+    {% for product in products %}
+      <div class="search-block col-12 col-md-4">
+        <div class="card">
+          <div class="image-container">
+            <img src="{{product.product_image}}" alt="recipe image">
           </div>
-           <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-          </div>
-          <div class="row">
-              {% for product in products %}
-                <div class="search-block col-12 col-md-4">
-                  <div class="card">
-                    <div class="image-container">
-                          <img src="{{product.product_image}}" alt="recipe image">
-                    </div>
-                    <div class="card-body">
-                      <div class="card-title">{{product.product_name}}</div>
-                     <a href="{{ url_for('product', name=product.product_name) }}"><button type="button" class="btn btn-primary btn-block">Go to Product</button></a>
-                    </div>
-                  </div>
-                </div>
-               {% endfor %}
+          <div class="card-body">
+            <div class="card-title">
+              {{product.product_name}}
             </div>
+            <a href="{{ url_for('product', name=product.product_name) }}"><button type="button" class="btn btn-primary btn-block">Go to Product</button></a>
+          </div>
         </div>
+      </div>
+    {% endfor %}
+  </div>
+        <!--</div>-->
 </div>
 {% endblock %}
