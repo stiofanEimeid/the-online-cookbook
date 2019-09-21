@@ -577,9 +577,9 @@ legend {
         margin-top: calc((77.5vh - 70px - 35vw)/2)
       }
       
-      .sleeve {
-          overflow: visible;
-      }
+      /*.sleeve {*/
+      /*    overflow: visible;*/
+      /*}*/
  }
  
  /*ipads*/
