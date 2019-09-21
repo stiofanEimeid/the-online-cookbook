@@ -609,14 +609,14 @@ p, ol, ul, .cell {
 
 @media screen and (max-height: 480px) and (orientation:landscape){
     .sleeve {
-        height: 90.5vh;
+        height: 75vh;
     }
     
     .innerRing, .outerRing, .centerRing {
         width: 35%;
         margin-left: 32.5%;
         margin-right: 32.5%;
-        margin-top: calc((90.5vh - 70px - 35vw)/2)
+        margin-top: calc((95vh - 70px - 35vw)/2)
       }
     }
     
