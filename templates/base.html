@@ -38,7 +38,7 @@
     {% if session.username %}
           <a class="nav-link" href="{{url_for('account')}}"><i class="fas fa-user-circle"></i> Account</a>
     {% else %}
-          <a class="nav-link" href="{{url_for('login')}}"><i class="fas fa-user-circle"></i> Login</a>
+          <a class="nav-link" href="{{url_for('login')}}"><i class="fas fa-user-circle"></i> Login/Register</a>
     {% endif %}
     <a class="nav-link" href="{{url_for('get_recipes')}}"><i class="fas fa-search"></i> Search Recipes</a>
     <a class="nav-link" href="{{url_for('products')}}"><i class="fas fa-shopping-cart"></i> Products</a>
