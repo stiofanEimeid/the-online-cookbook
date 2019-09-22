@@ -1,14 +1,26 @@
 {% extends 'base.html' %} {% block content %}
         <div class="container">
            <h1 class="text-center">Login Page</h1>
-            <form method=POST action="{{ url_for('login_form') }}">  
+            <form method=POST action="{{ url_for('login_form') }}" class="needs-validation" novalidate>  
               <div class="form-group">
                 <label>Username</label><br>
                 <input type="text" class="form-control" name="username" placeholder="Username" minlength="2" maxlength="10" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your username.
+                </div>
               </div>
               <div class="form-group">
                 <label>Password</label><br>
                 <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" maxlength="16" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter your password.
+                </div>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
