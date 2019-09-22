@@ -43,7 +43,7 @@
             {% if session.username == recipe.author %}
               <div class="row">
                   <div class="col-6 no-padding">
-                        <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-block">Edit recipe</button></a>
+                        <a class="btn btn-primary btn-block" href="{{ url_for('edit_recipe', id=recipe._id) }}">Edit recipe</a>
                   </div>
                   <div class="col-6 no-padding">
                   <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModal">
@@ -66,7 +66,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <a href="{{ url_for('delete_recipe', id=recipe._id) }}"><button type="button" class="btn btn-danger">Delete recipe</button></a>
+                    <a class="btn btn-danger" href="{{ url_for('delete_recipe', id=recipe._id) }}">Delete recipe</a>
                   </div>
                 </div>
               </div>
@@ -75,13 +75,13 @@
               {% if session.username in recipe.favourited_by%}
                 <div class="row">
                   <div class="col no-padding">
-                    <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-block">Remove recipe from my favourites - </button></a>
+                    <a class="btn btn-danger btn-block" href="{{ url_for('remove_favourite', id=recipe._id) }}">Remove recipe from my favourites - </a>
                   </div>
                 </div>
               {% else %}
                 <div class="row">
                   <div class="col no-padding">
-                    <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-block"> Add recipe to my favourites + </button></a>
+                    <a class="btn btn-success btn-block" href="{{ url_for('add_favourite', id=recipe._id) }}">Add recipe to my favourites + </a>
                   </div>
                 </div>
               {% endif %}
@@ -89,7 +89,7 @@
           {% else %}
             <div class="row">
               <div class="col no-padding">
-                <a href="{{ url_for('login') }}"><button type="button" class="btn btn-success btn-block">Login to add, edit and favourite recipes</button></a>
+                <a class="btn btn-success btn-block" href="{{ url_for('login') }}">Login to add, edit and favourite recipes</a>
               </div>
             </div>
           {% endif %}
@@ -162,7 +162,7 @@
             </div>
             <div class="card-body text-center">
               <div class="card-title text-truncate">{{product.product_name}}</div>
-              <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-block">Visit Product Page</button></a>
+              <a class="btn btn-success btn-block" href="{{ url_for('product', name=product.product_name) }}">Visit Product Page</a>
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@
     <div class="tab-content marginBottom" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-recipes" role="tabpanel" aria-labelledby="pills-recipes-tab">
             <div class="row">
-                <div class="col"><h3>My Recipes | <a href="{{ url_for('add_recipe') }}"><button type="button" class="btn btn-success">Add recipe</button></a></h3></div>
+                <div class="col"><h3>My Recipes | <a class="btn btn-success" href="{{ url_for('add_recipe') }}">Add recipe</a></h3></div>
             </div>
             <div class="row">
                 {% for recipe in recipes %}
@@ -55,7 +55,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="card-title text-truncate">{{recipe.recipe_name}}</div>
-                                    <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a><a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-success">Edit recipe</button></a>
+                                    <a class="btn btn-primary" href="{{ url_for('recipe', id=recipe._id) }}">Go to Recipe</a><a class="btn btn-success" href="{{ url_for('edit_recipe', id=recipe._id) }}">Edit recipe</a>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                             <div class="card-body">
                                 <div class="card-title text-truncate">{{favourite.recipe_name}} by <strong>{{favourite.author}}</strong>
                                 </div>
-                                <a href="{{ url_for('recipe', id=favourite._id) }}"><button type="button" class="btn btn-primary">Go to Recipe</button></a>
+                                <a class="btn btn-primary" href="{{ url_for('recipe', id=favourite._id) }}">Go to Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
     </div>
     <div class="row marginBottom">
         <div class="col text-center">
-            <a href="{{ url_for('logout') }}"><button type="button" class="btn btn-primary">Logout</button></a>
+            <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
         </div>
     </div>
 </div>
