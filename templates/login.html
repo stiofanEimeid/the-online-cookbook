@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
         <div class="container">
-           <h1 class="text-center">Login Page</h1>
+           <h1 class="text-center marginBottom">Login Page</h1>
             <form method=POST action="{{ url_for('login_form') }}" class="needs-validation" novalidate>  
               <div class="form-group">
                 <label>Username</label><br>
@@ -22,7 +22,7 @@
                   Please enter your password.
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary btn-lg">Submit</button>
             </form>
             <br>
             <div>

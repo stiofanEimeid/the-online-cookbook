@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-  <h1 class="text-center">Registration Page</h1>
+  <h1 class="text-center marginBottom">Registration Page</h1>
     <form method=POST action="{{ url_for('register') }}" class="needs-validation" novalidate>
       <div class="form-group">
         <input type="text" class="form-control" name="username" placeholder="Username" minlength="2" maxlength="10" required>
@@ -39,8 +39,9 @@
             <img src="../static/img/avatars/avatar3.png" alt="Third Avatar">
           </label>
       </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-primary">Register</button><br>Already have an account? <a href="{{ url_for('login') }}">Login here</a>
+      <div class="marginBottom">
+        <button type="submit" class="btn btn-primary btn-lg">Register</button><br>
+        Already have an account? <a href="{{ url_for('login') }}">Login here</a>
       </div>
     </form>
 </div>
