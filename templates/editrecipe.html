@@ -49,6 +49,7 @@
                         <option value="">Choose</option>
                         <option value="African" {{ 'selected' if recipe.recipe_type == "African" else '' }}>African</option>
                         <option value="American" {{ 'selected' if recipe.recipe_type == "American" else '' }}>American</option>
+                        <option value="British" {{ 'selected' if recipe.recipe_type == "British" else '' }}>British</option>
                         <option value="Chinese" {{ 'selected' if recipe.recipe_type == "Chinese" else '' }}>Chinese</option>
                         <option value="French" {{ 'selected' if recipe.recipe_type == "French" else '' }}>French</option>
                         <option value="Indian" {{ 'selected' if recipe.recipe_type == "Indian" else '' }}>Indian</option>
@@ -58,7 +59,6 @@
                         <option value="Mexican" {{ 'selected' if recipe.recipe_type == "Mexican" else '' }}>Mexican</option>
                         <option value="Spanish" {{ 'selected' if recipe.recipe_type == "Spanish" else '' }}>Spanish</option>
                         <option value="Thai" {{ 'selected' if recipe.recipe_type == "Thai" else '' }}>Thai</option>
-                        <option value="British" {{ 'selected' if recipe.recipe_type == "British" else '' }}>British</option>
                         <option value="Other" {{ 'selected' if recipe.recipe_type == "Other" else '' }}>Other</option>
                     </select>
                     <small class="form-text text-muted required">Required</small>
