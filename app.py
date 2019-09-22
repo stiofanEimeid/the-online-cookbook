@@ -26,7 +26,6 @@ def home():
 
 # search functionality begins
 
-
 @app.route("/recipe_text_search_results")
 def search():
         '''
@@ -125,9 +124,11 @@ def get_recipes():
                         else page * recipes_per_page)
         return render_template("recipes.html", recipes=recipes, pages=pages,
                                page=page, recipes_count=recipes_count,
-                               display_result=display_result)
-# Statistics routes
 
+                               display_result=display_result)
+
+
+# Statistics routes
 
 @app.route("/discover")
 def discover():
@@ -274,8 +275,9 @@ def data():
                           total_other2}
                          ])
     return myData
-# View a recipe
 
+
+# View a recipe
 
 @app.route("/recipe/<id>", methods=['GET', 'POST'])
 def recipe(id):
@@ -316,9 +318,7 @@ def remove_favourite(id):
     return redirect(url_for('recipe', id=id))
 
 
-#Create and update recipes in the database.
-
-
+# Create and update recipes in the database.
 
 @app.route("/add_recipe")
 def add_recipe():
@@ -421,8 +421,8 @@ def delete_recipe(id):
         error_message = "You must be logged in to delete your recipes."
         return render_template("error.html", error_message=error_message)
 
-# Products Pages
 
+# Products Pages
 
 @app.route('/products')
 def products():
@@ -434,8 +434,8 @@ def product(name):
     product = mongo.db.products.find_one({"product_name": name})
     return render_template("product.html", product=product)
 
-# Login/Registration functionality
 
+# Login/Registration functionality
 
 @app.route('/login')
 def login():
@@ -519,8 +519,8 @@ def logout():
     session.clear()
     return redirect(url_for('home'))
 
-# Account and account settings
 
+# Account and account settings
 
 @app.route('/account')
 def account():
@@ -624,8 +624,8 @@ def delete_account_form():
         error_message = "Your password is incorrect."
         return render_template('error2.html', error_message=error_message)
 
-# User functionality ends
 
+# Error pages
 
 @app.errorhandler(404)
 def page_not_found(error):
