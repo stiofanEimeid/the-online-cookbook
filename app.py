@@ -154,7 +154,7 @@ def data():
     # Retrieve the amount of recipes submitted pertaining to a given continent
     south_america = mongo.db.recipes.find({"recipe_type": "Mexican"}).count()
     europe = mongo.db.recipes.find({'$or': [{"recipe_type": "Italian"},
-                                            {"recipe_type": "UK"},
+                                            {"recipe_type": "British"},
                                             {"recipe_type": "Spanish"},
                                             {"recipe_type": "Irish"},
                                             {"recipe_type": "French"}
@@ -174,7 +174,7 @@ def data():
     south_america2 = list(mongo.db.recipes.find({"recipe_type": "Mexican"},
                                                 {"views": 1, "_id": 0}))
     europe2 = list(mongo.db.recipes.find({'$or': [{"recipe_type": "Italian"},
-                                                  {"recipe_type": "UK"},
+                                                  {"recipe_type": "British"},
                                                   {"recipe_type": "Spanish"},
                                                   {"recipe_type": "Irish"},
                                                   {"recipe_type": "French"}
@@ -216,7 +216,7 @@ def data():
     south_america3 = list(mongo.db.recipes.find({"recipe_type": "Mexican"},
                                                 {"favourites": 1, "_id": 0}))
     europe3 = list(mongo.db.recipes.find({'$or': [{"recipe_type": "Italian"},
-                                                  {"recipe_type": "UK"},
+                                                  {"recipe_type": "British"},
                                                   {"recipe_type": "Spanish"},
                                                   {"recipe_type": "Irish"},
                                                   {"recipe_type": "French"}

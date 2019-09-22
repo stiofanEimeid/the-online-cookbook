@@ -21,8 +21,8 @@
             <fieldset>
         		<legend>Recipe Name</legend>
             	<div>
-                    <input type="text" name="recipe_name" class="form-control" id="recipe_name" placeholder="Name" required>
-                    <small class="form-text text-muted required">Required</small>
+                    <input type="text" name="recipe_name" class="form-control" id="recipe_name" placeholder="Name" minlength="3" maxlength="30" required>
+                    <small class="form-text text-muted required">Required. Must be 3 to 30 characters long.</small>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -36,7 +36,8 @@
             <fieldset>
     		    <legend>Recipe Description</legend>
         	    <div>
-                    <textarea class="form-control" name="recipe_description" id="recipe_description" rows="3"></textarea>
+                    <textarea class="form-control" name="recipe_description" id="recipe_description" rows="3" maxlength="450"></textarea>
+                    <small class="form-text text-muted required">Max 450 characters long</small>
                 </div>
         	</fieldset>
         </div>
@@ -57,7 +58,7 @@
                         <option value="Mexican">Mexican</option>
                         <option value="Spanish">Spanish</option>
                         <option value="Thai">Thai</option>
-                        <option value="UK">UK</option>
+                        <option value="British">British</option>
                         <option value="Other">Other</option>
                     </select>
                     <small class="form-text text-muted required">Required</small>
@@ -97,7 +98,7 @@
             <fieldset>
         		<legend>Recipe Preptime</legend>
             	<div>
-                    <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Enter a time" required>
+                    <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Enter a time" minlength="3" maxlength="20" required>
                     <small class="form-text text-muted required">Required</small>
                     <div class="valid-feedback">
                       Looks good!
@@ -112,7 +113,7 @@
             <fieldset>
         		<legend>Cooking Time</legend>
             	<div>
-                    <input type="text" class="form-control" name="recipe_cooktime" id="recipe_cooktime" placeholder="Enter a length of time" required>
+                    <input type="text" class="form-control" name="recipe_cooktime" id="recipe_cooktime" placeholder="Enter a length of time" minlength="3" maxlength="20" required>
                     <small class="form-text text-muted required">Required</small>
                     <div class="valid-feedback">
                       Looks good!
@@ -127,7 +128,7 @@
             <fieldset>
         	    <legend>Recipe Serves</legend>
             	<div>
-                    <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Enter a number" required>
+                    <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Enter a number" minlength="3" maxlength="20" required>
                     <small class="form-text text-muted required">Required</small>
                     <div class="valid-feedback">
                       Looks good!

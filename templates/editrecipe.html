@@ -21,8 +21,8 @@
             <fieldset id="buildyourform">
     		    <legend>Recipe Name</legend>
                 <div>
-                    <input type="text" name="recipe_name" class="form-control" value="{{ recipe.recipe_name }}" required>
-                    <small class="form-text text-muted required">Required</small>
+                    <input type="text" name="recipe_name" class="form-control" value="{{ recipe.recipe_name }}" minlength="3" maxlength="30" required>
+                    <small class="form-text text-muted required">Required. Must be 3 to 30 characters long</small>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -36,7 +36,8 @@
             <fieldset>
                 <legend>Recipe Description</legend>
                 <div>
-                    <textarea class="form-control" name="recipe_description"  rows="3">{{recipe.recipe_description}}</textarea>
+                    <textarea class="form-control" name="recipe_description"  rows="3" maxlength="450">{{recipe.recipe_description}}</textarea>
+                    <small class="form-text text-muted required">Max 450 characters long</small>
                 </div>
             </fieldset>
         </div>
@@ -57,7 +58,7 @@
                         <option value="Mexican" {{ 'selected' if recipe.recipe_type == "Mexican" else '' }}>Mexican</option>
                         <option value="Spanish" {{ 'selected' if recipe.recipe_type == "Spanish" else '' }}>Spanish</option>
                         <option value="Thai" {{ 'selected' if recipe.recipe_type == "Thai" else '' }}>Thai</option>
-                        <option value="UK" {{ 'selected' if recipe.recipe_type == "UK" else '' }}>UK</option>
+                        <option value="British" {{ 'selected' if recipe.recipe_type == "British" else '' }}>British</option>
                         <option value="Other" {{ 'selected' if recipe.recipe_type == "Other" else '' }}>Other</option>
                     </select>
                     <small class="form-text text-muted required">Required</small>
@@ -97,8 +98,8 @@
             <fieldset>
     		    <legend>Recipe Preptime</legend>
                 <div>
-                    <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}" required>
-                    <small class="form-text text-muted required">Required</small>
+                    <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}" minlength="3" maxlength="20" required>
+                    <small class="form-text text-muted required">Required. Must be 3-20 characters long.</small>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -112,8 +113,8 @@
             <fieldset>
     		    <legend>Cooking Time</legend>
         	    <div>
-                    <input type="text" class="form-control" name="recipe_cooktime" value="{{ recipe.recipe_cooktime }}" required>
-                    <small class="form-text text-muted required">Required</small>
+                    <input type="text" class="form-control" name="recipe_cooktime" value="{{ recipe.recipe_cooktime }}" minlength="3" maxlength="20" required>
+                    <small class="form-text text-muted required">Required. Must be 3-20 characters long.</small>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -127,8 +128,8 @@
             <fieldset>
     		    <legend>Recipe Serves</legend>
         	    <div>
-        	        <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}" required>
-        	        <small class="form-text text-muted required">Required</small>
+        	        <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}" minlength="3" maxlength="20" required>
+        	        <small class="form-text text-muted required">Required. Must be 3-20 characters long.</small>
         	        <div class="valid-feedback">
                       Looks good!
                     </div>
