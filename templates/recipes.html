@@ -1,199 +1,150 @@
 {% extends 'base.html' %}
-    {% block content %}
-      <div class="container">
+{% block content %}
+  <div class="container">
     <div class="heading-box-container"> 
-    <h1 class="text-center search-header">Search Recipes</h1>
+      <h1 class="text-center search-header">Search Recipes</h1>
       <div class="heading-box">
-            
-            <div class="search-box text-center">
-              <form action="{{ url_for('search', search_request=search_request) }}">
-                <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
-                <button class="search-button btn btn-primary" type="submit" name="action">Search</button>
-              
-              </form>
-            </div>
-            <div class="search-filters">
-            
-                  <form action="{{ url_for('get_recipes') }}" method="POST">
-                    <div class="row">
-                    <div class="col-12 col-md-4">
-                      Cuisine:<br>
-                      <select class="custom-select" name="recipe_type">
-                                          <option selected="selected" value="All">All</option>
-                                          <option value="African">African</option>
-                                          <option value="American">American</option>
-                                          <option value="Chinese">Chinese</option>
-                                          <option value="French">French</option>
-                                          <option value="Indian">Indian</option>
-                                          <option value="Irish">Irish</option>
-                                          <option value="Italian">Italian</option>
-                                          <option value="Japanese">Japanese</option>
-                                          <option value="Mexican">Mexican</option>
-                                          <option value="Spanish">Spanish</option>
-                                          <option value="Thai">Thai</option>
-                                          <option value="UK">UK</option>
-                                          <option value="Other">Other</option>
-                      </select>
-                      </div>
-                      <div class="col-12 col-md-4">
-                        Meal time:<br>
-                       <select class="custom-select" name="meal_type">
-                                 <option selected="selected" value="All">All</option>
-                                  <option value="Breakfast">Breakfast</option>
-                                  <option value="Lunch">Lunch</option>
-                                  <option value="Dinner">Dinner</option>
-                                  <option value="Dessert">Dessert</option>
-                                  <option value="Snack">Snack</option>
-                                  <option value="Shake">Shake</option>
-                                 
-                      </select>
-                      </div>
-                      <div class="col-12 col-md-4">
-                        Dietary Requirements:<br>
-                           <select class="custom-select" name="diet">
-                                 <option selected="selected" value="None">None</option>
-                                 <option value="Dairy-free">Dairy-free</option>
-                                 <option value="Gluten-free">Gluten-free</option>
-                                 <option value="Low-sugar">Low in sugar</option>
-                                 <option value="Nut-free">Nut-free</option>
-                                 <option value="Vegetarian">Vegetarian</option>
-                                 
-                                 
-                          </select>
-                      </div>
-                     
-                      <div class="col-12 text-center">
-                      <button class="search-button btn btn-primary" type="submit" name="action">Filter Results</button>
-                      </div>
-                      </div>
-                  </form>
-              </div>  
-              
-              </div>
-              
-                 <div style="height: 25px; width: 100%;" >
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
-            </div>
-              
-        </div> 
-        
-             <div style="height: 25px; width: 100%; background-color: #f3d250;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
-          </div>
-           <div class="marginBottom"  style="height: 25px; width: 100%; background-color: #f78888;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-          </div>
-          
-        <h2 class="text-center results">Search Results</h1>
-        <div class="searchResults">
-          
+        <div class="search-box text-center">
+          <form action="{{ url_for('search', search_request=search_request) }}">
+            <input class="form-control" type="text" name="search_request" placeholder="Search recipes">
+            <button class="search-button btn btn-primary" type="submit" name="action">Search</button>
+          </form>
+        </div>
+        <div class="search-filters">
+        <form action="{{ url_for('get_recipes') }}" method="POST">
           <div class="row">
-            
-          {% if recipes_count %}
-           <div class="col-12 text-center searchCounter"> Showing {{ (page * 12) - (11) }}-
-              {{ display_result }} of {{ recipes_count }}
-              Recipes</div>
-              
-         
-          
-          
-              
-          {% endif %}
-            
-           
-              {% for recipe in recipes %}
-              
-             
-               
-                
-              
-                <div class="search-block col-12 col-md-4 col-lg-3">
-                  <div class="card">
+            <div class="col-12 col-md-4">
+              Cuisine:<br>
+                <select class="custom-select" name="recipe_type">
+                  <option selected="selected" value="All">All</option>
+                  <option value="African">African</option>
+                  <option value="American">American</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="French">French</option>
+                  <option value="Indian">Indian</option>
+                  <option value="Irish">Irish</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Mexican">Mexican</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="Thai">Thai</option>
+                  <option value="UK">UK</option>
+                  <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-4">
+              Meal time:<br>
+              <select class="custom-select" name="meal_type">
+                <option selected="selected" value="All">All</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Snack">Snack</option>
+                <option value="Shake">Shake</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              Dietary Requirements:<br>
+              <select class="custom-select" name="diet">
+                <option selected="selected" value="None">None</option>
+                <option value="Dairy-free">Dairy-free</option>
+                <option value="Gluten-free">Gluten-free</option>
+                <option value="Low-sugar">Low in sugar</option>
+                <option value="Nut-free">Nut-free</option>
+                <option value="Vegetarian">Vegetarian</option>
+              </select>
+            </div>
+            <div class="col-12 text-center">
+              <button class="search-button btn btn-primary" type="submit" name="action">Filter Results</button>
+            </div>
+          </div>
+        </form>
+        </div>  
+      </div>
+      <div style="height: 25px; width: 100%;" >
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
+    </div>
+    </div> 
+    <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
+    </div>
+    <div class="marginBottom"  style="height: 25px; width: 100%; background-color: #f78888;" >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+    </div>
+    <h2 class="text-center results">Search Results</h1>
+    <div class="searchResults">
+      <div class="row">
+        {% if recipes_count %}
+          <div class="col-12 text-center searchCounter">
+            Showing {{ (page * 12) - (11) }}-{{ display_result }} of {{ recipes_count }} Recipes
+          </div>
+        {% endif %}
+        {% for recipe in recipes %}
+              <div class="search-block col-12 col-md-4 col-lg-3">
+                <div class="card">
                     <div class="image-container">
-                      
-                    {% if recipe.recipe_image != "" %}
-                          <img src="{{recipe.recipe_image}}" alt="recipe image">
-                    {% else %}
-                          <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                    {% endif %}
-           
-                    </div>
+                        {% if recipe.recipe_image != "" %}
+                              <img src="{{recipe.recipe_image}}" alt="recipe image">
+                        {% else %}
+                              <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+                        {% endif %}
+               
+                  </div>
                     <div class="card-body">
                       <div class="card-title text-truncate">{{recipe.recipe_name}}</div>
                       <div class="card-title">by {{recipe.author}}</div>
-                      <!--<p class="card-text text-truncate">{{ recipe.recipe_description }}</p>-->
-                      {% if recipe.last_updated %}
-                      <p class="card-text"><small class="text-muted">Last updated {{recipe.last_updated}}</small></p>
-                      {% else %}
-                      <p class="card-text"><small class="text-muted">Last updated {{recipe.time_created}}</small></p>
-                      {% endif %}
-                      <div class="text-center">
-                      <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-block">Go to Recipe</button></a>
+                        {% if recipe.last_updated %}
+                        <p class="card-text"><small class="text-muted">Last updated {{recipe.last_updated}}</small></p>
+                        {% else %}
+                        <p class="card-text"><small class="text-muted">Last updated {{recipe.time_created}}</small></p>
+                        {% endif %}
+                        <div class="text-center">
+                        <a href="{{ url_for('recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-block">Go to Recipe</button></a>
                       </div>
                     </div>
                   </div>
-                </div>
-             
-              
+              </div>
+        {% else %}
+          <div class="col-12 text-center searchCounter">Oops! Zero matching documents were found.</div>
+        {% endfor %}
+            {% if recipes_count %}
+              <div class="col-12 text-center searchCounter"> Showing {{ (page * 12) - (11) }}-{{ display_result }} of {{ recipes_count }} Recipes </div>
+            {% endif %}
+      </div>
+    </div>
+    <!--Pagination-->
+    <div class="row marginBottom">
+      <div class="col">
+        <nav aria-label="Page navigation">
+          <ul class="pagination justify-content-center">
+            {% if page > 1  %} 
+              <!--checks to see whether the first page is currently being viewed and if not, allows user to go back one page-->
+              <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page-1) }}">Previous</a></li>
+            {% else %}
+              <li class="page-item disabled"><a class="page-link" href="#/" disabled>Previous</a></li>
+            {% endif %}
+            {% for page_number in pages %}
+              {% if page_number == page %}
+                <!--Page One-->
+                <li class="page-item"><a class="page-link" href="#">{{ page_number }}</a></li>
+                {% else %}
+                <!--All Other Pages-->
+                <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page_number) }}">{{ page_number }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% if page < pages | count | int %} 
+              <!--pipe converts page-count to integer, allowing it to be compared with page to determine if the user has any more pages to move through-->
+              <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page+1) }}">Next</a></li>
               {% else %}
-                <div class="col-12 text-center searchCounter">Oops! Zero matching documents were found.</div>
-             {% endfor %}
-             
-                {% if recipes_count %}
-           <div class="col-12 text-center searchCounter"> Showing {{ (page * 12) - (11) }}-
-              {{ display_result }} of
-              {{ recipes_count }}
-              Recipes </div>
-              
-         
-          
-          
-              
-          {% endif %}
-            </div>
-        </div>
-  
-          
-          <!--Pagination-->
-          <div class="row marginBottom">
-            <div class="col">
-              <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                  {% if page > 1  %} 
-                  <!--checks to see whether the first page is currently being viewed and if not, allows user to go back one page-->
-                  <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page-1) }}">Previous</a></li>
-                  {% else %}
-                  <li class="page-item disabled"><a class="page-link" href="#/" disabled>Previous</a></li>
-                  {% endif %}
-                  
-                  
-                  {% for page_number in pages %}
-                    {% if page_number == page %}
-                    <!--Page One-->
-                    <li class="page-item"><a class="page-link" href="#">{{ page_number }}</a></li>
-                    {% else %}
-                    <!--All Other Pages-->
-                    <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page_number) }}">{{ page_number }}</a></li>
-                    {% endif %}
-                  {% endfor %}
-                  
-                  {% if page < pages | count | int %} 
-                  <!--pipe converts page-count to integer, allowing it to be compared with page to determine if the user has any more pages to move through-->
-                  <li class="page-item"><a class="page-link" href="{{ url_for('get_recipes', page=page+1) }}">Next</a></li>
-                  
-                  {% else %}
-                  <li class="page-item disabled"><a class="page-link" href="#/">Next</a></li>
-                  
-                  {% endif %}
-                  
-                  
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-
-    {% endblock %}
+              <li class="page-item disabled"><a class="page-link" href="#/">Next</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+{% endblock %}
     
 
 

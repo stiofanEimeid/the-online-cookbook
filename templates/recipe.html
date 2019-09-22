@@ -1,58 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
-        <div class="container">
-          <div class="heading-box-container">
-            <div class="row heading-box">
-              <div class="col-12 col-md-6">
-                    {% if recipe.recipe_image != "" %}
-                    <img src="{{recipe.recipe_image}}" alt="recipe image">
-                    {% else %}
-                    <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
-                    {% endif %}
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="row">
-                  <div class="col-12">
-                    <h1>{{recipe.recipe_name}}</h1>
-                  </div>
-                  <div class="col-12">
-                    <h3>by <strong>{{recipe.author}}</strong> </h3>
-                    </div>
-                    <div class="col-6">
-                    <p><strong>Views: {{ recipe.views }}</strong></p>
-                  </div>
-                  <div class="col-6">
-                    <p><strong>Favourites: {{ recipe.favourited_by | length}}</strong></p>
-                  </div>
-                  <div class="col-12 cell">Preparation Time: {{recipe.recipe_preptime}} </div>
-                  <div class="col-12 cell">Cooking Time: {{recipe.recipe_cooktime}}</div>
-                  <div class="col-12 cell">Serves: {{recipe.recipe_serves}}</div>
-                  <div class="col-12 cell">Diet: 
-                  <ul>
-                    {% for diet_type in recipe.diet %}
-                   <li>{{ diet_type }}</li>
-                    {% endfor %}
-                     </ul>
-                  </div>
-                  <div class="col-12 cell">
-                    Cuisine: {{recipe.recipe_type}}
-                  </div>
-                </div>
-                          <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
-                {% if session.username %}
-                {% if session.username == recipe.author %}
-                <div class="row">
+  <div class="container">
+    <div class="heading-box-container">
+      <div class="row heading-box">
+        <div class="col-12 col-md-6">
+          {% if recipe.recipe_image != "" %}
+            <img src="{{recipe.recipe_image}}" alt="recipe image">
+          {% else %}
+            <img src="../static/img/dose-juice-unsplash.jpg" alt="recipe image">
+          {% endif %}
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-12">
+              <h1>{{recipe.recipe_name}}</h1>
+            </div>
+            <div class="col-12">
+              <h3>by <strong>{{recipe.author}}</strong> </h3>
+            </div>
+            <div class="col-6">
+              <p><strong>Views: {{ recipe.views }}</strong></p>
+            </div>
+            <div class="col-6">
+              <p><strong>Favourites: {{ recipe.favourited_by | length}}</strong></p>
+            </div>
+            <div class="col-12 cell">Preparation Time: {{recipe.recipe_preptime}}</div>
+            <div class="col-12 cell">Cooking Time: {{recipe.recipe_cooktime}}</div>
+            <div class="col-12 cell">Serves: {{recipe.recipe_serves}}</div>
+            <div class="col-12 cell">Diet: 
+              <ul>
+                {% for diet_type in recipe.diet %}
+                  <li>{{ diet_type }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="col-12 cell">
+              Cuisine: {{recipe.recipe_type}}
+            </div>
+          </div>
+          <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
+          {% if session.username %}
+            {% if session.username == recipe.author %}
+              <div class="row">
                   <div class="col-6 no-padding">
                         <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-block">Edit recipe</button></a>
                   </div>
-                <div class="col-6 no-padding">
-                      <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModal">
-                        Delete Recipe
-                      </button>
+                  <div class="col-6 no-padding">
+                  <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModal">
+                    Delete Recipe
+                  </button>
                 </div>
-              </div>
-            
-            <!-- Delete Modal -->
+                </div>
+          <!-- Delete Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -72,124 +71,102 @@
                 </div>
               </div>
             </div>
-            
-                {% else %}
-                  {% if session.username in recipe.favourited_by%}
-                  <div class="row">
-                    <div class="col no-padding">
-                      <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-block">Remove recipe from my favourites - </button></a>
-                    </div>
-                  </div>
-                  
-                    
-                    {% else %}
-                    <div class="row">
-                      <div class="col no-padding">
-                        <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-block"> Add recipe to my favourites + </button></a>
-                      </div>
-                    </div>
-                    {% endif %}
-                {% endif %}
-                  
-                {% else %}
+            {% else %}
+              {% if session.username in recipe.favourited_by%}
                 <div class="row">
                   <div class="col no-padding">
-                    <a href="{{ url_for('login') }}"><button type="button" class="btn btn-success btn-block">Login to add, edit and favourite recipes</button></a>
+                    <a href="{{ url_for('remove_favourite', id=recipe._id) }}"><button type="button" class="btn btn-danger btn-block">Remove recipe from my favourites - </button></a>
                   </div>
                 </div>
-                {% endif %}
+              {% else %}
+                <div class="row">
+                  <div class="col no-padding">
+                    <a href="{{ url_for('add_favourite', id=recipe._id) }}"><button type="button" class="btn btn-success btn-block"> Add recipe to my favourites + </button></a>
+                  </div>
                 </div>
-              
-              </div>
-              <div style="height: 25px; width: 100%;" >
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
-            </div>
-          </div>
-          <div style="height: 25px; width: 100%; background-color: #f3d250;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
-          </div>
-           <div class="marginBottom"  style="height: 25px; width: 100%; background-color: #f78888;" >
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
-          </div>
-          
-          <div class="row recipe-row">
-            <div class="col">
-            {% if recipe.recipe_description %}
-              <p>{{recipe.recipe_description }}</p>
-            {% else %}
-                  {% if session.username == recipe.author %}
-                  <div class="text-center">
-                   <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-lg">Add description now</button></a>
-                   </div>
-                   {% else %}
-                  <p>No description added yet.</p>
-                  {% endif %}
+              {% endif %}
             {% endif %}
-            </div>
-          </div>
-        
-            <!--Ingredients/Steps tabs-->
-            
-          <div class="row recipe-row">
-            <div class="col">
-              <h2 class="text-center">Ingredients 
-        <i id='myTooltip' href="#/" data-toggle="tooltip" title="Cross off ingredients as you go by tapping or clicking them" data-placement="top" class="fas fa-info-circle"></i></h2>
-       
-                       <ul class="no-list-style">
-                          {% for ingredient in recipe.recipe_ingredients %}
-                            {% if loop.index % 2 == 0 %}
-                            <li class="ingredient grey">{{ingredient}}</li>
-                            {% else %}
-                            <li class="ingredient">{{ingredient}}</li>
-                            {% endif %}
-                            
-                          {% endfor %}
-                        </ul>
-            </div>
-          </div>
-          
-          <div class="row recipe-row">
-            <div class="col">
-              <h2 class="text-center">Steps
-              <i id='mySecondTooltip' href="#/" data-toggle="tooltip" title="Cross off steps as you go by tapping or clicking them" data-placement="top" class="fas fa-info-circle"></i></h2>
-                       <ol class="no-list-style" >
-                          {% for step in recipe.recipe_steps %}
-                            {% if loop.index % 2 == 0 %}
-                            <li class="step grey">{{ loop.index }}. {{step}}</li>
-                            {% else %}
-                            <li class="step">{{ loop.index }}. {{step}}</li>
-                            {% endif %}
-                            
-                          {% endfor %}
-                        </ol>
-            </div>
-          </div>
-     
-
-
-  
-          <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->
-        
-                <div class="row marginBottom">
-                    <div class="col-12 text-center">
-                      <h2>Product Suggestions</h2>
-                    </div>
-                    {% for product in products %}
-                    <div class="search-block col-12 col-md-4">
-                      <div class="card">
-                        <div class="image-container">
-                            <img src="{{ product.product_image}}">
-                        </div>
-                        <div class="card-body text-center">
-                          <div class="card-title text-truncate">{{product.product_name}}</div>
-                            <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-block">Visit Product Page</button></a>
-                        </div>
-                      </div>
-                    </div>
-                 {% endfor %}
+          {% else %}
+            <div class="row">
+              <div class="col no-padding">
+                <a href="{{ url_for('login') }}"><button type="button" class="btn btn-success btn-block">Login to add, edit and favourite recipes</button></a>
               </div>
-              
-  
+            </div>
+          {% endif %}
         </div>
-        
+      </div>
+      <div style="height: 25px; width: 100%;" >
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
+      </div>
+    </div>
+    <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
+    </div>
+    <div class="marginBottom"  style="height: 25px; width: 100%; background-color: #f78888;" >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
+    </div>
+    <div class="row recipe-row">
+      <div class="col">
+        {% if recipe.recipe_description %}
+          <p>{{recipe.recipe_description }}</p>
+        {% else %}
+          {% if session.username == recipe.author %}
+            <div class="text-center">
+              <a href="{{ url_for('edit_recipe', id=recipe._id) }}"><button type="button" class="btn btn-primary btn-lg">Add description now</button></a>
+            </div>
+          {% else %}
+            <p>No description added yet.</p>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    <!--Ingredients/Steps tabs-->
+    <div class="row recipe-row">
+      <div class="col">
+        <h2 class="text-center">Ingredients <i id='myTooltip' href="#/" data-toggle="tooltip" title="Cross off ingredients as you go by tapping or clicking them" data-placement="top" class="fas fa-info-circle"></i></h2>
+        <ul class="no-list-style">
+          {% for ingredient in recipe.recipe_ingredients %}
+            {% if loop.index % 2 == 0 %}
+              <li class="ingredient grey">{{ingredient}}</li>
+            {% else %}
+              <li class="ingredient">{{ingredient}}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="row recipe-row">
+      <div class="col">
+        <h2 class="text-center">Steps <i id='mySecondTooltip' href="#/" data-toggle="tooltip" title="Cross off steps as you go by tapping or clicking them" data-placement="top" class="fas fa-info-circle"></i></h2>
+          <ol class="no-list-style" >
+              {% for step in recipe.recipe_steps %}
+                {% if loop.index % 2 == 0 %}
+                  <li class="step grey">{{ loop.index }}. {{step}}</li>
+                {% else %}
+                  <li class="step">{{ loop.index }}. {{step}}</li>
+                {% endif %}
+              {% endfor %}
+          </ol>
+        </div>
+      </div>
+    <!--Product Suggestion Section - Will only appear if user has included suggestions in addrecipe.html or editrecipe.html-->
+    <div class="row marginBottom">
+      <div class="col-12 text-center">
+        <h2>Product Suggestions</h2>
+      </div>
+      {% for product in products %}
+        <div class="search-block col-12 col-md-4">
+          <div class="card">
+            <div class="image-container">
+              <img src="{{ product.product_image}}">
+            </div>
+            <div class="card-body text-center">
+              <div class="card-title text-truncate">{{product.product_name}}</div>
+              <a href="{{ url_for('product', name=product.product_name) }}"><button  type="button" class="btn btn-success btn-block">Visit Product Page</button></a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
