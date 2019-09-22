@@ -366,11 +366,11 @@ def edit_recipe(id):
     if 'username' in session:
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
         user = session['username']
-        # if recipe["author"] == user:
-        return render_template("editrecipe.html", recipe=recipe)
-        # else:
-        #     error_message = "Denied: You may only edit your own recipes."
-        #     return render_template("error.html", error_message=error_message)
+        if recipe["author"] == user:
+            return render_template("editrecipe.html", recipe=recipe)
+        else:
+            error_message = "Denied: You may only edit your own recipes."
+            return render_template("error.html", error_message=error_message)
     else:
         error_message = "You must be logged in to edit your recipes."
         return render_template("error.html", error_message=error_message)
@@ -625,7 +625,7 @@ def delete_account_form():
         error_message = "Your password is incorrect."
         return render_template('error2.html', error_message=error_message)
 
-# Error
+# User functionality ends
 
 
 @app.errorhandler(404)
