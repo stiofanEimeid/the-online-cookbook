@@ -70,7 +70,7 @@ $('#mySecondTooltip').tooltip();
         //Check maximum number of input fields
         if(x < maxField){ 
             x++; //Increment field counter
-            $(wrapper).append('<div><textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" placeholder="Ingredient"></textarea><a href="#" class="remove_button">&#10008;</a></div>'); //Add field html
+            $(wrapper).append('<div><textarea class="form-control reduce" name="recipe_ingredient" rows="1" placeholder="Ingredient"></textarea><a href="#" class="remove_button">&#10008;</a></div>'); //Add field html
           
         }
     });
@@ -87,7 +87,7 @@ $('#mySecondTooltip').tooltip();
         //Check maximum number of input fields
         if(y < maxField2){ 
             y++; //Increment field counter
-            $(wrapper2).append('<div><textarea class="form-control reduce" name="recipe_step" rows="2" value="" placeholder="Step"/><a href="#" class="remove_button2">&#10008;</a></div>'); //Add field html
+            $(wrapper2).append('<div><textarea class="form-control reduce" name="recipe_step" rows="2" placeholder="Step"/><a href="#" class="remove_button2">&#10008;</a></div>'); //Add field html
         }
     });
     

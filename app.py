@@ -126,7 +126,7 @@ def get_recipes():
         return render_template("recipes.html", recipes=recipes, pages=pages,
                                page=page, recipes_count=recipes_count,
                                display_result=display_result)
-# search functionality ends
+# Statistics routes
 
 
 @app.route("/discover")
@@ -315,9 +315,9 @@ def remove_favourite(id):
                             {'$inc': {'favourites': int(-1)}})
     return redirect(url_for('recipe', id=id))
 
-'''
-Create and update recipes in the database.
-'''
+
+#Create and update recipes in the database.
+
 
 
 @app.route("/add_recipe")
@@ -366,11 +366,11 @@ def edit_recipe(id):
     if 'username' in session:
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(id)})
         user = session['username']
-        if recipe["author"] == user:
-            return render_template("editrecipe.html", recipe=recipe)
-        else:
-            error_message = "Denied: You may only edit your own recipes."
-            return render_template("error.html", error_message=error_message)
+        # if recipe["author"] == user:
+        return render_template("editrecipe.html", recipe=recipe)
+        # else:
+        #     error_message = "Denied: You may only edit your own recipes."
+        #     return render_template("error.html", error_message=error_message)
     else:
         error_message = "You must be logged in to edit your recipes."
         return render_template("error.html", error_message=error_message)
@@ -422,8 +422,6 @@ def delete_recipe(id):
         error_message = "You must be logged in to delete your recipes."
         return render_template("error.html", error_message=error_message)
 
-# Create and update recipes in the database ends
-
 # Products Pages
 
 
@@ -437,7 +435,7 @@ def product(name):
     product = mongo.db.products.find_one({"product_name": name})
     return render_template("product.html", product=product)
 
-# Login/Registration functionality begins
+# Login/Registration functionality
 
 
 @app.route('/login')
@@ -627,7 +625,7 @@ def delete_account_form():
         error_message = "Your password is incorrect."
         return render_template('error2.html', error_message=error_message)
 
-# User functionality ends
+# Error
 
 
 @app.errorhandler(404)
