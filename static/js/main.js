@@ -100,72 +100,73 @@ $('#mySecondTooltip').tooltip();
 });
 
 // Credit: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-    queue()
-    .defer(d3.json, "/data")
-    .await(myTag)
-    .await(makeGraph);
+
+// D3/DC Code
+
+queue()
+.defer(d3.json, "/data")
+.await(myTag)
+.await(makeGraph);
     
-    function myTag(key, endAngle, startAngle){
-        var percentage = dc.utils.printSingleValue((endAngle - startAngle) / (2*Math.PI) * 100);
-        // hide tag is less than 5% of the chart to prevent labels from overlapping
-        if (percentage > 5){
-            return key + "(" + Math.round(percentage) + '%)';
+function myTag(key, endAngle, startAngle){
+    var percentage = dc.utils.printSingleValue((endAngle - startAngle) / (2*Math.PI) * 100);
+    // hide tag is less than 5% of the chart to prevent labels from overlapping
+    if (percentage > 5){
+        return key + "(" + Math.round(percentage) + '%)';
         }
-     }
+    }
  
-    function makeGraph(error, myDataJson) {
-        var ndx = crossfilter(myDataJson);
+function makeGraph(error, myDataJson) {
+    var ndx = crossfilter(myDataJson);
         
-            var type_dim = ndx.dimension(dc.pluck('Type'));
-            var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
+    var type_dim = ndx.dimension(dc.pluck('Type'));
+    var amount =  type_dim.group().reduceSum(dc.pluck('Amount'));
             
-            dc.pieChart('#chart-here')
-                .height(280)
-                .width(280)
-                .radius(120)
-                .transitionDuration(1500)
-                .dimension(type_dim)
-                .group(amount)
-                .on('pretransition', function(chart){
-                    chart.selectAll('text.pie-slice').text( function(d) {
-                    return myTag(d.data.key, d.endAngle, d.startAngle);
-                    });
-                });
+    dc.pieChart('#chart-here')
+        .height(280)
+        .width(280)
+        .radius(120)
+        .transitionDuration(1500)
+        .dimension(type_dim)
+        .group(amount)
+        .on('pretransition', function(chart){
+            chart.selectAll('text.pie-slice').text( function(d) {
+            return myTag(d.data.key, d.endAngle, d.startAngle);
+            });
+        });
                 
-                // https://stackoverflow.com/questions/25209971/add-percentages-to-the-pie-chart-label-in-dc-js
+    // https://stackoverflow.com/questions/25209971/add-percentages-to-the-pie-chart-label-in-dc-js
                 
-                
-                
-            var views = type_dim.group().reduceSum(dc.pluck('Views'));
-            dc.pieChart('#another-chart-here')
-                .height(280)
-                .width(280)
-                .radius(120)
-                .transitionDuration(1500)
-                .dimension(type_dim)
-                .group(views)
-                .on('pretransition', function(chart){
-                    chart.selectAll('text.pie-slice').text( function(d) {
-                    return myTag(d.data.key, d.endAngle, d.startAngle);
-                    });
-                });
+    var views = type_dim.group().reduceSum(dc.pluck('Views'));
+    dc.pieChart('#another-chart-here')
+        .height(280)
+        .width(280)
+        .radius(120)
+        .transitionDuration(1500)
+        .dimension(type_dim)
+        .group(views)
+        .on('pretransition', function(chart){
+        chart.selectAll('text.pie-slice').text( function(d) {
+            return myTag(d.data.key, d.endAngle, d.startAngle);
+            });
+        });
              
                 
-            var favourites = type_dim.group().reduceSum(dc.pluck('Favourites'));  
-            dc.pieChart('#final-chart-here')
-                .height(280)
-                .width(280)
-                .radius(120)
-                .transitionDuration(1500)
-                .dimension(type_dim)
-                .group(favourites)
-                .on('pretransition', function(chart){
-                    chart.selectAll('text.pie-slice').text( function(d) {
-                    return myTag(d.data.key, d.endAngle, d.startAngle);
-                    });
-                });
+    var favourites = type_dim.group().reduceSum(dc.pluck('Favourites'));  
+    dc.pieChart('#final-chart-here')
+        .height(280)
+        .width(280)
+        .radius(120)
+        .transitionDuration(1500)
+        .dimension(type_dim)
+        .group(favourites)
+        .on('pretransition', function(chart){
+            chart.selectAll('text.pie-slice').text( function(d) {
+            return myTag(d.data.key, d.endAngle, d.startAngle);
+            });
+        });
     
-        dc.renderAll();
+    dc.renderAll();
 }
 
 // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar //
