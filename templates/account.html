@@ -10,19 +10,19 @@
             <div class="col-12 col-md-8">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-12 cell">{{ profile.name }}</div>
-                    <div class="col-12 cell">Member since: {{ profile.member_since }} </div>
+                    <div class="col-12 cell">Member since: {{ profile.member_since }}</div>
                     <div class="col-12 cell">Recipes: {{recipe_count}}</div>
                 </div>
             </div>
         </div>
-        <div style="height: 25px; width: 100%;" >
+        <div style="height: 25px; width: 100%;">
                     <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f3d250;"></path></svg>
         </div>
     </div>
-    <div style="height: 25px; width: 100%; background-color: #f3d250;" >
+    <div style="height: 25px; width: 100%; background-color: #f3d250;">
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f78888;"></path></svg>
     </div>
-    <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
+    <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;">
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
     </div>
     
@@ -56,13 +56,13 @@
                             <div class="card-body">
                                 <div class="card-title text-truncate">{{recipe.recipe_name}}</div>
                                     <a class="btn btn-primary" href="{{ url_for('recipe', id=recipe._id) }}">Go to Recipe</a><a class="btn btn-success" href="{{ url_for('edit_recipe', id=recipe._id) }}">Edit recipe</a>
-                                </div>
                             </div>
                         </div>
-                        {% endfor %}
-                    <!--Endfor placed inside the end tag of the search block to ensure
-                    there is only end tag at the end of the loop-->
                     </div>
+                {% endfor %}
+                <!--Endfor placed inside the end tag of the search block to ensure
+                there is only end tag at the end of the loop-->
+            </div>
         </div>
           
         <div class="tab-pane fade" id="pills-favourites" role="tabpanel" aria-labelledby="pills-favourites-tab">
