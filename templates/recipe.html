@@ -29,9 +29,13 @@
             <div class="col-12 cell">Serves: {{recipe.recipe_serves}}</div>
             <div class="col-12 cell">Diet: 
               <ul>
-                {% for diet_type in recipe.diet %}
-                  <li>{{ diet_type }}</li>
-                {% endfor %}
+                {% if recipe.diet %}
+                  {% for diet_type in recipe.diet %}
+                    <li>{{ diet_type }}</li>
+                  {% endfor %}
+                {% else %}
+                  <li>No diet information available.</li>
+                {% endif %}
               </ul>
             </div>
             <div class="col-12 cell">
