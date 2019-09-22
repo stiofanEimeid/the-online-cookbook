@@ -367,9 +367,9 @@ legend {
     z-index: 997;
     width: 100%;
     padding: 10px;
-    /*margin-left: 0;*/
     height: 70px;
     background-color: #f8f9fa;
+    top: 0;
     transition: top 0.3s;
 }
 
