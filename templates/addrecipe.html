@@ -20,6 +20,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
         		<legend>Recipe Name</legend>
+        		<span class="required">(required)</span>
             	<div>
                     <input type="text" name="recipe_name" class="form-control" id="recipe_name" placeholder="Name" required>
                 </div>
@@ -36,6 +37,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Cuisine</legend>
+    		    <span class="required">(required)</span>
         	    <div>
                     <select class='custom-select' name="recipe_type" required>
                         <option value="">Choose</option>
@@ -59,6 +61,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Meal Type</legend>
+    		    <span class="required">(required)</span>
         	        <div>
                         <select class='custom-select' name="meal_type" required>
                             <option value="">Choose</option>
@@ -75,6 +78,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
         		<legend>Recipe Preptime</legend>
+        		<span class="required">(required)</span>
             	<div>
                     <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Insert number" required>
                 </div>
@@ -83,6 +87,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
         		<legend>Cooking Time</legend>
+        		<span class="required">(required)</span>
             	<div>
                     <input type="text" class="form-control" name="recipe_cooktime" id="recipe_cooktime" placeholder="Insert a length of time" required>
                 </div>
@@ -91,6 +96,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
         	    <legend>Recipe Serves</legend>
+        	    <span class="required">(required)</span>
             	<div>
                     <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Insert number" required>
                 </div>
@@ -99,6 +105,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
         		<legend>Add ingredients</legend>
+        		<span class="required">(required)</span>
             	<div class="field_wrapper">
                 	<div>
                 	    <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" placeholder="Ingredient" required>{{ingredient}}</textarea>
@@ -111,6 +118,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Add steps</legend>
+    		    <span class="required">(required)</span>
     		          <div class="field_wrapper2">
         	               <div>
         	                   <textarea class="form-control reduce" name="recipe_step" rows="2" placeholder="Step" required></textarea>

@@ -267,6 +267,10 @@ input {
   width: 50%;  
 }
 
+.required {
+    margin-left: 5px;
+}
+
 .form-control {
 	width: 100%;
 }
