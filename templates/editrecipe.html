@@ -98,8 +98,8 @@
             <fieldset>
     		    <legend>Recipe Preptime</legend>
                 <div>
-                    <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}" minlength="3" maxlength="20" required>
-                    <small class="form-text text-muted required">Required. Must be 3-20 characters long.</small>
+                    <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}" maxlength="20" required>
+                    <small class="form-text text-muted required">Required. Max length of 20 characters.</small>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -113,8 +113,8 @@
             <fieldset>
     		    <legend>Cooking Time</legend>
         	    <div>
-                    <input type="text" class="form-control" name="recipe_cooktime" value="{{ recipe.recipe_cooktime }}" minlength="3" maxlength="20" required>
-                    <small class="form-text text-muted required">Required. Must be 3-20 characters long.</small>
+                    <input type="text" class="form-control" name="recipe_cooktime" value="{{ recipe.recipe_cooktime }}" maxlength="20" required>
+                    <small class="form-text text-muted required">Required. Max length of 20 characters.</small>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -128,8 +128,8 @@
             <fieldset>
     		    <legend>Recipe Serves</legend>
         	    <div>
-        	        <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}" minlength="3" maxlength="20" required>
-        	        <small class="form-text text-muted required">Required. Must be 3-20 characters long.</small>
+        	        <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}" maxlength="20" required>
+        	        <small class="form-text text-muted required">Required. Max length of 20 characters.</small>
         	        <div class="valid-feedback">
                       Looks good!
                     </div>
