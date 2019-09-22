@@ -173,11 +173,11 @@
     	            {% for step in recipe.recipe_steps %}
     	                {% if loop.index == 1 %}
     	                    <div>
-    	                        <textarea class="form-control reduce" name="recipe_step" rows="2" value="" required>{{step}}</textarea>
+    	                        <textarea class="form-control reduce" name="recipe_step" rows="2" required>{{step}}</textarea>
     	                    </div>
     	                {% else %}
     	                    <div>
-    	                        <textarea class="form-control reduce" name="recipe_step" rows="2" value="">{{step}}</textarea><a href="#" class="remove_button2">&#10008;</a>
+    	                        <textarea class="form-control reduce" name="recipe_step" rows="2">{{step}}</textarea><a href="#" class="remove_button2">&#10008;</a>
     	                    </div>
     	                {% endif %}
     	            {% endfor %}
@@ -221,7 +221,7 @@
             <fieldset>
     		    <legend>Recipe Image</legend>
         	        <div>
-                        <input type="text" name="recipe_image" class="form-control" value="{{ recipe.recipe_image }}">
+                        <input type="text" name="recipe_image" class="form-control" placeholder="image url" value="{{ recipe.recipe_image }}">
           	        </div>
         	</fieldset>
         </div>
