@@ -20,8 +20,9 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Recipe Name</legend>
+    		    <span class="required">(required)</span>
                 <div>
-                    <input type="text" name="recipe_name" class="form-control" value="{{ recipe.recipe_name }}">
+                    <input type="text" name="recipe_name" class="form-control" value="{{ recipe.recipe_name }}" required>
           	    </div>
         	</fieldset>
         </div>
@@ -36,6 +37,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Cuisine</legend>
+    		    <span class="required">(required)</span>
         	    <div>
                     <select class='custom-select' name="recipe_type" required>
                         <option value="">Choose</option>
@@ -59,6 +61,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Meal Type</legend>
+    		    <span class="required">(required)</span>
         	    <div>
                     <select class='custom-select' name="meal_type" required>
                         <option value="">Choose</option>
@@ -75,6 +78,7 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Recipe Preptime</legend>
+    		    <span class="required">(required)</span>
                 <div>
                     <input type="text" class="form-control" name="recipe_preptime" value="{{ recipe.recipe_preptime }}" required>
                 </div>
@@ -83,41 +87,45 @@
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Cooking Time</legend>
-        	        <div>
-                        <input type="text" class="form-control" name="recipe_cooktime" value="{{ recipe.recipe_cooktime }}" required>
-                    </div>
+    		    <span class="required">(required)</span>
+        	    <div>
+                    <input type="text" class="form-control" name="recipe_cooktime" value="{{ recipe.recipe_cooktime }}" required>
+                </div>
         	</fieldset>
         </div>
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Recipe Serves</legend>
-        	        <div>
-        	            <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}" required>
-                    </div>
+    		    <span class="required">(required)</span>
+        	    <div>
+        	        <input type="text" class="form-control" name="recipe_serves"  value="{{ recipe.recipe_serves }}" required>
+                </div>
         	</fieldset>
         </div>
         <div class="form-group">
             <fieldset id="buildyourform">
     		    <legend>Add ingredients</legend>
-        		    <div class="field_wrapper">
-        	            {% for ingredient in recipe.recipe_ingredients %}
-        	                 {% if loop.index == 1 %}
-        	                     <div>
-        	                         <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" required>{{ingredient}}</textarea>
-        	                     </div>
-        	                 {% else %}
-        	                     <div>
-        	                         <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
-        	                     </div>
-        	                 {% endif %}
-        	            {% endfor %}
-            	    </div>
+    		    <span class="required">(required)</span>
+        		<div class="field_wrapper">
+        	        {% for ingredient in recipe.recipe_ingredients %}
+        	            {% if loop.index == 1 %}
+        	                <div>
+        	                    <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="" required>{{ingredient}}</textarea>
+        	                </div>
+        	            {% else %}
+        	                <div>
+        	                    <textarea class="form-control reduce" name="recipe_ingredient" rows="1" value="">{{ingredient}}</textarea><a href="#" class="remove_button">&#10008;</a>
+        	                </div>
+        	            {% endif %}
+        	         {% endfor %}
+            	 </div>
         	</fieldset>
     	    <a href="#/" class="add_button" title="Add field"><button type="button" class="btn btn-primary">Add ingredient</button></a>
         </div>
         <div class="form-group">
             <fieldset id="buildyourform">
 		        <legend>Add steps</legend>
+		        <span class="required">(required)</span>
 		        <div class="field_wrapper2">
     	            {% for step in recipe.recipe_steps %}
     	                {% if loop.index == 1 %}
