@@ -16,13 +16,19 @@
     <div class="marginBottom" style="height: 25px; width: 100%; background-color: #f78888;" >
         <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,50.00 C150.00,150.00 350.00,150.00 500.00,50.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ececec;"></path></svg>
     </div>
-    <form action="{{ url_for('insert_recipe') }}" method="POST">
+    <form action="{{ url_for('insert_recipe') }}" method="POST" class="needs-validation" novalidate>
         <div class="form-group">
             <fieldset>
         		<legend>Recipe Name</legend>
             	<div>
                     <input type="text" name="recipe_name" class="form-control" id="recipe_name" placeholder="Name" required>
                     <small class="form-text text-muted required">Required</small>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter a recipe name.
+                    </div>
                 </div>
         	</fieldset>
         </div>
@@ -55,6 +61,12 @@
                         <option value="Other">Other</option>
                     </select>
                     <small class="form-text text-muted required">Required</small>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please choose a cuisine.
+                    </div>
                 </div>
         	</fieldset>
         </div>
@@ -72,6 +84,12 @@
                             <option value="Shake">Shake</option>
                         </select>
                         <small class="form-text text-muted required">Required</small>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please choose a meal type.
+                        </div>
                     </div>
         	</fieldset>
         </div>
@@ -79,8 +97,14 @@
             <fieldset>
         		<legend>Recipe Preptime</legend>
             	<div>
-                    <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Insert number" required>
+                    <input type="text" class="form-control" name="recipe_preptime" id="recipe_preptime" placeholder="Enter a time" required>
                     <small class="form-text text-muted required">Required</small>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter a time.
+                    </div>
                 </div>
         	</fieldset>
         </div>
@@ -88,8 +112,14 @@
             <fieldset>
         		<legend>Cooking Time</legend>
             	<div>
-                    <input type="text" class="form-control" name="recipe_cooktime" id="recipe_cooktime" placeholder="Insert a length of time" required>
+                    <input type="text" class="form-control" name="recipe_cooktime" id="recipe_cooktime" placeholder="Enter a length of time" required>
                     <small class="form-text text-muted required">Required</small>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter a time.
+                    </div>
                 </div>
         	</fieldset>
         </div>
@@ -97,8 +127,14 @@
             <fieldset>
         	    <legend>Recipe Serves</legend>
             	<div>
-                    <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Insert number" required>
+                    <input type="text" class="form-control" name="recipe_serves" id="recipe_serves" placeholder="Enter a number" required>
                     <small class="form-text text-muted required">Required</small>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter a number.
+                    </div>
                 </div>
             </fieldset>
         </div>
@@ -107,8 +143,14 @@
         		<legend>Add ingredients</legend>
             	<div class="field_wrapper">
                 	<div>
-                	    <textarea class="form-control reduce" name="recipe_ingredient" rows="1" placeholder="Ingredient" required>{{ingredient}}</textarea>
+                	    <textarea class="form-control reduce" name="recipe_ingredient" rows="1" placeholder="Enter ingredient" required>{{ingredient}}</textarea>
                 	    <small class="form-text text-muted required">Required</small>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please add an ingredient.
+                        </div>
                 	</div>
                 </div>
                 <a href="#/" class="add_button btn btn-primary" title="Add field">Add ingredient</a>
@@ -120,8 +162,14 @@
     		    <legend>Add steps</legend>
     		          <div class="field_wrapper2">
         	               <div>
-        	                   <textarea class="form-control reduce" name="recipe_step" rows="2" placeholder="Step" required></textarea>
+        	                   <textarea class="form-control reduce" name="recipe_step" rows="2" placeholder="Enter step" required></textarea>
         	                   <small class="form-text text-muted required">Required</small>
+        	                   <div class="valid-feedback">
+                                  Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                  Please add a step.
+                                </div>
         	               </div>
             	      </div>
             	      <a href="#/" class="add_button2 btn btn-primary" title="Add field">Add step</a> 
