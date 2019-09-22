@@ -101,7 +101,7 @@ $('#mySecondTooltip').tooltip();
     var prevScrollpos = window.pageYOffset;
     $(window).on('scroll', function(){
     var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos || prevScrollpos < 0) {
+    if (prevScrollpos > currentScrollPos || prevScrollpos <= 0) {
     $(".navbar-wrapper").css('top',"0");
         } else {
             $(".navbar-wrapper").css('top', "-70px");
