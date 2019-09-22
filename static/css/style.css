@@ -33,7 +33,8 @@ footer {
     font-family: 'Lobster';
 }
 
-h1, h2, h3, h4, h5, h6, .nav-brand, .nav-title, .trough, .searchCounter {
+h1, h2, h3, h4, h5, h6, .nav-brand,
+.nav-title, .trough, .searchCounter {
     font-family: 'Lobster', cursive;
 }
 
@@ -115,12 +116,14 @@ img {
     padding: 0;
 }
 
-.nav-title a:link, .nav-title a:visited, .nav-title a:hover, .nav-title:active {
+.nav-title a:link, .nav-title a:visited,
+.nav-title a:hover, .nav-title:active {
     text-decoration: none;
     color: #072c43;
 }
 
-.btn-block a:link, .btn-block a:visited, .btn-block a:hover, .btn-block:active {
+.btn-block a:link, .btn-block a:visited,
+.btn-block a:hover, .btn-block:active {
     text-decoration: none;
 }
 
@@ -164,6 +167,8 @@ img {
 }
 
 .sleeve {
+    /*the sleeve height takes account of the nav bar to ensure that
+    no more than 77.5% of the screen is taken up by it*/
     height: calc(77.5vh - 70px);
     position: relative;
     overflow: hidden;
@@ -493,7 +498,9 @@ legend {
   color: #052031;
   border: none;
   font-size: 1.5rem;
-  pointer-events: auto; /*restores click functionality disabled by fixed positioning of parent container element(navbar)*/
+  /*restores click functionality disabled by fixed
+  positioning of parent container element(navbar)*/
+  pointer-events: auto; 
 }
 
 .openbtn:hover {
@@ -521,13 +528,20 @@ legend {
 
 /*homepage graphic classes*/
 
-/*The three rings are overlaid on top of one another using the position: absolute selector. */
+/*The three rings are overlaid on top of one another 
+using the position: absolute selector. */
 
 .innerRing, .outerRing, .centerRing {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+    /*Each svg is laid on top of the other, with lower-level
+    content visible through the gaps in upper level content.*/
     position: absolute;
+    /*The margin space available is calculated by subtacting
+    the circle's diameter, to be determined by its width, 
+    from the sleeve height. This number is then divided by 2
+    to display a vertically aligned circle.*/
     margin-top: calc((77.5vh - 70px - 90vw)/2)
 }
 
@@ -567,7 +581,9 @@ legend {
 
 /*media queries*/
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* On smaller screens, where height is less than 450px,
+change the style of the sidenav (less padding and a
+smaller font size) */
 @media screen and (max-height: 450px) {
       .sidebar {
           padding-top: 15px;
@@ -582,6 +598,8 @@ legend {
         width: 35%;
         margin-left: 32.5%;
         margin-right: 32.5%;
+        /*Modified circle sizing formula to take account
+        of new circle diameter*/
         margin-top: calc((77.5vh - 70px - 35vw)/2)
       }
  }
