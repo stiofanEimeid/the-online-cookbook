@@ -97,6 +97,21 @@ $('#mySecondTooltip').tooltip();
         $(this).parent('div').remove(); //Remove field html
         x--; //Decrement field counter
     });
+    
+    var prevScrollpos = window.pageYOffset;
+    $(window).on('scroll', function(){
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+    $(".navbar-wrapper").css('top',"0");
+        } else {
+            $(".navbar-wrapper").css('top', "-70px");
+                }
+        prevScrollpos = currentScrollPos;
+        }
+    );
+
+    
+    
 });
 
 // Credit: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
@@ -170,17 +185,17 @@ function makeGraph(error, myDataJson) {
 }
 
 // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar //
-var prevScrollpos = window.pageYOffset;
+// var prevScrollpos = window.pageYOffset;
 
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".navbar-wrapper").style.top = "0";
-  } else {
-    document.querySelector(".navbar-wrapper").style.top = "-70px";
-  }
-  prevScrollpos = currentScrollPos;
-};
+// window.onscroll = function() {
+//   var currentScrollPos = window.pageYOffset;
+//   if (prevScrollpos > currentScrollPos) {
+//     document.querySelector(".navbar-wrapper").style.top = "0";
+//   } else {
+//     document.querySelector(".navbar-wrapper").style.top = "-70px";
+//   }
+//   prevScrollpos = currentScrollPos;
+// };
 
 (function() {
   'use strict';
