@@ -323,11 +323,11 @@ def remove_favourite(id):
 @app.route("/add_recipe")
 def add_recipe():
     # Only logged in users may add recipes
-    if 'username' in session:
-        return render_template("addrecipe.html",
+    # if 'username' in session:
+    return render_template("addrecipe.html",
                                recipes=mongo.db.recipes.find())
-    error_message = "You must be logged in to add recipes."
-    return render_template("error.html", error_message=error_message)
+    # error_message = "You must be logged in to add recipes."
+    # return render_template("error.html", error_message=error_message)
 
 
 @app.route('/insert_recipe', methods=['GET', 'POST'])
