@@ -22,6 +22,7 @@ The following validation services and linter were used to check the validity of 
 - [W3C Markup Validation](https://validator.w3.org/) was used to validate HTML.
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
+- [Esprima](https://esprima.org/demo/validate.html) was used to validate JS syntax.
 - [PEP8](http://pep8online.com/) was used to ensure python code is PEP8 compliant.
 
 ## Client Stories Testing
@@ -122,16 +123,32 @@ In addition, there are sections that show the user four recipes are the most vie
 
 ### Responsiveness
 
-The application was tested across browsers on mobile phone, laptop, tablet and desktop. 
+The application was tested on mobile phone (Oneplus6, iphone), laptop(Macbook Air), tablet and desktop(Mac Desktop) in addition to Google Chrome devtools. 
+
+### Browswer Compatibility
+
+The application was tested on Edge, Firefox, Google Chrome, Opera and Safari. 
 
 ## Bugs Discovered
 
-Python logic in flask still works despite being commented out. 
+### Bugs fixed
 
-100vh is not really 100vh on mobile.
+Initially, when submitting forms, form fields changed would be updated despite clicking on the cancel button. I realised that
+the attribute 'type' set to 'button' must be set to a button on the page if it was not intended to post form data.
 
-CSS fires on page load with Chrome.
+A bug was noticed when using the application on Safari. Whereby the navbar would disappear when the user scrolled up while at the top of the page.
+In general, the navbar should stay fixed at the top of the page and only disappear when the user scrolls down, reappearing when the user scrolls up again.
+This is based on the current scroll position being greater than the previous scroll position for the navbar to disappear and vice versa for it to reappear.
+I attributed the problem on Safari to the fact that the user may scroll up further, even while at the top of the page. This meant that the user's previous scroll
+position, a negative Y-axis value, would be greater than the current scroll position and would therefore disappear as stupuldated by the code. I changed the code
+to make the navbar appear then the previous scroll position was greater than the current scroll position OR when the previous scroll position was less
+than or greater than zero. This seemed to fix the issue.
 
-Form update despite non-submission
+
+### Bugs yet to be fixed
+
+The CSS transition associated with the side navigation bar fires when the page is loaded on Chrome. 
 
 ## Further Testing 
+
+Family and friends were asked to test the application and provide feedback. This proved immensely helpful for fine-tuning the applicaiton.
