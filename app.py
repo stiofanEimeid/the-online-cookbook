@@ -2,12 +2,16 @@ import os
 import math
 import pymongo
 import json
+import time
 from flask import (Flask, render_template, redirect, request, url_for, session,
                    flash, jsonify)
 from flask_bcrypt import Bcrypt
 from time import gmtime, strftime
+from datetime import datetime
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
+
+dateTimeObj = datetime.now()
 
 # create instance of app in variable 'app'
 
@@ -136,7 +140,7 @@ def discover():
     users = mongo.db.users
     top_recipe = recipes.find().sort("views", -1).limit(1)
     top_recipes = recipes.find().sort("views", -1).limit(5)
-    most_recent = recipes.find().sort("time_created", -1).limit(5)
+    most_recent = recipes.find().sort("timestamp", -1).limit(5)
     top_favourite = recipes.find().sort("favourites", -1).limit(1)
     most_favourited = recipes.find().sort("favourites", -1).limit(5)
     recipe_total = recipes.count()
@@ -347,6 +351,7 @@ def insert_recipe():
                 "author": session['username'],
                 "recipe_image": request.form.get("recipe_image"),
                 "time_created": strftime("%H:%M:%S %d-%m-%Y", gmtime()),
+                'timestamp': datetime.timestamp(datetime.now()),
                 "last_updated": "",
                 "diet": request.form.getlist("diet"),
                 "views": 0,

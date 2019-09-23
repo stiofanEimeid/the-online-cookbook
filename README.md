@@ -192,6 +192,7 @@ Views | views | Integer32
 Favourites | favourites | Integer32
 Favourited By | favourited-by | Array
 Time Created | time_created | String
+Timestamp | timestamp | Double
 Last Updated | last_updated | String
 
 ### User Collection
@@ -335,6 +336,7 @@ views | Integer32
 favourites | Integer32
 favourited-by | Array
 time_created | String
+timestamp | Double
 last_updated | String
 
 Users
