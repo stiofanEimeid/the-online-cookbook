@@ -284,15 +284,7 @@ Using an IDE of your choice, ensure the following are installed, Git, PIP and Py
 
 It is recommended that you create a virtual environment that contains the project's dependencies, and keeps those dependencies separate from those of other projects. 
 
-Create MongoDB Database. Get Mongo_uri
-For further details please consult the [sessions documentation](https://flask.palletsprojects.com/en/1.0.x/quickstart/#sessions)
-[MONGO_URI documentation](https://docs.mongodb.com/manual/reference/connection-string/)
-Set Secret Key
-6. Set SECRET\_KEY
-In order to set a secret key
-$ python -c 'import os; print(os.urandom(16))'
-b'_5#y2L"F4Q8z\n\xec]/'
-7. Input the command git init to the terminal and push the project to github using the following commands:```git add .```, ```git commit -m "Initial Commit",``` and finally ```git push```. You should be prompted for your Github username and password. Enter these and the project will be pushed.
+
 
 #### Cloning from Github
 
@@ -318,13 +310,14 @@ To cut ties with this repository, type ```git remote rm origin``` into the termi
 Create a virtual environment that contains the project's dependencies, and keeps those dependencies separate from those of other projects. 
 
 1.  Activate Python's built in virtual environment using the command python -m .venv venv where the second instance of venv is the name of the virtual environment and thus serves as a placeholder in this instance. 
-2. Activate the venv using the command ```.venv\Scripts\activate```. Note: Successful activation of the virtual environment is indicated by the presence of ```(env) $ ...``` in the terminal. Once finished working in the virtual environment, type in the command ```$ deactivate```
+2. Activate the venv using the command ```.venv\Scripts\activate```. Note: Successful activation of the virtual environment is indicated by the presence of ```(env) $ ...``` in the terminal. Once finished working in the virtual environment, type in the command ```$ deactivate```.
 3. Pip may be upgraded with the command ```pip install --upgrade pip```.
 4. Install any required modules using the command ```pip install -r requirements.txt```.
-5. Save config vars Secret Key and Mongo URI to venv.
-7. Create a new database in MongoDB called 'the-online-cookbook'. Create three collections called reipes, users and products
-8. and structure them as follows:
-9. 
+5. In your local IDE create a file called .flaskenv. Include the following:
+FLASK_APP=app.py
+FLASK_ENV=development
+6. Save config vars Secret Key to .flask.env as environment variable. For guidance creating a secure secret key, please consult the [sessions documentation](https://flask.palletsprojects.com/en/1.0.x/quickstart/#sessions).
+7. Create a new database in MongoDB called 'the-online-cookbook'. Create three collections called recipes, users and products and structure them as follows:
 
 Recipes 
 
@@ -368,33 +361,29 @@ product_image | String
 product_description | String
 product_price | String
 
-8. Run using the command ```python3 app.py```.
-9. Site may be found running at http://127.0.0.1:5000/ 
+8. Save your Mongo URI for the database collection to .flaskenv. The MONGO URI typically comes in the form: mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority (Note the placeholders for your username, password, cluster name and database name). For further assistance, please consult the [MONGO_URI documentation](https://docs.mongodb.com/manual/reference/connection-string/).
+9. Run using the command ```python3 app.py```.
+10. Site may be found running at http://127.0.0.1:5000/ 
 
 #### Deploying the Project to Heroku
 
 This project has been deployed to Heroku using the master branch on GitHub. In order to deploy to Heroku, please follow these steps: 
 
-1. Install the heroku API to your IDE of choice, using the command ... 
-2. Create a requirements.txt file using the command ```sudo pip3 freeze > requirements.txt```
-3. Create a Procfile using the command ```echo web: Python app.py > Procfile```. (Note that 'app.py' is the name of this project's main Python file.)
-4. Free Dynos...
-5. Create or login to your account on Heroku. Create a new app in your dashboard and name it. Set it to your region. Under the settings tab, select reveal var configs and input following:
+1. Create a requirements.txt file using the command ```sudo pip3 freeze > requirements.txt```
+2. Create a Procfile using the command ```echo web: Python app.py > Procfile```. (Note that 'app.py' is the name of this project's main Python file.)
+3. Initialise a git repository using the command ```git init``` and push the project to github using the following commands:```git add .```, ```git commit -m "Initial Commit",``` and finally ```git push```. You should be prompted for your Github username and password. Enter these and the project will be pushed.
+4. Create or login to your account on Heroku. Create a new app in your dashboard and name it. Set it to your region. Under the settings tab, select reveal var configs and input following:
 
 IP | 0.0.0.0
-PORT | 
-MONGO URI | mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
-SECRET KEY | <your_secret_key> *
+PORT | 5000
+MONGO URI | <your_mongo_uri>
+SECRET KEY | <your_secret_key> 
 DEBUG | FALSE
 
-6. Go to the deploy tab, connect Github under the deployment method section and then select enable automic deployment.
-7. At this point, you should be able to see the app running by clicking the Open App button in the top right of the Heroku dashboard. A record of build success and otherwise along with deployment may be viewed from the activity tab, also in the dashboard. If you encounter any issues using Heroku, please visit their [troubleshooting section](https://devcenter.heroku.com/categories/troubleshooting).
-
-*Note the placeholders for your username, password, cluster name and database name. 
-
-9. Under the settings tab of your account, enable automatic deploy by connecting to Github. Select the relevant repository with which to connect. This will enable your code to automatically update and deploy on heroku when you push Github.
-10. MongoDB cluster and collection names...
-11. With the site successfully deployed, you may now view it using the open app button. Problems with deployment may be found under the activity tab. 
+5. Go to the deploy tab, connect Github under the deployment method section and then select enable automic deployment.
+6. At this point, you should be able to see the app running by clicking the Open App button in the top right of the Heroku dashboard. A record of build success and otherwise along with deployment may be viewed from the activity tab, also in the dashboard. If you encounter any issues using Heroku, please visit their [troubleshooting section](https://devcenter.heroku.com/categories/troubleshooting).
+7. Under the settings tab of your account, enable automatic deploy by connecting to Github. Select the relevant repository with which to connect. This will enable your code to automatically update and deploy on heroku when you push Github.
+8. With the site successfully deployed, you may now view it using the open app button. A history of the deployment statuses may be viewed under the activity tab. 
 
 ## Credits
 
