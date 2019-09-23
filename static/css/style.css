@@ -338,7 +338,7 @@ legend {
 
 /* CHECKED STYLES */
 .avatarRadio:checked + img {
-  outline: 2px solid #f78888;
+  outline: 3px solid #f78888;
 }
 
 /*recipe page*/

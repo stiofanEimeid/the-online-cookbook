@@ -284,6 +284,16 @@ Using an IDE of your choice, ensure the following are installed, Git, PIP and Py
 
 It is recommended that you create a virtual environment that contains the project's dependencies, and keeps those dependencies separate from those of other projects. 
 
+Create MongoDB Database. Get Mongo_uri
+For further details please consult the [sessions documentation](https://flask.palletsprojects.com/en/1.0.x/quickstart/#sessions)
+[MONGO_URI documentation](https://docs.mongodb.com/manual/reference/connection-string/)
+Set Secret Key
+6. Set SECRET\_KEY
+In order to set a secret key
+$ python -c 'import os; print(os.urandom(16))'
+b'_5#y2L"F4Q8z\n\xec]/'
+7. Input the command git init to the terminal and push the project to github using the following commands:```git add .```, ```git commit -m "Initial Commit",``` and finally ```git push```. You should be prompted for your Github username and password. Enter these and the project will be pushed.
+
 #### Cloning from Github
 
 In order to run a repository locally, the repository must be cloned. To clone the repository
@@ -312,39 +322,79 @@ Create a virtual environment that contains the project's dependencies, and keeps
 3. Pip may be upgraded with the command ```pip install --upgrade pip```.
 4. Install any required modules using the command ```pip install -r requirements.txt```.
 5. Save config vars Secret Key and Mongo URI to venv.
-6. Run using the command ```python3 app.py```.
-7. Site may be found running at http://127.0.0.1:8080/ 
+7. Create a new database in MongoDB called 'the-online-cookbook'. Create three collections called reipes, users and products
+8. and structure them as follows:
+9. 
+
+Recipes 
+
+DB Key | Data type 
+--- | --- 
+_id | Object ID 
+recipe_name | String 
+recipe_preptime | Integer32
+recipe_serves | Integer32
+receipe_ingredients | Array 
+recipe_steps | Array 
+diet | Array
+recipe_description | String 
+author | String
+recipe_image | String
+views | Integer32
+favourites | Integer32
+favourited-by | Array
+time_created | String
+last_updated | String
+
+Users
+
+DB Key | Data Type 
+--- | --- 
+_id | Object ID
+name | String
+name_lowercase | String
+user_pw | String
+favourites | Array
+avatar | String
+member_since | String
+
+Products
+
+DB Key | Data Type 
+--- | --- 
+ _id | Object ID 
+product_name | String
+product_image | String
+product_description | String
+product_price | String
+
+8. Run using the command ```python3 app.py```.
+9. Site may be found running at http://127.0.0.1:5000/ 
 
 #### Deploying the Project to Heroku
 
-In order to deploy to Heroku, please follow these steps: 
+This project has been deployed to Heroku using the master branch on GitHub. In order to deploy to Heroku, please follow these steps: 
 
 1. Install the heroku API to your IDE of choice, using the command ... 
-2. Create a requirements.txt file using the command ```pip freeze > requirements.txt```
-3. Create a Procfile using the command ```echo web: Python app.py > Procfile```. (Note that 'app.py' is the name of this project's main Python file)
+2. Create a requirements.txt file using the command ```sudo pip3 freeze > requirements.txt```
+3. Create a Procfile using the command ```echo web: Python app.py > Procfile```. (Note that 'app.py' is the name of this project's main Python file.)
 4. Free Dynos...
-5. Login to your account on Github. If you do not have a Github account, register here.  Create a new repository, name it copy the code that concerns cloning a repository from a remote server. 
-6. Set SECRET\_KEY and MONGO_URI...
-7. Input the command git init to the terminal and push the project to github using the following commands:```git add .```, ```git commit -m "Initial Commit",``` and finally ```git push```. You should be prompted for your Github username and password. Enter these and the project will be pushed.
-8. Create or login to your account on Heroku. Create a new app in your dashboard and name it. Set the region to Europe. Set the config vars to the following, using the names of your database and values for the Secret Key and Mongo URI you created in Step 6. Recommended process for creating key value ...
+5. Create or login to your account on Heroku. Create a new app in your dashboard and name it. Set it to your region. Under the settings tab, select reveal var configs and input following:
 
-Var configs
-
-Key | Value 
- --- | ---
 IP | 0.0.0.0
-MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`*
-PORT | 5000
-SECRET_KEY | `<your_secret_key>`
+PORT | 
+MONGO URI | mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+SECRET KEY | <your_secret_key> *
 DEBUG | FALSE
+
+6. Go to the deploy tab, connect Github under the deployment method section and then select enable automic deployment.
+7. At this point, you should be able to see the app running by clicking the Open App button in the top right of the Heroku dashboard. A record of build success and otherwise along with deployment may be viewed from the activity tab, also in the dashboard. If you encounter any issues using Heroku, please visit their [troubleshooting section](https://devcenter.heroku.com/categories/troubleshooting).
 
 *Note the placeholders for your username, password, cluster name and database name. 
 
 9. Under the settings tab of your account, enable automatic deploy by connecting to Github. Select the relevant repository with which to connect. This will enable your code to automatically update and deploy on heroku when you push Github.
 10. MongoDB cluster and collection names...
 11. With the site successfully deployed, you may now view it using the open app button. Problems with deployment may be found under the activity tab. 
-
-MongoDB troubleshooting ... 
 
 ## Credits
 
