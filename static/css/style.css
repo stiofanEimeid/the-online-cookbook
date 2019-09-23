@@ -84,6 +84,10 @@ p, ol, ul, .cell {
     margin-bottom: 60px;
 }
 
+.marginTop {
+    margin-top: 60px;
+}
+
 .row {
     margin-left: 0;
     margin-right: 0;
