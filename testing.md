@@ -144,7 +144,6 @@ position, a negative Y-axis value, would be greater than the current scroll posi
 to make the navbar appear then the previous scroll position was greater than the current scroll position OR when the previous scroll position was less
 than or greater than zero. This seemed to fix the issue.
 
-
 ### Bugs yet to be fixed
 
 The CSS transition associated with the side navigation bar fires when the page is loaded on Chrome. 

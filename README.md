@@ -237,7 +237,7 @@ Product Price | product_price | String
 - [GoogleFonts](https://fonts.google.com/)
     - The Lobster and Nunito fonts found on **GoogleFonts** were used for this project. 
 - [Git](https://git-scm.com/)
-    - Was used to handle version control
+    - **Git** was used to handle version control
 - [Am I Responsive Design](http://ami.responsivedesign.is/)
     - **Am I Reponsive Design** was used to test the responsiveness of the site and to provide the [image of the site running
     on all devices](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png) contained in this README.md
@@ -258,9 +258,9 @@ Product Price | product_price | String
 - [Favicon Generator](https://www.favicon-generator.org/) 
     - **Favicon Generator** was used to generate this websites favicon
 - [Gravit](https://gravit.io/) 
-    - Gravit was used to design this projects SVGs. 
+    - **Gravit** was used to design this projects SVGs. 
 - [CompressJpeg](https://compressjpeg.com/)
-    - Compress Jpeg was used to compress website images.
+    - **Compress Jpeg** was used to compress website images.
 
 ## Testing
 
@@ -283,8 +283,6 @@ In order to run this project locally, the following tools are needed.
 Using an IDE of your choice, ensure the following are installed, Git, PIP and Python3. Access to MongoDB Atlas is also required.
 
 It is recommended that you create a virtual environment that contains the project's dependencies, and keeps those dependencies separate from those of other projects. 
-
-
 
 #### Cloning from Github
 
@@ -374,6 +372,8 @@ This project has been deployed to Heroku using the master branch on GitHub. In o
 3. Initialise a git repository using the command ```git init``` and push the project to github using the following commands:```git add .```, ```git commit -m "Initial Commit",``` and finally ```git push```. You should be prompted for your Github username and password. Enter these and the project will be pushed.
 4. Create or login to your account on Heroku. Create a new app in your dashboard and name it. Set it to your region. Under the settings tab, select reveal var configs and input following:
 
+Key | Value
+--- | ---
 IP | 0.0.0.0
 PORT | 5000
 MONGO URI | <your_mongo_uri>
@@ -408,10 +408,10 @@ SVG wave
 
 Dynamic form field generation https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/
 
-Custom checkbox found at https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
-
 Custom radio box: https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons
 
-https://www.favicon-generator.org/
+### Disclaimer 
+
+The contents of this website are for educational purposes only.
 
 [**Jump to top &uarr;**](#table-of-contents)
