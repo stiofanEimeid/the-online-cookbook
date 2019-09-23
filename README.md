@@ -228,11 +228,39 @@ Product Price | product_price | String
     - The project also uses Bootstrap to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)
 - [GitHub](https://github.com/)
     - This project uses **GitHub** to store and share all project code remotely. 
-- [Unsplash](https://unsplash.com/)
-    - The default image for recipes was taken from Unsplash, a stock image library.
-- Heroku
-- Jninja
-- Git
+- [Heroku](https://www.heroku.com/)
+    - The application is hosted on **Heroku**.
+- [Jinja](https://jinja.palletsprojects.com/en/2.10.x/)
+    - **Jinja** was used to create templates
+- [FontAwesome](https://fontawesome.com/)
+    - **FontAwesome** was used to provide icons for the side-navigation bar. 
+- [GoogleFonts](https://fonts.google.com/)
+    - The Lobster and Nunito fonts found on **GoogleFonts** were used for this project. 
+- [Git](https://git-scm.com/)
+    - Was used to handle version control
+- [Am I Responsive Design](http://ami.responsivedesign.is/)
+    - **Am I Reponsive Design** was used to test the responsiveness of the site and to provide the [image of the site running
+    on all devices](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png) contained in this README.md
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+    - **PIP** was used to install the necessary software packages for this project. 
+- [Balsamiq](https://balsamiq.com/?gclid=CjwKCAjw2qHsBRAGEiwAMbPoDGWJ8Vt62S0dfo_Gtqbf5WdHzNWohvOch7nnGT7kxnWNIr85RsS2IxoCmwkQAvD_BwE)
+    - **Balsamiq** was used to create the wireframes for this project.
+- [MongoDB Atlas](https://www.mongodb.com/)
+    - **MongoDB Atlas** was used to create the database for this project
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - The **Flask** framework was used to design this project. 
+- [Flask-Bcrypt](https://flask-bcrypt.readthedocs.io/en/latest/)
+    - **Flask-bcrypt** was used for encryption of passwords in this project.
+- [ObjectId](https://api.mongodb.com/python/current/api/bson/objectid.html)
+    - The ObjectId module was used to read objectIds of documents retrieved from MongoDB in python.
+- [PyMongo](https://api.mongodb.com/python/current/)
+    The PyMongo package was used to communicate with the Mongo DB database. 
+- [Favicon Generator](https://www.favicon-generator.org/) 
+    - **Favicon Generator** was used to generate this websites favicon
+- [Gravit](https://gravit.io/) 
+    - Gravit was used to design this projects SVGs. 
+- [CompressJpeg](https://compressjpeg.com/)
+    - Compress Jpeg was used to compress website images.
 
 ## Testing
 
@@ -323,7 +351,8 @@ MongoDB troubleshooting ...
 ### Content
 
 ### Media
-
+- [Unsplash](https://unsplash.com/)
+    - The default image for recipes was taken from Unsplash, a stock image library.
 Unsplash
 
 Color Scheme
