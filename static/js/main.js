@@ -98,9 +98,17 @@ $('#mySecondTooltip').tooltip();
         x--; //Decrement field counter
     });
     
+    // w3schools code
+    
     var prevScrollpos = window.pageYOffset;
     $(window).on('scroll', function(){
     var currentScrollPos = window.pageYOffset;
+    /*
+    If the user scrolls down the page area, the menu disappears.
+    Scrolling up off the page is not recognised to keep the menu
+    fixed at the top when the user is viewing that area of the page.
+    The menu reappears on scroll up. 
+    */
     if (prevScrollpos > currentScrollPos || prevScrollpos <= 0) {
     $(".navbar-wrapper").css('top',"0");
         } else {
@@ -111,15 +119,14 @@ $('#mySecondTooltip').tooltip();
     );
 });
 
-// Credit: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-
 // D3/DC Code
 
 queue()
 .defer(d3.json, "/data")
 .await(myTag)
 .await(makeGraph);
-    
+
+// function found on stackoverflow 
 function myTag(key, endAngle, startAngle){
     var percentage = dc.utils.printSingleValue((endAngle - startAngle) / (2*Math.PI) * 100);
     // hide tag is less than 5% of the chart to prevent labels from overlapping
@@ -141,13 +148,12 @@ function makeGraph(error, myDataJson) {
         .transitionDuration(1500)
         .dimension(type_dim)
         .group(amount)
+        // function found on stackoverflow 
         .on('pretransition', function(chart){
             chart.selectAll('text.pie-slice').text( function(d) {
             return myTag(d.data.key, d.endAngle, d.startAngle);
             });
         });
-                
-    // https://stackoverflow.com/questions/25209971/add-percentages-to-the-pie-chart-label-in-dc-js
                 
     var views = type_dim.group().reduceSum(dc.pluck('Views'));
     dc.pieChart('#another-chart-here')

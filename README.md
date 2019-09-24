@@ -1,14 +1,13 @@
 <div align="center">
-
 <a href="https://the-online-cookbook.herokuapp.com/" target="_blank" rel="noopener"><img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo"/></a>
-
+<h1 align="center">
+ Apéritif: The Online Cookbook
+</h1>
 </div>
 
-<h1 align="center">
-
-[Visit Apéritif: The Online Cookbook](https://the-online-cookbook.herokuapp.com/)
-
-</h1>
+<div align="center">
+[Visit the site](https://the-online-cookbook.herokuapp.com/)
+</div>
 
 # Stephen Byrne Portfolio
 
@@ -392,19 +391,47 @@ DEBUG | FALSE
 ### Content
 
 ### Media
-- [Unsplash](https://unsplash.com/)
-    - The default image for recipes was taken from Unsplash, a stock image library.
-Unsplash
 
 Color Scheme
 
-Recipe images
+A number of recipes and their respective images taken from [BBC Food](https://www.bbc.co.uk/food). Links accrediting each auther included in each recipe description. 
+
+#### Product Images:
+
+Spatula -Image by <a href="https://pixabay.com/users/WikimediaImages-1185597/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2202239">WikimediaImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2202239">Pixabay</a>
+
+Frying Pan - Image by <a href="https://pixabay.com/users/Silberfuchs-721/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554072">Walter Bichler</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554072">Pixabay</a>
+
+Cutting- board - Image by <a href="https://pixabay.com/users/StockSnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=925544">StockSnap</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=925544">Pixabay</a>
+
+Pot - Image by <a href="https://pixabay.com/users/Silberfuchs-721/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554068">Walter Bichler</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554068">Pixabay</a>
+
+Kitchen Knife - Image by <a href="https://pixabay.com/users/Silberfuchs-721/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554067">Walter Bichler</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554067">Pixabay</a>
+
+Peeler - Image by <a href="https://pixabay.com/users/Silberfuchs-721/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554070">Walter Bichler</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=554070">Pixabay</a>
+
+Wooden Pestle and Mortar - Image by <a href="https://pixabay.com/users/Robert-Owen-Wahl-2077322/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1238282">Robert-Owen-Wahl</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1238282">Pixabay</a>
+
+Whisk - Image by <a href="https://pixabay.com/users/InspiredImages-57296/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1056226">InspiredImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1056226">Pixabay</a>
+
+Blender - Image by <a href="https://pixabay.com/users/opaye-1806/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=10934">Yao Charlen</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=10934">Pixabay</a>
+
+Placeholder Image by Dose Juice on Unsplash found on [Unsplash](https://unsplash.com/)
+
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@dosejuice?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Dose Juice"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Dose Juice</span></a>
+
+
 
 ### Code
 
-Pretty Printed
-w3 schools
-SVG wave
+[Pretty Printed: Creating a User Login System Using Python, Flask and MongoDB](https://www.youtube.com/watch?v=vVx1737auSE&t=45s)
+[Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
+[Navbar disappear on scroll](https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp)
+[Sidebar](https://www.w3schools.com/w3css/w3css_sidebar.asp)
+[Image Radio Buttons](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons)
+[Rounded SVG](https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections)
+[Add percentage to chart function](// https://stackoverflow.com/questions/25209971/add-percentages-to-the-pie-chart-label-in-dc-js)
+[Dynamic form fields](https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/)
 
 ### Acknowledgements
 
