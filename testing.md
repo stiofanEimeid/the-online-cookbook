@@ -29,24 +29,6 @@ The following validation services and linter were used to check the validity of 
 
 **As a user I want to**
 
-1. See all recipes on the site without requiring an account to do so;
-2. Filter recipes by dietary requirements, meal type, and cuisine; 
-3. Search recipes with text search;
-4. View each individual recipe and its details on its own page;
-5. Create an account on the site that is secure;
-6. Choose an avatar for my account;
-7. Create, update and delete my own recipes;
-8. Favourite recipes and tie them to my account so I can see all of them when I log in;
-9. Remove favourite recipes if I so wish;
-10. Be able to change my password;
-11. Be able to change my avatar;
-12. Be able to delete my account;
-13. View statistical data of the site in an appealling visual format;
-14. View products that I may need for cooking meals;
-15. Navigate the site quickly and easily;
-16. View the site on my preferred device, be it mobile, tablet, laptop or desktop. 
-
-
 1. **See all recipes on the site without requiring an account to do so**
 
 Users may search recipes without having to register or login. By default, every recipe in the database is returned when the user first navigates to the recipes page. Each recipe is represented by a card, with a maximum of twelve per page. Results are paginated in the interest of organisation and preventing the user becoming overwhelmed.
@@ -131,23 +113,15 @@ Below the pie charts are three lists of five items each - most viewed recipes, m
 
 Users may view a list of products in a 3x3 grid from the products link in the side navigation bar. Each entry contains a product image and name along with a link to its individual page. The individual page contains such information as a product image, the product name, its price, a description and an indication of whether or not it is in stock. At the bottom of the page is an option to buy. Unfortunately, check-out functionality is not currently available. 
 
-15. Navigate the site quickly and easily;
-
-Users may navigate through the site by way of the side navigation bar. The 'sidenav' is accessed by way of the menu icon contained the navigation bar at the time of the page. This navigation bar disappears when the user scrolls down in the interest of freeing up space on the screen. It reappears whenever the user scrolls up or is at the top of the page. 
-
-The options contained in the navbar when not logged in include home, about, login/register, discover, products.
-
-When users have logged in, the options are as follows, home, about, account, discover, products, add recipe and finally logout. 
-
-16. View the site on my preferred device, be it mobile, tablet, laptop or desktop. 
-
-The site is fully responsive - it's mobile, tablet, laptop and desktop-friendly.
-
 Owner Stories
 
 1. Promote a brand of cooking tools to my users
 
-Users are shown three random products each time they view a recipe page. They may also view products directly from the products page which leads them to the product's individual page.
+I sought to accomplish this by making a direct connection between the recipes users were making and viewing and the tools I wished to promote and sell. Each individual recipe page features a random selection of three of nine tools. The tools are presented to users as facilitating their needs and interests. Users can click through to each of the three products' individual page, where a larger image of the product along with a description, a price and an option to buy appear.
+
+Users may also view products directly from the products page which leads them to the product's individual page.
+
+I kept the product copy light-hearted and playful to inject some personality into the brand and differentiate it from other, more reserved competitors. 
 
 2. Collect data on what users are submitting to determine what types of recipes are popular and any trends that may exist for marketing purposes. 
 
@@ -155,16 +129,38 @@ The site collects data that is dynamically represented on a statistcs dashboard 
 
 If the user attempts to navigate to the add recipe page without registering or logging in, they will be met with an error message prompting them to login or register. All recipes must have at least one step or ingredient.
 
+<!--Some site statistics are represented in the Discover template. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. 
+
+Two pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed. This may be used potentially to taylor cooking utensils and applicances to users in the future to determine what areas of cooking are most popular to users. Further scales may be added once larger amounts of data are available.-->
+
+<!--In addition, there are sections that show the user four recipes are the most viewed, another four that are most favourited and finally a list of recent submissions. In order to promote user engagement, users may be rewarded for appearing in the most-viewed or most-favourited sections. Rewards may take the form of discounts on cooking products. -->
 
 
-What fields are required?
+#### Searching Recipes
 
-Users may edit or delete any and all of their recipes by navigating to each recipes resptive page. If the session username matches the author of the recipe, the user will be given the option to edit or delete their recipe if they so wish. 
-If a user decides to edit the recipe, they will be taken to a page that mirrors the page they used to upload the recipe in the first place, with each input area occupied by the current details of the recipe. Users may delete all but one of the recipes steps and/or ingredients. Once the user is happy with their changes, they may submit the recipe. A note is made of when the edit took place and contained in the recipe document.
+When the user first opends the recipes page, every recipe in the database is returned. They may search these recipes with text-search or with the three search filters. I ran a number of search queries with the text-search to verify it worked as intended and performed a extensive amount of searches with the filters together and in isolation and verified the returned recipes matched the selected criteria. 
 
-On the other hand, if they decide to delete the recipe they will be asked to confirm their decision through a modal. If they do not change their mind, the recipe will be removed from the database. Users other than the author will not be given this option nor the option to edit the recipe. Instead, a user who is logged in but is not the author will be given the option of adding the recipe to their favourites while a user who is not logged in at all will be prompted to login to add the recipe to their favourites.
+#### Adding Recipes
 
+Users may only add recipes if they are logged in. Users who attempt to add recipes without logging in by using the add recipe url will be asked to login or register to add recipes. Users who are logged in may add recipes from the link in the side navigation bar or from the link in their account under the 'My Recipes' tab. They will be required to complete a number of fields including recipe name, recipe description, meal type, cuisine, cooking time, preparation time, number of people the recipe serves, steps, ingredients, dietary information and finally recipe image. All these fields are required except for recipe description, image and dietary information (although the latter merely equates to no special dietary information). If a user attempts to submit a form without filling one or more of the required fields, the form will not submit and they will be asked to provide input for the empty required fields. I tested this feature with recipes I myself inputted to the database. I then made sure the correct information appeared in the database through MongoDB Atlas.
 
+#### Editing Recipes
+
+Users may only update/edit the recipes they have authored. In order to do this they must navigate to the recipe's individual recipe page where they will be given the option to edit the recipe(along with the option to delete the recipe.) In order to test this feature, I visited the same recipe page as a visitor, a logged in user and logged in as the recipe's author. The option only appeared when logged in as the recipe's author, as intended.
+I repeated this process with other recipes with different author accounts.
+
+If a visitor to the site who is not logged in attempts to view the edit recipe page with a recipe id in the url, they will be asked to sign in to edit their recipes or register an account. If a logged in user who is not the author tries this action, they will instead see an error message telling them they may only delete their own recipes. 
+
+When user's decide to edit their recipe, they will be taken to a page that mirrors the page they used to add the recipe with all the same fields now filled with the values they inputted when adding the recipe. All fields are required apart from recipe description, recipe image and recipe dietary requirements. Users may delete all but one of the recipes steps and/or ingredients. Once the user is happy with their changes, they may submit the recipe. A note is made of when the edit took place and contained in the recipe document. If a user removes any of the required values and attempts to submit the updated recipe, the form will not submit. Instead they will be pointed to the empty required fields and asked for input. This process was carried out for each recipe in the database. 
+
+#### Deleting Recipes
+
+Users may only delete the recipes they have themselves authored. In order to do this they must navigate to the recipe's individual recipe page where they will be given the option to delete the recipe (along with the option to edit the recipe) and asked to confirm this decision through a modal. In order to test this feature, I visited the same recipe page as a visitor, a logged in user and logged in as the recipe's author. The option only appeared when logged in as the recipe's author, as intended.
+I repeated this with other recipes with different author accounts.
+
+Once I had chosen to delete a recipe, I made sure it had been removed from the database through Mongo DB Atlas. I repeated this process for more dummy recipe documents.
+
+# Account Access
 
 <div align="center">
 <img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/flowchartfinal.png" alt="User login and registration flowchart"/>
@@ -194,6 +190,16 @@ Users may log out from their account or from the navbar. The session is cleared 
 
 ### Account Settings
 
+#### Access to Settings
+
+Users may only view the account page if they are logged in. If they attempt to view the account page or any of its settings, they will be met with an error page and asked to login or register an account.
+
+The account page visible to users is based on the username they used to sign in. This is set as the session username and used to retrieve the relevant user documents in the database. The account url has no information tied to which specific account it is displaying. 
+
+#### Account Tabs
+
+The Account page displays some basic information about the user currently logged in along with their recipes and favourites. I logged in with multiple accounts to ensure that the correct information was being displayed. 
+
 #### Deleting Account
 
 Should a user wish to delete their account, they must reenter their password. They will then be asked to confirm that they wish to delete their account by a modal. Once a user has chosen to delete their account, any recipe written by them is removed from the database (they are warned that this will happen in the delete account template).
@@ -208,27 +214,37 @@ Should a user wish to change their password, they will be asked to reenter their
 
 Because this is purely an asethetic choice and not bearing on the integrity of an account, a user may choose to change their avatar without having to enter their password.
 
-**As a site I want to**
+#### Navigation Bar
 
-1. **Promote a brand of cooking tools to my users.**
+The navigation bar is fixed to the top of the page. It disappears on scroll down but reappears on scroll up. The Menu button opens a side navigation bar with a number of options to choose from. Once the side menu is open, an overlay covers the rest of the webpage not already covered by the sidenav. Users may scroll down the sidenav through the options but they may not scroll through the webpage or otherwise interact with it while the sidenav is open. 
 
-Users may view a selection of products directly through the products link in the navbar. Each product has an individual page similar to recipes. 
+Different options appear depending on whether the user is logged in or not. I checked the options while logged out compared to being logged in with multiple accounts to verify the intended options appeared as expected. 
 
-I sought to accomplish this by making a direct connection between the recipes users were making and viewing and the tools I wished to promote and sell. Each individual recipe page features a random selection of three of nine tools. The tools are presented to users as facilitating their needs and interests. Users can click through to each of the three products' individual page, where a larger image of the product along with a description, a price and an option to buy appear.
+#### Discover Page
+
+The Discover Page dynamically generates three pie-charts using site data using dc.js and d3.js. I tested this feature by hard-coding various values to be graphed by each of the three pie-charts before switching to data generated by MongoDB search queries. Cross-referencing the results with the values in the database confirmed the correct values were being displayed. 
+
+It also returns 5 results of a sort query based on number of recipe views, recipe favourites and time a particular recipe was created. I created a number of test recipes to verify that they appeared in the recently submitted section and cross-referenced the top recipes based on views and favourites with the values contained in the database through Atlas. 
+
+#### Pagination
+
+Pagination is provided on the search recipes page. A maximum of twelve results per page is displayed. The range of recipes being displayed ( a multiple of twelve) of total recipes returned is displayed in a div container at the top and bottom of the results e.g. 13-24 of 28 results displayed. 
+
+Once the user reaches a page where the results do not reach the next multiple of 12, the recipe total will instead be displayed rather than a multiple of 12 i.e. 24-28 of 28 results displayed. This feature was implemented with conditional operators - if the page number by a multiple of 12 was greater than the total recipes, the total recipe value would take the place of the second value in the statement. Otherwise, it would be a multiple of 12. 
+
+I tested this feature using a variety of search queries i.e. text search and filter combinations.
+
+#### Products
 
 Users attempting to buy a product will be greeted by a modal advising them that a checkout functionality for buying products is currently unavailable.
-
-2. **Observe trends in the content being submitted to the website by way of a statistics dashboard**
-
-Some site statistics are represented in the Discover template. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. Two pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed. This may be used potentially to taylor cooking utensils and applicances to users in the future to determine what areas of cooking are most popular to users. Further scales may be added once larger amounts of data are available.
-
-In addition, there are sections that show the user four recipes are the most viewed, another four that are most favourited and finally a list of recent submissions. In order to promote user engagement, users may be rewarded for appearing in the most-viewed or most-favourited sections. Rewards may take the form of discounts on cooking products. 
 
 ## Manual Testing
 
 ### Responsiveness
 
 The application was tested on mobile phone (Oneplus6, iphone), laptop(Macbook Air), tablet and desktop(Mac Desktop) in addition to Google Chrome devtools. 
+
+The site is fully responsive - it's mobile, tablet, laptop and desktop-friendly.
 
 ### Browswer Compatibility
 

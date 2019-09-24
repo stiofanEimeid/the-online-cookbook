@@ -78,9 +78,7 @@ As a user, I want to:
 11. Be able to change my avatar;
 12. Be able to delete my account;
 13. View statistical data of the site in an appealling visual format;
-14. View products that I may need for cooking meals;
-15. Navigate the site quickly and easily;
-16. View the site on my preferred device, be it mobile, tablet, laptop or desktop. 
+14. View products that I may need for cooking meals.
 
 As a site owner, I want to:
 1. Promote a brand of cooking tools to my users; 
@@ -160,6 +158,10 @@ Users may search or 'read' recipes contained in the database. They can define sp
 
 Recipe pages provide essential information about a recipe, an image of the recipe and links to pages of products that may help when following the recipe. 
 
+### Pagination
+
+Search results are paginated, with a maximum of twelve results(recipes) displayed per page. Users can keep track of how many recipes are displayed by a highlighted page number and a counter that displays the range of recipes being currently viewed of the total returned recipes e.g. 13-24 of 32 recipes.
+
 ### Edit, Add and Delete Recipes
 
 Registered users may add recipes, update these recipes and finally delete the recipes. The add recipe and edit recipe pages consist of forms with spaces for essential information that will be displayed in individual recipe pages. registered users may dynamically add steps or ingredients up to a maximum of fifteen in each case. If users choose not to attach an image of the recipe to the form, a placeholder image will appear when the recipe's page is selected. 
@@ -171,6 +173,14 @@ Users may search products on the product page. They are not given the option to 
 ### Discover
 
 The discover page provides some statistics about the site, including most viewed recipes, most liked recipes, the proportion of recipes to users, and most popular categories of recipes. 
+
+### Navigation
+
+Users may navigate through the site by way of the side navigation bar. The 'sidenav' is accessed by way of the menu icon contained the navigation bar at the time of the page. This navigation bar disappears when the user scrolls down in the interest of freeing up space on the screen. It reappears whenever the user scrolls up or is at the top of the page. 
+
+The options contained in the navbar when not logged in include home, about, login/register, discover, products.
+
+When users have logged in, the options are as follows, home, about, account, discover, products, add recipe and finally logout. 
 
 
 ### Existing Features
