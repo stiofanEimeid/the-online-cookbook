@@ -269,7 +269,7 @@ than or greater than zero. This seemed to fix the issue.
 
 ### Unsolved Bugs
 
-The CSS transition associated with the side navigation bar fires when the page is loaded on Chrome. 
+There are no bugs I am aware of at this time.
 
 ## Further Testing 
 

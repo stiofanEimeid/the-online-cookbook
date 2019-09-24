@@ -417,20 +417,43 @@ legend {
   top: 0;
   left: 0;
   overflow-x: hidden;
-  /*transition: 0.5s;*/
-  /*transition-timing-function: ease;*/
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
   transform: translateX(-100%);
+  
 }
 
 .translateMe {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
   transition-timing-function: ease;
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
   transform: translateX(0%);
 }
 
 .untranslateMe {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
   transition-timing-function: ease;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
   transform: translateX(-100%);
 }
 
@@ -463,7 +486,6 @@ legend {
 
 .openbtn {
   height: 100%;
-  font-size: 20px;
   cursor: pointer;
   background-color: #f8f9fa;
   color: #052031;
@@ -517,6 +539,14 @@ using the position: absolute selector. */
 }
 
 .outerRing {
+    -webkit-animation-name: revolving;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 14s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: revolving;
+	-moz-animation-timing-function: linear;
+	-moz-animation-duration: 14s;
+	-moz-animation-iteration-count: infinite;
 	animation-name: revolving;
 	animation-timing-function: linear;
 	animation-duration: 14s;
@@ -524,28 +554,46 @@ using the position: absolute selector. */
 }
 
 .innerRing {
+    -webkit-animation-name: revolvingTwo;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 7s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: revolvingTwo;
+	-moz-animation-timing-function: linear;
+	-moz-animation-duration: 7s;
+	-moz-animation-iteration-count: infinite;
 	animation-name: revolvingTwo;
 	animation-timing-function: linear;
 	animation-duration: 7s;
 	animation-iteration-count: infinite;
+
 }
 
 @keyframes revolving {
 	from {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
 		transform: rotate(0deg);
 	}
 
 	to {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
 
 @keyframes revolvingTwo {
 	from {
+	    -webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
 		transform: rotate(0deg);
+		
 	}
 
 	to {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
