@@ -1,12 +1,16 @@
 <div align="center">
-<a href="https://the-online-cookbook.herokuapp.com/" target="_blank" rel="noopener"><img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo"/></a>
-<h1 align="center">
- Apéritif: The Online Cookbook
-</h1>
+ <a href="https://the-online-cookbook.herokuapp.com/" target="_blank" rel="noopener"><img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo"/></a>
+ <h1 align="center">
+ 
+  Apéritif: The Online Cookbook
+  
+ </h1>
 </div>
 
 <div align="center">
+
 [Visit the site](https://the-online-cookbook.herokuapp.com/)
+
 </div>
 
 # Stephen Byrne Portfolio
@@ -79,7 +83,20 @@ Icons have been sourced from FontAwesome to help convey essential characteristic
 
 **Colours**
 
-The main colour scheme of the site consisted of yellow(#f3d250), blue(#90CCF4) and red(f78888), white(#fafafa) and grey(#ececec).
+The main colour scheme of the site consisted of yellow(#f3d250), blue(#90CCF4), and red(f78888) and grey(#ececec).
+
+- Red:
+ ![red][https://place-hold.it/20x20/f78888/f78888.png]
+- Yellow
+ ![yellow][https://place-hold.it/20x20/f3d250/f3d250.png]
+- Blue
+ ![blue][https://place-hold.it/20x20/90ccf4/90ccf4.png]
+- Grey
+ ![grey][https://place-hold.it/20x20/ececec/ececec.png]
+- Navy
+ ![navy][https://place-hold.it/20x20/072c43/072c43.png]
+
+
 
 **Styling**
 
