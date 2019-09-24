@@ -2,6 +2,8 @@
 
 [Main README.md file](README.md)
 
+[Got to site](https://the-online-cookbook.herokuapp.com/)
+
 ## Table of Contents
 
 1. [**Automated Testing**](#automated-testing)
@@ -204,15 +206,15 @@ The Account page displays some basic information about the user currently logged
 
 Should a user wish to delete their account, they must reenter their password. They will then be asked to confirm that they wish to delete their account by a modal. Once a user has chosen to delete their account, any recipe written by them is removed from the database (they are warned that this will happen in the delete account template).
 
-I tested this by creating test user accounts and writing test recipes before attempting to delete the account. My account was removed along with the recipes tied to the account. 
+I tested this by creating test user accounts and writing test recipes before attempting to delete the account. My account was removed along with the recipes tied to the account. I repeated this process with a number of dummy accounts and dummy recipe entries.
 
 #### Changing Password
 
-Should a user wish to change their password, they will be asked to reenter their current password before selecting a new password. I was able to successfully change my password. 
+Should a user wish to change their password, they will be asked to reenter their current password before selecting a new password. I was able to successfully change my password a number of times with different accounts. 
 
 #### Changing Avatar
 
-Because this is purely an asethetic choice and not bearing on the integrity of an account, a user may choose to change their avatar without having to enter their password.
+Because this is purely an asethetic choice and not bearing on the integrity of an account, a user may choose to change their avatar without having to enter their password. I was successfully able to change my avatar a number of times with different accounts.
 
 #### Navigation Bar
 
@@ -272,3 +274,5 @@ The CSS transition associated with the side navigation bar fires when the page i
 ## Further Testing 
 
 Family and friends were asked to test the application and provide feedback. This proved immensely helpful for fine-tuning the applicaiton.
+
+[**Jump to top &uarr;**](#table-of-contents)

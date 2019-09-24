@@ -35,21 +35,24 @@ $('#mySecondTooltip').tooltip();
     //   overlay only displayed when sidebar selected
        $(".openbtn" ).click(function(){
         $(".overlay").css("display", "block");
-        $(".sidebar").css("transform", "translateX(0%)");
+        // $(".sidebar").css("transform", "translateX(0%)");
+        $(".sidebar").addClass('translateMe')
         // Prevents user from scrolling through body while sidenav is open
         $("body").css('overflow', 'hidden');
       });
       
       $(".closebtn").click(function(){
         $(".overlay").css("display", "none");
-        $(".sidebar").css("transform", "translateX(-100%)");
+        // $(".sidebar").css("transform", "translateX(-100%)");
+         $(".sidebar").addClass('untranslateMe');
         // Allows user to scroll through body after closing sidenav
          $("body").css('overflow', 'visible');
       });
       
       $(".overlay").click(function(){
           $(".overlay").css("display", "none");
-        $(".sidebar").css("transform", "translateX(-100%)");
+        // $(".sidebar").css("transform", "translateX(-100%)");
+         $(".sidebar").addClass('untranslateMe');
          // Allows user to scroll through body after closing sidenav
         $("body").css('overflow', 'visible');
       });

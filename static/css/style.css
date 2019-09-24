@@ -417,6 +417,18 @@ legend {
   top: 0;
   left: 0;
   overflow-x: hidden;
+  /*transition: 0.5s;*/
+  /*transition-timing-function: ease;*/
+  transform: translateX(-100%);
+}
+
+.translateMe {
+  transition: 0.5s;
+  transition-timing-function: ease;
+  transform: translateX(0%);
+}
+
+.untranslateMe {
   transition: 0.5s;
   transition-timing-function: ease;
   transform: translateX(-100%);
