@@ -18,7 +18,7 @@ Apéritif: The Online Cookbook allows users to search recipes and add their own 
 ## Table of Contents
 1. [**UX**](#ux)
     - [**Project Goals**](#project-goals)
-    - [**User Goals**](#player-goals)
+    - [**User Goals**](#user-goals)
     - [**User Stories**](#user-stories)
     - [**Design Choices**](#design-choices)
     - [**Wireframes**](#wireframes)
@@ -35,7 +35,7 @@ Apéritif: The Online Cookbook allows users to search recipes and add their own 
 5. [**Testing**](#testing)
 
 6. [**Deployment**](#deployment)
-    - [**How to Run Code Locally**](#how-to-run-locally)
+    - [**How to Run Code Locally**](#how-to-run-code-locally)
 
 7. [**Credits**](#credits)
     - [**Content**](#content)
@@ -99,7 +99,7 @@ In addition, the wheels are meant to arrest the viewers attention and convey a s
 
 Visual Consistency
 
-**Demo**
+### Demo
 
 <img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
 
@@ -148,8 +148,6 @@ The discover page provides some statistics about the site, including most viewed
 ### Existing Features
 
 If they so wish, users may register an account with the site that displays all the recipes they create.
-
-
 
 Users may search the recipes collection using a collection of filters whether they are registered or not. The filters are based on meal time and meal type.  
 
@@ -363,6 +361,8 @@ SVG designs and product copy were designed and written by me, respectively.
 
 Color scheme was found at [Visme](https://visme.co/blog/website-color-schemes/), no. 39, 'Rich and Colorful', on the list. 
 
+Placeholder image by [Dose Juice](https://unsplash.com/s/photos/dose-juice) on Unsplash found on [Unsplash](https://unsplash.com/).
+
 A number of recipes and their respective images taken from [BBC Food](https://www.bbc.co.uk/food). Links accrediting each auther included in each recipe description. 
 
 #### Product Images:
@@ -385,19 +385,17 @@ A number of recipes and their respective images taken from [BBC Food](https://ww
 
 - Blender image by [Yao Charlen](https://pixabay.com/users/opaye-1806/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=10934) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=10934).
 
-Placeholder image by [Dose Juice](https://unsplash.com/s/photos/dose-juice) on Unsplash found on [Unsplash](https://unsplash.com/)
-
 
 ### Code
 
-- [Pretty Printed: Creating a User Login System Using Python, Flask and MongoDB](https://www.youtube.com/watch?v=vVx1737auSE&t=45s)
-- [Overlay](https://www.w3schools.com/howto/howto_css_overlay.asp)
-- [Navbar disappear on scroll](https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp)
-- [Sidebar](https://www.w3schools.com/w3css/w3css_sidebar.asp)
-- [Image Radio Buttons](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons)
-- [Rounded SVG](https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections)
-- [Add percentage to chart function](// https://stackoverflow.com/questions/25209971/add-percentages-to-the-pie-chart-label-in-dc-js)
-- [Dynamic form fields](https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/)
+- Login system designed using [Pretty Printed: Creating a User Login System Using Python, Flask and MongoDB](https://www.youtube.com/watch?v=vVx1737auSE&t=45s).
+- Overlay code found at [w3schools](https://www.w3schools.com/howto/howto_css_overlay.asp).
+- Navbar disappear on scroll functionality adapted from [w3schools](https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp).
+- Sidebar functionality found at [w3schools](https://www.w3schools.com/w3css/w3css_sidebar.asp).
+- Images used in the place of buttons code found at [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons).
+- Rounded div code taken from [Smooth](https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections).
+- Function used to add percentages to pie charts found at  [StackOverflow](https://stackoverflow.com/questions/25209971/add-percentages-to-the-pie-chart-label-in-dc-js).
+- Code for dynamic form fields found at [codexworld](https://www.codexworld.com/add-remove-input-fields-dynamically-using-jquery/).
 
 ### Acknowledgements
 

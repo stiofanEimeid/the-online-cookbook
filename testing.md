@@ -131,7 +131,7 @@ The application was tested on Edge, Firefox, Google Chrome, Opera and Safari.
 
 ## Bugs Discovered
 
-### Bugs fixed
+### Solved Bugs
 
 Initially, when submitting forms, form fields changed would be updated despite clicking on the cancel button. I realised that
 the attribute 'type' set to 'button' must be set to a button on the page if it was not intended to post form data.
@@ -144,7 +144,7 @@ position, a negative Y-axis value, would be greater than the current scroll posi
 to make the navbar appear then the previous scroll position was greater than the current scroll position OR when the previous scroll position was less
 than or greater than zero. This seemed to fix the issue.
 
-### Bugs yet to be fixed
+### Unsolved Bugs
 
 The CSS transition associated with the side navigation bar fires when the page is loaded on Chrome. 
 
