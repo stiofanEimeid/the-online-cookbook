@@ -17,7 +17,7 @@
 
 Stream Three Project: Data-Centric Development - Code Institute 
 
-Apéritif: The Online Cookbook allows users to search recipes and add their own in a quick and easy manner. A live version of the site may be found here: [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
+Apéritif: The Online Cookbook allows users to search and view recipes, as well as create an account to create, update and delete their own recipes. They may allow view statsitical data on a dashboard and as well as kitchenware to help make the meas contained in the recipes. A live version of the site may be found here: [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
 
 ## Table of Contents
 1. [**UX**](#ux)
@@ -55,7 +55,7 @@ The goal of this project is to build a database that allows users to carry out e
 
 #### User Goals
 
-The target audience of the application are those who are relatively new to cooking and are curious about learning how to make new dishes. In addition, it hopes to attract those who are already passionate about cooking to share some of their favourite recipes with other users. Ideally, these groups would join together to create a thriving online community, one that is bound together by a love of cooking and learning more about it. 
+The target audience of the application are those who are passionate about cooking or wish to know more about it. The site is intended to be accessible to those who are relatively new to cooking and are curious about learning how to make new dishes. In addition, it hopes to attract those who are already passionate about cooking to share some of their favourite recipes with other users. Ideally, these groups would join together to create a thriving online community, one that is bound together by a love of cooking and learning more about it. 
 
 Users seek the means to find a variety of recipes through an accessible interface that is easy to use. Frequent users or those with extensive experience in cooking may seek to add their recipes to the website to share with others as well as discover more recipes. 
 
@@ -63,9 +63,28 @@ Aperitif is easy to use and visusally appealling. Filters help users find specif
 
 #### User Stories
 
-As a user, I want to find and share recipes. I want to be able to create an account that is secure and keeps track of the recipes I create, allowing me to update them and delete them as I please. 
+As a user, I want to:
 
-As a site owner, I want to promote a brand of cooking tools to my users. 
+1. See all recipes on the site without requiring an account to do so;
+2. Filter recipes by dietary requirements, meal type, and cuisine; 
+3. Search recipes with text search;
+4. View each individual recipe and its details on its own page;
+5. Create an account on the site that is secure;
+6. Choose an avatar for my account;
+7. Create, update and delete my own recipes;
+8. Favourite recipes and tie them to my account so I can see all of them when I log in;
+9. Remove favourite recipes if I so wish;
+10. Be able to change my password;
+11. Be able to change my avatar;
+12. Be able to delete my account;
+13. View statistical data of the site in an appealling visual format;
+14. View products that I may need for cooking meals;
+15. Navigate the site quickly and easily;
+16. View the site on my preferred device, be it mobile, tablet, laptop or desktop. 
+
+As a site owner, I want to:
+1. Promote a brand of cooking tools to my users; 
+2. Collect data on what users are submitting to determine what types of recipes are popular and any trends that may exist for marketing purposes. 
 
 ### Design Choices
 
@@ -83,19 +102,11 @@ Icons have been sourced from FontAwesome to help convey essential characteristic
 
 **Colours**
 
-The main colour scheme of the site consisted of yellow(#f3d250), blue(#90CCF4), and red(f78888) and grey(#ececec).
-
-- Red:
- ![red][https://place-hold.it/20x20/f78888/f78888.png]
-- Yellow
- ![yellow][https://place-hold.it/20x20/f3d250/f3d250.png]
-- Blue
- ![blue][https://place-hold.it/20x20/90ccf4/90ccf4.png]
-- Grey
- ![grey][https://place-hold.it/20x20/ececec/ececec.png]
-- Navy
- ![navy][https://place-hold.it/20x20/072c43/072c43.png]
-
+- #f78888: ![red][https://place-hold.it/20x20/f78888/f78888.png]
+- #f3d250: ![yellow][https://place-hold.it/20x20/f3d250/f3d250.png]
+- #90ccf4: ![blue][https://place-hold.it/20x20/90ccf4/90ccf4.png]
+- #ececec: ![grey][https://place-hold.it/20x20/ececec/ececec.png]
+- #072c43: ![navy][https://place-hold.it/20x20/072c43/072c43.png]
 
 
 **Styling**
@@ -276,6 +287,8 @@ Product Price | product_price | String
     - **Gravit** was used to design this projects SVGs. 
 - [CompressJpeg](https://compressjpeg.com/)
     - **Compress Jpeg** was used to compress website images.
+- [Place-Hold it](https://place-hold.it/)
+    - Place-Hold it was used to generate reference images for the colour scheme section above.
 
 ## Testing
 

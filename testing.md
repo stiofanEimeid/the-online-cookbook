@@ -29,28 +29,133 @@ The following validation services and linter were used to check the validity of 
 
 **As a user I want to**
 
-1. **Find recipes.**
+1. See all recipes on the site without requiring an account to do so;
+2. Filter recipes by dietary requirements, meal type, and cuisine; 
+3. Search recipes with text search;
+4. View each individual recipe and its details on its own page;
+5. Create an account on the site that is secure;
+6. Choose an avatar for my account;
+7. Create, update and delete my own recipes;
+8. Favourite recipes and tie them to my account so I can see all of them when I log in;
+9. Remove favourite recipes if I so wish;
+10. Be able to change my password;
+11. Be able to change my avatar;
+12. Be able to delete my account;
+13. View statistical data of the site in an appealling visual format;
+14. View products that I may need for cooking meals;
+15. Navigate the site quickly and easily;
+16. View the site on my preferred device, be it mobile, tablet, laptop or desktop. 
 
-#### Reading Recipes
+
+1. **See all recipes on the site without requiring an account to do so**
 
 Users may search recipes without having to register or login. By default, every recipe in the database is returned when the user first navigates to the recipes page. Each recipe is represented by a card, with a maximum of twelve per page. Results are paginated in the interest of organisation and preventing the user becoming overwhelmed.
 
-Clicking on a card will bring the user to that recipe's individual page. 
+Each result is contained in a card which displays an image of the recipe, its name and its author, when it was submitted or when it was last updated, and a link to the recipe's individua; page. 
 
-Search options include text search and search by filter. Filters include cuisine, dietary requirements and meal-time.
+2. **Filter recipes by dietary requirements, meal type, and cuisine**
 
-Dietary options...
+Users may search for recipes based on cuisine, meal type and dietary requirements. Each filter may be used with the other two or by itself. I have now uploaded at least recipe for each individual option within the three categories although not every combination of the three e.g. "Thai Gluten-free Shake" will return a recipe at this time. 
 
-Pagination..
+3. **Search Recipes with text-search**
 
-Individual recipe pages provide fundamental information as well as a recipe image at the top of the page.
+Users may also search recipes by text. The text search considers all text in recipe documents and not just the title. 
 
-Clicking on each ingredient or step adds strikes them out or adds a text-decoration property of 'line-through' so users can more easily keep track of the cooking materials and process.
+4. **View each individual recipe and its details on its own page**
 
-2. **Add, update and delete my own recipes.**
+Users may click the "Go to recipe" function to view that recipe's page, from the search page, discover page or their account with regard to recipes they have created or favourited. 
 
-Only registered and logged in users may add recipes to the database. If the user attempts to navigate to the add recipe page without registering or logging in, they will be met with an error message prompting them to login or register. 
-Registered users may add recipes at any time using the add recipe tab contained in the navbar or by selecting the add recipe button in their account page under the 'My Recipes' tab. All recipes must have at least one step or ingredient. Both steps and ingredients may be dynamically added and removed. Once the user is satisfied with the recipe they have written, they may submit it to the database. The date and time of submission is noted and passed into the document. 
+Individual recipe pages provide fundamental information as well as a recipe image at the top of the page, including name, meal type, cuisine, cooking time, preparation time, dietary requirements. Users are not required to have an account to view individual recipes pages but if they are logged in they will see the option to add/remove the recipe from their favourites or, if they are the author, the option to update or delete the recipe.
+
+Below this section is a section where the author may choose to add a description if they so wish. The author of the recipe will view a button labelled 'add description' if they are logged in while viewing the page. 
+
+Following the description section are the ingredients and steps sections. Clicking on each ingredient or step adds a text-decoration property of 'line-through', crossing them off, so users can more easily keep track of the ingredients they have added and which step in the recipe they are currently on.. This is conveyed to the user by way of a tool-tip that appears when the user hovers over or taps the info icon beside the section heading.
+
+Finally, the user will see three of nine random product cards, containing the respective product's image, name, and a link to the product's individual page. 
+
+5. Create an account on the site that is secure
+
+Users may create an account by clicking on the link contained the copy when the open the home page or from the side navigation bar, under the 'login/register' tab. Clicking the latter will bring them to the login page first where they will be asked to register if they do not already have an account. 
+
+Users are then prompted to enter a username two to ten characters long, a password eight to sixteen characters long and an avatar.
+
+If registration is successful they will be brought to their account page where they can view their username, time they became a registered user, their recipes, favourites and account settings along with an option to logout at the end of the page. 
+
+6. Choose an avatar for my account
+
+As mentioned above, users may choose one of four avatars upon registration. One is preselected and will become their avatar if they do not make a choice. 
+
+7. Create, update and delete my own recipes;
+
+**Create**
+
+Only registered, logged in users may add recipes to the database. They may add recipes at any time using the 'add recipe' link contained in the side navigation bar or by selecting the 'add recipe' button in their account page under the 'My Recipes' tab.  Both steps and ingredients may be dynamically added and removed. Once the user is satisfied with the recipe they have written, they may submit it to the database. The date and time of submission is noted and passed into the document. Once submitted the recipe may be viewed in the search page or directly from their account page under the 'My Recipes' tab. 
+
+**Update**
+
+If the user wishes to update the recipe, they may do so directly from the recipe page while logged in as the recipe's author or from their account page. An 'edit recipe' button sits beside the 'go to recipe' button for each of their recipes.
+
+The update recipe fields mirror those of the add recipe page but with each of the recipe's current field values appearing in their respective fields. Once the user is happy with the changes they must click submit to update the recipe in the database or simply click cancel to return to the previous page if they change their mind about updating the recipe. 
+
+**Delete**
+
+Users may delete their own and only their own recipes at any time from the recipe's page. The option to delete sits alongside the option to edit the recipe in the top section of the recipe page. They will be asked to confirm their decision by way of a modal before the recipe is removed from the database. 
+
+8. Favourite recipes and tie them to my account so I can see all of them when I log in
+
+Registered users may favourite recipes they have not authored from each recipes individual page. Favourites are then viewable under the relevant tab in their account page. 
+
+9. Remove recipes from my favourites
+
+They may also remove the recipe at any time, again directly from the recipe page where the add to favourites button has been replaced by a remove from favourites button. 
+
+10. Be able to change my password;
+
+Users may change their password by following the link in the settings tab in their account page. For security reasons, the user must enter their password again before they can create a new password. 
+
+11. Be able to change my avatar;
+
+Users may change their avatar by following the link in the settings tab in their account page. Their is no requirement to enter their password as this is merely an aesthetic and not a security concern. 
+
+12. Be able to delete my account;
+
+Users may delete their account by following the link in the settings tab in their account page. For security reasons, they must enter their password before their account is removed from the database. Once the user has decided to delete their account, the account along with all the recipes tied to the account are removed from the database. The user is warned of this on the page. 
+
+13. View statistical data of the site in an appealling visual format;
+
+Users may view site data on the statistics dashboard or the 'Discover' page. The page includes the number of recipes and users on the site, three pie charts showing the proportion of recipes by cuisine submitted, viewed and favourited respectively. Categories are broken down into continents (Europe, Africa, North America, South America, Asia) and 'Other' to present the data as clearly as possible to the user. 
+
+Below the pie charts are three lists of five items each - most viewed recipes, most favourited recipes, and most recently submitted recipes. Each entry shows the recipe's name, author and the number of views or favourites it has or the date of its submission depending on which section it falls into. A link is to each recipe's individual page is included in each entry. The top recipe in each of the three sections also includes the recipe's image. 
+
+14. View products that I may need for cooking meals;
+
+Users may view a list of products in a 3x3 grid from the products link in the side navigation bar. Each entry contains a product image and name along with a link to its individual page. The individual page contains such information as a product image, the product name, its price, a description and an indication of whether or not it is in stock. At the bottom of the page is an option to buy. Unfortunately, check-out functionality is not currently available. 
+
+15. Navigate the site quickly and easily;
+
+Users may navigate through the site by way of the side navigation bar. The 'sidenav' is accessed by way of the menu icon contained the navigation bar at the time of the page. This navigation bar disappears when the user scrolls down in the interest of freeing up space on the screen. It reappears whenever the user scrolls up or is at the top of the page. 
+
+The options contained in the navbar when not logged in include home, about, login/register, discover, products.
+
+When users have logged in, the options are as follows, home, about, account, discover, products, add recipe and finally logout. 
+
+16. View the site on my preferred device, be it mobile, tablet, laptop or desktop. 
+
+The site is fully responsive - it's mobile, tablet, laptop and desktop-friendly.
+
+Owner Stories
+
+1. Promote a brand of cooking tools to my users
+
+Users are shown three random products each time they view a recipe page. They may also view products directly from the products page which leads them to the product's individual page.
+
+2. Collect data on what users are submitting to determine what types of recipes are popular and any trends that may exist for marketing purposes. 
+
+The site collects data that is dynamically represented on a statistcs dashboard in the 'Discover page'. This allows me to view correlations in the data and identify trends among those who use the site in order to understand them better. 
+
+If the user attempts to navigate to the add recipe page without registering or logging in, they will be met with an error message prompting them to login or register. All recipes must have at least one step or ingredient.
+
+
 
 What fields are required?
 
@@ -59,7 +164,7 @@ If a user decides to edit the recipe, they will be taken to a page that mirrors 
 
 On the other hand, if they decide to delete the recipe they will be asked to confirm their decision through a modal. If they do not change their mind, the recipe will be removed from the database. Users other than the author will not be given this option nor the option to edit the recipe. Instead, a user who is logged in but is not the author will be given the option of adding the recipe to their favourites while a user who is not logged in at all will be prompted to login to add the recipe to their favourites.
 
-3. **Create an account that is secure and keeps track of the recipes I create**
+
 
 <div align="center">
 <img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/flowchartfinal.png" alt="User login and registration flowchart"/>
