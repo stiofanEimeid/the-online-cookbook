@@ -229,8 +229,6 @@ img {
 }
 
 .avatar-image-container {
-    /*height: 200px;*/
-    /*width: 200px;*/
     margin: 15px auto;
 }
 
@@ -281,8 +279,7 @@ img {
 .search-result {
     background-color: #fafafa;
     padding: 10px;
-    /*height: 425px;*/
-    height: 100%; /*(based on largest card in row)*/
+    height: 100%;
 }
 
 /*tab contents*/
@@ -310,9 +307,8 @@ input {
 	width: 100%;
 }
 
-.form-control.reduce {
+.reduce {
 	width: 80%;
-	display: inline;
 }
 
 fieldset {
@@ -422,7 +418,6 @@ legend {
   -ms-transform: translateX(-100%);
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
-  
 }
 
 .translateMe {
