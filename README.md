@@ -138,6 +138,8 @@ I wanted a design to grab the user's attention as it is the first thing they see
 
 ## Features
 
+### Existing Features
+
 ### Access
 
 Users may register an account and login to same through dedicated templates. Passwords are encrypted using bcrypt to ensure account integrity and prevent access to the account from anyone but the user. 
@@ -174,18 +176,6 @@ Users may navigate through the site by way of the side navigation bar. The 'side
 The options contained in the navbar when not logged in include home, about, login/register, discover, products.
 
 When users have logged in, the options are as follows, home, about, account, discover, products, add recipe and finally logout. 
-
-### Existing Features
-
-If they so wish, users may register an account with the site that displays all the recipes they create.
-
-Users may search the recipes collection using a collection of filters whether they are registered or not. The filters are based on meal time and meal type.  
-
-Users who have registered with the site may submit their own recipes to be viewed by other users. They may also update the recipe or even delete it. Naturally, each user will only be able to edit and delete recipes they themselves have submitted.
-
-The discover page displays a number of statistics about the site such as most viewed recipes.
-
-A product page displays products relevant to recipes submitted to the site. During the submission and editing processes of recipes, users may identify kitchen appliances and utensils from a list on each of the pages. Links to each product are then found on the recipe page. 
 
 ### Features left to implement 
 
