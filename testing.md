@@ -2,7 +2,7 @@
 
 [Main README.md file](README.md)
 
-[Got to site](https://the-online-cookbook.herokuapp.com/)
+[Go to site](https://the-online-cookbook.herokuapp.com/)
 
 ## Table of Contents
 
@@ -169,7 +169,7 @@ Once I had chosen to delete a recipe, I made sure it had been removed from the d
 <img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/flowchartfinal.png" alt="User login and registration flowchart"/>
 </div>
 
-The flowchart documents all the eventualities of a user trying to gain access to the database. 
+The flowchart documents all the eventualities of a user trying to login or register. 
 
 ### Registering
 
