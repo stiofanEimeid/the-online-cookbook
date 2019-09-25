@@ -11,7 +11,7 @@
 
 # Stephen Byrne Portfolio
 
-Stream Three Project: Data-Centric Development - Code Institute 
+Stream Three Project: Data Centric Development - Code Institute 
 
 Apéritif: The Online Cookbook allows users to search and view recipes, as well as create an account to create, update and delete their own recipes. They may allow view statsitical data on a dashboard and as well as kitchenware to help make the meals contained in the recipes. Visit the site here:  [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
 
