@@ -57,7 +57,7 @@ Following the description section are the ingredients and steps sections. Clicki
 
 Finally, the user will see three of nine random product cards, containing the respective product's image, name, and a link to the product's individual page. 
 
-5. Create an account on the site that is secure
+5. **Create an account on the site that is secure**
 
 Users may create an account by clicking on the link contained the copy when the open the home page or from the side navigation bar, under the 'login/register' tab. Clicking the latter will bring them to the login page first where they will be asked to register if they do not already have an account. 
 
@@ -65,59 +65,59 @@ Users are then prompted to enter a username two to ten characters long, a passwo
 
 If registration is successful they will be brought to their account page where they can view their username, time they became a registered user, their recipes, favourites and account settings along with an option to logout at the end of the page. 
 
-6. Choose an avatar for my account
+6. **Choose an avatar for my account**
 
 As mentioned above, users may choose one of four avatars upon registration. One is preselected and will become their avatar if they do not make a choice. 
 
-7. Create, update and delete my own recipes;
+7. **Create, update and delete my own recipes**
 
-**Create**
+Create
 
-Only registered, logged in users may add recipes to the database. They may add recipes at any time using the 'add recipe' link contained in the side navigation bar or by selecting the 'add recipe' button in their account page under the 'My Recipes' tab.  Both steps and ingredients may be dynamically added and removed. Once the user is satisfied with the recipe they have written, they may submit it to the database. The date and time of submission is noted and passed into the document. Once submitted the recipe may be viewed in the search page or directly from their account page under the 'My Recipes' tab. 
+- Only registered, logged in users may add recipes to the database. They may add recipes at any time using the 'add recipe' link contained in the side navigation bar or by selecting the 'add recipe' button in their account page under the 'My Recipes' tab.  Both steps and ingredients may be dynamically added and removed. Once the user is satisfied with the recipe they have written, they may submit it to the database. The date and time of submission is noted and passed into the document. Once submitted the recipe may be viewed in the search page or directly from their account page under the 'My Recipes' tab. 
 
-**Update**
+Update
 
-If the user wishes to update the recipe, they may do so directly from the recipe page while logged in as the recipe's author or from their account page. An 'edit recipe' button sits beside the 'go to recipe' button for each of their recipes.
+- If the user wishes to update the recipe, they may do so directly from the recipe page while logged in as the recipe's author or from their account page. An 'edit recipe' button sits beside the 'go to recipe' button for each of their recipes.
 
-The update recipe fields mirror those of the add recipe page but with each of the recipe's current field values appearing in their respective fields. Once the user is happy with the changes they must click submit to update the recipe in the database or simply click cancel to return to the previous page if they change their mind about updating the recipe. 
+- The update recipe fields mirror those of the add recipe page but with each of the recipe's current field values appearing in their respective fields. Once the user is happy with the changes they must click submit to update the recipe in the database or simply click cancel to return to the previous page if they change their mind about updating the recipe. 
 
-**Delete**
+Delete
 
-Users may delete their own and only their own recipes at any time from the recipe's page. The option to delete sits alongside the option to edit the recipe in the top section of the recipe page. They will be asked to confirm their decision by way of a modal before the recipe is removed from the database. 
+- Users may delete their own and only their own recipes at any time from the recipe's page. The option to delete sits alongside the option to edit the recipe in the top section of the recipe page. They will be asked to confirm their decision by way of a modal before the recipe is removed from the database. 
 
-8. Favourite recipes and tie them to my account so I can see all of them when I log in
+8. **Favourite recipes and tie them to my account so I can see all of them when I log in**
 
 Registered users may favourite recipes they have not authored from each recipes individual page. Favourites are then viewable under the relevant tab in their account page. 
 
-9. Remove recipes from my favourites
+9. **Remove recipes from my favourites**
 
 They may also remove the recipe at any time, again directly from the recipe page where the add to favourites button has been replaced by a remove from favourites button. 
 
-10. Be able to change my password;
+10. **Be able to change my password**
 
 Users may change their password by following the link in the settings tab in their account page. For security reasons, the user must enter their password again before they can create a new password. 
 
-11. Be able to change my avatar;
+11. **Be able to change my avatar**
 
 Users may change their avatar by following the link in the settings tab in their account page. Their is no requirement to enter their password as this is merely an aesthetic and not a security concern. 
 
-12. Be able to delete my account;
+12. **Be able to delete my account**
 
 Users may delete their account by following the link in the settings tab in their account page. For security reasons, they must enter their password before their account is removed from the database. Once the user has decided to delete their account, the account along with all the recipes tied to the account are removed from the database. The user is warned of this on the page. 
 
-13. View statistical data of the site in an appealling visual format;
+13. **View statistical data of the site in an appealling visual format**
 
 Users may view site data on the statistics dashboard or the 'Discover' page. The page includes the number of recipes and users on the site, three pie charts showing the proportion of recipes by cuisine submitted, viewed and favourited respectively. Categories are broken down into continents (Europe, Africa, North America, South America, Asia) and 'Other' to present the data as clearly as possible to the user. 
 
 Below the pie charts are three lists of five items each - most viewed recipes, most favourited recipes, and most recently submitted recipes. Each entry shows the recipe's name, author and the number of views or favourites it has or the date of its submission depending on which section it falls into. A link is to each recipe's individual page is included in each entry. The top recipe in each of the three sections also includes the recipe's image. 
 
-14. View products that I may need for cooking meals;
+14. **View products that I may need for cooking meals**
 
 Users may view a list of products in a 3x3 grid from the products link in the side navigation bar. Each entry contains a product image and name along with a link to its individual page. The individual page contains such information as a product image, the product name, its price, a description and an indication of whether or not it is in stock. At the bottom of the page is an option to buy. Unfortunately, check-out functionality is not currently available. 
 
-Owner Stories
+**As an owner I want to**
 
-1. Promote a brand of cooking tools to my users
+1. **Promote a brand of cooking tools to my users**
 
 I sought to accomplish this by making a direct connection between the recipes users were making and viewing and the tools I wished to promote and sell. Each individual recipe page features a random selection of three of nine tools. The tools are presented to users as facilitating their needs and interests. Users can click through to each of the three products' individual page, where a larger image of the product along with a description, a price and an option to buy appear.
 
@@ -125,18 +125,13 @@ Users may also view products directly from the products page which leads them to
 
 I kept the product copy light-hearted and playful to inject some personality into the brand and differentiate it from other, more reserved competitors. 
 
-2. Collect data on what users are submitting to determine what types of recipes are popular and any trends that may exist for marketing purposes. 
+2. **Collect data on what users are submitting to determine what types of recipes are popular and any trends that may exist for marketing purposes**
 
-The site collects data that is dynamically represented on a statistcs dashboard in the 'Discover page'. This allows me to view correlations in the data and identify trends among those who use the site in order to understand them better. 
+Some site statistics are represented in the 'Discover page'.. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. 
 
-If the user attempts to navigate to the add recipe page without registering or logging in, they will be met with an error message prompting them to login or register. All recipes must have at least one step or ingredient.
+Three pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed and favourited. These charts may be used to identify trends among those who use the site and better understand how they user the site. Furthermore, I may be able to determine what areas of cooking are most popular to users and tailor cooking utensils and applicances to them. 
 
-<!--Some site statistics are represented in the Discover template. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. 
-
-Two pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed. This may be used potentially to taylor cooking utensils and applicances to users in the future to determine what areas of cooking are most popular to users. Further scales may be added once larger amounts of data are available.-->
-
-<!--In addition, there are sections that show the user four recipes are the most viewed, another four that are most favourited and finally a list of recent submissions. In order to promote user engagement, users may be rewarded for appearing in the most-viewed or most-favourited sections. Rewards may take the form of discounts on cooking products. -->
-
+In addition, there are sections that show the user five recipes are the most viewed, another five that are most favourited and finally five of the most recent submissions. 
 
 #### Searching Recipes
 
@@ -144,7 +139,11 @@ When the user first opends the recipes page, every recipe in the database is ret
 
 #### Adding Recipes
 
-Users may only add recipes if they are logged in. Users who attempt to add recipes without logging in by using the add recipe url will be asked to login or register to add recipes. Users who are logged in may add recipes from the link in the side navigation bar or from the link in their account under the 'My Recipes' tab. They will be required to complete a number of fields including recipe name, recipe description, meal type, cuisine, cooking time, preparation time, number of people the recipe serves, steps, ingredients, dietary information and finally recipe image. All these fields are required except for recipe description, image and dietary information (although the latter merely equates to no special dietary information). If a user attempts to submit a form without filling one or more of the required fields, the form will not submit and they will be asked to provide input for the empty required fields. I tested this feature with recipes I myself inputted to the database. I then made sure the correct information appeared in the database through MongoDB Atlas.
+Users may only add recipes if they are logged in. Users who attempt to add recipes without logging in by using the add recipe url will be asked to login or register to add recipes. Users who are logged in may add recipes from the link in the side navigation bar or from the link in their account under the 'My Recipes' tab. 
+
+They will be required to complete a number of fields including recipe name, recipe description, meal type, cuisine, cooking time, preparation time, number of people the recipe serves, steps, ingredients, dietary information and finally recipe image. All these fields are required except for recipe description, image and dietary information (although the latter merely equates to no special dietary information). All recipes must have at least one step or ingredient. 
+
+If a user attempts to submit a form without filling one or more of the required fields, the form will not submit and they will be asked to provide input for the empty required fields. I tested this feature with recipes I myself inputted to the database. I then made sure the correct information appeared in the database through MongoDB Atlas.
 
 #### Editing Recipes
 
@@ -250,7 +249,7 @@ The site is fully responsive - it's mobile, tablet, laptop and desktop-friendly.
 
 ### Browswer Compatibility
 
-The application was tested on Edge, Firefox, Google Chrome, Opera and Safari. 
+The application was tested on Edge, Firefox, Google Chrome, Opera and Safari. The site functioned satisfactorily on every browser except Safari, discussed below. 
 
 ## Bugs Discovered
 

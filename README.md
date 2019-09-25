@@ -193,6 +193,8 @@ I would like to further develop the login and registration system. Should users 
 
 I would like to implement full checkout functionality so user's may purchase products.
 
+In order to promote user engagement, I would like to develop a reward system whereby users will be rewarded for appearing in the most-viewed or most-favourited sections. Rewards may take the form of discounts on cooking products.
+
 I would like to create public versions of account pages so that user's may view each other's profile.
 
 In terms of searching recipes, I would like to include pagination truncation for when large amounts of results are returned. 
