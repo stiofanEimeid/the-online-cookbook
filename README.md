@@ -100,11 +100,11 @@ Icons have been sourced from FontAwesome to help convey essential characteristic
 
 **Colours**
 
-- #f78888: ![red][https://place-hold.it/20x20/f78888/f78888.png]
-- #f3d250: ![yellow][https://place-hold.it/20x20/f3d250/f3d250.png]
-- #90ccf4: ![blue][https://place-hold.it/20x20/90ccf4/90ccf4.png]
-- #ececec: ![grey][https://place-hold.it/20x20/ececec/ececec.png]
-- #072c43: ![navy][https://place-hold.it/20x20/072c43/072c43.png]
+- #f78888: ![red](https://dummyimage.com/20x20/f78888/f78888.png)
+- #f3d250: ![yellow](https://dummyimage.com/20x20/f3d250/f3d250.png)
+- #90ccf4: ![blue](https://dummyimage.com/20x20/90ccf4/90ccf4.png)
+- #ececec: ![grey](https://dummyimage.com/20x20/ececec/ececec.png)
+- #072c43: ![navy](https://dummyimage.com/20x20/072c43/072c43.png)
 
 
 **Styling**
@@ -384,7 +384,6 @@ IP | 0.0.0.0
 PORT | 5000
 MONGO URI | <your_mongo_uri>
 SECRET KEY | <your_secret_key> 
-DEBUG | FALSE
 
 5. Go to the deploy tab, connect Github under the deployment method section and then select enable automic deployment.
 6. At this point, you should be able to see the app running by clicking the Open App button in the top right of the Heroku dashboard. A record of build success and otherwise along with deployment may be viewed from the activity tab, also in the dashboard. If you encounter any issues using Heroku, please visit their [troubleshooting section](https://devcenter.heroku.com/categories/troubleshooting).
