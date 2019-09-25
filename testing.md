@@ -9,6 +9,8 @@
 1. [**Automated Testing**](#automated-testing)
     - [**Validation services**](#validation-services)
 2. [**Client Stories Testing**](#client-stories-testing)
+    - [**User Stories Testing**](#as-a-user-i-want-to:)
+    - [**Owner Stories Testing**](#as-an-owner-i-want-to:)
 3. [**Manual Testing**](#manual-testing)
     - [**Testing undertaken on desktop**](#testing-undertaken-on-desktop)
     - [**Testing undertaken on tablet and phone devices**](#testing-undertaken-on-tablet-and-phone-devices)
@@ -29,7 +31,7 @@ The following validation services and linter were used to check the validity of 
 
 ## Client Stories Testing
 
-**As a user I want to**
+### As a user I want to:
 
 1. **See all recipes on the site without requiring an account to do so**
 
@@ -115,7 +117,7 @@ Below the pie charts are three lists of five items each - most viewed recipes, m
 
 Users may view a list of products in a 3x3 grid from the products link in the side navigation bar. Each entry contains a product image and name along with a link to its individual page. The individual page contains such information as a product image, the product name, its price, a description and an indication of whether or not it is in stock. At the bottom of the page is an option to buy. Unfortunately, check-out functionality is not currently available. 
 
-**As an owner I want to**
+### As an owner I want to:
 
 1. **Promote a brand of cooking tools to my users**
 
