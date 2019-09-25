@@ -1,23 +1,19 @@
 <div align="center">
  <a href="https://the-online-cookbook.herokuapp.com/" target="_blank" rel="noopener"><img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/intro_logo.png" alt="Apéritif: The Online Cookbook Logo"/></a>
- <h1 align="center">
  
-  Apéritif: The Online Cookbook
-  
+ <h1 align="center">
+ Apéritif: The Online Cookbook
  </h1>
+ 
 </div>
 
-<div align="center">
-
-[Visit the site](https://the-online-cookbook.herokuapp.com/)
-
-</div>
+<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
 
 # Stephen Byrne Portfolio
 
 Stream Three Project: Data-Centric Development - Code Institute 
 
-Apéritif: The Online Cookbook allows users to search and view recipes, as well as create an account to create, update and delete their own recipes. They may allow view statsitical data on a dashboard and as well as kitchenware to help make the meas contained in the recipes. A live version of the site may be found here: [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
+Apéritif: The Online Cookbook allows users to search and view recipes, as well as create an account to create, update and delete their own recipes. They may allow view statsitical data on a dashboard and as well as kitchenware to help make the meals contained in the recipes. Visit the site here:  [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
 
 ## Table of Contents
 1. [**UX**](#ux)
@@ -28,7 +24,6 @@ Apéritif: The Online Cookbook allows users to search and view recipes, as well 
     - [**Wireframes**](#wireframes)
 
 2. [**Features**](#features)
-    - [**Demo**](#demo)
     - [**Existing Features**](#existing-features)
     - [**Features Left to Implement**](#features-left-to-implement)
 
@@ -86,49 +81,47 @@ As a site owner, I want to:
 
 ### Design Choices
 
-**Fonts**
+#### Fonts
 
-The Lobster font was chosen for its vibrancy and energy in contrast to the nunito font to make important titles jump out to the user while complimenting aperitif's brand identity.
+The Lobster font was chosen for its vibrancy and energy to make important titles jump out to the user. 
 
-The Nunito style was chosen for its sharpness and clarity to help convey a significant amount of information clearly. 
+The Nunito style was chosen for its sharpness and clarity to help convey a significant amount of text information to the reader clearly. 
 
 Both fonts were sourced from GoogleFonts. 
 
-**Icons**
+#### Icons
 
-Icons have been sourced from FontAwesome to help convey essential characteristics about recipes to users in an intuitive manner.
+Icons have been sourced from FontAwesome to help convey essential characteristics about menu options to users in an intuitive manner e.g. charts for the discover page to indicate to the user that the page is concerned with statistics.
 
-**Colours**
+#### Colours
+
+The following set of colours have been used for the site's colour scheme: 
 
 - #f78888: ![red](https://dummyimage.com/20x20/f78888/f78888.png)
 - #f3d250: ![yellow](https://dummyimage.com/20x20/f3d250/f3d250.png)
 - #90ccf4: ![blue](https://dummyimage.com/20x20/90ccf4/90ccf4.png)
-- #ececec: ![grey](https://dummyimage.com/20x20/ececec/ececec.png)
 - #072c43: ![navy](https://dummyimage.com/20x20/072c43/072c43.png)
+- #ececec: ![grey](https://dummyimage.com/20x20/ececec/ececec.png)
 
+I found these colours to be rich and pleasing to the eye when filling sections of the website for decoration purposes. Sections containing large amounts of text are grey and white in the interest of making them easy to read, following the style of popular websites such as facebook, reddit, youtube and twitter. Ultimately, I found that both categories, decorative and textual, complimented each other nicely. 
 
-**Styling**
+Navy rather than black was used for the side navigation menu to make text appear less flat and pop when the user is selecting a destination on the site.
 
-The recipe pages are intended to convey essential information about a particular recipe in an intuitive and effective manner. This intent informs the design process. Recipe pages are intended to be uncluttered. The largest groups of information, steps and ingredients, are contained in tabs that the user may switch between, preventing the user from being bombared with large amounts of text and keeping page space free from everything but the most relevant information at any one time.
+#### Format
 
-**Logo**
+Each major section of the website, the home page, search page, individual recipe page, search product page, individual product page, account page and discover page, contain a rounded header at the top of the page made up of three colours, #90ccf4, #f3d250, and #f78888. I followed this format to provide a contrast between the heading of the page and the content of the page, and repeated this across each of the major pages of the site in the interest of visual consistency, so that the reader may become familiar with the format of the site quickly.
 
-The logo is a cartoon ape in a chef's hat, the ape in aperifif if you will. The imagery of the site is intended to be light-hearted and fun in order to make cooking accessible for those who are less confident in their cooking abilities. More generally, the imagery is intended to illustrate that this a site for those who are passionate about cooking but one that doesn't take itself too seriously. 
+#### Logo
 
-**The Wheel**
+The logo is a cartoon ape in a chef's hat (the ape in apérifif if you will). The imagery of the site is intended to be light-hearted and fun in order to make cooking accessible for those who are less confident in their cooking abilities. More generally, the imagery is intended to illustrate that this a site for those who are passionate about cooking but one that doesn't take itself too seriously. 
 
-The background consists of two wheels of food with the logo at the center, slowly revolving. The wheels are made up of images of food and cooking utensils. Both of these comprise the content being delivered to the user, recipes which they can search and add to along with kitchen products to help bring these recipes to life. 
+#### The Wheel
 
-Designed in SVG. 3 different wheels layered one on top of the other. 
+The background consists of two rings of food revolving around the site logo. The wheels are made up of images of food and cooking utensils drawn by me in SVG format using Gravit. Three SVGs the same size are layered on top of one another. However, all three take up different sections of the circle so that the content of the lower layers may be seen through the upper layers. 
 
-In addition, the wheels are meant to arrest the viewers attention and convey a sense of individuality about the site. It speaks to the vast array of possiblities in the world of cooking. 
+The rings are comprised of examples of the content being delivered to the user: recipes which they can search and add to along with kitchen products to help bring these recipes to life. 
 
-Visual Consistency
-
-### Demo
-
-<img src="https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png" alt="Apéritif: The Online Cookbook Logo Displayed on Different Screen Sizes"/>
-
+I wanted a design to grab the user's attention as it is the first thing they see when they open the site. In addition, it is intended to speak to the wide range of possiblities in the world of cooking. I hope this stimulates the user's curiosity and leads them to explore the site.
 
 ### Wireframes
 
@@ -182,7 +175,6 @@ The options contained in the navbar when not logged in include home, about, logi
 
 When users have logged in, the options are as follows, home, about, account, discover, products, add recipe and finally logout. 
 
-
 ### Existing Features
 
 If they so wish, users may register an account with the site that displays all the recipes they create.
@@ -197,11 +189,15 @@ A product page displays products relevant to recipes submitted to the site. Duri
 
 ### Features left to implement 
 
-A forum for users to discuss cooking content / add comments to recipes
+I would like to further develop the login and registration system. Should users forget their password, I would like to give them the option of creating a new one via email. As authetification was not meant to be a focus of the project according to the brief, I left this feature to be implemented in the future. 
 
-Should users forget their password, I would like to give them the option of creating a new one. As authetification was understood by me not to be a focus of the project, this feature was left to be implemented in the future. 
+I would like to implement full checkout functionality so user's may purchase products.
 
-Checkout functionality
+I would like to create public versions of account pages so that user's may view each other's profile.
+
+In terms of searching recipes, I would like to include pagination truncation for when large amounts of results are returned. 
+
+Finally, I would also like to give users the ability to upload images and save those images to the database, for recipes and avatars.
 
 ## Data Structure
 
@@ -254,51 +250,58 @@ Product Price | product_price | String
 
 ## Technologies Used
 
-- This project uses HTML, CSS, JavaScript and Python programming languages.
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+### Languages
+
+- This project uses HTML, CSS, JavaScript, and Python programming languages.
+
+### Tools
+
+- [Am I Responsive Design](http://ami.responsivedesign.is/)
+    - **Am I Reponsive Design** was used to test the responsiveness of the site and to provide the [image of the site running
+    on all devices](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png) contained in this README.md
+- [Balsamiq](https://balsamiq.com/?gclid=CjwKCAjw2qHsBRAGEiwAMbPoDGWJ8Vt62S0dfo_Gtqbf5WdHzNWohvOch7nnGT7kxnWNIr85RsS2IxoCmwkQAvD_BwE)
+    - **Balsamiq** was used to create the wireframes for this project.
 - [Cloud9](https://c9.io) 
     - Developer used **Cloud9** for their IDE while building the website.
-- [Bootstrap](https://www.bootstrapcdn.com/)
-    - The project uses **Bootstrap** to simplify the structure of the website and make the website responsive easily.
-    - The project also uses Bootstrap to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)
+- [Git](https://git-scm.com/)
+    - **Git** was used to handle version control
 - [GitHub](https://github.com/)
     - This project uses **GitHub** to store and share all project code remotely. 
 - [Heroku](https://www.heroku.com/)
     - The application is hosted on **Heroku**.
 - [Jinja](https://jinja.palletsprojects.com/en/2.10.x/)
     - **Jinja** was used to create templates
+- [MongoDB Atlas](https://www.mongodb.com/)
+    - **MongoDB Atlas** was used to create the database for this project
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+    - **PIP** was used to install the necessary software packages for this project. 
+
+### Libraries
+
+- [Bootstrap](https://www.bootstrapcdn.com/)
+    - The project uses **Bootstrap** to simplify the structure of the website and make the website responsive easily.
+- [CompressJpeg](https://compressjpeg.com/)
+    - **Compress Jpeg** was used to compress website images.
+- [Dynamic Dummy Image Generator](https://dummyimage.com/)
+    - **Dynamic Dummy Image Generator** it was used to generate reference images for the colour scheme section above.
 - [FontAwesome](https://fontawesome.com/)
     - **FontAwesome** was used to provide icons for the side-navigation bar. 
 - [GoogleFonts](https://fonts.google.com/)
     - The Lobster and Nunito fonts found on **GoogleFonts** were used for this project. 
-- [Git](https://git-scm.com/)
-    - **Git** was used to handle version control
-- [Am I Responsive Design](http://ami.responsivedesign.is/)
-    - **Am I Reponsive Design** was used to test the responsiveness of the site and to provide the [image of the site running
-    on all devices](https://github.com/stiofanEimeid/the-online-cookbook/blob/master/static/img/atoc_demo.png) contained in this README.md
-- [PIP](https://pip.pypa.io/en/stable/installing/)
-    - **PIP** was used to install the necessary software packages for this project. 
-- [Balsamiq](https://balsamiq.com/?gclid=CjwKCAjw2qHsBRAGEiwAMbPoDGWJ8Vt62S0dfo_Gtqbf5WdHzNWohvOch7nnGT7kxnWNIr85RsS2IxoCmwkQAvD_BwE)
-    - **Balsamiq** was used to create the wireframes for this project.
-- [MongoDB Atlas](https://www.mongodb.com/)
-    - **MongoDB Atlas** was used to create the database for this project
+- [Favicon Generator](https://www.favicon-generator.org/) 
+    - **Favicon Generator** was used to generate this websites favicon
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
     - The **Flask** framework was used to design this project. 
 - [Flask-Bcrypt](https://flask-bcrypt.readthedocs.io/en/latest/)
     - **Flask-bcrypt** was used for encryption of passwords in this project.
+- [Gravit](https://gravit.io/) 
+    - **Gravit** was used to design this projects SVGs. 
+- [JQuery](https://jquery.com)
+    - The project uses **JQuery** to simplify DOM manipulation.
 - [ObjectId](https://api.mongodb.com/python/current/api/bson/objectid.html)
     - The ObjectId module was used to read objectIds of documents retrieved from MongoDB in python.
 - [PyMongo](https://api.mongodb.com/python/current/)
     The PyMongo package was used to communicate with the Mongo DB database. 
-- [Favicon Generator](https://www.favicon-generator.org/) 
-    - **Favicon Generator** was used to generate this websites favicon
-- [Gravit](https://gravit.io/) 
-    - **Gravit** was used to design this projects SVGs. 
-- [CompressJpeg](https://compressjpeg.com/)
-    - **Compress Jpeg** was used to compress website images.
-- [Place-Hold it](https://place-hold.it/)
-    - Place-Hold it was used to generate reference images for the colour scheme section above.
 
 ## Testing
 
@@ -306,13 +309,11 @@ Information on the testing process may be found in the [testing.md file](https:/
 
 ## Deployment
 
-### 
-
 This project was written using the AWS Cloud IDE.
 
 Project code was pushed to Github and Heroku.
 
-MONGO_URI and SECRET_KEY config variables were saved to .bashrc, accessed from the terminal. 
+`MONGO_URI` and `SECRET_KEY` config variables were saved to ``.bashrc`, accessed from the terminal. 
 
 ### How to Run Code Locally
 
@@ -365,7 +366,7 @@ product_image | String
 product_description | String
 product_price | String
 
-8. Save your Mongo URI for the database collection to .flaskenv. The MONGO URI typically comes in the form: mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority (Note the placeholders for your username, password, cluster name and database name). For further assistance, please consult the [MONGO_URI documentation](https://docs.mongodb.com/manual/reference/connection-string/).
+8. Save your Mongo URI for the database collection to .flaskenv. The MONGO URI typically comes in the form: `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority` (Note the placeholders for your username, password, cluster name and database name). For further assistance, please consult the [MONGO_URI documentation](https://docs.mongodb.com/manual/reference/connection-string/).
 9. Run using the command ```python3 app.py```.
 10. Site may be found running at http://127.0.0.1:5000/ 
 

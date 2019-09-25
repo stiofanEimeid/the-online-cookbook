@@ -256,16 +256,9 @@ The application was tested on Edge, Firefox, Google Chrome, Opera and Safari.
 
 ### Solved Bugs
 
-Initially, when submitting forms, form fields changed would be updated despite clicking on the cancel button. I realised that
-the attribute 'type' set to 'button' must be set to a button on the page if it was not intended to post form data.
+Initially, when submitting forms, form fields changed would be updated despite clicking on the cancel button. I realised that the attribute 'type' set to 'button' must be set to a button on the page if it was not intended to post form data.
 
-A bug was noticed when using the application on Safari. Whereby the navbar would disappear when the user scrolled up while at the top of the page.
-In general, the navbar should stay fixed at the top of the page and only disappear when the user scrolls down, reappearing when the user scrolls up again.
-This is based on the current scroll position being greater than the previous scroll position for the navbar to disappear and vice versa for it to reappear.
-I attributed the problem on Safari to the fact that the user may scroll up further, even while at the top of the page. This meant that the user's previous scroll
-position, a negative Y-axis value, would be greater than the current scroll position and would therefore disappear as stupuldated by the code. I changed the code
-to make the navbar appear then the previous scroll position was greater than the current scroll position OR when the previous scroll position was less
-than or greater than zero. This seemed to fix the issue.
+A bug was noticed when using the application on Safari. Whereby the navbar would disappear when the user scrolled up while at the top of the page. In general, the navbar should stay fixed at the top of the page and only disappear when the user scrolls down, reappearing when the user scrolls up again. This is based on the current scroll position being greater than the previous scroll position for the navbar to disappear and vice versa for it to reappear. I attributed the problem on Safari to the fact that the user may scroll up further, even while at the top of the page. This meant that the user's previous scroll position, a negative Y-axis value, would be greater than the current scroll position and would therefore disappear as stupuldated by the code. I changed the code to make the navbar appear then the previous scroll position was greater than the current scroll position OR when the previous scroll position was less than or greater than zero. This seemed to fix the issue.
 
 ### Unsolved Bugs
 
