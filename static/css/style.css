@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6, .nav-brand,
     font-family: 'Lobster', cursive;
 }
 
-p, ol, ul, .cell {
+h1, p, ol, ul, .cell {
     overflow-wrap: break-word;
 }
 
