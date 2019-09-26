@@ -38,14 +38,12 @@
                 {% endif %}
               </ul>
             </div>
-            <div class="row">
-              <div class="col-5 cell">
+              <div class="col-12 cell">
                 Cuisine: {{recipe.recipe_type}}
               </div>
-              <div class="col-5 cell">
+              <div class="col-12 cell">
                 Meal Type: {{recipe.meal_type}}
               </div>
-            </div>
           </div>
           <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
           {% if session.username %}
