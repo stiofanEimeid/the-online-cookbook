@@ -98,7 +98,7 @@
                         {% if recipe.last_updated %}
                         <p class="card-text"><small class="text-muted">Last updated; {{recipe.last_updated}}</small></p>
                         {% else %}
-                        <p class="card-text"><small class="text-muted">Time created: {{recipe.time_created}}</small></p>
+                        <p class="card-text"><small class="text-muted">Submitted: {{recipe.time_created}}</small></p>
                         {% endif %}
                         <div class="text-center">
                         <a class="btn btn-primary btn-block" href="{{ url_for('recipe', id=recipe._id) }}">Go to Recipe</a>
