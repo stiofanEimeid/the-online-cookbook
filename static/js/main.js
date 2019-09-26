@@ -71,7 +71,6 @@ $('#mySecondTooltip').tooltip();
         if(x < maxField){ 
             x++; //Increment field counter
             $(wrapper).append('<div><textarea class="form-control reduce" name="recipe_ingredient" rows="1" placeholder="Enter ingredient"></textarea><a href="#" class="remove_button">&#10008;</a></div>'); //Add field html
-          
         }
     });
     
