@@ -128,9 +128,10 @@ queue()
 
 // function found on stackoverflow 
 function myTag(key, endAngle, startAngle){
-    var percentage = dc.utils.printSingleValue((endAngle - startAngle) / (2*Math.PI) * 100);
+    var percentage = dc.utils.printSingleValue((endAngle - startAngle)
+    / (2*Math.PI) * 100);
     // hide tag is less than 5% of the chart to prevent labels from overlapping
-    if (percentage > 5){
+    if (percentage >= 5){
         return key + "(" + Math.round(percentage) + '%)';
         }
     }

@@ -47,7 +47,6 @@ h1, p, ol, ul, .cell {
     width: 100%;
 }
 
-
 .roundHomeDiv1 {
     height: 60px;
     overflow: hidden;
@@ -561,7 +560,6 @@ using the position: absolute selector. */
 	animation-timing-function: linear;
 	animation-duration: 7s;
 	animation-iteration-count: infinite;
-
 }
 
 @keyframes revolving {
@@ -583,7 +581,6 @@ using the position: absolute selector. */
 	    -webkit-transform: rotate(0deg);
 	    -ms-transform: rotate(0deg);
 		transform: rotate(0deg);
-		
 	}
 
 	to {
