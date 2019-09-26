@@ -148,6 +148,10 @@ Registering or logging in successfully brings users to their account page where 
 
 Finally, they may logout from this page. 
 
+### About Section
+
+The About section found on the homepage directly beneath the wheel decoration provides a short introduction to the site and handy links to different sections of the site as well as a short description of each.
+
 ### Read
 
 Users may search or 'read' recipes contained in the database. They can define special criteria for their search using the filters provided, including meal origin (mexican, indian, italian, chinese etc), meal type (breakfast, lunch, dinner or snack), and diet type (vegetarian, vegan, dairy-free, gluten-free, nut-free and low in sugar). Clicking on each result's respective "Go to Recipe" button brings users to a dedicated recipe page. 
@@ -194,9 +198,9 @@ Finally, I would also like to give users the ability to upload images and save t
 
 ## Data Structure
 
-I choose to use MongoDB, a 'NoSQl' database, in order to implement the knowledge I'd accrued from the module mini-project. In addition, I was aware the next milestone project would involve using a SQL. As such, this was my only opportunity to work with a NoSQL database for a milestone project. Suitability?
+I choose to use MongoDB, a 'NoSQl' database, in order to implement the knowledge I'd gained from the module mini-project. In addition, I was aware the next milestone project would involve using a SQL database. As such, this was my only opportunity to work with a NoSQL database for a milestone project.
 
-The recipe collection and user collection share a common key-value pair, "username", which links the two collections. The recipe entry takes the username of the user who created it. Each recipe can only have one creator and may therefore be described as a one-to-one relationship between each recipe and the user who created it. However, a user can have many recipes attributed to them.  As such, a one-to-many relationship exists between the user and the recipes created by them. 
+Each recipe document contains an 'author' key whose value is the name of the user who created it, stored as 'name' in the relevant user document. This links the two collections. Each recipe can only have one creator and may therefore be described as a one-to-one relationship between each recipe and the user who created it. However, a user can have many recipes attributed to them.  As such, a one-to-many relationship exists between the user and the recipes created by them. 
 
 ### Recipe Collection
 
@@ -255,7 +259,7 @@ Product Price | product_price | String
 - [Balsamiq](https://balsamiq.com/?gclid=CjwKCAjw2qHsBRAGEiwAMbPoDGWJ8Vt62S0dfo_Gtqbf5WdHzNWohvOch7nnGT7kxnWNIr85RsS2IxoCmwkQAvD_BwE)
     - **Balsamiq** was used to create the wireframes for this project.
 - [Cloud9](https://c9.io) 
-    - Developer used **Cloud9** for their IDE while building the website.
+    -  **Cloud9** was used as the IDE for building the website.
 - [Git](https://git-scm.com/)
     - **Git** was used to handle version control
 - [GitHub](https://github.com/)
@@ -272,29 +276,29 @@ Product Price | product_price | String
 ### Libraries
 
 - [Bootstrap](https://www.bootstrapcdn.com/)
-    - The project uses **Bootstrap** to simplify the structure of the website and make the website responsive easily.
+    - The project uses **Bootstrap** to simplify the structure of the website and make the website responsive.
 - [CompressJpeg](https://compressjpeg.com/)
     - **Compress Jpeg** was used to compress website images.
 - [Dynamic Dummy Image Generator](https://dummyimage.com/)
-    - **Dynamic Dummy Image Generator** it was used to generate reference images for the colour scheme section above.
+    - **Dynamic Dummy Image Generator** was used to generate reference images for the colour scheme section above.
 - [FontAwesome](https://fontawesome.com/)
     - **FontAwesome** was used to provide icons for the side-navigation bar. 
 - [GoogleFonts](https://fonts.google.com/)
-    - The Lobster and Nunito fonts found on **GoogleFonts** were used for this project. 
+    - The Lobster and Nunito fonts were found on **GoogleFonts**.
 - [Favicon Generator](https://www.favicon-generator.org/) 
-    - **Favicon Generator** was used to generate this websites favicon
+    - **Favicon Generator** was used to generate this website's favicon
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
     - The **Flask** framework was used to design this project. 
 - [Flask-Bcrypt](https://flask-bcrypt.readthedocs.io/en/latest/)
     - **Flask-bcrypt** was used for encryption of passwords in this project.
 - [Gravit](https://gravit.io/) 
-    - **Gravit** was used to design this projects SVGs. 
+    - **Gravit** was used to design this project's SVGs. 
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 - [ObjectId](https://api.mongodb.com/python/current/api/bson/objectid.html)
-    - The ObjectId module was used to read objectIds of documents retrieved from MongoDB in python.
+    - The ObjectId module was used to read ObjectIds of documents retrieved from MongoDB in python.
 - [PyMongo](https://api.mongodb.com/python/current/)
-    The PyMongo package was used to communicate with the Mongo DB database. 
+    The PyMongo package was used to communicate with the MongoDB database. 
 
 ## Testing
 
@@ -388,7 +392,7 @@ SECRET KEY | <your_secret_key>
 
 ### Content
 
-SVG designs and product copy were designed and written by me, respectively. 
+SVG designs and product copy were designed and written by me.
 
 ### Media
 
