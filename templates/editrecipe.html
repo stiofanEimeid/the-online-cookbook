@@ -22,7 +22,7 @@
     		    <legend>Recipe Name</legend>
                 <div>
                     <input type="text" name="recipe_name" class="form-control" value="{{ recipe.recipe_name }}" minlength="3" maxlength="75" required>
-                    <small class="form-text text-muted required">Required. Must be 3 to 75 characters long</small>
+                    <small class="form-text text-muted required">Required. Must be 3 to 75 characters long.</small>
                     <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -37,7 +37,7 @@
                 <legend>Recipe Description</legend>
                 <div>
                     <textarea class="form-control" name="recipe_description" placeholder="Add a description" rows="3" maxlength="450">{{recipe.recipe_description}}</textarea>
-                    <small class="form-text text-muted required">Max 450 characters long</small>
+                    <small class="form-text text-muted required">Max 450 characters long.</small>
                 </div>
             </fieldset>
         </div>
@@ -61,7 +61,7 @@
                         <option value="Thai" {{ 'selected' if recipe.recipe_type == "Thai" else '' }}>Thai</option>
                         <option value="Other" {{ 'selected' if recipe.recipe_type == "Other" else '' }}>Other</option>
                     </select>
-                    <small class="form-text text-muted required">Required</small>
+                    <small class="form-text text-muted required">Required.</small>
                      <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -85,7 +85,7 @@
                         <option value="Shake" {{ 'selected' if recipe.meal_type == "Shake" else '' }}>Shake</option>
                         <option value="Other" {{ 'selected' if recipe.meal_type == "Other" else '' }}>Other</option>
                     </select>
-                    <small class="form-text text-muted required">Required</small>
+                    <small class="form-text text-muted required">Required.</small>
                      <div class="valid-feedback">
                       Looks good!
                     </div>
@@ -181,7 +181,7 @@
     	                    </div>
     	                {% endif %}
     	            {% endfor %}
-    	            <small class="form-text text-muted required">At least one step required</small>
+    	            <small class="form-text text-muted required">At least one step required.</small>
     	            <div class="valid-feedback">
                                   Looks good!
                     </div>
