@@ -208,7 +208,10 @@ Title | DB Key | Data type
 --- | --- | --- 
 Recipe ID | _id | Object ID 
 Name | recipe_name | String 
-Preparation Time | recipe_preptime | Integer32
+Preparation Time | recipe_preptime | String
+Cooking Time | recipe_cooktime | String
+Cuisine | recipe_type | String
+Meal Type | meal_type | String
 Serves | recipe_serves | Integer32
 Ingredients | receipe_ingredients | Array 
 Steps | recipe_steps | Array 
