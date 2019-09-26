@@ -167,8 +167,9 @@
             <div class="image-container">
               <img src="{{ product.product_image}}" alt="{{product.product_name}}">
             </div>
-            <div class="card-body text-center">
+            <div class="card-body">
               <div class="card-title text-truncate">{{product.product_name}}</div>
+              <p class="card-text"><small class="text-muted">{{ product.product_price}}</small></p>
               <a class="btn btn-success btn-block" href="{{ url_for('product', name=product.product_name) }}">Visit Product Page</a>
             </div>
           </div>
