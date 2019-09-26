@@ -28,7 +28,7 @@
             <div class="card-title">
               {{product.product_name}}
             </div>
-            <p class="card-text"><small class="text-muted"></small>{{ product.product_price}}</p>
+            <p class="card-text"><small class="text-muted">{{ product.product_price}}</small></p>
             <a class="btn btn-primary btn-block" href="{{ url_for('product', name=product.product_name) }}">Go to Product</a>
           </div>
         </div>
