@@ -35,13 +35,13 @@ The following validation services and linter were used to check the validity of 
 
 1. **See all recipes on the site without requiring an account to do so**
 
-Users may search recipes without having to register or login. By default, every recipe in the database is returned when the user first navigates to the recipes page. Each recipe is represented by a card, with a maximum of twelve per page. Results are paginated in the interest of organisation and preventing the user becoming overwhelmed.
+Users may search recipes without having to register or login. By default, every recipe in the database is returned when the user first navigates to the recipes page. Each recipe is represented by a card, with a maximum of 12 per page. Results are paginated in the interest of organisation and preventing the user from becoming overwhelmed.
 
-Each result is contained in a card which displays an image of the recipe, its name and its author, when it was submitted or when it was last updated, and a link to the recipe's individua; page. 
+Each result is contained in a card which displays an image of the recipe, its name and its author, when it was submitted or when it was last updated, and a link to the recipe's individual page. 
 
 2. **Filter recipes by dietary requirements, meal type, and cuisine**
 
-Users may search for recipes based on cuisine, meal type and dietary requirements. Each filter may be used with the other two or by itself. I have now uploaded at least recipe for each individual option within the three categories although not every combination of the three e.g. "Thai Gluten-free Shake" will return a recipe at this time. 
+Users may search for recipes based on cuisine, meal type, and dietary requirements. Each filter may be used with the other two or by itself. I have now uploaded at least recipe for each individual option within the three categories although not every combination of the three e.g. "Thai Gluten-free Shake" will return a recipe at this time. 
 
 3. **Search Recipes with text-search**
 
@@ -49,15 +49,15 @@ Users may also search recipes by text. The text search considers all text in rec
 
 4. **View each individual recipe and its details on its own page**
 
-Users may click the "Go to recipe" function to view that recipe's page, from the search page, discover page or their account with regard to recipes they have created or favourited. 
+Users may click the "Go to Recipe" button to view that recipe's page, from the search page, discover page or their account with regard to recipes they have created or favourited. 
 
-Individual recipe pages provide fundamental information as well as a recipe image at the top of the page, including name, meal type, cuisine, cooking time, preparation time, dietary requirements. Users are not required to have an account to view individual recipes pages but if they are logged in they will see the option to add/remove the recipe from their favourites or, if they are the author, the option to update or delete the recipe.
+Individual recipe pages provide basic information as well as a recipe image at the top of the page, including name, meal type, cuisine, cooking time, preparation time, dietary requirements. Users are not required to have an account to view individual recipes pages but if they are logged in they will see the option to add or remove the recipe from their favourites or, if they are the author, the option to update or delete the recipe.
 
-Below this section is a section where the author may choose to add a description if they so wish. The author of the recipe will view a button labelled 'add description' if they are logged in while viewing the page. 
+Below this section is a section where the author may choose to add a description, if they so wish. The author of the recipe will view a button labelled 'Add Description' if they are logged while viewing the page. 
 
-Following the description section are the ingredients and steps sections. Clicking on each ingredient or step adds a text-decoration property of 'line-through', crossing them off, so users can more easily keep track of the ingredients they have added and which step in the recipe they are currently on.. This is conveyed to the user by way of a tool-tip that appears when the user hovers over or taps the info icon beside the section heading.
+Following the description section are the ingredients and steps sections. Clicking on each ingredient or step adds a text-decoration property of 'line-through', crossing them off, so users can more easily keep track of the ingredients they have added and which step in the recipe they are currently on. The user is informed of this feature by way of a tool-tip that appears when the user hovers over or taps the info icon beside the section heading.
 
-Finally, the user will see three of nine random product cards, containing the respective product's image, name, and a link to the product's individual page. 
+Finally, the user will see three of nine random product cards, containing the respective product's image, name, and a link to the product's individual page.
 
 5. **Create an account on the site that is secure**
 
@@ -65,7 +65,7 @@ Users may create an account by clicking on the link contained the copy when the 
 
 Users are then prompted to enter a username two to ten characters long, a password eight to sixteen characters long and an avatar.
 
-If registration is successful they will be brought to their account page where they can view their username, time they became a registered user, their recipes, favourites and account settings along with an option to logout at the end of the page. 
+If registration is successful they will be brought to their account page where they can view their username, the time they became a registered user, their recipes, favourites and account settings along with an option to logout at the end of the page. 
 
 6. **Choose an avatar for my account**
 
@@ -75,11 +75,11 @@ As mentioned above, users may choose one of four avatars upon registration. One 
 
 Create
 
-- Only registered, logged in users may add recipes to the database. They may add recipes at any time using the 'add recipe' link contained in the side navigation bar or by selecting the 'add recipe' button in their account page under the 'My Recipes' tab.  Both steps and ingredients may be dynamically added and removed. Once the user is satisfied with the recipe they have written, they may submit it to the database. The date and time of submission is noted and passed into the document. Once submitted the recipe may be viewed in the search page or directly from their account page under the 'My Recipes' tab. 
+- Only registered, logged in users may add recipes to the database. They may add recipes at any time using the 'Add Recipe' link contained in the side navigation bar or by selecting the 'Add Recipe' button in their account page under the 'My Recipes' tab.  Both steps and ingredients may be dynamically added and removed. Once the user is satisfied with the recipe they have written, they may submit it to the database. The date and time of submission is noted and passed into the document. Once submitted the recipe may be viewed in the search page or directly from their account page under the 'My Recipes' tab. 
 
 Update
 
-- If the user wishes to update the recipe, they may do so directly from the recipe page while logged in as the recipe's author or from their account page. An 'edit recipe' button sits beside the 'go to recipe' button for each of their recipes.
+- If the user wishes to update the recipe, they may do so directly from the recipe page while logged in as the recipe's author or from their account page. An 'Edit Recipe' button sits beside the 'Go to Recipe' button for each of their recipes.
 
 - The update recipe fields mirror those of the add recipe page but with each of the recipe's current field values appearing in their respective fields. Once the user is happy with the changes they must click submit to update the recipe in the database or simply click cancel to return to the previous page if they change their mind about updating the recipe. 
 
@@ -109,7 +109,7 @@ Users may delete their account by following the link in the settings tab in thei
 
 13. **View statistical data of the site in an appealling visual format**
 
-Users may view site data on the statistics dashboard or the 'Discover' page. The page includes the number of recipes and users on the site, three pie charts showing the proportion of recipes by cuisine submitted, viewed and favourited respectively. Categories are broken down into continents (Europe, Africa, North America, South America, Asia) and 'Other' to present the data as clearly as possible to the user. 
+Users may view site data on the statistics dashboard or the 'Discover' page. The page includes the number of recipes and users on the site, three pie charts showing the proportion of recipes by cuisine submitted, viewed, and favourited. Types of cuisine are broken down into continents (Europe, Africa, North America, South America, Asia) and 'Other' to present the data as clearly as possible to the user. 
 
 Below the pie charts are three lists of five items each - most viewed recipes, most favourited recipes, and most recently submitted recipes. Each entry shows the recipe's name, author and the number of views or favourites it has or the date of its submission depending on which section it falls into. A link is to each recipe's individual page is included in each entry. The top recipe in each of the three sections also includes the recipe's image. 
 
@@ -121,17 +121,17 @@ Users may view a list of products in a 3x3 grid from the products link in the si
 
 1. **Promote a brand of cooking tools to my users**
 
-I sought to accomplish this by making a direct connection between the recipes users were making and viewing and the tools I wished to promote and sell. Each individual recipe page features a random selection of three of nine tools. The tools are presented to users as facilitating their needs and interests. Users can click through to each of the three products' individual page, where a larger image of the product along with a description, a price and an option to buy appear.
+I sought to accomplish this by making a direct connection between the recipes users were making and viewing and the tools I wished to promote and sell. Each individual recipe page features a random selection of three of nine tools. Users can click through to each of the three products' individual page, where a larger image of the product along with a description, a price, and an option to buy appear.
 
 Users may also view products directly from the products page which leads them to the product's individual page.
 
-I kept the product copy light-hearted and playful to inject some personality into the brand and differentiate it from other, more reserved competitors. 
+I kept the product copy light-hearted and playful to inject some personality into the brand.
 
 2. **Collect data on what users are submitting to determine what types of recipes are popular and any trends that may exist for marketing purposes**
 
-Some site statistics are represented in the 'Discover page'.. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. 
+Some site statistics are represented in the 'Discover page'. They offer some general statistics about the site, such as the number of users and recipes currently in the database, as well as visual representations of the the type of recipes that are popular. 
 
-Three pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed and favourited. These charts may be used to identify trends among those who use the site and better understand how they user the site. Furthermore, I may be able to determine what areas of cooking are most popular to users and tailor cooking utensils and applicances to them. 
+Three pie-charts evaluate the proportion of each recipe being submitted as well as the proportion of each recipe being viewed and favourited. These charts may be used to identify trends among those who use the site and better understand how they use the site. Furthermore, I may be able to determine what areas of cooking are most popular to users and tailor cooking utensils and applicances to them. 
 
 In addition, there are sections that show the user five recipes are the most viewed, another five that are most favourited and finally five of the most recent submissions. 
 
