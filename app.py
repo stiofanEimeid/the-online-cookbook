@@ -620,7 +620,7 @@ def delete_account_form():
     '''
     if bcrypt.check_password_hash(login_user['password'].encode('utf-8'),
                                   request.form['password'].encode('utf-8')):
-        recipes.remove({"name": username})
+        recipes.remove({"author": username})
         session.clear()
         users.remove({"name": username})
 
