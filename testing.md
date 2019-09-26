@@ -13,7 +13,7 @@
     - [**Owner Stories Testing**](#as-an-owner-i-want-to)
 3. [**Manual Testing**](#manual-testing)
     - [**Responsiveness**](#responsiveness)
-    - [**Browswer Compatibility**](#browswer-compatibility)
+    - [**Browser Compatibility**](#browser-compatibility)
 4. [**Bugs discovered**](#bugs-discovered)
     - [**Solved bugs**](#solved-bugs)
     - [**Unsolved bugs**](#unsolved-bugs)
@@ -246,7 +246,7 @@ The application was tested on mobile phone (Oneplus6, iphone), laptop(Macbook Ai
 
 The site is fully responsive - it's mobile, tablet, laptop and desktop-friendly.
 
-### Browswer Compatibility
+### Browser Compatibility
 
 The application was tested on Edge, Firefox, Google Chrome, Opera and Safari. The site functioned satisfactorily on every browser except Safari, discussed below. 
 
