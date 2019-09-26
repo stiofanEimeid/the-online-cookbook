@@ -143,25 +143,23 @@ When the user first opends the recipes page, every recipe in the database is ret
 
 Users may only add recipes if they are logged in. Users who attempt to add recipes without logging in by using the add recipe url will be asked to login or register to add recipes. Users who are logged in may add recipes from the link in the side navigation bar or from the link in their account under the 'My Recipes' tab. 
 
-They will be required to complete a number of fields including recipe name, recipe description, meal type, cuisine, cooking time, preparation time, number of people the recipe serves, steps, ingredients, dietary information and finally recipe image. All these fields are required except for recipe description, image and dietary information (although the latter merely equates to no special dietary information). All recipes must have at least one step or ingredient. 
+They will be required to complete a number of fields including recipe name, recipe description, meal type, cuisine, cooking time, preparation time, number of people the recipe serves, steps, ingredients, dietary information and finally recipe image. All these fields are required except for recipe description, image and dietary information (although the latter merely equates to no special dietary information). All recipes must have at least one step or ingredient. Users may only include a maximum of 30 ingredients and 30 steps.
 
 If a user attempts to submit a form without filling one or more of the required fields, the form will not submit and they will be asked to provide input for the empty required fields. I tested this feature with recipes I myself inputted to the database. I then made sure the correct information appeared in the database through MongoDB Atlas.
 
 #### Editing Recipes
 
-Users may only update/edit the recipes they have authored. In order to do this they must navigate to the recipe's individual recipe page where they will be given the option to edit the recipe(along with the option to delete the recipe.) In order to test this feature, I visited the same recipe page as a visitor, a logged in user and logged in as the recipe's author. The option only appeared when logged in as the recipe's author, as intended.
-I repeated this process with other recipes with different author accounts.
+Users may only update/edit the recipes they have authored. In order to do this they must navigate to the recipe's individual recipe page where they will be given the option to edit the recipe(along with the option to delete the recipe.) In order to test this feature, I visited the same recipe page as a visitor, a logged-in user who was not the author and logged-in as the recipe's author. The option only appeared when logged in as the recipe's author, as intended.I repeated this process with other recipes with different author accounts.
 
-If a visitor to the site who is not logged in attempts to view the edit recipe page with a recipe id in the url, they will be asked to sign in to edit their recipes or register an account. If a logged in user who is not the author tries this action, they will instead see an error message telling them they may only delete their own recipes. 
+If a visitor to the site who is not logged in attempts to view the edit recipe page with a recipe id in the url, they will be asked to sign in to edit their recipes or register an account. If a logged-in user who is not the author tries this action, they will instead see an error message telling them they may only delete their own recipes. 
 
-When user's decide to edit their recipe, they will be taken to a page that mirrors the page they used to add the recipe with all the same fields now filled with the values they inputted when adding the recipe. All fields are required apart from recipe description, recipe image and recipe dietary requirements. Users may delete all but one of the recipes steps and/or ingredients. Once the user is happy with their changes, they may submit the recipe. A note is made of when the edit took place and contained in the recipe document. If a user removes any of the required values and attempts to submit the updated recipe, the form will not submit. Instead they will be pointed to the empty required fields and asked for input. This process was carried out for each recipe in the database. 
+When users decide to edit their recipe, they will be taken to a page that mirrors the page they used to add the recipe with all the same fields now filled with the values they inputted when adding the recipe. All fields are required apart from recipe description, recipe image and dietary requirements. Users may delete all but one of the steps and ingredients. Once the user is happy with their changes, they may submit the recipe. A note is made of when the edit took place and contained in the recipe document. If a user removes any of the required values and attempts to submit the updated recipe, the form will not submit. Instead they will be pointed to the empty required fields and asked for input. This process was carried out for each recipe in the database. 
 
 #### Deleting Recipes
 
-Users may only delete the recipes they have themselves authored. In order to do this they must navigate to the recipe's individual recipe page where they will be given the option to delete the recipe (along with the option to edit the recipe) and asked to confirm this decision through a modal. In order to test this feature, I visited the same recipe page as a visitor, a logged in user and logged in as the recipe's author. The option only appeared when logged in as the recipe's author, as intended.
-I repeated this with other recipes with different author accounts.
+Users may only delete the recipes they have themselves authored. In order to do this they must navigate to the recipe's individual recipe page where they will be given the option to delete the recipe (along with the option to edit the recipe) and asked to confirm this decision through a modal. In order to test this feature, I visited the same recipe page as a visitor, a logged-in user who was not the author and logged-in as the recipe's author. The option only appeared when logged in as the recipe's author, as intended. I repeated this with other recipes with different author accounts.
 
-Once I had chosen to delete a recipe, I made sure it had been removed from the database through Mongo DB Atlas. I repeated this process for more dummy recipe documents.
+Once I had chosen to delete a recipe, I made sure it had been removed from the database through Mongo DB Atlas. I repeated this process for more test recipe documents.
 
 # Account Access
 
@@ -175,7 +173,7 @@ The flowchart documents all the eventualities of a user trying to login or regis
 
 Usernames may be a maximum of eight characters long. Passwords must be between eight and twelve characters inclusive. 
 
-In the interest of security, duplicate usernames are not allowed. A lowercase version of a user's chosen username is created during a new account registration. This is then checked against the lowercase versions of usernames already in the database among the users' collection. If such a match exists, users will be met with an error message, prompting them to register with a different name (or login should the user have mistaken the registration page for the login page). As such, a user will not be able to regsiter a username that already exists by changing the case of a letter or letters. 
+In the interest of security, duplicate usernames are not allowed. A lowercase version of a user's chosen username is created during a new account registration. This is then checked against the lowercase versions of usernames already in the database among the users' collection. If such a match exists, the user will be met with an error message, prompting them to register with a different name (or login should the user have mistaken the registration page for the login page). As such, a user will not be able to regsiter a username that already exists by changing the case of a letter or letters. 
 
 In order to test this measure, I attempted to login with different case versions of usernames already in the database. Being unable to register a duplicate username confirmed that the measure works as intended. 
 
@@ -205,7 +203,7 @@ The Account page displays some basic information about the user currently logged
 
 #### Deleting Account
 
-Should a user wish to delete their account, they must reenter their password. They will then be asked to confirm that they wish to delete their account by a modal. Once a user has chosen to delete their account, any recipe written by them is removed from the database (they are warned that this will happen in the delete account template).
+Should a user wish to delete their account, they must reenter their password. They will then be asked to confirm that they wish to delete their account by a modal. Once a user has chosen to delete their account, any recipe written by them is removed from the database (they are warned that this will happen at the top of the page).
 
 I tested this by creating test user accounts and writing test recipes before attempting to delete the account. My account was removed along with the recipes tied to the account. I repeated this process with a number of dummy accounts and dummy recipe entries.
 
@@ -215,24 +213,23 @@ Should a user wish to change their password, they will be asked to reenter their
 
 #### Changing Avatar
 
-Because this is purely an asethetic choice and not bearing on the integrity of an account, a user may choose to change their avatar without having to enter their password. I was successfully able to change my avatar a number of times with different accounts.
+Because this is purely an asethetic choice and not bearing on the security of an account, a user may choose to change their avatar without having to enter their password. I was successfully able to change my avatar a number of times with different accounts.
 
 #### Navigation Bar
 
 The navigation bar is fixed to the top of the page. It disappears on scroll down but reappears on scroll up. The Menu button opens a side navigation bar with a number of options to choose from. Once the side menu is open, an overlay covers the rest of the webpage not already covered by the sidenav. Users may scroll down the sidenav through the options but they may not scroll through the webpage or otherwise interact with it while the sidenav is open. 
 
-Different options appear depending on whether the user is logged in or not. I checked the options while logged out compared to being logged in with multiple accounts to verify the intended options appeared as expected. 
+Different options appear depending on whether the user is logged in or not. I checked the options while logged out compared to being logged in with different accounts to verify the intended options appeared as expected. 
 
 #### Discover Page
 
 The Discover Page dynamically generates three pie-charts using site data using dc.js and d3.js. I tested this feature by hard-coding various values to be graphed by each of the three pie-charts before switching to data generated by MongoDB search queries. Cross-referencing the results with the values in the database confirmed the correct values were being displayed. 
 
-It also returns 5 results of a sort query based on number of recipe views, recipe favourites and time a particular recipe was created. I created a number of test recipes to verify that they appeared in the recently submitted section and cross-referenced the top recipes based on views and favourites with the values contained in the database through Atlas. 
+It also returns 5 results of a sort query based on number of recipe views, recipe favourites and time a particular recipe was submitted. I created a number of test recipes to verify that they appeared in the recently submitted section and cross-referenced the top recipes based on views and favourites with the values contained in the database through MongoDB Atlas. 
 
 #### Pagination
 
-Pagination is provided on the search recipes page. A maximum of twelve results per page is displayed. The range of recipes being displayed ( a multiple of twelve) of total recipes returned is displayed in a div container at the top and bottom of the results e.g. 13-24 of 28 results displayed. 
-
+Pagination is provided on the search recipes page. A maximum of twelve results per page is displayed. The range of recipes being displayed (a multiple of 12) of total recipes returned is displayed in a div container at the top and bottom of the results e.g. 13-24 of 28 results displayed. 
 Once the user reaches a page where the results do not reach the next multiple of 12, the recipe total will instead be displayed rather than a multiple of 12 i.e. 24-28 of 28 results displayed. This feature was implemented with conditional operators - if the page number by a multiple of 12 was greater than the total recipes, the total recipe value would take the place of the second value in the statement. Otherwise, it would be a multiple of 12. 
 
 I tested this feature using a variety of search queries i.e. text search and filter combinations.
@@ -245,7 +242,7 @@ Users attempting to buy a product will be greeted by a modal advising them that 
 
 ### Responsiveness
 
-The application was tested on mobile phone (Oneplus6, iphone), laptop(Macbook Air), tablet and desktop(Mac Desktop) in addition to Google Chrome devtools. 
+The application was tested on mobile phone (Oneplus6, iphone), laptop(Macbook Air), tablet(iPad) and desktop(Mac Desktop) in addition to Google Chrome devtools. 
 
 The site is fully responsive - it's mobile, tablet, laptop and desktop-friendly.
 
@@ -259,7 +256,7 @@ The application was tested on Edge, Firefox, Google Chrome, Opera and Safari. Th
 
 Initially, when submitting forms, form fields changed would be updated despite clicking on the cancel button. I realised that the attribute 'type' set to 'button' must be set to a button on the page if it was not intended to post form data.
 
-A bug was noticed when using the application on Safari. Whereby the navbar would disappear when the user scrolled up while at the top of the page. In general, the navbar should stay fixed at the top of the page and only disappear when the user scrolls down, reappearing when the user scrolls up again. This is based on the current scroll position being greater than the previous scroll position for the navbar to disappear and vice versa for it to reappear. I attributed the problem on Safari to the fact that the user may scroll up further, even while at the top of the page. This meant that the user's previous scroll position, a negative Y-axis value, would be greater than the current scroll position and would therefore disappear as stupuldated by the code. I changed the code to make the navbar appear then the previous scroll position was greater than the current scroll position OR when the previous scroll position was less than or greater than zero. This seemed to fix the issue.
+A bug was noticed when using the application on Safari. The navbar would disappear when the user scrolled up while at the top of the page. In general, the navbar should stay fixed at the top of the page and only disappear when the user scrolls down, reappearing when the user scrolls up again. This is based on the current scroll position being greater than the previous scroll position for the navbar to disappear and vice-versa for it to reappear. I attributed the problem on Safari to the fact that the user may scroll up further, even while at the top of the page. This meant that the user's previous scroll position, a negative Y-axis value, would be greater than the current scroll position and would therefore disappear as stipulated by the code. I changed the code to make the navbar appear then the previous scroll position was greater than the current scroll position OR when the previous scroll position was less than or greater than zero. This seemed to fix the issue.
 
 ### Unsolved Bugs
 
