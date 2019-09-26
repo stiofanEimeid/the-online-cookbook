@@ -18,11 +18,13 @@
             <div class="col-12">
               <h3>by <strong>{{recipe.author}}</strong> </h3>
             </div>
-            <div class="col-6 cell">
-              <p><strong>Views: {{ recipe.views }}</strong></p>
-            </div>
-            <div class="col-6 cell">
-              <p><strong>Favourites: {{ recipe.favourited_by | length}}</strong></p>
+            <div class="row">
+              <div class="col-6 cell">
+                <p><strong>Views: {{ recipe.views }}</strong></p>
+              </div>
+              <div class="col-6 cell">
+                <p><strong>Favourites: {{ recipe.favourited_by | length}}</strong></p>
+              </div>
             </div>
             <div class="col-12 cell">Preparation Time: {{recipe.recipe_preptime}}</div>
             <div class="col-12 cell">Cooking Time: {{recipe.recipe_cooktime}}</div>
@@ -38,11 +40,13 @@
                 {% endif %}
               </ul>
             </div>
-            <div class="col-6 cell">
-              Cuisine: {{recipe.recipe_type}}
-            </div>
-            <div class="col-6 cell">
-              Meal Type: {{recipe.meal_type}}
+            <div class="row">
+              <div class="col-6 cell">
+                Cuisine: {{recipe.recipe_type}}
+              </div>
+              <div class="col-6 cell">
+                Meal Type: {{recipe.meal_type}}
+              </div>
             </div>
           </div>
           <!--The following options will only appear if the username of the author of the recipe matches the username of the username currently viewing the recipe. Else the user will be given the option to add the recipe to their favourites-->
