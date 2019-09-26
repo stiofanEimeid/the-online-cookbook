@@ -13,7 +13,7 @@
 
 Stream Three Project: Data Centric Development - Code Institute 
 
-Apéritif: The Online Cookbook allows users to search and view recipes, as well as create an account to create, update and delete their own recipes. They may allow view statsitical data on a dashboard and as well as kitchenware to help make the meals contained in the recipes. Visit the site here:  [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
+Apéritif: The Online Cookbook allows users to search and view recipes, as well as register an account to create, update and delete their own recipes. They may also view site statsitical data through a dashboard. In addition, they may view a selection of kitchenware products to help make the meals contained in the recipes. Visit the site here:  [https://the-online-cookbook.herokuapp.com/](https://the-online-cookbook.herokuapp.com/).
 
 ## Table of Contents
 1. [**UX**](#ux)
@@ -27,9 +27,9 @@ Apéritif: The Online Cookbook allows users to search and view recipes, as well 
     - [**Existing Features**](#existing-features)
     - [**Features Left to Implement**](#features-left-to-implement)
 
-3. [**Data Structure**](#datastructure)
+3. [**Data Structure**](#data-structure)
 
-4. [**Technologies**](#technologies)
+4. [**Technologies Used**](#technologies-used)
 
 5. [**Testing**](#testing)
 
@@ -46,15 +46,15 @@ Apéritif: The Online Cookbook allows users to search and view recipes, as well 
 
 #### Project Goals
 
-The goal of this project is to build a database that allows users to carry out each CRUD operation: Creating, Reading, Updating and Deleting recipes. Although authentification is not expected I have included login functionality and user accounts in order to keep user recipes secure. 
+The goal of this project is to build a database that allows users to carry out each CRUD operation: creating, reading, updating and deleting recipes. Although authentification is not expected as per the brief I have included login functionality and user accounts in order to keep user's recipes secure. 
 
 #### User Goals
 
-The target audience of the application are those who are passionate about cooking or wish to know more about it. The site is intended to be accessible to those who are relatively new to cooking and are curious about learning how to make new dishes. In addition, it hopes to attract those who are already passionate about cooking to share some of their favourite recipes with other users. Ideally, these groups would join together to create a thriving online community, one that is bound together by a love of cooking and learning more about it. 
+The target audience of the application are those who are passionate about cooking or wish to know more about it. The site is intended to be accessible to those who are relatively new to cooking and are curious about learning how to make new dishes. In addition, it hopes to attract those who are already passionate about cooking to share some of their favourite recipes with other users. Ideally, these groups would join together to create a thriving online community, one that is bound together by a love of cooking. 
 
 Users seek the means to find a variety of recipes through an accessible interface that is easy to use. Frequent users or those with extensive experience in cooking may seek to add their recipes to the website to share with others as well as discover more recipes. 
 
-Aperitif is easy to use and visusally appealling. Filters help users find specific recipes quickly and easily. Unique recipe pages give users all the information they need in an effective manner... With an account, users may add and edit recipes as well as keep track of their favourite recipes. The product section of recipe pages provide additional information to give user's the best cooking experience possible.
+Aperitif is accessible for all users. Filters help users find specific recipes quickly and easily. Unique recipe pages give users all the information they need, delivered in a clear and concise manner. With an account, users may add and edit recipes as well as keep track of their favourite recipes. The product section of recipe pages provide additional information to give user's the best cooking experience possible.
 
 #### User Stories
 
@@ -77,7 +77,7 @@ As a user, I want to:
 
 As a site owner, I want to:
 1. Promote a brand of cooking tools to my users; 
-2. Collect data on what users are submitting to determine what types of recipes are popular and any trends that may exist for marketing purposes. 
+2. Collect data on what users are submitting to determine what types of recipes are popular along with any trends that may exist for marketing purposes. 
 
 ### Design Choices
 
@@ -103,21 +103,21 @@ The following set of colours have been used for the site's colour scheme:
 - #072c43: ![navy](https://dummyimage.com/20x20/072c43/072c43.png)
 - #ececec: ![grey](https://dummyimage.com/20x20/ececec/ececec.png)
 
-I found these colours to be rich and pleasing to the eye when filling sections of the website for decoration purposes. Sections containing large amounts of text are grey and white in the interest of making them easy to read, following the style of popular websites such as facebook, reddit, youtube and twitter. Ultimately, I found that both categories, decorative and textual, complimented each other nicely. 
+I found these colours to be rich and pleasing to the eye. I used them to fill sections of the website for decoration purposes. Sections containing large amounts of text are grey and white in the interest of making them easy to read, following the style of popular websites such as Facebook, Reddit, Youtube and Twitter. I found that both categories, decorative and textual, complimented each other nicely. 
 
 Navy rather than black was used for the side navigation menu to make text appear less flat and pop when the user is selecting a destination on the site.
 
 #### Format
 
-Each major section of the website, the home page, search page, individual recipe page, search product page, individual product page, account page and discover page, contain a rounded header at the top of the page made up of three colours, #90ccf4, #f3d250, and #f78888. I followed this format to provide a contrast between the heading of the page and the content of the page, and repeated this across each of the major pages of the site in the interest of visual consistency, so that the reader may become familiar with the format of the site quickly.
+Each major section of the website - the home page, search page, individual recipe page, search product page, individual product page, account page and discover page, contain a rounded header at the top of the page made up of three colours, #90ccf4, #f3d250, and #f78888. I followed this format to provide a contrast between the heading of the page and the content of the page, and repeated this across each of the major pages of the site in the interest of visual consistency, so that the reader may become familiar with the format of the site quickly.
 
 #### Logo
 
-The logo is a cartoon ape in a chef's hat (the ape in apérifif if you will). The imagery of the site is intended to be light-hearted and fun in order to make cooking accessible for those who are less confident in their cooking abilities. More generally, the imagery is intended to illustrate that this a site for those who are passionate about cooking but one that doesn't take itself too seriously. 
+The logo is a cartoon ape in a chef's hat (the ape in apérifif if you will). The imagery of the site is intended to be light-hearted and fun in order to make the site welcoming to all users. This a site for those who are passionate about cooking but at the same time one that doesn't take itself too seriously. 
 
 #### The Wheel
 
-The background consists of two rings of food revolving around the site logo. The wheels are made up of images of food and cooking utensils drawn by me in SVG format using Gravit. Three SVGs the same size are layered on top of one another. However, all three take up different sections of the circle so that the content of the lower layers may be seen through the upper layers. 
+The background consists of two rings of food revolving around the site logo. The wheels are made up of images of food and cooking utensils drawn by me in SVG format using Gravit. Three SVGs of the same size are layered on top of one another. However, all three take up different sections of the circle so that the content of the lower layers may be seen through the upper layers. 
 
 The rings are comprised of examples of the content being delivered to the user: recipes which they can search and add to along with kitchen products to help bring these recipes to life. 
 
@@ -142,50 +142,51 @@ I wanted a design to grab the user's attention as it is the first thing they see
 
 ### Access
 
-Users may register an account and login to same through dedicated templates. Passwords are encrypted using bcrypt to ensure account integrity and prevent access to the account from anyone but the user. 
+Users may register an account and login to same through dedicated templates. Passwords are encrypted using bcrypt to ensure account integrity and prevent access to the account from anyone but the owner. 
 
 Registering or logging in successfully brings users to their account page where they may follow a link to the add recipe page, see their added recipes and recipes they have favourited. Settings include changing their password or deleting their account altogether. Users are cautioned that deleting their account will remove all the content they have created for the site and that the process is irreversible. 
+
 Finally, they may logout from this page. 
 
 ### Read
 
-Users may search or 'read' recipes contained in the database. They can define special criteria for their search using the filters provided, including meal origin(mexican, indian, italian, chinese etc), meal type(breakfast, lunch, dinner or snack), and diet type(vegetarian, vegan, dairy-free, gluten-free and nut-free). Search results are paginated with 8 results max for small screens and 12 for larger screens. Clicking on each result's respective "Go to Recipe" button brings users to a dedicated recipe page. 
+Users may search or 'read' recipes contained in the database. They can define special criteria for their search using the filters provided, including meal origin (mexican, indian, italian, chinese etc), meal type (breakfast, lunch, dinner or snack), and diet type (vegetarian, vegan, dairy-free, gluten-free, nut-free and low in sugar). Clicking on each result's respective "Go to Recipe" button brings users to a dedicated recipe page. 
 
-Recipe pages provide essential information about a recipe, an image of the recipe and links to pages of products that may help when following the recipe. 
+Recipe pages provide essential information about a recipe, an image of the recipe and links to pages of products that may help users to make recipes. 
 
 ### Pagination
 
-Search results are paginated, with a maximum of twelve results(recipes) displayed per page. Users can keep track of how many recipes are displayed by a highlighted page number and a counter that displays the range of recipes being currently viewed of the total returned recipes e.g. 13-24 of 32 recipes.
+Search results are paginated, with a maximum of 12 results (recipes) displayed per page. Users can keep track of how many recipes are displayed by a highlighted page number and a counter that displays the range of recipes being currently viewed of the total returned recipes e.g. 13-24 of 32 recipes.
 
 ### Edit, Add and Delete Recipes
 
-Registered users may add recipes, update these recipes and finally delete the recipes. The add recipe and edit recipe pages consist of forms with spaces for essential information that will be displayed in individual recipe pages. registered users may dynamically add steps or ingredients up to a maximum of fifteen in each case. If users choose not to attach an image of the recipe to the form, a placeholder image will appear when the recipe's page is selected. 
+Registered users may add recipes, update these recipes and finally delete the recipes. The 'Add Recipe' and 'Edit Recipe' pages consist of forms with spaces for essential information that will be displayed in individual recipe pages. Registered users may dynamically add steps or ingredients up to a maximum of 30 in each case. If users choose not to attach an image of the recipe to the form, a placeholder image will appear when the recipe's page is selected. 
 
-When registered users are taken to the page of a recipe they have created, they are given the option to update or delete the recipe. The user is asked to confirm their decision to remove their recipe if they click on the delete button - first, to encourage users to think twice about removing their recipe and secondly to prevent frustation for users who may click the button accidentally. If the user visits a recipe page that is not of their own creation, they are instead given the option of adding the recipe to their favourites. Favourites are vieweable from their account page and may be removed at any time if they see fit. 
+When registered users are taken to the page of a recipe they have created, they are given the option to update or delete the recipe. The user is asked to confirm their decision to remove their recipe if they click on the 'Delete Recipe' button - first, to encourage users to think twice about removing their recipe and secondly to prevent frustation for users who may click the button accidentally. If the user visits a recipe page that is not of their own creation, they are instead given the option of adding the recipe to their favourites. Favourites are vieweable from their account page and may be removed at any time. 
 
 Users may search products on the product page. They are not given the option to add their own. 
 
 ### Discover
 
-The discover page provides some statistics about the site, including most viewed recipes, most liked recipes, the proportion of recipes to users, and most popular categories of recipes. 
+The Discover page provides some statistics about the site, including most viewed recipes, most liked recipes, the proportion of recipes to users, and most popular categories of recipes. 
 
 ### Navigation
 
 Users may navigate through the site by way of the side navigation bar. The 'sidenav' is accessed by way of the menu icon contained the navigation bar at the time of the page. This navigation bar disappears when the user scrolls down in the interest of freeing up space on the screen. It reappears whenever the user scrolls up or is at the top of the page. 
 
-The options contained in the navbar when not logged in include home, about, login/register, discover, products.
+The options contained in the navbar when not logged in include 'home', 'about', 'login/register', 'discover' and 'products'.
 
-When users have logged in, the options are as follows, home, about, account, discover, products, add recipe and finally logout. 
+When users have logged in, the options are as follows: 'home', 'about', 'account', 'discover', 'products', 'add recipe' and finally, 'logout'. 
 
 ### Features left to implement 
 
 I would like to further develop the login and registration system. Should users forget their password, I would like to give them the option of creating a new one via email. As authetification was not meant to be a focus of the project according to the brief, I left this feature to be implemented in the future. 
 
-I would like to implement full checkout functionality so user's may purchase products.
+I would like to implement full checkout functionality so users may purchase products.
 
 In order to promote user engagement, I would like to develop a reward system whereby users will be rewarded for appearing in the most-viewed or most-favourited sections. Rewards may take the form of discounts on cooking products.
 
-I would like to create public versions of account pages so that user's may view each other's profile.
+I would like to create public versions of account pages so that users may view each other's profile.
 
 In terms of searching recipes, I would like to include pagination truncation for when large amounts of results are returned. 
 
@@ -360,7 +361,7 @@ product_price | String
 
 8. Save your Mongo URI for the database collection to .flaskenv. The MONGO URI typically comes in the form: `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority` (Note the placeholders for your username, password, cluster name and database name). For further assistance, please consult the [MONGO_URI documentation](https://docs.mongodb.com/manual/reference/connection-string/).
 9. Run using the command ```python3 app.py```.
-10. Site may be found running at http://127.0.0.1:5000/ 
+10. Site may be found running at ```http://127.0.0.1:5000/```. 
 
 #### Deploying the Project to Heroku
 
